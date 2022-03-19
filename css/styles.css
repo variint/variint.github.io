@@ -236,7 +236,7 @@ sup {
 }
 
 a {
-  color: #ffffff; /* try */
+  color: rgba(85, 145, 156); /* try */
   text-decoration: underline;
 }
 a:hover {
@@ -2219,7 +2219,6 @@ progress {
   background-color: #fff;
   border-color: #ffe480;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(255, 200, 0, 0.25);
 }
 .form-control::-webkit-date-and-time-value {
   height: 1.5em;
@@ -2434,7 +2433,6 @@ textarea.form-control-lg {
 .form-select:focus {
   border-color: #ffe480;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(255, 200, 0, 0.25);
 }
 .form-select[multiple], .form-select[size]:not([size="1"]) {
   padding-right: 0.75rem;
@@ -2503,7 +2501,6 @@ textarea.form-control-lg {
 .form-check-input:focus {
   border-color: #ffe480;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(255, 200, 0, 0.25);
 }
 .form-check-input:checked {
   background-color: #ffc800;
@@ -2581,12 +2578,7 @@ textarea.form-control-lg {
 .form-range:focus {
   outline: 0;
 }
-.form-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(255, 200, 0, 0.25);
-}
-.form-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(255, 200, 0, 0.25);
-}
+
 .form-range::-moz-focus-outer {
   border: 0;
 }
@@ -3022,7 +3014,6 @@ textarea.form-control-lg {
 }
 .btn-check:focus + .btn, .btn:focus {
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(255, 200, 0, 0.25);
 }
 .btn:disabled, .btn.disabled, fieldset:disabled .btn {
   pointer-events: none;
@@ -4084,11 +4075,11 @@ textarea.form-control-lg {
 }
 
 .navbar-toggler {
-  padding: 0.25rem 0.75rem;
+  padding: 0.1rem 0.1rem;
   font-size: 1.25rem;
   line-height: 1;
   background-color: transparent;
-  border: 1px solid transparent;
+  border: 0.5rem solid transparent;
   border-radius: 0.25rem;
   transition: box-shadow 0.15s ease-in-out;
 }
@@ -4717,7 +4708,6 @@ textarea.form-control-lg {
   z-index: 3;
   border-color: #ffe480;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(255, 200, 0, 0.25);
 }
 
 .accordion-header {
@@ -4826,7 +4816,6 @@ textarea.form-control-lg {
   color: #cca000;
   background-color: #e9ecef;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(255, 200, 0, 0.25);
 }
 
 .page-item:not(:first-child) .page-link {
@@ -5409,7 +5398,6 @@ textarea.form-control-lg {
 }
 .btn-close:focus {
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(255, 200, 0, 0.25);
   opacity: 1;
 }
 .btn-close:disabled, .btn-close.disabled {
@@ -6747,22 +6735,6 @@ textarea.form-control-lg {
 
 .d-none {
   display: none !important;
-}
-
-.shadow {
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-}
-
-.shadow-sm {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-}
-
-.shadow-lg {
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
-}
-
-.shadow-none {
-  box-shadow: none !important;
 }
 
 .position-static {
@@ -11353,14 +11325,14 @@ p {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #212529;
+  background-color: transparent;
 }
 #mainNav .navbar-toggler {
   padding: 0.75rem;
   font-size: 0.75rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   text-transform: uppercase;
-  font-weight: 700;
+  color: #fff;
 }
 #mainNav .navbar-brand {
   color: #ffc800;
@@ -11438,9 +11410,13 @@ p {
     margin-right: 0;
   }
 }
+
+.home-header {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
 header.masthead {
-  padding-top: 10.5rem;
-  padding-bottom: 6rem;
+  padding-bottom: 2rem;
   text-align: center;
   color: #fff;
   background-color: rgba(85, 145, 156, 0.9);
@@ -11479,8 +11455,7 @@ header.masthead .masthead-heading {
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 17rem;
-    padding-bottom: 12.5rem;
+    padding-bottom: 2rem;
   }
   header.masthead .masthead-subheading {
     font-size: 2rem;
@@ -11821,3 +11796,46 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+#myBtnContainer{
+ text-align: center; 
+}
+
+#projects .container {
+  overflow: hidden;
+}
+
+#projects .filterDiv {
+  display: none; /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+#projects .show {
+  display: block;
+}
+
+.project div{
+  margin-bottom: 2em;
+}
+
+/* Style the buttons */
+#myBtnContainer .btn {
+  border: none;
+  outline: none;
+  padding: 8px 8px;
+  background-color: #f1f1f1;
+  cursor: pointer; 
+  margin-top: 3px;
+}
+
+/* Add a light grey background on mouse-over */
+#myBtnContainer .btn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+#myBtnContainer .btn.active {
+  background-color: #6c757d;
+  color: white;
+}
+
