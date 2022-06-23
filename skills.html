@@ -82,15 +82,17 @@
                   <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
                       <strong class="d-inline-block mb-2 text-warning">Image Processing</strong>
-                      <h3 class="mb-0">Skill Draft: seamless editing of image regions</h3>
+                      <h3 class="mb-0">Skill Draft: Seamless editing of image regions</h3>
                       <p class="mb-auto">
+                        <br>
                         <b>Description: </b><br>
-                        Seamless cloning and other Poisson image editing techniques are methods to insert a source image region/texture/illumination/colour into a destination image region. Seamless cloning uses Poisson equations with Dirichlet boundary conditions for guided interpolation to avoid discontinuinities at edges between source and destination regions. There are two variations, importing gradients/normal cloning (using the texture/gradient) from the source region, and mixing gradients/mixed cloning, where a combination of the source and destination texture is used for the final clone result. 
+                        Poisson image editing techniques have the goal to insert a source image region/texture/illumination/colour into a destination image region. The goal is to avoid discontinuinities at edges between source and destination regions.
+                        <br>
                         <b>Goals:</b>
                         <ul>
                           <li> I know about Guided Interpolation and Poisson partial differential equations. </li>
-                          <li> I know about the seamless importation of both opaque and transparent source image regions into a destination region.</li>
-                          <li> I can distinguish between the Seamless cloning types importing gradients and mixing gradients. </li>
+                          <li> I know about the seamless importation of a source image region into a destination region.</li>
+                          <li> I can distinguish between the seamless cloning types (1) importing gradients and (2) mixing gradients. </li>
                           <li> I can list image transformation techniques that are defined by using a guidance field depending entirely on the original image.</li>
                         </ul>
                       <br>
@@ -148,8 +150,7 @@
                       <p class="mb-auto">
                         <br>
                         <b>Description:</b> <br>
-                        Multi-task learning trains a combined network with a separate output head for each task. It is distinguished between hard and soft parameter sharing.
-                        <br>
+                        Multi-task learning trains a combined network for multiple tasks simultaneusly, with the goal of training a shared representation.
                         <b>Goals:</b>
                         <ul>
                           <li> I know the difference between hard and soft parameter sharing. </li>
