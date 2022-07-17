@@ -11603,13 +11603,13 @@ header.masthead .masthead-heading {
   position: absolute;
   z-index: 100;
   left: 0;
-  width: 10px;
-  height: 10px;
-  margin-left: 34px;
+  width: 30px;
+  height: 30px;
+  margin-left: 24px;
   text-align: center;
   color: white;
   border-radius: 100%;
-  background-color: #666;
+  /*background-color: #666;*/
 }
 .timeline > li .timeline-image h4, .timeline > li .timeline-image .h4 {
   font-size: 10px;
