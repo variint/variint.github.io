@@ -80,53 +80,136 @@
                 </div>
                 -->
 
-                <!--  Code -->
+                <!--  CAD -->
                 <div class="col-md-6">
                   <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
-                      <strong class="d-inline-block mb-2 text-warning">Code</strong>
+                      <strong class="d-inline-block mb-2 text-warning">Computer-Aided Diagnosis</strong>
                       <h3 class="mb-0">ThinkTank Draft: Debugging</h3>
                       <div class="mb-1 text-muted">June 2022</div>
                       <p class="mb-auto">Ideas for debugging.</p>
                       <p>
-                      <a href="ideas/debugging.html" class="stretched-link">Continue reading</a>
+                          <ol>
+                          <li>Printing code and use highlight pens.</li>
+                          <li>Pair programming</li>
+                          <li>Rubber duck debugging</li>
+                          <li>Write a message: (1) I want to do ... (2) I did x and y, but ... (3) Could this be because ... ? (4) This seems impossible because ... (5) I've tried ... <a href="https://twitter.com/b0rk/status/1546875361002135554"> Julia Evans </a></li>
+                          </ol> 
                       </p>
                     </div>
                   </div>
                 </div>
-                <!--  Code -->
+                <!--  CAD -->
 
-                <!--  Code -->
+                <!--  CAD -->
                 <div class="col-md-6">
                   <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
-                      <strong class="d-inline-block mb-2 text-warning">Code</strong>
-                      <h3 class="mb-0">ThinkTank Draft: Computer Aided Diagnosis</h3>
-                      <div class="mb-1 text-muted">June 2022</div>
-                      <p class="mb-auto">All sorts of questions and answers regarding deep learning, machine learning and image processing.</p>
-                      <p>
-                      <a href="ideas/cadiagnosis.html" class="stretched-link">Continue reading</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!--  Code -->
-
-                <!--  Research -->
-                <div class="col-md-6">
-                  <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                      <strong class="d-inline-block mb-2 text-danger">Research</strong>
+                      <strong class="d-inline-block mb-2 text-warning">Computer-Aided Diagnosis</strong>
                       <h3 class="mb-0">ThinkTank Draft: Publication Reading</h3>
                       <div class="mb-1 text-muted">June 2022</div>
-                      <p class="mb-auto">Ideas for reading publications.</p>
-                      <p>
-                      <a href="ideas/reading.html" class="stretched-link">Continue reading</a>
+                      <p class="mb-auto">Ideas for reading publications:
+                        <ul>
+                          <li>Presentation for each paper</li>
+                          <li>Topic Overview: <a href="https://www.sciencedirect.com/topics/index">https://www.sciencedirect.com/topics/index</a></li>
+                        </ul>
                       </p>
                     </div>
                   </div>
                 </div>
-                <!--  Research -->
+                <!--  CAD -->
+
+                <!--  CAD -->
+                <div class="col-md-6">
+                  <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                      <strong class="d-inline-block mb-2 text-warning">Computer-Aided Diagnosis</strong>
+                      <h3 class="mb-0">ThinkTank Draft: Image Registration</h3>
+                      <div class="mb-1 text-muted">July 2022</div>
+                      <p class="mb-auto">
+                        What is the best way to perform registration?
+                        <ul>
+                          <li>U: In image registration using vessels, take the distance from each pixel to the closest vessel.
+                          </li>
+                        </ul>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!--  CAD -->
+
+                <!--  CAD -->
+                <div class="col-md-6">
+                  <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                      <strong class="d-inline-block mb-2 text-warning">Computer-Aided Diagnosis</strong>
+                      <h3 class="mb-0">ThinkTank Draft: Training with patches</h3>
+                      <div class="mb-1 text-muted">July 2022</div>
+                      <p class="mb-auto">
+                        How does inference work when I train a neural network on patches?
+                          <ul>
+                        <li>M: Check the sliding_window_inference from MONAI. It scans the image according to your patch size defined (roi_size), performs predictions on each individually, and combines the projections at the end. </li>
+                        <li>S: Tensors should solve this problem, considering every image is a tensor of cropped images. Crop the image into parts and then put them as a batch through the network.</li>
+                        <li>J: You can create a new model with the new input size, load the weights, and run.</li>
+                    </ul>
+
+                      </p>
+                      <p>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!--  CAD -->
+
+                <!--  CAD -->
+                <div class="col-md-6">
+                  <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                      <strong class="d-inline-block mb-2 text-warning">Computer-Aided Diagnosis</strong>
+                      <h3 class="mb-0">ThinkTank Draft: Feature extraction</h3>
+                      <div class="mb-1 text-muted">July 2022</div>
+                      <p class="mb-auto">
+                        I am currently trying to understand feature extraction for kmeans clustering of images. I am using for example 32 gabor filters - this means every image (64x64) gets 32 filtered versions. Should I:
+                         <ol type="A">
+                        <li> generate a feature vector (646432=131072) by just concatenating those? </li>
+                        <li> generate a feature vector (64*64=4096) by somehow combining the pixels?</li>
+                        <li> generate one feature for each filter (=32)?</li>
+                        <li> do something else?</li>
+                        </ol>
+                        <ul>
+                        <li>V: Make histograms per filter (32 filters x 10 bins = 320 features). This way images don't need to be the same size. Use adaptive binning for the bins. </li>
+                        <li>S: In any case, after applying Gabor filters to the image you'll want to look into methods to combine them (not just concatenating) such as Local Energy, Mean Amplitude, Phase Amplitude... your feature vectors will have to be low-dimensional (e.g., 1x32).</li>
+                        </ul>
+                      </p>
+                      <p>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!--  CAD -->
+
+
+
+                <!--  CAD -->
+                <div class="col-md-6">
+                  <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                      <strong class="d-inline-block mb-2 text-warning">Computer-Aided Diagnosis</strong>
+                      <h3 class="mb-0">ThinkTank Draft: Out of Distribution Detection</h3>
+                      <div class="mb-1 text-muted">July 2022</div>
+                      <p class="mb-auto">
+                        What is Out of Distribution Detection?
+                        <ul>
+                        <li>M: A way to detect unknown objects, implementation: <a href="https://github.com/MECLabTUDA/FrOoDo"> https://github.com/MECLabTUDA/FrOoDo </a>
+                        </ul>
+                      </p>
+                      <p>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!--  CAD -->
+
 
                 <!--  Infrastructure -->
                 <div class="col-md-6">
@@ -135,9 +218,13 @@
                       <strong class="d-inline-block mb-2 text-success">Infrastructure</strong>
                       <h3 class="mb-0">ThinkTank Draft: Trees in the city</h3>
                       <div class="mb-1 text-muted">June 2022</div>
-                      <p class="mb-auto">Considerations for planting trees.</p>
-                      <p>
-                      <a href="ideas/trees.html" class="stretched-link">Continue reading</a>
+                      <p class="mb-auto">Considerations for planting trees.
+                        <ul>
+                          <li>Allergies</li>
+                          <li>Insects</li>
+                          <li>Diversity</li>
+                          <li>Plant disease</li>
+                        </ul>
                       </p>
                     </div>
                   </div>
@@ -151,10 +238,14 @@
                       <strong class="d-inline-block mb-2 text-success">Infrastructure</strong>
                       <h3 class="mb-0">ThinkTank Draft: Bins for waste management.</h3>
                       <div class="mb-1 text-muted">June 2022</div>
-                      <p class="mb-auto">unbreakable, tank for liquids, close to a storm drain, can size, computer vision</p>
-                      <p>
-                      <!-- <a href="ideas/bin.html" class="stretched-link">Continue reading</a> -->
-                      </p>
+                      <p class="mb-auto">Considerations.
+                        <ul>
+                          <li>unbreakable</li>
+                          <li>tank for liquids</li>
+                          <li>close to a storm drain</li>
+                          <li>can size</li>
+                        </ul>
+                        </p>
                     </div>
                   </div>
                 </div>
@@ -168,9 +259,6 @@
                       <h3 class="mb-0">ThinkTank Draft: Public transport station.</h3>
                       <div class="mb-1 text-muted">June 2022</div>
                       <p class="mb-auto">Plants that don't attrackt insects, how often to maintain, solar power with chargers (they often break though), water tank for automatic watering of plants, bins and cigarret places</p>
-                      <p>
-                      <!-- <a href="ideas/station.html" class="stretched-link">Continue reading</a> -->
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -184,10 +272,15 @@
                       <strong class="d-inline-block mb-2 text-success">Infrastructure</strong>
                       <h3 class="mb-0">ThinkTank Draft: Electric cars.</h3>
                       <div class="mb-1 text-muted">June 2022</div>
-                      <p class="mb-auto">Good in a city, bad if you barely ever drive, bad for long distances, inductive driving, battery recycling</p>
-                      <p>
-                      <!--  <a href="ideas/cars.html" class="stretched-link">Continue reading</a> -->
-                      </p>
+                      <p class="mb-auto">
+                        <ul>
+                          <li>We are only "shifting" the problem to another place. We need more power plants. Battery development/recycling.</li>
+                          <li>Cleaner cities: (1) health due to less fumes. (2) less construction work/cleaning of building needed.</li>
+                          <li>Bad if you barely ever drive - batteries are generally bad for the environment, if you never use it, it's a waste. Therefore car sharing would be a good way to go.</li>
+                          <li>Bad for long distances.</li>
+                          <li>Interesting concept: inductive driving</li>
+                          <li>Even if we can recycle batteries - will we actually do it?</li>
+                        </ul></p>
                     </div>
                   </div>
                 </div>
@@ -201,9 +294,6 @@
                       <h3 class="mb-0">ThinkTank Draft: The problems with "green" energy.</h3>
                       <div class="mb-1 text-muted">June 2022</div>
                       <p class="mb-auto">Solar pannels: recycling, water power plants: methane (dying plants), gas: methane</p>
-                      <p>
-                      <!-- <a href="ideas/energy.html" class="stretched-link">Continue reading</a> -->
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -216,16 +306,18 @@
                       <strong class="d-inline-block mb-2 text-success">Infrastructure</strong>
                       <h3 class="mb-0">ThinkTank Draft: The problems with recycling.</h3>
                       <div class="mb-1 text-muted">June 2022</div>
-                      <p class="mb-auto">You are only one part of the recycling chain. Where to put organic plastic? We need to clean, Southampton: unclear, Cassino: Unclear</p>
-                      <p>
-                      <!--  <a href="ideas/recycling.html" class="stretched-link">Continue reading</a> -->
-                      </p>
+                      <p class="mb-auto">
+                      You are only one part of the recycling chain. 
+                      It is badly communicated, which waste goes into which bin in which community.
+                      <ul>
+                        <li>Where to put organic plastic?</li>
+                        <li>Southampton/UK: Where do we put food-contaminated plastic? Into the organic or the recycling bin? Should we clean it?
+                      </ul>
                     </div>
                   </div>
                 </div>
                 <!--  Infrastructure -->
 
-                
 
 
               </div>
