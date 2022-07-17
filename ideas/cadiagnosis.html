@@ -33,7 +33,6 @@
                         <li class="nav-item"><a class="nav-link nav-button" href="../projects.html">Projects</a></li>
                         <li class="nav-item"><a class="nav-link nav-active" href="../ideas.html">Ideas</a></li>
                         <li class="nav-item"><a class="nav-link nav-button" href="../skills.html">Skills</a></li>
-
                         
                     </ul>
                 </div>
@@ -58,17 +57,78 @@
                 <!-- text -->
                 <div class="col-md-8">
                   <article class="blog-post">
-                    <h2 class="blog-post-title">ThinkTank Draft: Publication Reading</h2>
-                    <p class="blog-post-meta">June 2022 by Christina</p>
+                    <h2 class="blog-post-title">ThinkTank Draft: Computer Aided Diagnosis</h2>
+                    <p class="blog-post-meta">July 2022 by Christina</p>
                     <hr>
-                    <p> 
-                        <ol>
-                          <li>Presentation for each paper</li>
-                          <li>Topic Overview: <a href="https://www.sciencedirect.com/topics/index">https://www.sciencedirect.com/topics/index</a></li>
-                        </ol> 
-                    </p>
-                </div>
 
+                    <h3>Image Registration</h3>
+                    <p> 
+                        
+                    </p>
+
+                    <h3>Training with patches</h3>
+                    <h6>Question:</h6>
+                    <p> 
+                    How does inference work when I train a neural network on patches?
+                    </p>
+                    <h6>Replies:</h6>
+                    <p> 
+                    <ul>
+                        <li>M: Check the sliding_window_inference from MONAI. It scans the image according to your patch size defined (roi_size), performs predictions on each individually, and combines the projections at the end. </li>
+                        <li>S: Tensors should solve this problem, considering every image is a tensor of cropped images. Crop the image into parts and then put them as a batch through the network.</li>
+                        <li>J: You can create a new model with the new input size, load the weights, and run.</li>
+                    </ul>
+                    </p>
+
+                    <h3>Feature extraction</h3>
+                    
+                    <h6>Question:</h6>
+                    <p> 
+                    I am currently trying to understand feature extraction for kmeans clustering of images. I am using for example 32 gabor filters - this means every image (64x64) gets 32 filtered versions. 
+                    Should I:
+                    <ol type="A">
+                        <li> generate a feature vector (646432=131072) by just concatenating those? </li>
+                        <li> generate a feature vector (64*64=4096) by somehow combining the pixels?</li>
+                        <li> generate one feature for each filter (=32)?</li>
+                        <li> do something else?</li>
+                    </ol>
+                    </p>
+                    <h6>Replies:</h6>
+                    <p> 
+                    <ul>
+                        <li>V: The standard thing was to make histograms per filter. So eg 32 filters x 10 bins for 320 features. This way images don't need to be the same size. Create a histogram, then concatenate the histograms. This is an example that I worked on a couple of years ago: https://ieeexplore.ieee.org/document/8094884 . These filters are similar to Gabor filters and I used 8 filters x 4 scales x 10 bins = 320 features. Use adaptive binning for the bins. If you just quantize the [min, max] interval for a filter into bins, you might have a bin that's very full, and all other bins are empty. So the bin size should be varied, so that each of the bins is a bit informative. You can do this by, for a single filter, taking a subset (e.g. 10) of the images filtered with that filter, concatenating them (so in essense you are creating a big image), and then looking at the quantiles of the pixel distributions. </li>
+                        <li>S: In any case, after applying Gabor filters to the image you'll want to look into methods to combine them (not just concatenating) such as Local Energy, Mean Amplitude, Phase Amplitude... your feature vectors will have to be low-dimensional (e.g., 1x32) and then you'll apply the clustering.</li>
+                    </ul>
+    
+
+
+
+
+                    </p>
+
+                    <h3>PCA</h3>
+                    
+                    <h6>Question:</h6>
+                    <p> 
+                    How can we use PCA after pre-processing?
+                    </p>
+                    <h6>Replies:</h6>
+                    <p> 
+                        <ul>
+                    <li>S: Pre-processing (normalization, scaling, resizing) should not affect the nature of the data, so typically it's okay to use PCA for representing the data in a lower dimensional space after the pre-processing. </li>
+                </ul>
+                    </p>
+
+
+                    <h3>Out of Distribution Detection</h3>
+                    <p>
+                        <a href="https://github.com/MECLabTUDA/FrOoDo"> https://github.com/MECLabTUDA/FrOoDo </a>
+                    </p>
+
+                    
+
+                </div>
+                <!-- text -->
 
 
                 <div class="col-md-4">
@@ -81,7 +141,11 @@
                 </div>
 
 
+
+
               </div>
+
+
 
             </main>
 
