@@ -184,6 +184,8 @@
                         <li>V: Make histograms per filter (32 filters x 10 bins = 320 features). This way images don't need to be the same size. Use adaptive binning for the bins. </li>
                         <li>S: In any case, after applying Gabor filters to the image you'll want to look into methods to combine them (not just concatenating) such as Local Energy, Mean Amplitude, Phase Amplitude... your feature vectors will have to be low-dimensional (e.g., 1x32).</li>
                         </ul>
+
+                        <a href="https://projector.tensorflow.org/">Embedding Projector for PCA visualisation</a>
                       </p>
                       <p>
                       </p>
@@ -192,7 +194,51 @@
                 </div>
                 <!--  CAD -->
 
+                <!--  CAD -->
+                <div class="col-md-6">
+                  <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                      <strong class="d-inline-block mb-2 text-warning">Computer-Aided Diagnosis</strong>
+                      <h3 class="mb-0">ThinkTank Draft: Saliency</h3>
+                      <div class="mb-1 text-muted">July 2022</div>
+                      <p class="mb-auto">
+                        basically those lines do the job:
+grad_outputs = torch.zeros_like(model_output[self.head_name])
+grad_outputs[:, ground_truth] = 1 # if class is 3 then I get 0 0 0 1 0 aka one-hot
+model_output[self.head_name].backward(gradient = grad_outputs)
+saliencyimage,  = torch.max(image.grad.data.abs(),dim=1)
 
+Info: I cannot use a library cause I have multiple heads and can't figure out how that would work
+
+Question: do you have any suggestions how to do this for binary (one output neuron 0/1)? - it works for class 1, but not for class 0.
+
+breeze — 21.07.2022
+If you have control over model architecture, you can make a small change in the last layer.. Instead of a single output neuron with 0 and 1 representing two classes, use an output of size 2 (similar to multi-class classification)... And then creating saliency maps for any one of those classes would be straightforward as you mentioned in your pseudo-code.. Plus, as far as I am aware, it won't change anything in terms of your model performance (or predictive behavior in general)
+
+1
+24. Juli 2022
+
+Christina — heute um 12:48 Uhr
+@breeze thanks for the answer, I was already thinking that I'd need to do that. From what I heard, BCE is better than CE for a binary task (not sure this is true though) - do you know whether there is a way with a single output neuron to produce saliency for the zero class?
+
+breeze — heute um 13:53 Uhr
+Actually CE for two classes is same as BCE mathematically.. 
+Formula for CE loss = sigma(-t_i * log(p_i)), where each t_i is the true label and each p_i is the predicted score for that label.. Since we use softmax to constraint the predicted scores, we can also say sigma(p_i) = 1. 
+Now, if you rewrite this formula for only two classes and using the fact that p_1 = 1 - p_0 and t_1 = 1 - t_0, you'll get 
+loss = -t_0 * log(p_0) + -(1 - t_0) * log(1 - p_0), which is the formula for BCE loss..
+So don't worry about losing performance from switching to a multi-class setup (Bearbeitet)
+[13:55]
+As for the problem of creating saliency maps directly from the BCE setup, I have a strong intuition that there must be a '1-x' trick somewhere in the pipeline that will convert the saliency maps of one class to zero class. But I am not sure where exactly in the pipeline. It's an interesting mathematical exercise though, if you would like to try. (Bearbeitet)
+
+Christina — heute um 21:12 Uhr
+Okay, I'll probably really switch to ce loss then, but the 1-x trick seems tempting, I'll try to figure out how to do that! Thanks again!!
+                      </p>
+                      <p>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!--  CAD -->
 
                 <!--  CAD -->
                 <div class="col-md-6">
@@ -204,8 +250,40 @@
                       <p class="mb-auto">
                         What is Out of Distribution Detection?
                         <ul>
-                        <li>M: A way to detect unknown objects, implementation: <a href="https://github.com/MECLabTUDA/FrOoDo"> https://github.com/MECLabTUDA/FrOoDo </a>
+                        <li>M: A way to detect unknown objects, implementation: <a href="https://github.com/MECLabTUDA/FrOoDo"> https://github.com/MECLabTUDA/FrOoDo </a></li>
                         </ul>
+
+Hi vielen dank.
+Es geht um out of distribution detection einem open set recognition problem.
+Moritz Fuchs
+6. Juli 2022, 1:48 nachm.
+Und was genau versteht man da darunter?
+6. Juli 2022, 1:53 nachm.
+Das kommt dann stark auf die Aufgabenstellung drauf an.
+Als OOD gilt alles was nicht in der originellen distribution modelliert wurde. Z.b.da du mit zellen arbeitest: zellen die in diesem Gewebe nicht natürlich sind er kennen ohne labels oder feststellen das ein Model nicht auf einem staining style trainiert wurde...
+Moritz Fuchs
+6. Juli 2022, 1:58 nachm.
+Probiere mal unser ood framewokr für semantic segmentation für pathology aus
+👍
+1
+github.com
+GitHub - MECLabTUDA/FrOoDo
+Moritz Fuchs
+6. Juli 2022, 2:00 nachm.
+Also so eine art "unbekannte Objekte" erkennung?
+6. Juli 2022, 2:16 nachm.
+Ganz genau
+Moritz Fuchs
+6. Juli 2022, 2:16 nachm.
+https://arxiv.org/pdf/2110.11334.pdf
+Ein gutes review paper ....
+Moritz Fuchs
+6. Juli 2022, 2:21 nachm.
+Dankeschön!! ☺️
+6. Juli 2022, 2:35 nachm.
+
+
+
                       </p>
                       <p>
                       </p>
