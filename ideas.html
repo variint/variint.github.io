@@ -204,7 +204,10 @@
                       <p class="mb-auto">
                       Any suggestions how to do saliency maps for binary (one output neuron 0/1)? - it works for class 1, but not for class 0.
 
-                      B: As for the problem of creating saliency maps directly from the BCE setup, I have a strong intuition that there must be a '1-x' trick somewhere in the pipeline that will convert the saliency maps of one class to zero class. But I am not sure where exactly in the pipeline. It's an interesting mathematical exercise though, if you would like to try. 
+                      <ul>
+                      <li>B: As for the problem of creating saliency maps directly from the BCE setup, I have a strong intuition that there must be a '1-x' trick somewhere in the pipeline that will convert the saliency maps of one class to zero class. But I am not sure where exactly in the pipeline. It's an interesting mathematical exercise though, if you would like to try. </li>
+                      <li>D: When applying attribution to binary classification, the attribution scores are the same (but opposite) for both classes. This is because if a pixel is very important for determining the image is class 0, it must also be very important for determining the image is not class 1. Put another way, a pixel is either important for the 1:0 classification, or it isn't. You can get the attribution map for the other class in binary classification just by taking the negative* of the first class. (*requires an attribution method with a typical mathematical output of course)</li>
+                      </ul>
                       </p>
                     </div>
                   </div>
@@ -317,10 +320,10 @@
                       <div class="mb-1 text-muted">June 2022</div>
                       <p class="mb-auto">
                         <ul>
-                          <li>Natural gas emissions: Methane is the second biggest contributor to global warming.<a href="https://www.iea.org/news/methane-emissions-from-the-energy-sector-are-70-higher-than-official-figures"> Source: International Energy Agency</a>
-                          <li>Hydroelectric dam emissions: Hydroelectric dams generate a surprising amount of greenhouse gas emissions. <a href="https://www.theguardian.com/sustainable-business/2016/nov/06/hydropower-hydroelectricity-methane-clean-climate-change-study"> Source: The Guardian, English</a></li>
+                          <li>Natural gas emissions: Methane is the second biggest contributor to global warming. <a href="https://www.iea.org/news/methane-emissions-from-the-energy-sector-are-70-higher-than-official-figures">Source: International Energy Agency</a>
+                          <li>Hydroelectric dam emissions: Hydroelectric dams generate a surprising amount of greenhouse gas emissions. <a href="https://www.theguardian.com/sustainable-business/2016/nov/06/hydropower-hydroelectricity-methane-clean-climate-change-study">Source: The Guardian, English</a></li>
                           <li>Solar panel recycling: Millions of solar panels have been installed in the last two decades—and since they typically last between 25 and 30 years, many will soon be ready for retirement and probably headed to a landfill. Recycling the devices is currently much more expensive than just discarding them. <a href="https://www.technologyreview.com/2021/08/19/1032215/solar-panels-recycling/">Source: MIT Tech Review, English</a> </li>
-                          <li>Wind turbine recycling: turbine blades are currently considered non-recycable due to their composite material: fibreglass (fiber-reinforced plastic using glass fiber). This is why discarded wind turbine blades often end up being buried in the ground. <a href="https://futurezone.at/science/radweg-reuse-bruecke-windradfluegel-rotorblaetter-christoph-bauer-woschitz-juergen-schwarz/402076588"> Source: Futurezone, German </a>
+                          <li>Wind turbine recycling: turbine blades are currently considered non-recycable due to their composite material: fibreglass (fiber-reinforced plastic using glass fiber). This is why discarded wind turbine blades often end up being buried in the ground. <a href="https://futurezone.at/science/radweg-reuse-bruecke-windradfluegel-rotorblaetter-christoph-bauer-woschitz-juergen-schwarz/402076588">Source: Futurezone, German </a>
                           </li>
                         </ul>
                       </p>
@@ -341,7 +344,7 @@
                       It is badly communicated, which waste goes into which bin in which community.
                       <ul>
                         <li>Where to put organic plastic?</li>
-                        <li>Southampton/UK: Where do we put food-contaminated plastic? Into the organic or the recycling bin? Should we clean it?
+                        <li>Southampton/UK: Where do we put food-contaminated plastic? Into the organic or the recycling bin? Should we clean it?</li>
                       </ul>
                     </div>
                   </div>
