@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', event => {
 });
 
 
-    filterSelection("multitask")
+    filterSelection("decentnet")
     function filterSelection(c) {
       var x, i;
       x = document.getElementsByClassName("filterDiv");

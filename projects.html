@@ -40,19 +40,20 @@
         <!-- Masthead-->
             
                 <div id="myBtnContainer">
-                  <button class="btn active" onclick="filterSelection('multitask')"><i class="fa fa-laptop-medical"></i> Eye</button>
-                  <button class="btn" onclick="filterSelection('semisup')"><i class="fa fa-laptop-medical"></i> Vessel</button>
-                  <button class="btn" onclick="filterSelection('cytotoxicity')"><i class="fa fa-laptop-medical"></i> Cell</button>
+                  <button class="btn active" onclick="filterSelection('decentnet')"><i class="fa fa-laptop-medical"></i> DecentNet<br>Explainability</button>
+                  <button class="btn" onclick="filterSelection('multitask')"><i class="fa fa-laptop-medical"></i> AgentF<br>Multi-task</button>
+                  <button class="btn" onclick="filterSelection('semisup')"><i class="fa fa-laptop-medical"></i> Feta<br>Semi-sup</button>
+                  <button class="btn" onclick="filterSelection('cytotoxicity')"><i class="fa fa-laptop-medical"></i> SISSI/CellLab<br>Weak labels</button>
                   <!--<button class="btn" onclick="filterSelection('read')"><i class="fa fa-laptop-medical"></i> Reading</button> -->
                   
-                  <button class="btn" onclick="filterSelection('astraeus')"><i class="fa fa-satellite"></i> Astraeus</button>
-                  <button class="btn" onclick="filterSelection('arcanum')"> <i class="fa fa-satellite"></i> Arcanum</button>
-                  <button class="btn" onclick="filterSelection('rubiks')"> <i class="fa fa-satellite"></i> Rubiks</button>
-                  <button class="btn" onclick="filterSelection('chimera')"> <i class="fa fa-satellite"></i> Chimera</button>
-                  <button class="btn" onclick="filterSelection('hovi')"> <i class="fa fa-satellite"></i> Hovi</button>
+                  <button class="btn" onclick="filterSelection('astraeus')"><i class="fa fa-satellite"></i> Astraeus<br>Titan</button>
+                  <button class="btn" onclick="filterSelection('arcanum')"> <i class="fa fa-satellite"></i> Arcanum<br>Neptune</button>
+                  <button class="btn" onclick="filterSelection('rubiks')"> <i class="fa fa-satellite"></i> Rubiks<br>CubeSat</button>
+                  <button class="btn" onclick="filterSelection('chimera')"> <i class="fa fa-satellite"></i> Chimera<br>Rocket</button>
+                  <button class="btn" onclick="filterSelection('hovi')"> <i class="fa fa-satellite"></i> Hovi<br>Quadrotor</button>
                   
                   <!--<button class="btn" onclick="filterSelection('sgac')"> <i class="fa fa-pen"></i> Titan</button>-->
-                  <button class="btn" onclick="filterSelection('tallinn')"> <i class="fa fa-pen"></i> Storytelling</button>
+                  <button class="btn" onclick="filterSelection('tallinn')"> <i class="fa fa-pen"></i> Storytelling<br>Summer school</button>
                 </div>
 
         </header>
@@ -61,6 +62,33 @@
         <section class="page-section bg-white">
 
             <div class="container" id="projects">
+
+                <!-- project -->
+                <div class="filterDiv decentnet project">
+                    <div class="row">
+                        <div class="text-center project-head">
+                                <h4 class="section-heading text-uppercase">DecentNet</h4>
+                                <h3 class="section-subheading text-muted"></h3>
+                        </div>
+
+                        <div class="col-xl-7">
+                            <p>
+                                DecentNet is a network that makes use of modularity and disentanglement in early layers. Each module (DecentBlock) is trained on a single concept which is derived from clustering small image patches. In order not to limit the network in learning complex representations, the DecentBlocks feed into a fusion module and subsequently into combined layers. We focus on the explainability of the fusion module's layers and channels that are the bridge between the DecentBlocks and combined layers to understand which of the less abstract early layer features contribute most to a prediction.
+                            </p>
+
+                            <p>
+                                <b>Milestones</b>
+                                <ul>
+                                    <li>2022: Start of project as university coursework</li>
+                                </ul>
+                            </p>
+                        </div> 
+                        <div class="col-xl-5">
+                            <!--<img class="img-fluid project-image" src="assets/img/portfolio/multi.PNG" alt="Blockdiagrams" />-->
+                        </div>
+                    </div>
+                </div>
+                <!-- project end -->
 
                 <!-- project -->
                 <div class="filterDiv multitask project">
@@ -119,21 +147,22 @@
                 <div class="filterDiv cytotoxicity project">
                     <div class="row">
                         <div class="text-center project-head">
-                                <h4 class="section-heading text-uppercase">CellLab - Cytotoxicity grading with cell segmentation</h4>
-                                <h3 class="section-subheading text-muted">University of Cassino</h3>
+                                <h4 class="section-heading text-uppercase">SISSI: Seamless Iterative Semi-Supervised correction of Imperfect labels</h4>
+                                <h3 class="section-subheading text-muted">University of Applied Sciences Technikum Wien, University of Cassino</h3>
                         </div>
 
                         <div class="col-xl-7">
-                            <p>The idea is to increase recognition for in-vitro and in-chemico tests by digitalising the biotechnology field. Cell-Lab should provide software for testing the toxicity  of pharmaceuticals, medical devices and cosmetics by analysing microscopy images. The goal is a prototype of a cell analysing software that follows the ISO 10993-5: Biological evaluation of medical devices - Part 5: Tests for in vitro cytotoxicity standard. First, images are analysed with traditional computer vision algorithms to create unsupervised masks which are then used for training a neural network. A Mask R-CNN is used for the segmentation.</p>
+                            <p>The idea is to increase recognition for in-vitro and in-chemico tests by digitalising the biotechnology field. Cell-Lab should provide software for testing the toxicity  of pharmaceuticals, medical devices and cosmetics by analysing microscopy images. The goal is a prototype of a cell analysing software that follows the ISO 10993-5: Biological evaluation of medical devices - Part 5: Tests for in vitro cytotoxicity standard. First, images are analysed with traditional computer vision algorithms to create unsupervised masks which are then used for training a neural network. A Mask R-CNN (later Faster R-CNN) is used for the segmentation (later object detection).</p>
                             <p>
                                 <b>Milestones</b>
                                 <ul>
-                                    <li>2022: Use techniques of partial label problem</li>
+                                    <li>2022: MICCAI DARTS Workshop: Best paper award for "SISSI - Seamless Iterative Semi-Supervised correction of Imperfect labels"</li>
+                                    <li>2022: Continue project as university coursework. Contribution: semi-supervised network with synthetic-like image generation for solving the partial label problem</li>
                                     <li>2022: Outreach at Lange Nacht der Forschung (Long night of research): "Kann KI die Versuchskaninchen retten?" (Can AI save rabbits from animal testing?)
                                     <li>2020: MICCAI LABELS workshop: Presentation of abstract "Training data preparation with computer vision algorithms for a Mask R-CNN"</li>
                                     <li>2020: imGraetzl.at: 4th supporter team for founders, freelancers and makers, 4 months programme, attended workshops: website check, graphics check, social media check, funding check</li>
                                     <li>2019: Vienna Techstars Startup Weekend Women: Attended mentoring and workshops, Pitching CellLab</li>
-                                    <li>2019: Start of project</li>
+                                    <li>2019: Start of project as Bachelor's thesis: CellLab - Cell segmentation for cytotoxicity grading</li>
                                 </ul>
                             </p>
                         </div> 
