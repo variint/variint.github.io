@@ -7,8 +7,9 @@
         <meta name="author" content="" />
         <title>Variint</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
@@ -21,7 +22,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="index.html"><img src="assets/img/navbar-logo.svg" alt="Variint Logo" /></a>
+                <a class="navbar-brand" href="index.html"><img src="assets/img/logos/navbar-logo.svg" alt="Variint Logo" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -70,21 +71,19 @@
                                 <h4 class="section-heading text-uppercase">DecentNet</h4>
                                 <h3 class="section-subheading text-muted"></h3>
                         </div>
-
-                        <div class="col-xl-7">
-                            <p>
-                                DecentNet is a network that makes use of modularity and disentanglement in early layers. Each module (DecentBlock) is trained on a single concept which is derived from clustering small image patches. In order not to limit the network in learning complex representations, the DecentBlocks feed into a fusion module and subsequently into combined layers. We focus on the explainability of the fusion module's layers and channels that are the bridge between the DecentBlocks and combined layers to understand which of the less abstract early layer features contribute most to a prediction.
-                            </p>
-
-                            <p>
-                                <b>Milestones</b>
-                                <ul>
-                                    <li>2022: Start of project as university coursework</li>
-                                </ul>
-                            </p>
+                        <div class="col-xl-7" id="decentnet_content">
+                            
                         </div> 
+
+                        <script>
+                            $(document).ready(function () {
+                                    $("#decentnet_content").load("projects/decentnet.html");
+                            });                  
+                        </script>
+
+                        
                         <div class="col-xl-5">
-                            <!--<img class="img-fluid project-image" src="assets/img/portfolio/multi.PNG" alt="Blockdiagrams" />-->
+                            <!--<img class="img-fluid project-image" src="assets/img/projects/multi.PNG" alt="Blockdiagrams" />-->
                         </div>
                     </div>
                 </div>
@@ -110,7 +109,7 @@
                             </p>
                         </div> 
                         <div class="col-xl-5">
-                            <img class="img-fluid project-image" src="assets/img/portfolio/multi.PNG" alt="Blockdiagrams" />
+                            <img class="img-fluid project-image" src="assets/img/projects/multi.PNG" alt="Blockdiagrams" />
                         </div>
                     </div>
                 </div>
@@ -137,7 +136,7 @@
                             </p>
                         </div> 
                         <div class="col-xl-5">
-                            <img class="img-fluid project-image" src="assets/img/portfolio/semi_sup_ucl.jpg" alt="Semi-supervised" />
+                            <img class="img-fluid project-image" src="assets/img/projects/semi_sup_ucl.jpg" alt="Semi-supervised" />
                         </div>
                     </div>
                 </div>
@@ -167,7 +166,7 @@
                             </p>
                         </div> 
                         <div class="col-xl-5">
-                            <img class="img-fluid project-image" src="assets/img/portfolio/cell_lab.png" alt="Blockdiagrams" />
+                            <img class="img-fluid project-image" src="assets/img/projects/cell_lab.png" alt="Blockdiagrams" />
                         </div>
                     </div>
                 </div>
@@ -192,7 +191,7 @@
                             </p>
                         </div> 
                         <div class="col-xl-5">
-                            <img class="img-fluid project-image" src="assets/img/portfolio/astraeus.jpg" alt="Titan" />
+                            <img class="img-fluid project-image" src="assets/img/projects/astraeus.jpg" alt="Titan" />
                         </div>
                     </div>
                 </div>
@@ -222,7 +221,7 @@
                             </p>
                         </div> 
                         <div class="col-xl-5">
-                            <img class="img-fluid project-image" src="assets/img/portfolio/arcanum.jpg" alt="Somerville orbiter" />
+                            <img class="img-fluid project-image" src="assets/img/projects/arcanum.jpg" alt="Somerville orbiter" />
                         </div>
                     </div>
                 </div>
@@ -250,7 +249,7 @@
                             </p>
                         </div> 
                         <div class="col-xl-5">
-                            <img class="img-fluid project-image" src="assets/img/portfolio/chimera.jpg" alt="Blockdiagrams" />
+                            <img class="img-fluid project-image" src="assets/img/projects/chimera.jpg" alt="Blockdiagrams" />
                         </div>
                     </div>
                 </div>
@@ -282,7 +281,7 @@
                             </p>
                         </div> 
                         <div class="col-xl-5">
-                            <img class="img-fluid project-image" src="assets/img/portfolio/ecer.jpg" alt="ECER 2016" />
+                            <img class="img-fluid project-image" src="assets/img/projects/ecer.jpg" alt="ECER 2016" />
                         </div>
                     </div>
                 </div>
@@ -338,7 +337,7 @@
                         </p>
                         </div> 
                         <div class="col-xl-5">
-                            <img class="img-fluid project-image" src="assets/img/portfolio/comic.png" alt="Comic" />
+                            <img class="img-fluid project-image" src="assets/img/projects/comic.png" alt="Comic" />
                         </div>
                     </div>
                 </div>
@@ -394,7 +393,7 @@
                             In the evening we had a big farewell dinner at the congress centre and won the award for the most innovative mission. I'm very glad, that I was able to attend this summer school and want to thank FFG and ESA for this great opportunity and Jacob Smith for helping me with the blog post!
                         </div> 
                         <div class="col-xl-5">
-                            <img class="img-fluid project-image" src="assets/img/portfolio/alpbach.JPG" alt="Blockdiagrams" />
+                            <img class="img-fluid project-image" src="assets/img/projects/alpbach.JPG" alt="Blockdiagrams" />
                         </div>
                     </div>
                 </div>
