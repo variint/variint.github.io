@@ -59,9 +59,11 @@
 <div class="col-md-6">
 <b>Results:</b>
 <p>
+	Fundus image with AMD, including exudates, hemorrhages and scars. The DecentBlock was trained on the first cluster (c0). The cluster covers optic disc (not primary cluster for optic disc) and lesions.
 	<ul>
 		<li>Boxplots of the clusters showed that there are slight similarities between the cluster results and the human annotated segmentation masks. </li>
 		<li>Activation maps showed that slightly different parts of the image were activated. The difference of activation maps from a concept-trained ShuffleNet compared to the ImageNet-trained ShuffleNet were bigger than two ShuffleNets trained on 2 different concepts.</li>
+		<li>It can be seen, that DeepDream shows activation at the optic disc in the fundus image, and in a similar position on the noise image. Furthermore, there is activation that may be related to lesions, the region seems to be random in both the fundus and noise image.
 	</ul>
 </p>
 </div>
@@ -152,14 +154,14 @@
 
 <h3>Experiment: Use Concepts from Segmentation Masks (April 2023)</h3>
 
-<div class="col-md-3">
+<div class="col-md-6">
 <b>Summary:</b>
 <p>
 		Due to non satisfactory results from the clustering, the manual segmentation masks were used to define concepts. In a later experiment this should be done by a revised clustering mechanism. For now we just want to proof, that the DecentBlocks actually differ if trained on different concepts. Each DecentBlock will again be trained by a positive and a negative class. This time it will be "vessel" vs "non-vessel", "drusen" vs "non-drusen", ...
 </p>
 </div>
 
-<div class="col-md-3">
+<div class="col-md-6">
 <b>Pipeline:</b>
 <p>
 	<ol>
@@ -173,11 +175,11 @@
 </p>
 </div>
 
-<div class="col-md-3">
+<div class="col-md-6">
 <b>Results:</b>
 </div>
 
-<div class="col-md-3">
+<div class="col-md-6">
 <b>Conclusion:</b>
 </div>
 
