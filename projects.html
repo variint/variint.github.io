@@ -17,41 +17,43 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-
-
-
     </head>
+
+
+
     <body id="page-top">
         <header class="masthead">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg" id="mainNav"> </nav>
         <!-- Masthead-->
             
-                <div id="myBtnContainer">
-                  <button class="btn active" onclick="filterSelection('decentnet')"><i class="fa fa-laptop-medical"></i> DecentNet<br>Explainability</button>
-                  <button class="btn" onclick="filterSelection('multitask')"><i class="fa fa-laptop-medical"></i> AgentF<br>Multi-task</button>
-                  <button class="btn" onclick="filterSelection('semisup')"><i class="fa fa-laptop-medical"></i> Feta<br>Semi-sup</button>
-                  <button class="btn" onclick="filterSelection('cytotoxicity')"><i class="fa fa-laptop-medical"></i> SISSI/CellLab<br>Weak labels</button>
-                  <!--<button class="btn" onclick="filterSelection('read')"><i class="fa fa-laptop-medical"></i> Reading</button> -->
-                  
-                  <button class="btn" onclick="filterSelection('astraeus')"><i class="fa fa-satellite"></i> Astraeus<br>Titan</button>
-                  <button class="btn" onclick="filterSelection('arcanum')"> <i class="fa fa-satellite"></i> Arcanum<br>Neptune</button>
-                  <button class="btn" onclick="filterSelection('rubiks')"> <i class="fa fa-satellite"></i> Rubiks<br>CubeSat</button>
-                  <button class="btn" onclick="filterSelection('chimera')"> <i class="fa fa-satellite"></i> Chimera<br>Rocket</button>
-                  <button class="btn" onclick="filterSelection('hovi')"> <i class="fa fa-satellite"></i> Hovi<br>Quadrotor</button>
-                  
-                  <!--<button class="btn" onclick="filterSelection('sgac')"> <i class="fa fa-pen"></i> Titan</button>-->
-                  <button class="btn" onclick="filterSelection('tallinn')"> <i class="fa fa-pen"></i> Storytelling<br>Summer school</button>
-                </div>
+        <div id="myBtnContainer">
+
+          <button class="btn active" onclick="filterSelection('decentnet')"><i class="fa fa-laptop-medical"></i> DecentNet<br>Explainability</button>
+          <button class="btn" onclick="filterSelection('multitask')"><i class="fa fa-laptop-medical"></i> AgentF<br>Multi-task</button>
+          <button class="btn" onclick="filterSelection('semisup')"><i class="fa fa-laptop-medical"></i> Feta<br>Semi-sup</button>
+          <button class="btn" onclick="filterSelection('cytotoxicity')"><i class="fa fa-laptop-medical"></i> SISSI/CellLab<br>Weak labels</button>
+          <!--<button class="btn" onclick="filterSelection('read')"><i class="fa fa-laptop-medical"></i> Reading</button> -->
+          
+          <button class="btn" onclick="filterSelection('astraeus')"><i class="fa fa-satellite"></i> Astraeus<br>Titan</button>
+          <button class="btn" onclick="filterSelection('arcanum')"> <i class="fa fa-satellite"></i> Arcanum<br>Neptune</button>
+          <button class="btn" onclick="filterSelection('rubiks')"> <i class="fa fa-satellite"></i> Rubiks<br>CubeSat</button>
+          <button class="btn" onclick="filterSelection('chimera')"> <i class="fa fa-satellite"></i> Chimera<br>Rocket</button>
+          <button class="btn" onclick="filterSelection('hovi')"> <i class="fa fa-satellite"></i> Hovi<br>Quadrotor</button>
+          
+          <!--<button class="btn" onclick="filterSelection('sgac')"> <i class="fa fa-pen"></i> Titan</button>-->
+          <button class="btn" onclick="filterSelection('tallinn')"> <i class="fa fa-pen"></i> Storytelling<br>Summer school</button>
+        </div>
 
         </header>
 
 
         <section class="page-section bg-white">
 
-            <div class="container" id="projects">
+
+            <main class="container" id="projects">
+
+            <!--<div class="container" id="projects"> -->
 
                 <!-- project -->
                 <div class="filterDiv decentnet project">
@@ -383,7 +385,7 @@
                
 
 
-            </div>
+            </main> <!-- div -->
         </section>
         
         

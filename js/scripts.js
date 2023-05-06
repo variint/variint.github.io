@@ -8,15 +8,15 @@
 // 
 
 $(document).ready(function () {
-    $("#mainNav").load("parts/navbar.html");
-    var url = window.location;
-      $('ul.navbar-nav li a[href="'+ url +'"]').parent().addClass('nav-active').remove("nav-button");
-      $('ul.navbar-nav li a').filter(function() {
-           return this.href == url;
-      }).parent().addClass('nav-active').remove("nav-button");
-});
+  
+    $("#mainNav").load("parts/navbar.html", function(){
+      var url = window.location.pathname;
+      var filename = url.substring(url.lastIndexOf('/')+1);
+      var element = document.getElementById(filename);
+      // console.log(element)
+      element.classList.add("nav-active");
+    });
 
-$(document).ready(function () {  
     $("#footer_content").load("parts/footer.html");
     $("#decentnet_content").load("projects/decentnet.html");
 });
@@ -33,6 +33,8 @@ window.addEventListener('DOMContentLoaded', event => {
             offset: 74,
         });
     };
+
+
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
