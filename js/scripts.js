@@ -8,7 +8,7 @@
 // 
 
 $(document).ready(function () {
-                    $("#navbarResponsive").load("parts/navbar.html");
+                    $("#mainNav").load("parts/navbar.html");
                     $("#footer_content").load("parts/footer.html");
                     $("#decentnet_content").load("projects/decentnet.html");
             });
