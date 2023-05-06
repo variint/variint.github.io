@@ -8,10 +8,21 @@
 // 
 
 $(document).ready(function () {
-                    $("#mainNav").load("parts/navbar.html");
+    $("#mainNav").load("parts/navbar.html");
+    var url = window.location;
+        $('ul.nav a[href="'+ url +'"]').parent().addClass('nav-active');
+        $('ul.nav a').filter(function() {
+             return this.href == url;
+        }).parent().addClass('nav-active');
+}
+
+$(document).ready(function () {
+                    
                     $("#footer_content").load("parts/footer.html");
                     $("#decentnet_content").load("projects/decentnet.html");
             });
+
+
 
 window.addEventListener('DOMContentLoaded', event => {
 
