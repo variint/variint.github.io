@@ -10,8 +10,8 @@
 $(document).ready(function () {
     $("#mainNav").load("parts/navbar.html");
     var url = window.location;
-      $('ul.navbar-nav a[href="'+ url +'"]').parent().addClass('nav-active').remove("nav-button");
-      $('ul.navbar-nav a').filter(function() {
+      $('ul.navbar-nav li a[href="'+ url +'"]').parent().addClass('nav-active').remove("nav-button");
+      $('ul.navbar-nav li a').filter(function() {
            return this.href == url;
       }).parent().addClass('nav-active').remove("nav-button");
 });
