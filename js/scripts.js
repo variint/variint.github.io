@@ -8,8 +8,11 @@
 // 
 
 $(document).ready(function () {
-                    $("#decentnet_content").load("projects/decentnet.html");
                     $("#footer_content").load("parts/footer.html");
+            });
+
+$(document).ready(function () {
+                    $("#decentnet_content").load("projects/decentnet.html");
             });
 
 window.addEventListener('DOMContentLoaded', event => {
