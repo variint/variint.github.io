@@ -7,6 +7,11 @@
 // Scripts
 // 
 
+$(document).ready(function () {
+                    $("#decentnet_content").load("projects/decentnet.html");
+                    $("#footer_content").load("parts/footer.html");
+            });
+
 window.addEventListener('DOMContentLoaded', event => {
 
     // Activate Bootstrap scrollspy on the main nav element
