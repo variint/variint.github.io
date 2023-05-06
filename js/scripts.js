@@ -10,10 +10,10 @@
 $(document).ready(function () {
     $("#mainNav").load("parts/navbar.html");
     var url = window.location;
-      $('ul.nav a[href="'+ url +'"]').parent().addClass('nav-active');
-      $('ul.nav a').filter(function() {
+      $('ul.navbar-nav a[href="'+ url +'"]').parent().addClass('nav-active').remove("nav-button");
+      $('ul.navbar-nav a').filter(function() {
            return this.href == url;
-      }).parent().addClass('nav-active');
+      }).parent().addClass('nav-active').remove("nav-button");
 });
 
 $(document).ready(function () {  
