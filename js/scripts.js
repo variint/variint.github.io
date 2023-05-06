@@ -9,9 +9,6 @@
 
 $(document).ready(function () {
                     $("#footer_content").load("parts/footer.html");
-            });
-
-$(document).ready(function () {
                     $("#decentnet_content").load("projects/decentnet.html");
             });
 
