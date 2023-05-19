@@ -1,4 +1,4 @@
-datasceyence-book
+summary
 disentangled-learning
 introduction
 domain-shift
@@ -12,3 +12,4 @@ latent-space
 applications
 synthesis
 segmentation
+retina
