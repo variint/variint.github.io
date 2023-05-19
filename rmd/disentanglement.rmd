@@ -1,0 +1,34 @@
+---
+title: "Datasceyence"
+author: "Christina Bornberg"
+date: "19 5 2023"
+output: html_document
+---
+
+# Disentangled learning
+
+## Introduction
+
+### Domain Shift
+
+### Domain Knowledge
+
+### Disentanglement
+
+
+## Architecture
+
+### Generative Models
+
+### Encoder
+
+### Decoder
+
+### Latent Space
+
+
+## Applications
+
+### Synthesis
+
+### Segmentation

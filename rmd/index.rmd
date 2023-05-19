@@ -1,0 +1,17 @@
+---
+title: "Datasceyence"
+author: "Christina Bornberg"
+date: "19 5 2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Summary
+
+
+Follow me on Twitter @datasceyence and Instagram @datasceyence
+
+
