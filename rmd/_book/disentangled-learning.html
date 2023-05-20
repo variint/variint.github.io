@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Disentangled learning | Datasceyence</title>
+  <meta name="description" content="2 Disentangled learning | Datasceyence" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Disentangled learning | Datasceyence" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Disentangled learning | Datasceyence" />
+  
+  
+  
+
+<meta name="author" content="Christina Bornberg" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="retina.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Summary</a></li>
+<li class="chapter" data-level="2" data-path="disentangled-learning.html"><a href="disentangled-learning.html"><i class="fa fa-check"></i><b>2</b> Disentangled learning</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="disentangled-learning.html"><a href="disentangled-learning.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="disentangled-learning.html"><a href="disentangled-learning.html#domain-shift"><i class="fa fa-check"></i><b>2.1.1</b> Domain Shift</a></li>
+<li class="chapter" data-level="2.1.2" data-path="disentangled-learning.html"><a href="disentangled-learning.html#domain-knowledge"><i class="fa fa-check"></i><b>2.1.2</b> Domain Knowledge</a></li>
+<li class="chapter" data-level="2.1.3" data-path="disentangled-learning.html"><a href="disentangled-learning.html#disentanglement"><i class="fa fa-check"></i><b>2.1.3</b> Disentanglement</a></li>
+<li class="chapter" data-level="2.1.4" data-path="disentangled-learning.html"><a href="disentangled-learning.html#representation-learning"><i class="fa fa-check"></i><b>2.1.4</b> Representation Learning</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="disentangled-learning.html"><a href="disentangled-learning.html#architecture"><i class="fa fa-check"></i><b>2.2</b> Architecture</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="disentangled-learning.html"><a href="disentangled-learning.html#generative-models"><i class="fa fa-check"></i><b>2.2.1</b> Generative Models</a></li>
+<li class="chapter" data-level="2.2.2" data-path="disentangled-learning.html"><a href="disentangled-learning.html#encoder"><i class="fa fa-check"></i><b>2.2.2</b> Encoder</a></li>
+<li class="chapter" data-level="2.2.3" data-path="disentangled-learning.html"><a href="disentangled-learning.html#decoder"><i class="fa fa-check"></i><b>2.2.3</b> Decoder</a></li>
+<li class="chapter" data-level="2.2.4" data-path="disentangled-learning.html"><a href="disentangled-learning.html#latent-space"><i class="fa fa-check"></i><b>2.2.4</b> Latent Space</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="disentangled-learning.html"><a href="disentangled-learning.html#applications"><i class="fa fa-check"></i><b>2.3</b> Applications</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="disentangled-learning.html"><a href="disentangled-learning.html#synthesis"><i class="fa fa-check"></i><b>2.3.1</b> Synthesis</a></li>
+<li class="chapter" data-level="2.3.2" data-path="disentangled-learning.html"><a href="disentangled-learning.html#segmentation"><i class="fa fa-check"></i><b>2.3.2</b> Segmentation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="disentangled-learning.html"><a href="disentangled-learning.html#further-reading"><i class="fa fa-check"></i><b>2.4</b> Further reading</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="retina.html"><a href="retina.html"><i class="fa fa-check"></i><b>3</b> Retina</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Datasceyence</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="disentangled-learning" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Disentangled learning<a href="disentangled-learning.html#disentangled-learning" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="introduction" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Introduction<a href="disentangled-learning.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="domain-shift" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Domain Shift<a href="disentangled-learning.html#domain-shift" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Style</p>
+<p>Content</p>
+</div>
+<div id="domain-knowledge" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Domain Knowledge<a href="disentangled-learning.html#domain-knowledge" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Inductive Bias</p>
+<p>Inductive bias refers to a set of assumptions made by a learning algorithm in order to predict outputs of given inputs that it has not encountered. The goal is to generalize a finite set of observation (training data) into a general model of the domain.</p>
+<p>There are two types of inductive biases. Relational inductive biases represent the relationship between entities in a network. Non-relational inductive biases is a set of techniques that further constrain the learning algorithm.</p>
+<!-- We can categorize inductive biases into two different groups called relational and non-relational. The former represents the relationship between entities in the network, while the latter is a set of techniques that further constrain the learning algorithm. -->
+<!-- Without a bias of that kind, induction would not be possible, since the observations can normally be generalized in many ways. Treating all these possibilities in equally, i.e., without any bias in the sense of a preference for specific types of generalization (reflecting background knowledge about the target function to be learned), predictions for new situations could not be made. -->
+</div>
+<div id="disentanglement" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Disentanglement<a href="disentangled-learning.html#disentanglement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="representation-learning" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Representation Learning<a href="disentangled-learning.html#representation-learning" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="architecture" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Architecture<a href="disentangled-learning.html#architecture" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="generative-models" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Generative Models<a href="disentangled-learning.html#generative-models" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="encoder" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Encoder<a href="disentangled-learning.html#encoder" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="decoder" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Decoder<a href="disentangled-learning.html#decoder" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="latent-space" class="section level3 hasAnchor" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> Latent Space<a href="disentangled-learning.html#latent-space" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="applications" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Applications<a href="disentangled-learning.html#applications" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="synthesis" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Synthesis<a href="disentangled-learning.html#synthesis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Image 2 Image translation</p>
+</div>
+<div id="segmentation" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Segmentation<a href="disentangled-learning.html#segmentation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="further-reading" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Further reading<a href="disentangled-learning.html#further-reading" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Induction, Inductive Biases, and Infusing Knowledge into Learned Representations
+<a href="https://sgfin.github.io/2020/06/22/Induction-Intro/" class="uri">https://sgfin.github.io/2020/06/22/Induction-Intro/</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="retina.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
