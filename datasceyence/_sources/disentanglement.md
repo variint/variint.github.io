@@ -1,11 +1,14 @@
----
-title: "Datasceyence"
-author: "Christina Bornberg"
-date: "19 5 2023"
-output: html_document
----
-
 # Disentangled learning
+
+## Skill
+
+### Description:
+
+### Goals:
+
+### Links:
+* Induction, Inductive Biases, and Infusing Knowledge into Learned Representations https://sgfin.github.io/2020/06/22/Induction-Intro/
+
 
 ## Introduction
 
@@ -62,8 +65,3 @@ Image 2 Image translation
 
 ### Segmentation
 
-
-## Further reading
-
-Induction, Inductive Biases, and Infusing Knowledge into Learned Representations
-https://sgfin.github.io/2020/06/22/Induction-Intro/

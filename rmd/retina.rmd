@@ -1,8 +1,0 @@
----
-title: "Datasceyence"
-author: "Christina Bornberg"
-date: "19 5 2023"
-output: html_document
----
-
-# Retina
