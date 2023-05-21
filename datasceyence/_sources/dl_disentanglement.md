@@ -2,22 +2,26 @@
 
 ## Skill
 
-### Description:
+### Description
 
-### Goals:
+### Goals
+* I know metrics for measuring the level of disentanglement.
 
-### Links:
-* Induction, Inductive Biases, and Infusing Knowledge into Learned Representations https://sgfin.github.io/2020/06/22/Induction-Intro/
+### Links
+* Modified PhD thesis excerpt (GitHub): Induction, Inductive Biases, and Infusing Knowledge into Learned Representations (Finlayson, 2020) - https://sgfin.github.io/2020/06/22/Induction-Intro/
+* Review Paper: Review of Disentanglement Approaches for Medical Applications (Fragemann, 2022) - https://arxiv.org/abs/2203.11132
+* Review paper: Learning Disentangled Representations in the Imaging Domain (Liu, 2022) - https://arxiv.org/abs/2108.12043
+* Book (GitHub): Network Dissection (Molnar) - https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection
 
 
-## Introduction
+
+## Background
 
 ### Domain Shift
 
 Style
 
 Content
-
 
 
 ### Domain Knowledge
@@ -50,11 +54,19 @@ There are two types of inductive biases. Relational inductive biases represent t
 
 ### Generative Models
 
+Variational Auto Encoders
+
+Masked Variational Auto Encoders
+
+
+
 ### Encoder
 
 ### Decoder
 
 ### Latent Space
+
+
 
 
 ## Applications

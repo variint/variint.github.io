@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sceyence_css.css" />
+    <link rel="stylesheet" type="text/css" href="_static/datasceyence_css.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -64,6 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'dl_semisup';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Anatomy of the Retina" href="retina_anatomy.html" />
+    <link rel="prev" title="Partial labels" href="dl_partiallabels.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -154,9 +156,16 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="retina_anatomy.html">Retina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_explainability.html">Explainable AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_i2itranslation.html">Image to Image translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_partiallabels.html">Partial labels</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Semi-Supervised learning (SSL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_anatomy.html">Anatomy of the Retina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stat_gsva.html">Gene Set Variation Analysis (GSVA)</a></li>
 </ul>
 
     </div>
@@ -351,9 +360,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
 </li>
 </ul>
@@ -372,11 +381,11 @@ document.write(`
 <section id="skill">
 <h2>Skill<a class="headerlink" href="#skill" title="Permalink to this headline">#</a></h2>
 <section id="description">
-<h3>Description:<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h3>
+<h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h3>
 <p>Semi-supervised learning combines a (small) labelled with a (bigger) unlabelled dataset to perform a task such as classification or segmentation.</p>
 </section>
 <section id="goals">
-<h3>Goals:<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h3>
+<h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>I know the difference between self-training and co-training.</p></li>
 <li><p>I know multiple ways to implement SSL.</p></li>
@@ -385,12 +394,12 @@ document.write(`
 </ul>
 </section>
 <section id="links">
-<h3>Links:<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h3>
+<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>Contribution paper: Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results (Tarvainen et al., 2017)</p></li>
-<li><p>Review paper: Not-so-supervised: A survey of semi-supervised, multi-instance, and transfer learning in medical image analysis (Cheplygina et al., 2019)</p></li>
-<li><p>Review paper: An Overview of Deep Semi-Supervised Learning (Ouali et al., 2020)</p></li>
-<li><p>Github Repository with papers: Semi-supervised-learning-for-medical-image-segmentation.</p></li>
+<li><p>Contribution paper: Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results (Tarvainen et al., 2017) - <a class="reference external" href="https://arxiv.org/abs/1703.01780">https://arxiv.org/abs/1703.01780</a></p></li>
+<li><p>Review paper: Not-so-supervised: A survey of semi-supervised, multi-instance, and transfer learning in medical image analysis (Cheplygina et al., 2019) - <a class="reference external" href="https://arxiv.org/abs/1804.06353">https://arxiv.org/abs/1804.06353</a></p></li>
+<li><p>Review paper: An Overview of Deep Semi-Supervised Learning (Ouali et al., 2020) - <a class="reference external" href="https://arxiv.org/abs/2006.05278">https://arxiv.org/abs/2006.05278</a></p></li>
+<li><p>Github Repository with papers: Semi-supervised-learning-for-medical-image-segmentation - <a class="github reference external" href="https://github.com/HiLab-git/SSL4MIS">HiLab-git/SSL4MIS</a></p></li>
 </ul>
 </section>
 </section>
@@ -427,6 +436,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="dl_partiallabels.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Partial labels</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="retina_anatomy.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Anatomy of the Retina</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -446,9 +473,9 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
 </li>
 </ul>

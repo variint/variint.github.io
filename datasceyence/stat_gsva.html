@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Disentangled learning &#8212; Datasceyence</title>
+    <title>Gene Set Variation Analysis (GSVA) &#8212; Datasceyence</title>
   
   
   
@@ -61,11 +61,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'dl_disentanglement';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'stat_gsva';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Explainable AI" href="dl_explainability.html" />
-    <link rel="prev" title="Datasceyence" href="intro.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="retina_disease.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -157,7 +156,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Disentangled learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_explainability.html">Explainable AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_i2itranslation.html">Image to Image translation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
@@ -165,7 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="dl_partiallabels.html">Partial labels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="retina_anatomy.html">Anatomy of the Retina</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stat_gsva.html">Gene Set Variation Analysis (GSVA)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Gene Set Variation Analysis (GSVA)</a></li>
 </ul>
 
     </div>
@@ -237,7 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/variint/variint.github.io/issues/new?title=Issue%20on%20page%20%2Fdl_disentanglement.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/variint/variint.github.io/issues/new?title=Issue%20on%20page%20%2Fstat_gsva.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -267,7 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/dl_disentanglement.md" target="_blank"
+      <li><a href="_sources/stat_gsva.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -349,7 +348,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Disentangled learning</h1>
+    <h1>Gene Set Variation Analysis (GSVA)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -360,28 +359,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-shift">Domain Shift</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-knowledge">Domain Knowledge</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disentanglement">Disentanglement</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representation-learning">Representation Learning</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-models">Generative Models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encoder">Encoder</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decoder">Decoder</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latent-space">Latent Space</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#synthesis">Synthesis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation">Segmentation</a></li>
 </ul>
 </li>
 </ul>
@@ -395,76 +374,24 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="disentangled-learning">
-<h1>Disentangled learning<a class="headerlink" href="#disentangled-learning" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="gene-set-variation-analysis-gsva">
+<h1>Gene Set Variation Analysis (GSVA)<a class="headerlink" href="#gene-set-variation-analysis-gsva" title="Permalink to this headline">#</a></h1>
 <section id="skill">
 <h2>Skill<a class="headerlink" href="#skill" title="Permalink to this headline">#</a></h2>
-<section id="description">
-<h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h3>
-</section>
+<p>###Description
+Gene Set Variation Analysis (GSVA) is a unsupervised Gene set enrichment (GSE) method for estimating variation of pathway activity over a sample population within highly heterogeneous data sets.</p>
 <section id="goals">
 <h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>I know metrics for measuring the level of disentanglement.</p></li>
+<li><p>I understand the Input (Gene expression matrix) and Output (GSVA score matrix) .</p></li>
+<li><p>I can explain the parts of the GSVA algorithm: (1) Gene expression level statistic, (2) Rank order sample, (3) KS-like random statistic, and (4) Score distributions.</p></li>
 </ul>
 </section>
 <section id="links">
 <h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>Modified PhD thesis excerpt (GitHub): Induction, Inductive Biases, and Infusing Knowledge into Learned Representations (Finlayson, 2020) - <a class="reference external" href="https://sgfin.github.io/2020/06/22/Induction-Intro/">https://sgfin.github.io/2020/06/22/Induction-Intro/</a></p></li>
-<li><p>Review Paper: Review of Disentanglement Approaches for Medical Applications (Fragemann, 2022) - <a class="reference external" href="https://arxiv.org/abs/2203.11132">https://arxiv.org/abs/2203.11132</a></p></li>
-<li><p>Review paper: Learning Disentangled Representations in the Imaging Domain (Liu, 2022) - <a class="reference external" href="https://arxiv.org/abs/2108.12043">https://arxiv.org/abs/2108.12043</a></p></li>
-<li><p>Book (GitHub): Network Dissection (Molnar) - <a class="reference external" href="https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection">https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection</a></p></li>
+<li><p>Contribution paper: GSVA: gene set variation analysis for microarray and RNA-Seq data (Hänzelmann, et al., 2013) - <a class="reference external" href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-14-7">https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-14-7</a></p></li>
 </ul>
-</section>
-</section>
-<section id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
-<section id="domain-shift">
-<h3>Domain Shift<a class="headerlink" href="#domain-shift" title="Permalink to this headline">#</a></h3>
-<p>Style</p>
-<p>Content</p>
-</section>
-<section id="domain-knowledge">
-<h3>Domain Knowledge<a class="headerlink" href="#domain-knowledge" title="Permalink to this headline">#</a></h3>
-<p>Inductive Bias</p>
-<p>Inductive bias refers to a set of assumptions made by a learning algorithm in order to predict outputs of given inputs that it has not encountered. The goal is to generalize a finite set of observation (training data) into a general model of the domain.</p>
-<p>There are two types of inductive biases. Relational inductive biases represent the relationship between entities in a network. Non-relational inductive biases is a set of techniques that further constrain the learning algorithm.</p>
-<!-- We can categorize inductive biases into two different groups called relational and non-relational. The former represents the relationship between entities in the network, while the latter is a set of techniques that further constrain the learning algorithm. -->
-<!-- Without a bias of that kind, induction would not be possible, since the observations can normally be generalized in many ways. Treating all these possibilities in equally, i.e., without any bias in the sense of a preference for specific types of generalization (reflecting background knowledge about the target function to be learned), predictions for new situations could not be made. -->
-</section>
-<section id="disentanglement">
-<h3>Disentanglement<a class="headerlink" href="#disentanglement" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="representation-learning">
-<h3>Representation Learning<a class="headerlink" href="#representation-learning" title="Permalink to this headline">#</a></h3>
-</section>
-</section>
-<section id="architecture">
-<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">#</a></h2>
-<section id="generative-models">
-<h3>Generative Models<a class="headerlink" href="#generative-models" title="Permalink to this headline">#</a></h3>
-<p>Variational Auto Encoders</p>
-<p>Masked Variational Auto Encoders</p>
-</section>
-<section id="encoder">
-<h3>Encoder<a class="headerlink" href="#encoder" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="decoder">
-<h3>Decoder<a class="headerlink" href="#decoder" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="latent-space">
-<h3>Latent Space<a class="headerlink" href="#latent-space" title="Permalink to this headline">#</a></h3>
-</section>
-</section>
-<section id="applications">
-<h2>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">#</a></h2>
-<section id="synthesis">
-<h3>Synthesis<a class="headerlink" href="#synthesis" title="Permalink to this headline">#</a></h3>
-<p>Image 2 Image translation</p>
-</section>
-<section id="segmentation">
-<h3>Segmentation<a class="headerlink" href="#segmentation" title="Permalink to this headline">#</a></h3>
 </section>
 </section>
 </section>
@@ -501,22 +428,13 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="retina_disease.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Datasceyence</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="dl_explainability.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Explainable AI</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -537,28 +455,8 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-shift">Domain Shift</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-knowledge">Domain Knowledge</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disentanglement">Disentanglement</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representation-learning">Representation Learning</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-models">Generative Models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encoder">Encoder</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decoder">Decoder</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latent-space">Latent Space</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#synthesis">Synthesis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation">Segmentation</a></li>
 </ul>
 </li>
 </ul>
