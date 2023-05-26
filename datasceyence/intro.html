@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Disentangled learning" href="dl_disentanglement.html" />
+    <link rel="next" title="Machine Learning Basics" href="ml_basics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -156,14 +156,19 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ml_basics.html">Machine Learning Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_explainability.html">Explainable AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_i2itranslation.html">Image to Image translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_partiallabels.html">Partial labels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="retina_anatomy.html">Anatomy of the Retina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_disease.html">Retinal Disease</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_retina.html">Deep Learning for Retinal Imaging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stat_gsva.html">Gene Set Variation Analysis (GSVA)</a></li>
 </ul>
 
@@ -364,16 +369,73 @@ document.write(`
 <h1>Datasceyence<a class="headerlink" href="#datasceyence" title="Permalink to this headline">#</a></h1>
 <p>Hello everyone!</p>
 <p>This is a document with everything I come across that has to do with deep learning and ophthalmology.</p>
+<!-- jupyter-book build datasceyence_dev/ -->
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Colours</p></th>
+<th class="head"><p>matplotlib</p></th>
+<th class="head"><p>hex</p></th>
+<th class="head"><p>rgb</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>teal (gray)</p></td>
+<td><p>-</p></td>
+<td><p>#55919C</p></td>
+<td><p>85, 145, 156</p></td>
+</tr>
+<tr class="row-odd"><td><p>teal (strong)</p></td>
+<td><p>teal</p></td>
+<td><p>#008080</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>teal (bright)</p></td>
+<td><p>paleturquoise</p></td>
+<td><p>#AFEEEE</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>light blue</p></td>
+<td><p>-</p></td>
+<td><p>#F7FEFF</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>pink (strong)</p></td>
+<td><p>mediumvioletred</p></td>
+<td><p>#C71585</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>light pink</p></td>
+<td><p>-</p></td>
+<td><p>#FDF8F7</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>orange (strong)</p></td>
+<td><p>darkorange</p></td>
+<td><p>#FF8C00</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>light orange</p></td>
+<td><p>-</p></td>
+<td><p>#FFFDF4</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="ml_basics.html">Machine Learning Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_explainability.html">Explainable AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_i2itranslation.html">Image to Image translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_partiallabels.html">Partial labels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="retina_anatomy.html">Anatomy of the Retina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_disease.html">Retinal Disease</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_retina.html">Deep Learning for Retinal Imaging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stat_gsva.html">Gene Set Variation Analysis (GSVA)</a></li>
 </ul>
 </div>
@@ -411,11 +473,11 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="right-next"
-       href="dl_disentanglement.html"
+       href="ml_basics.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Disentangled learning</p>
+        <p class="prev-next-title">Machine Learning Basics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

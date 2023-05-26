@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Anatomy of the Retina &#8212; Datasceyence</title>
+    <title>Deep Learning for Retinal Imaging &#8212; Datasceyence</title>
   
   
   
@@ -61,11 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'retina_anatomy';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dl_retina';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Retinal Disease" href="retina_disease.html" />
-    <link rel="prev" title="Semi-Supervised learning (SSL)" href="dl_semisup.html" />
+    <link rel="next" title="Gene Set Variation Analysis (GSVA)" href="stat_gsva.html" />
+    <link rel="prev" title="Retinal Disease" href="retina_disease.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -157,15 +157,19 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ml_basics.html">Machine Learning Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_explainability.html">Explainable AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_i2itranslation.html">Image to Image translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_partiallabels.html">Partial labels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Anatomy of the Retina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_anatomy.html">Anatomy of the Retina</a></li>
 <li class="toctree-l1"><a class="reference internal" href="retina_disease.html">Retinal Disease</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Deep Learning for Retinal Imaging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stat_gsva.html">Gene Set Variation Analysis (GSVA)</a></li>
 </ul>
 
@@ -238,7 +242,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/variint/variint.github.io/issues/new?title=Issue%20on%20page%20%2Fretina_anatomy.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/variint/variint.github.io/issues/new?title=Issue%20on%20page%20%2Fdl_retina.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -268,7 +272,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/retina_anatomy.md" target="_blank"
+      <li><a href="_sources/dl_retina.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -350,7 +354,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Anatomy of the Retina</h1>
+    <h1>Deep Learning for Retinal Imaging</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -360,19 +364,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macula">Macula</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fovea">Fovea</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faz">FAZ</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optic-disc">Optic Disc</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#layers">Layers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vascular-components">Vascular components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-components">Neural components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links:</a></li>
 </ul>
             </nav>
         </div>
@@ -384,46 +376,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="anatomy-of-the-retina">
-<h1>Anatomy of the Retina<a class="headerlink" href="#anatomy-of-the-retina" title="Permalink to this headline">#</a></h1>
-<section id="skill">
-<h2>Skill<a class="headerlink" href="#skill" title="Permalink to this headline">#</a></h2>
-<section id="description">
-<h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h3>
-<p>The retina is the sensory portion of an eye, including the macula and optic disc.</p>
-</section>
-<section id="goals">
-<h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h3>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="deep-learning-for-retinal-imaging">
+<h1>Deep Learning for Retinal Imaging<a class="headerlink" href="#deep-learning-for-retinal-imaging" title="Permalink to this headline">#</a></h1>
 <section id="links">
-<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h3>
+<h2>Links:<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>OphthoBook – the free ophthalmology textbook for new students (Timothy Root)</p></li>
-<li><p>The Organization of the Retina and Visual System (Helga Kolb, Eduardo Fernandez, and Ralph Nelson)</p></li>
-<li><p>Segregation of neuronal-vascular components in a retinal nerve fiber layer (Ai Ping Yow, et al.)</p></li>
+<li><p>A Deep Learning Framework for the Detection and Quantification of Reticular Pseudodrusen and Drusen on Optical Coherence Tomography () - <a class="reference external" href="https://tvst.arvojournals.org/article.aspx?articleid=2783895">https://tvst.arvojournals.org/article.aspx?articleid=2783895</a></p></li>
+<li><p>Deep-learning-based clustering of OCT images for automated biomarker discovery in age-related macular degeneration (Holland)</p></li>
+<li><p>Discovery of imaging biomarkers for healthy aging and age-related macular degeneration using counterfactual generative adversarial networks (Menten)</p></li>
 </ul>
-</section>
-</section>
-<section id="macula">
-<h2>Macula<a class="headerlink" href="#macula" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="fovea">
-<h2>Fovea<a class="headerlink" href="#fovea" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="faz">
-<h2>FAZ<a class="headerlink" href="#faz" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="optic-disc">
-<h2>Optic Disc<a class="headerlink" href="#optic-disc" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="layers">
-<h2>Layers<a class="headerlink" href="#layers" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="vascular-components">
-<h2>Vascular components<a class="headerlink" href="#vascular-components" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="neural-components">
-<h2>Neural components<a class="headerlink" href="#neural-components" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 
@@ -459,20 +420,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="dl_semisup.html"
+       href="retina_disease.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Semi-Supervised learning (SSL)</p>
+        <p class="prev-next-title">Retinal Disease</p>
       </div>
     </a>
     <a class="right-next"
-       href="retina_disease.html"
+       href="stat_gsva.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Retinal Disease</p>
+        <p class="prev-next-title">Gene Set Variation Analysis (GSVA)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -494,19 +455,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macula">Macula</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fovea">Fovea</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faz">FAZ</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optic-disc">Optic Disc</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#layers">Layers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vascular-components">Vascular components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-components">Neural components</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links:</a></li>
 </ul>
   </nav></div>
 

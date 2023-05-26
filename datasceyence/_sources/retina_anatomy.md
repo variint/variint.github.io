@@ -3,10 +3,9 @@
 ## Skill
 
 ### Description
-The retina is the sensory portion of an eye, including the mavcula and optic disk.
+The retina is the sensory portion of an eye, including the macula and optic disc.
 
 ### Goals
-I know about different retinal diseases.
 
 ### Links
 * OphthoBook – the free ophthalmology textbook for new students (Timothy Root)

@@ -19,3 +19,9 @@ Poisson image editing > Seamless cloning: The goal of seamless cloning is to avo
 * Cross-Domain Auto-Encoder and Decoder
 * Fourier domain adaptation
 * Image quilting - "Texture transfer"
+
+
+
+## Architecture
+
+### MUNIT

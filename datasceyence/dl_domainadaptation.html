@@ -64,6 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'dl_domainadaptation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Meta-learning" href="dl_metalearning.html" />
+    <link rel="prev" title="Image to Image translation" href="dl_i2itranslation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -154,15 +156,20 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ml_basics.html">Machine Learning Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_explainability.html">Explainable AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_i2itranslation.html">Image to Image translation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Domain Adaptation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_partiallabels.html">Partial labels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="retina_anatomy.html">Anatomy of the Retina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_disease.html">Retinal Disease</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_retina.html">Deep Learning for Retinal Imaging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stat_gsva.html">Gene Set Variation Analysis (GSVA)</a></li>
 </ul>
 
@@ -361,6 +368,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-links">Other links:</a></li>
 </ul>
 </li>
 </ul>
@@ -381,16 +389,29 @@ document.write(`
 </section>
 <section id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h2>
+<p>Domain Adaptation aims to mitigate the domain shift problem when transferring knowledge from one domain into another domain. Domain adaptation can be solved by (but not limited to) generative-based, pseudo labelling-based or reconstruction-based approaches.</p>
 </section>
 <section id="goals">
 <h2>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>I know about what domain shifts are and what causes them.</p></li>
+<li><p>I know how image-to-image translation can help reducing domain shifts.</p></li>
+<li><p>I know how semi-supervised learning can be applied for domain adaptation.</p></li>
 </ul>
 <section id="links">
 <h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>PhD Thesis: Improving the domain generalization and robustness of neural networks for medical imaging (Chen, 2022) - <a class="reference external" href="https://spiral.imperial.ac.uk/handle/10044/1/94593">https://spiral.imperial.ac.uk/handle/10044/1/94593</a></p></li>
+<li><p>Github Link Collection: awesome domain adaptation - <a class="github reference external" href="https://github.com/zhaoxin94/awesome-domain-adaptation">zhaoxin94/awesome-domain-adaptation</a></p></li>
+<li><p>Review paper: Unsupervised Domain Adaptation in Semantic Segmentation: a Review - <a class="reference external" href="https://arxiv.org/pdf/2005.10876.pdf">https://arxiv.org/pdf/2005.10876.pdf</a></p></li>
+<li><p>A Survey of Unsupervised Domain Adaptation for Visual Recognition - <a class="reference external" href="https://arxiv.org/pdf/2112.06745.pdf">https://arxiv.org/pdf/2112.06745.pdf</a></p></li>
+</ul>
+</section>
+<section id="other-links">
+<h3>Other links:<a class="headerlink" href="#other-links" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Gradient Regularized Contrastive Learning for Continual Domain Adaptation (Tang et al., 2021) - <a class="reference external" href="https://arxiv.org/abs/2103.12294v1">https://arxiv.org/abs/2103.12294v1</a></p></li>
+<li><p>Domain Invariant Representation Learning with Domain Density Transformations <a class="reference external" href="https://arxiv.org/pdf/2102.05082.pdf">https://arxiv.org/pdf/2102.05082.pdf</a></p></li>
 </ul>
 </section>
 </section>
@@ -427,6 +448,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="dl_i2itranslation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Image to Image translation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dl_metalearning.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Meta-learning</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -449,6 +488,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-links">Other links:</a></li>
 </ul>
 </li>
 </ul>
