@@ -1,4 +1,4 @@
-# Basics
+# Deep Learning Basics
 
 ## Loss
 
