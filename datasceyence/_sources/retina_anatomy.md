@@ -3,7 +3,7 @@
 ## Skill
 
 ### Description
-The retina is the sensory portion of an eye, including the macula and optic disc.
+The retina is the sensory portion of an eye.
 
 ### Goals
 

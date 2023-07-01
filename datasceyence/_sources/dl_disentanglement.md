@@ -191,7 +191,7 @@ Effective recombination or entanglement of the content and style representations
 
 *Concatenation*
 
-*Adaptive Instance Normalisation (AdaIN)*
+*Adaptive Instance Normalisation (AdaIN)* combines a content and style representation.
 
 *Feature-wise Linear Modulation (FiLM)*
 

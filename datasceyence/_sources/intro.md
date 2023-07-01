@@ -4,8 +4,13 @@ Hello everyone!
 
 This is a document with everything I come across that has to do with deep learning and ophthalmology.
 
+```{tableofcontents}
+```
+
 
 <!-- jupyter-book build datasceyence_dev/ -->
+
+## Colours
 
 | Colours | matplotlib | hex | rgb |
 | --- | --- | --- | --- |
@@ -18,5 +23,3 @@ This is a document with everything I come across that has to do with deep learni
 | orange (strong) | darkorange | #FF8C00 | |
 | light orange | - | #FFFDF4 | |
 
-```{tableofcontents}
-```

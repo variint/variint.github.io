@@ -4,8 +4,7 @@
 
 ### Segmentation Loss
 
-* https://github.com/JunMa11/SegLoss
-* https://github.com/JunMa11/SegWithDistMap/
+
 
 
 ## Metrics
