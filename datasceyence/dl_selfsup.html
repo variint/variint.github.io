@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Datasceyence &#8212; Datasceyence</title>
+    <title>Self-supervised learning &#8212; Datasceyence</title>
   
   
   
@@ -61,10 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dl_selfsup';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Machine Learning Basics" href="ml_basics.html" />
+    <link rel="next" title="Semi-Supervised learning (SSL)" href="dl_semisup.html" />
+    <link rel="prev" title="Deep Learning Basics" href="dl_basics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -130,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -149,16 +150,16 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Datasceyence
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ml_basics.html">Machine Learning Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Deep Learning Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Self-supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_modularnetworks.html">Modular Networks</a></li>
@@ -243,7 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/variint/variint.github.io/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/variint/variint.github.io/issues/new?title=Issue%20on%20page%20%2Fdl_selfsup.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -273,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/dl_selfsup.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -355,7 +356,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Datasceyence</h1>
+    <h1>Self-supervised learning</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -365,7 +366,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colours">Colours</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-self-predictive">Generative / Self-predictive</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contrastive-consistency">Contrastive / Consistency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#innate-relationship">Innate relationship</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -377,84 +389,45 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="datasceyence">
-<h1>Datasceyence<a class="headerlink" href="#datasceyence" title="Permalink to this headline">#</a></h1>
-<p>Hello everyone!</p>
-<p>This is a document with everything I come across that has to do with deep learning and ophthalmology.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ml_basics.html">Machine Learning Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Deep Learning Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_modularnetworks.html">Modular Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_explainability.html">Explainable AI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_i2itranslation.html">Image to Image translation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_partiallabels.html">Partial labels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="retina_anatomy.html">Anatomy of the Retina</a></li>
-<li class="toctree-l1"><a class="reference internal" href="retina_disease.html">Retinal Disease</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_retina.html">Deep Learning for Retinal Imaging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stat_gsva.html">Gene Set Variation Analysis (GSVA)</a></li>
+  <section class="tex2jax_ignore mathjax_ignore" id="self-supervised-learning">
+<h1>Self-supervised learning<a class="headerlink" href="#self-supervised-learning" title="Permalink to this headline">#</a></h1>
+<section id="skill">
+<h2>Skill<a class="headerlink" href="#skill" title="Permalink to this headline">#</a></h2>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h3>
+<p>Self-supervised learning doesn’t use labels. This step can be used as pre-training or for a representation learning.</p>
+</section>
+<section id="goals">
+<h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="links">
+<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Review paper: Self-supervised learning for medical image classification: a systematic review and implementation guidelines (Huang, 2023) - <a class="reference external" href="https://www.nature.com/articles/s41746-023-00811-0">https://www.nature.com/articles/s41746-023-00811-0</a></p></li>
 </ul>
-</div>
-<!-- jupyter-book build datasceyence_dev/ -->
-<section id="colours">
-<h2>Colours<a class="headerlink" href="#colours" title="Permalink to this headline">#</a></h2>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Colours</p></th>
-<th class="head"><p>matplotlib</p></th>
-<th class="head"><p>hex</p></th>
-<th class="head"><p>rgb</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>teal (gray)</p></td>
-<td><p>-</p></td>
-<td><p>#55919C</p></td>
-<td><p>85, 145, 156</p></td>
-</tr>
-<tr class="row-odd"><td><p>teal (strong)</p></td>
-<td><p>teal</p></td>
-<td><p>#008080</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>teal (bright)</p></td>
-<td><p>paleturquoise</p></td>
-<td><p>#AFEEEE</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>light blue</p></td>
-<td><p>-</p></td>
-<td><p>#F7FEFF</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>pink (strong)</p></td>
-<td><p>mediumvioletred</p></td>
-<td><p>#C71585</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>light pink</p></td>
-<td><p>-</p></td>
-<td><p>#FDF8F7</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p>orange (strong)</p></td>
-<td><p>darkorange</p></td>
-<td><p>#FF8C00</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>light orange</p></td>
-<td><p>-</p></td>
-<td><p>#FFFDF4</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
+</section>
+</section>
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">#</a></h2>
+<section id="generative-self-predictive">
+<h3>Generative / Self-predictive<a class="headerlink" href="#generative-self-predictive" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>VAE</p></li>
+<li><p>Masked VAE</p></li>
+</ul>
+</section>
+<section id="contrastive-consistency">
+<h3>Contrastive / Consistency<a class="headerlink" href="#contrastive-consistency" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Similar to FixMatch</p></li>
+</ul>
+</section>
+<section id="innate-relationship">
+<h3>Innate relationship<a class="headerlink" href="#innate-relationship" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Reverse engineer the augmentation - e.g. model predicts rotation degree (e.g. 90 deg)</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -489,12 +462,21 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="dl_basics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Deep Learning Basics</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="ml_basics.html"
+       href="dl_semisup.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Machine Learning Basics</p>
+        <p class="prev-next-title">Semi-Supervised learning (SSL)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -516,7 +498,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#colours">Colours</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-self-predictive">Generative / Self-predictive</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contrastive-consistency">Contrastive / Consistency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#innate-relationship">Innate relationship</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
