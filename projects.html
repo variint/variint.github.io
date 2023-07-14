@@ -29,20 +29,20 @@
             
         <div id="myBtnContainer">
 
-          <button class="btn active" onclick="filterSelection('decentnet')"><i class="fa fa-laptop-medical"></i> DecentNet<br>Explainability</button>
-          <button class="btn" onclick="filterSelection('multitask')"><i class="fa fa-laptop-medical"></i> AgentF<br>Multi-task</button>
-          <button class="btn" onclick="filterSelection('semisup')"><i class="fa fa-laptop-medical"></i> Feta<br>Semi-sup</button>
-          <button class="btn" onclick="filterSelection('cytotoxicity')"><i class="fa fa-laptop-medical"></i> SISSI/CellLab<br>Weak labels</button>
+          <button class="btn" id="decentnet" onclick="filterSelection('decentnet')"><i class="fa fa-laptop-medical"></i> DecentNet<br>Explainability</button>
+          <button class="btn" id="multitask" onclick="filterSelection('multitask')"><i class="fa fa-laptop-medical"></i> AgentF<br>Multi-task</button>
+          <button class="btn" id="semisup" onclick="filterSelection('semisup')"><i class="fa fa-laptop-medical"></i> Feta<br>Semi-sup</button>
+          <button class="btn" id="cytotoxicity" onclick="filterSelection('cytotoxicity')"><i class="fa fa-laptop-medical"></i> SISSI/CellLab<br>Weak labels</button>
           <!--<button class="btn" onclick="filterSelection('read')"><i class="fa fa-laptop-medical"></i> Reading</button> -->
           
-          <button class="btn" onclick="filterSelection('astraeus')"><i class="fa fa-satellite"></i> Astraeus<br>Titan</button>
-          <button class="btn" onclick="filterSelection('arcanum')"> <i class="fa fa-satellite"></i> Arcanum<br>Neptune</button>
-          <button class="btn" onclick="filterSelection('rubiks')"> <i class="fa fa-satellite"></i> Rubiks<br>CubeSat</button>
-          <button class="btn" onclick="filterSelection('chimera')"> <i class="fa fa-satellite"></i> Chimera<br>Rocket</button>
-          <button class="btn" onclick="filterSelection('hovi')"> <i class="fa fa-satellite"></i> Hovi<br>Quadrotor</button>
+          <button class="btn" id="astraeus" onclick="filterSelection('astraeus')"><i class="fa fa-satellite"></i> Astraeus<br>Titan</button>
+          <button class="btn" id="arcanum" onclick="filterSelection('arcanum')"> <i class="fa fa-satellite"></i> Arcanum<br>Neptune</button>
+          <button class="btn" id="rubiks" onclick="filterSelection('rubiks')"> <i class="fa fa-satellite"></i> Rubiks<br>CubeSat</button>
+          <button class="btn" id="chimera" onclick="filterSelection('chimera')"> <i class="fa fa-satellite"></i> Chimera<br>Rocket</button>
+          <button class="btn" id="hovi" onclick="filterSelection('hovi')"> <i class="fa fa-satellite"></i> Hovi<br>Quadrotor</button>
           
           <!--<button class="btn" onclick="filterSelection('sgac')"> <i class="fa fa-pen"></i> Titan</button>-->
-          <button class="btn" onclick="filterSelection('tallinn')"> <i class="fa fa-pen"></i> Storytelling<br>Summer school</button>
+          <button class="btn" id="tallinn" onclick="filterSelection('tallinn')"> <i class="fa fa-pen"></i> Storytelling<br>Summer school</button>
         </div>
 
         </header>
@@ -72,7 +72,7 @@
                 <!-- project end -->
 
                 <!-- project -->
-                <div class="filterDiv multitask project">
+                <div id="multitask" class="filterDiv multitask project">
                     <div class="row">
                         <div class="text-center project-head">
                                 <h4 class="section-heading text-uppercase">Multi-task classification of ordinal data applied to ophthalmology</h4>
@@ -397,6 +397,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script src="js/projects.js"></script>
 
     </body>
 </html>
