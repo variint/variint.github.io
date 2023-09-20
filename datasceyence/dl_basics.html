@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'dl_basics';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Disentangled learning" href="dl_disentanglement.html" />
+    <link rel="next" title="Supervised learning" href="dl_sup.html" />
     <link rel="prev" title="Machine Learning Basics" href="ml_basics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -159,6 +159,9 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ml_basics.html">Machine Learning Basics</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Deep Learning Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_sup.html">Supervised learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_modularnetworks.html">Modular Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_explainability.html">Explainable AI</a></li>
@@ -167,7 +170,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_partiallabels.html">Partial labels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="retina_anatomy.html">Anatomy of the Retina</a></li>
 <li class="toctree-l1"><a class="reference internal" href="retina_disease.html">Retinal Disease</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_retina.html">Deep Learning for Retinal Imaging</a></li>
@@ -366,7 +368,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loss">Loss</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-loss">Segmentation Loss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-loss-for-vessel-segmentation">Segmentation Loss for Vessel Segmentation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics">Metrics</a><ul class="nav section-nav flex-column">
@@ -388,8 +390,16 @@ document.write(`
 <h1>Deep Learning Basics<a class="headerlink" href="#deep-learning-basics" title="Permalink to this headline">#</a></h1>
 <section id="loss">
 <h2>Loss<a class="headerlink" href="#loss" title="Permalink to this headline">#</a></h2>
-<section id="segmentation-loss">
-<h3>Segmentation Loss<a class="headerlink" href="#segmentation-loss" title="Permalink to this headline">#</a></h3>
+<section id="segmentation-loss-for-vessel-segmentation">
+<h3>Segmentation Loss for Vessel Segmentation<a class="headerlink" href="#segmentation-loss-for-vessel-segmentation" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Graph Cuts Loss: The graph cuts loss function optimises both the region and boundary penalties.
+Paper: <a class="reference external" href="https://openaccess.thecvf.com/content/ICCV2021W/CVAMD/papers/Zheng_Graph_Cuts_Loss_To_Boost_Model_Accuracy_and_Generalizability_for_ICCVW_2021_paper.pdf">https://openaccess.thecvf.com/content/ICCV2021W/CVAMD/papers/Zheng_Graph_Cuts_Loss_To_Boost_Model_Accuracy_and_Generalizability_for_ICCVW_2021_paper.pdf</a>
+PyTorch implementation on GitHub: <a class="github reference external" href="https://github.com/zzhenggit/graph_cuts_loss/">zzhenggit/graph_cuts_loss</a></p></li>
+<li><p>“Beyond the Pixel-Wise Loss for Topology-Aware Delineation” - Connected Component Loss
+Paper: <a class="reference external" href="https://openaccess.thecvf.com/content_cvpr_2018/papers/Mosinska_Beyond_the_Pixel-Wise_CVPR_2018_paper.pdf">https://openaccess.thecvf.com/content_cvpr_2018/papers/Mosinska_Beyond_the_Pixel-Wise_CVPR_2018_paper.pdf</a>
+PyTorch implementation on GitHub: <a class="github reference external" href="https://github.com/dingmyu/Pytorch-Topology-Aware-Delineation">dingmyu/Pytorch-Topology-Aware-Delineation</a></p></li>
+</ul>
 </section>
 </section>
 <section id="metrics">
@@ -445,11 +455,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="dl_disentanglement.html"
+       href="dl_sup.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Disentangled learning</p>
+        <p class="prev-next-title">Supervised learning</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -472,7 +482,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loss">Loss</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-loss">Segmentation Loss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-loss-for-vessel-segmentation">Segmentation Loss for Vessel Segmentation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics">Metrics</a><ul class="nav section-nav flex-column">

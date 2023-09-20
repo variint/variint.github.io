@@ -16,3 +16,10 @@ Feature visualisation.
 * Article: Feature Visualization (Olah et al., 2017) - https://distill.pub/2017/feature-visualization/
 * Book (GitHub): Interpretable Machine Learning: A Guide for Making Black Box Models Explainable (Molnar) - https://christophm.github.io/interpretable-ml-book/
 * Code (GitHub): Convolutional Neural Network Visualizations (Ozbulak, 2019) - https://github.com/utkuozbulak/pytorch-cnn-visualizations
+* https://towardsdatascience.com/explainable-neural-networks-recent-advancements-part-4-73cacc910fef
+
+## Background
+* Layer-wise Relevance Propagation
+* Taylor Decomposition - Integrated Gradients (2017)
+* Deep LiFT
+* LIME, SHAP 

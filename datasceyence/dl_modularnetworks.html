@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'dl_modularnetworks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -159,6 +161,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ml_basics.html">Machine Learning Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Deep Learning Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_sup.html">Supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
@@ -372,6 +375,16 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-inspired-modular-training">Brain-Inspired Modular Training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#libertarian-free-will-neuroscientific-and-philosophical-evidence">Libertarian Free Will: Neuroscientific and Philosophical Evidence</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#information-as-pattern-decoding">Information as pattern decoding</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-conciousness">What is Conciousness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revolution-of-the-mind-inspirations-and-resources">Revolution of the Mind: Inspirations and Resources</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -397,8 +410,88 @@ document.write(`
 <h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>PhD Thesis: Biologically Inspired Modular Neural Networks (Azam, 2000) - <a class="reference external" href="https://vtechworks.lib.vt.edu/bitstream/handle/10919/27998/etd.pdf">https://vtechworks.lib.vt.edu/bitstream/handle/10919/27998/etd.pdf</a></p></li>
-<li><p>Seeing is Believing: Brain-Inspired Modular Training for Mechanistic Interpretability (Liu, 2023) - <a class="reference external" href="https://arxiv.org/abs/2305.08746">https://arxiv.org/abs/2305.08746</a>, <a class="github reference external" href="https://github.com/KindXiaoming/BIMT">KindXiaoming/BIMT</a></p></li>
+<li><p>Preprint: Seeing is Believing: Brain-Inspired Modular Training for Mechanistic Interpretability (Liu, 2023) - <a class="reference external" href="https://arxiv.org/abs/2305.08746">https://arxiv.org/abs/2305.08746</a>, <a class="github reference external" href="https://github.com/KindXiaoming/BIMT">KindXiaoming/BIMT</a></p></li>
+<li><p>Wiki: Brain Basics: The Life and Death of a Neuron - <a class="reference external" href="https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-life-and-death-neuron">https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-life-and-death-neuron</a></p></li>
 </ul>
+</section>
+</section>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
+<section id="brain-inspired-modular-training">
+<h3>Brain-Inspired Modular Training<a class="headerlink" href="#brain-inspired-modular-training" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>can use L1 or L2 penalty</p></li>
+<li><p>we have neuron layers (ni) and weight layers (wi)</p></li>
+<li><p>input: n0, output: nL</p></li>
+<li><p><span class="math notranslate nohighlight">\(r_{i,j}\)</span> is the neuron position in Y-axis i and X-axis j</p></li>
+<li><p>each index on the Y-axis represents a single layer</p></li>
+<li><p>the definition of j, p, q, k may differ between the paper and my graphics</p></li>
+</ul>
+<figure class="align-center" id="directive-fig">
+<a class="reference internal image-reference" href="_images/bimt_biolinear.png"><img alt="_images/bimt_biolinear.png" src="_images/bimt_biolinear.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Connection between pixels in Biolonear2D filters (3D setup - [m, n, Y])</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/bimt_neuron_biolinear.png"><img alt="_images/bimt_neuron_biolinear.png" src="_images/bimt_neuron_biolinear.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Connection between Biolonear2D filters (3D flattened setup - [X=m*n, Y])</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="_images/bimt_geometry.png"><img alt="_images/bimt_geometry.png" src="_images/bimt_geometry.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Geometrical space (2D setup - [X, Y)])</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="_images/bimt_neuron.png"><img alt="_images/bimt_neuron.png" src="_images/bimt_neuron.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">A neuron and incoming/outgoing weights (2D setup - [X, Y])</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="libertarian-free-will-neuroscientific-and-philosophical-evidence">
+<h3>Libertarian Free Will: Neuroscientific and Philosophical Evidence<a class="headerlink" href="#libertarian-free-will-neuroscientific-and-philosophical-evidence" title="Permalink to this headline">#</a></h3>
+<section id="information-as-pattern-decoding">
+<h4>Information as pattern decoding<a class="headerlink" href="#information-as-pattern-decoding" title="Permalink to this headline">#</a></h4>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=IfjSzRsPmsI">https://www.youtube.com/watch?v=IfjSzRsPmsI</a></p>
+<p>THIS IS COPIED FROM THE YOUTUBE VIDEO!!!</p>
+<ul class="simple">
+<li><p>information and (downward) informational causation is fundamentally realized in and is about <em>patterns</em> of energy,
+not amounts of energy.</p></li>
+<li><p>it makes sense to reduce global forces to the sum of local forces, and total amounts to the sum of local parts’ amounts</p></li>
+<li><p>this kind of reductionism does not make sense at all for patterns. Reductionism of global patterns to local parts of patterns and to local particle interactions fails as a program because patterns are inherently relational over space, time, and other dimensions (e.g. color relationships, social relationships, and so on).</p></li>
+</ul>
+<p>That is, patterns and relationships are not localistic.</p>
+<p>Patterns cannot be reduced to a level below the level where the relationships that a decoder
+responds to are present, or the pattern of relationships to which a decoder is sensitive
+will be lost.</p>
+<p>But if an act of decoding can trigger a change in a physical system, say a neuron that is
+tuned to a face detects a face in the visual input and then fires, thereby influencing
+other neurons, then reductionistic physicalism won’t work at all, because then even non-informational
+causal chains, say among local particles, become influenced by global energetic relationships.</p>
+<p>That is, once patterns and information become causal in the universe, because of the evolution
+of decoders, like neurons, that do things if patterns are present, like fire or trigger
+behaviors of animals in the world, then reductionistic physicalism fails.</p>
+<p>It requires understanding how decoders trigger other decoders, and also how decoders reparameterize
+each other for possible future acts of now altered decoding.</p>
+<p>The technical word for energetic relationships is phase (e.g., a sine and cosine wave of
+the same amplitude and frequency have a phase difference of ninety degrees).
+Spatial phase arises from spatial relationships (i.e. patterns), and is related to the everyday
+idea of shape.</p>
+<p>Temporal phase is related to the idea of timing.</p>
+<p>mass, momentum, wavelength or position.</p>
+</section>
+</section>
+<section id="what-is-conciousness">
+<h3>What is Conciousness<a class="headerlink" href="#what-is-conciousness" title="Permalink to this headline">#</a></h3>
+<p>conciousness is flexible but slow, automation is fast and energy saving</p>
+</section>
+<section id="revolution-of-the-mind-inspirations-and-resources">
+<h3>Revolution of the Mind: Inspirations and Resources<a class="headerlink" href="#revolution-of-the-mind-inspirations-and-resources" title="Permalink to this headline">#</a></h3>
+<p><a class="reference external" href="https://www.garethmlong.com/blog/d14nmw7v91vczeez29fl9dq6dkwfc2">https://www.garethmlong.com/blog/d14nmw7v91vczeez29fl9dq6dkwfc2</a></p>
 </section>
 </section>
 </section>
@@ -474,6 +567,16 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-inspired-modular-training">Brain-Inspired Modular Training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#libertarian-free-will-neuroscientific-and-philosophical-evidence">Libertarian Free Will: Neuroscientific and Philosophical Evidence</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#information-as-pattern-decoding">Information as pattern decoding</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-conciousness">What is Conciousness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revolution-of-the-mind-inspirations-and-resources">Revolution of the Mind: Inspirations and Resources</a></li>
 </ul>
 </li>
 </ul>
