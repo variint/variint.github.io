@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Machine Learning Basics &#8212; Datasceyence</title>
+    <title>Modular Networks &#8212; Datasceyence</title>
   
   
   
@@ -61,9 +61,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ml_basics';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dl_modularity';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Growing neural networks" href="dl_growing.html" />
+    <link rel="prev" title="Disentangled learning" href="dl_disentanglement.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -168,9 +172,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">grow prune swap</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_modularity.html">Modular Networks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modular Networks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_growing.html">Growing neural networks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Human-centered AI</span></p>
@@ -264,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/variint/variint.github.io/issues/new?title=Issue%20on%20page%20%2Fml_basics.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/variint/variint.github.io/issues/new?title=Issue%20on%20page%20%2Fdl_modularity.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -294,7 +298,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/ml_basics.md" target="_blank"
+      <li><a href="_sources/dl_modularity.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -376,7 +380,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Machine Learning Basics</h1>
+    <h1>Modular Networks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -386,7 +390,27 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biologically-inspired-modular-neural-networks">Biologically Inspired Modular Neural Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#life-and-death-of-a-neuron">Life and Death of a Neuron</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-inspired-modular-training">Brain-Inspired Modular Training</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-stuff">Other stuff</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#libertarian-free-will-neuroscientific-and-philosophical-evidence">Libertarian Free Will: Neuroscientific and Philosophical Evidence</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#information-as-pattern-decoding">Information as pattern decoding</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-conciousness">What is Conciousness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revolution-of-the-mind-inspirations-and-resources">Revolution of the Mind: Inspirations and Resources</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -398,11 +422,119 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="machine-learning-basics">
-<h1>Machine Learning Basics<a class="headerlink" href="#machine-learning-basics" title="Permalink to this headline">#</a></h1>
-<section id="id1">
-<h2><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="modular-networks">
+<h1>Modular Networks<a class="headerlink" href="#modular-networks" title="Permalink to this headline">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h3>
+<p>A modular neural network is composed of functions (modules) that can be combined to solve a given task.</p>
 </section>
+<section id="goals">
+<h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Learn about explicit and implicit modularity in neural networks.</p></li>
+</ul>
+</section>
+</section>
+<section id="related-work">
+<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">#</a></h2>
+<section id="biologically-inspired-modular-neural-networks">
+<h3>Biologically Inspired Modular Neural Networks<a class="headerlink" href="#biologically-inspired-modular-neural-networks" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Original version: PhD Thesis: Biologically Inspired Modular Neural Networks - <a class="reference external" href="https://vtechworks.lib.vt.edu/bitstream/handle/10919/27998/etd.pdf">https://vtechworks.lib.vt.edu/bitstream/handle/10919/27998/etd.pdf</a></p></li>
+</ul>
+</section>
+<section id="life-and-death-of-a-neuron">
+<h3>Life and Death of a Neuron<a class="headerlink" href="#life-and-death-of-a-neuron" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Original version: Brain Basics: The Life and Death of a Neuron - <a class="reference external" href="https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-life-and-death-neuron">https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-life-and-death-neuron</a></p></li>
+</ul>
+</section>
+<section id="brain-inspired-modular-training">
+<h3>Brain-Inspired Modular Training<a class="headerlink" href="#brain-inspired-modular-training" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Original version: Seeing is Believing: Brain-Inspired Modular Training for Mechanistic Interpretability (Liu, 2023) - <a class="reference external" href="https://arxiv.org/abs/2305.08746">https://arxiv.org/abs/2305.08746</a>, <a class="github reference external" href="https://github.com/KindXiaoming/BIMT">KindXiaoming/BIMT</a></p></li>
+<li><p>can use L1 or L2 penalty</p></li>
+<li><p>we have neuron layers (ni) and weight layers (wi)</p></li>
+<li><p>input: n0, output: nL</p></li>
+<li><p><span class="math notranslate nohighlight">\(r_{i,j}\)</span> is the neuron position in Y-axis i and X-axis j</p></li>
+<li><p>each index on the Y-axis represents a single layer</p></li>
+<li><p>the definition of j, p, q, k may differ between the paper and my graphics</p></li>
+</ul>
+<figure class="align-center" id="directive-fig">
+<a class="reference internal image-reference" href="_images/bimt_biolinear.png"><img alt="_images/bimt_biolinear.png" src="_images/bimt_biolinear.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Connection between pixels in Biolonear2D filters (3D setup - [m, n, Y])</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/bimt_neuron_biolinear.png"><img alt="_images/bimt_neuron_biolinear.png" src="_images/bimt_neuron_biolinear.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Connection between Biolonear2D filters (3D flattened setup - [X=m*n, Y])</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="_images/bimt_geometry.png"><img alt="_images/bimt_geometry.png" src="_images/bimt_geometry.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Geometrical space (2D setup - [X, Y)])</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="_images/bimt_neuron.png"><img alt="_images/bimt_neuron.png" src="_images/bimt_neuron.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">A neuron and incoming/outgoing weights (2D setup - [X, Y])</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="other-stuff">
+<h2>Other stuff<a class="headerlink" href="#other-stuff" title="Permalink to this headline">#</a></h2>
+<section id="libertarian-free-will-neuroscientific-and-philosophical-evidence">
+<h3>Libertarian Free Will: Neuroscientific and Philosophical Evidence<a class="headerlink" href="#libertarian-free-will-neuroscientific-and-philosophical-evidence" title="Permalink to this headline">#</a></h3>
+<section id="information-as-pattern-decoding">
+<h4>Information as pattern decoding<a class="headerlink" href="#information-as-pattern-decoding" title="Permalink to this headline">#</a></h4>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=IfjSzRsPmsI">https://www.youtube.com/watch?v=IfjSzRsPmsI</a></p>
+<p>THIS IS COPIED FROM THE YOUTUBE VIDEO!!!</p>
+<ul class="simple">
+<li><p>information and (downward) informational causation is fundamentally realized in and is about <em>patterns</em> of energy,
+not amounts of energy.</p></li>
+<li><p>it makes sense to reduce global forces to the sum of local forces, and total amounts to the sum of local parts’ amounts</p></li>
+<li><p>this kind of reductionism does not make sense at all for patterns. Reductionism of global patterns to local parts of patterns and to local particle interactions fails as a program because patterns are inherently relational over space, time, and other dimensions (e.g. color relationships, social relationships, and so on).</p></li>
+</ul>
+<p>That is, patterns and relationships are not localistic.</p>
+<p>Patterns cannot be reduced to a level below the level where the relationships that a decoder
+responds to are present, or the pattern of relationships to which a decoder is sensitive
+will be lost.</p>
+<p>But if an act of decoding can trigger a change in a physical system, say a neuron that is
+tuned to a face detects a face in the visual input and then fires, thereby influencing
+other neurons, then reductionistic physicalism won’t work at all, because then even non-informational
+causal chains, say among local particles, become influenced by global energetic relationships.</p>
+<p>That is, once patterns and information become causal in the universe, because of the evolution
+of decoders, like neurons, that do things if patterns are present, like fire or trigger
+behaviors of animals in the world, then reductionistic physicalism fails.</p>
+<p>It requires understanding how decoders trigger other decoders, and also how decoders reparameterize
+each other for possible future acts of now altered decoding.</p>
+<p>The technical word for energetic relationships is phase (e.g., a sine and cosine wave of
+the same amplitude and frequency have a phase difference of ninety degrees).
+Spatial phase arises from spatial relationships (i.e. patterns), and is related to the everyday
+idea of shape.</p>
+<p>Temporal phase is related to the idea of timing.</p>
+<p>mass, momentum, wavelength or position.</p>
+</section>
+</section>
+<section id="what-is-conciousness">
+<h3>What is Conciousness<a class="headerlink" href="#what-is-conciousness" title="Permalink to this headline">#</a></h3>
+<p>conciousness is flexible but slow, automation is fast and energy saving</p>
+</section>
+<section id="revolution-of-the-mind-inspirations-and-resources">
+<h3>Revolution of the Mind: Inspirations and Resources<a class="headerlink" href="#revolution-of-the-mind-inspirations-and-resources" title="Permalink to this headline">#</a></h3>
+<p><a class="reference external" href="https://www.garethmlong.com/blog/d14nmw7v91vczeez29fl9dq6dkwfc2">https://www.garethmlong.com/blog/d14nmw7v91vczeez29fl9dq6dkwfc2</a></p>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<span class="target" id="id4"></span></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -436,6 +568,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="dl_disentanglement.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Disentangled learning</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dl_growing.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Growing neural networks</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -454,7 +604,27 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biologically-inspired-modular-neural-networks">Biologically Inspired Modular Neural Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#life-and-death-of-a-neuron">Life and Death of a Neuron</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-inspired-modular-training">Brain-Inspired Modular Training</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-stuff">Other stuff</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#libertarian-free-will-neuroscientific-and-philosophical-evidence">Libertarian Free Will: Neuroscientific and Philosophical Evidence</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#information-as-pattern-decoding">Information as pattern decoding</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-conciousness">What is Conciousness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revolution-of-the-mind-inspirations-and-resources">Revolution of the Mind: Inspirations and Resources</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 

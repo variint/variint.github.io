@@ -64,6 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'retina_imaging';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Deep Learning for Retinal Imaging" href="retina_applied_dl.html" />
+    <link rel="prev" title="Retinal Disease" href="retina_disease.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -154,23 +156,44 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ml_basics.html">Machine Learning Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Deep Learning Basics</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reading</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="reading_list.html">My reading list</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Training strategies</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_sup.html">Supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_modularnetworks.html">Modular Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_explainability.html">Explainable AI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_i2itranslation.html">Image to Image translation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Partial labels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_partiallabels.html">Partial labels</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">grow prune swap</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_modularity.html">Modular Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_growing.html">Growing neural networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Human-centered AI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_xai.html">Explainable AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_concept.html">Concept Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Domains</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_i2i.html">Image to Image translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Medical</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="retina_anatomy.html">Anatomy of the Retina</a></li>
 <li class="toctree-l1"><a class="reference internal" href="retina_disease.html">Retinal Disease</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_retina.html">Deep Learning for Retinal Imaging</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Retinal Imaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_applied_dl.html">Deep Learning for Retinal Imaging</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistics</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="stat_gsva.html">Gene Set Variation Analysis (GSVA)</a></li>
 </ul>
 
@@ -365,19 +388,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fluorescein-angiography">Fluorescein Angiography</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oct">OCT</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#octa">OCTA</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colour-fundus-photography">Colour Fundus Photography</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optical-coherence-tomography-oct">Optical Coherence Tomography (OCT)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optical-coherence-tomography-angiography-octa">Optical Coherence Tomography Angiography (OCTA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colour-fundus-photography-cfp">Colour Fundus Photography (CFP)</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -391,32 +414,53 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="retinal-imaging">
 <h1>Retinal Imaging<a class="headerlink" href="#retinal-imaging" title="Permalink to this headline">#</a></h1>
-<section id="skill">
-<h2>Skill<a class="headerlink" href="#skill" title="Permalink to this headline">#</a></h2>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <section id="description">
 <h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h3>
 </section>
 <section id="goals">
 <h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Learn about the difference between invasive and non-invasive imaging modalities.</p></li>
+<li><p>Learn about time-domain and Fourier-domain OCT imagers.</p></li>
+<li><p>Learn about the Fourier-domain OCT imagers based on spectrometer vs swept source.</p></li>
+</ul>
 </section>
-<section id="links">
-<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h3>
 </section>
-</section>
-<section id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
+<section id="related-work">
+<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">#</a></h2>
 <section id="fluorescein-angiography">
 <h3>Fluorescein Angiography<a class="headerlink" href="#fluorescein-angiography" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Invasive imaging technique. Especially useful for vessel disease.</p></li>
+</ul>
 </section>
-<section id="oct">
-<h3>OCT<a class="headerlink" href="#oct" title="Permalink to this headline">#</a></h3>
+<section id="optical-coherence-tomography-oct">
+<h3>Optical Coherence Tomography (OCT)<a class="headerlink" href="#optical-coherence-tomography-oct" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Original version: <a class="reference external" href="https://www.aao.org/eye-health/treatments/what-is-optical-coherence-tomography">https://www.aao.org/eye-health/treatments/what-is-optical-coherence-tomography</a></p></li>
+</ul>
 </section>
-<section id="octa">
-<h3>OCTA<a class="headerlink" href="#octa" title="Permalink to this headline">#</a></h3>
+<section id="optical-coherence-tomography-angiography-octa">
+<h3>Optical Coherence Tomography Angiography (OCTA)<a class="headerlink" href="#optical-coherence-tomography-angiography-octa" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Original version: <span id="id1">[<a class="reference internal" href="#id9" title="Roland Rocholz, Federico Corvi, Julian Weichsel, Stefan Schmidt, and Giovanni Staurenghi. Oct angiography (octa) in retinal diagnostics. High resolution imaging in microscopy and ophthalmology: new frontiers in biomedical optics, pages 135–160, 2019. URL: https://link.springer.com/chapter/10.1007/978-3-030-16638-0_6.">Rocholz <em>et al.</em>, 2019</a>]</span></p></li>
+</ul>
 </section>
-<section id="colour-fundus-photography">
-<h3>Colour Fundus Photography<a class="headerlink" href="#colour-fundus-photography" title="Permalink to this headline">#</a></h3>
+<section id="colour-fundus-photography-cfp">
+<h3>Colour Fundus Photography (CFP)<a class="headerlink" href="#colour-fundus-photography-cfp" title="Permalink to this headline">#</a></h3>
 </section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<div class="docutils container" id="id2">
+<dl class="citation">
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id1">RCW+19</a></span></dt>
+<dd><p>Roland Rocholz, Federico Corvi, Julian Weichsel, Stefan Schmidt, and Giovanni Staurenghi. Oct angiography (octa) in retinal diagnostics. <em>High resolution imaging in microscopy and ophthalmology: new frontiers in biomedical optics</em>, pages 135–160, 2019. URL: <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-030-16638-0_6">https://link.springer.com/chapter/10.1007/978-3-030-16638-0_6</a>.</p>
+</dd>
+</dl>
+</div>
 </section>
 </section>
 
@@ -451,6 +495,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="retina_disease.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Retinal Disease</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="retina_applied_dl.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Deep Learning for Retinal Imaging</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -469,19 +531,19 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fluorescein-angiography">Fluorescein Angiography</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oct">OCT</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#octa">OCTA</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colour-fundus-photography">Colour Fundus Photography</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optical-coherence-tomography-oct">Optical Coherence Tomography (OCT)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optical-coherence-tomography-angiography-octa">Optical Coherence Tomography Angiography (OCTA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#colour-fundus-photography-cfp">Colour Fundus Photography (CFP)</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 

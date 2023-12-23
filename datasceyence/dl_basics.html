@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Deep Learning Basics &#8212; Datasceyence</title>
+    <title>Deep learning basics &#8212; Datasceyence</title>
   
   
   
@@ -64,8 +64,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'dl_basics';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Supervised learning" href="dl_sup.html" />
-    <link rel="prev" title="Machine Learning Basics" href="ml_basics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -156,23 +154,44 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ml_basics.html">Machine Learning Basics</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Deep Learning Basics</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reading</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="reading_list.html">My reading list</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Training strategies</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_sup.html">Supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_modularnetworks.html">Modular Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_explainability.html">Explainable AI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_i2itranslation.html">Image to Image translation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Partial labels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_partiallabels.html">Partial labels</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">grow prune swap</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_modularity.html">Modular Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_growing.html">Growing neural networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Human-centered AI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_xai.html">Explainable AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_concept.html">Concept Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Domains</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_i2i.html">Image to Image translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Medical</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="retina_anatomy.html">Anatomy of the Retina</a></li>
 <li class="toctree-l1"><a class="reference internal" href="retina_disease.html">Retinal Disease</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_retina.html">Deep Learning for Retinal Imaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_imaging.html">Retinal Imaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_applied_dl.html">Deep Learning for Retinal Imaging</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistics</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="stat_gsva.html">Gene Set Variation Analysis (GSVA)</a></li>
 </ul>
 
@@ -357,7 +376,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Deep Learning Basics</h1>
+    <h1>Deep learning basics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -367,14 +386,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loss">Loss</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-loss-for-vessel-segmentation">Segmentation Loss for Vessel Segmentation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics">Metrics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-metrics">Segmentation Metrics</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a></li>
 </ul>
             </nav>
         </div>
@@ -387,30 +399,23 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="deep-learning-basics">
-<h1>Deep Learning Basics<a class="headerlink" href="#deep-learning-basics" title="Permalink to this headline">#</a></h1>
-<section id="loss">
-<h2>Loss<a class="headerlink" href="#loss" title="Permalink to this headline">#</a></h2>
-<section id="segmentation-loss-for-vessel-segmentation">
-<h3>Segmentation Loss for Vessel Segmentation<a class="headerlink" href="#segmentation-loss-for-vessel-segmentation" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Graph Cuts Loss: The graph cuts loss function optimises both the region and boundary penalties.
-Paper: <a class="reference external" href="https://openaccess.thecvf.com/content/ICCV2021W/CVAMD/papers/Zheng_Graph_Cuts_Loss_To_Boost_Model_Accuracy_and_Generalizability_for_ICCVW_2021_paper.pdf">https://openaccess.thecvf.com/content/ICCV2021W/CVAMD/papers/Zheng_Graph_Cuts_Loss_To_Boost_Model_Accuracy_and_Generalizability_for_ICCVW_2021_paper.pdf</a>
-PyTorch implementation on GitHub: <a class="github reference external" href="https://github.com/zzhenggit/graph_cuts_loss/">zzhenggit/graph_cuts_loss</a></p></li>
-<li><p>“Beyond the Pixel-Wise Loss for Topology-Aware Delineation” - Connected Component Loss
-Paper: <a class="reference external" href="https://openaccess.thecvf.com/content_cvpr_2018/papers/Mosinska_Beyond_the_Pixel-Wise_CVPR_2018_paper.pdf">https://openaccess.thecvf.com/content_cvpr_2018/papers/Mosinska_Beyond_the_Pixel-Wise_CVPR_2018_paper.pdf</a>
-PyTorch implementation on GitHub: <a class="github reference external" href="https://github.com/dingmyu/Pytorch-Topology-Aware-Delineation">dingmyu/Pytorch-Topology-Aware-Delineation</a></p></li>
-</ul>
-</section>
-</section>
-<section id="metrics">
-<h2>Metrics<a class="headerlink" href="#metrics" title="Permalink to this headline">#</a></h2>
-<section id="segmentation-metrics">
-<h3>Segmentation Metrics<a class="headerlink" href="#segmentation-metrics" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.kaggle.com/code/yassinealouini/all-the-segmentation-metrics">https://www.kaggle.com/code/yassinealouini/all-the-segmentation-metrics</a></p></li>
-<li><p><a class="github reference external" href="https://github.com/hsiangyuzhao/Segmentation-Metrics-PyTorch">hsiangyuzhao/Segmentation-Metrics-PyTorch</a></p></li>
-</ul>
-</section>
+<h1>Deep learning basics<a class="headerlink" href="#deep-learning-basics" title="Permalink to this headline">#</a></h1>
+<section id="related-work">
+<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">#</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>paper</p></th>
+<th class="head"><p>task</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Faster R-CNN</p></td>
+<td><p>Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks</p></td>
+<td><p>Object detection</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 
@@ -445,24 +450,6 @@ PyTorch implementation on GitHub: <a class="github reference external" href="htt
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="ml_basics.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Machine Learning Basics</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="dl_sup.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Supervised learning</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -481,14 +468,7 @@ PyTorch implementation on GitHub: <a class="github reference external" href="htt
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loss">Loss</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-loss-for-vessel-segmentation">Segmentation Loss for Vessel Segmentation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics">Metrics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation-metrics">Segmentation Metrics</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a></li>
 </ul>
   </nav></div>
 

@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'dl_multitask';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Partial labels" href="dl_partiallabels.html" />
+    <link rel="next" title="Disentangled learning" href="dl_disentanglement.html" />
     <link rel="prev" title="Meta-learning" href="dl_metalearning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -156,21 +156,44 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ml_basics.html">Machine Learning Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Deep Learning Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_modularnetworks.html">Modular Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_explainability.html">Explainable AI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_i2itranslation.html">Image to Image translation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reading</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="reading_list.html">My reading list</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Training strategies</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_sup.html">Supervised learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Partial labels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Multi-task learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_partiallabels.html">Partial labels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">grow prune swap</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_modularity.html">Modular Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_growing.html">Growing neural networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Human-centered AI</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_xai.html">Explainable AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_concept.html">Concept Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Domains</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_i2i.html">Image to Image translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Medical</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="retina_anatomy.html">Anatomy of the Retina</a></li>
 <li class="toctree-l1"><a class="reference internal" href="retina_disease.html">Retinal Disease</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_retina.html">Deep Learning for Retinal Imaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_imaging.html">Retinal Imaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_applied_dl.html">Deep Learning for Retinal Imaging</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistics</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="stat_gsva.html">Gene Set Variation Analysis (GSVA)</a></li>
 </ul>
 
@@ -450,11 +473,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="dl_partiallabels.html"
+       href="dl_disentanglement.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Partial labels</p>
+        <p class="prev-next-title">Disentangled learning</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

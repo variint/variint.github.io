@@ -61,9 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'dl_conceptlearning';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dl_concept';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Image to Image translation" href="dl_i2i.html" />
+    <link rel="prev" title="Explainable AI" href="dl_xai.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -154,23 +156,44 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ml_basics.html">Machine Learning Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Deep Learning Basics</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reading</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="reading_list.html">My reading list</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Training strategies</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_sup.html">Supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_modularnetworks.html">Modular Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_explainability.html">Explainable AI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_i2itranslation.html">Image to Image translation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Partial labels</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_partiallabels.html">Partial labels</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">grow prune swap</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_modularity.html">Modular Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_growing.html">Growing neural networks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Human-centered AI</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_xai.html">Explainable AI</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Concept Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Domains</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_i2i.html">Image to Image translation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Medical</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="retina_anatomy.html">Anatomy of the Retina</a></li>
 <li class="toctree-l1"><a class="reference internal" href="retina_disease.html">Retinal Disease</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_retina.html">Deep Learning for Retinal Imaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_imaging.html">Retinal Imaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_applied_dl.html">Deep Learning for Retinal Imaging</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Statistics</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="stat_gsva.html">Gene Set Variation Analysis (GSVA)</a></li>
 </ul>
 
@@ -243,7 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/variint/variint.github.io/issues/new?title=Issue%20on%20page%20%2Fdl_conceptlearning.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/variint/variint.github.io/issues/new?title=Issue%20on%20page%20%2Fdl_concept.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -273,7 +296,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/dl_conceptlearning.md" target="_blank"
+      <li><a href="_sources/dl_concept.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -365,17 +388,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-dissection">Network dissection</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-in-progress">Concepts (in progress)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phenotypic-concepts">Phenotypic Concepts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-attribution">Concept Attribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-based-explanations">Concept-based explanations</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types">Types:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#artefacts-in-oct">Artefacts in OCT:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#artefacts-in-mri">Artefacts in MRI:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -389,82 +420,146 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="concept-learning">
 <h1>Concept Learning<a class="headerlink" href="#concept-learning" title="Permalink to this headline">#</a></h1>
-<section id="skill">
-<h2>Skill<a class="headerlink" href="#skill" title="Permalink to this headline">#</a></h2>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <section id="description">
 <h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h3>
-<p>Concept learning has the goal to increase the interpretability of a convolutional neural network.</p>
+<p>Concept learning has the goal to increase the interpretability of a convolutional neural network by aligning features with human understanable concepts.</p>
 </section>
 <section id="goals">
 <h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>I know about Concept Activation Vectors (TCAV).</p></li>
-<li><p>I know how unsupervised clustering can be used to obtain concepts.</p></li>
-<li><p>I know what role concepts play in explainable AI.</p></li>
-<li><p>I know how concepts are used in network dissection.</p></li>
-</ul>
-</section>
-<section id="links">
-<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Identifying Phenotypic Concepts Discriminating Molecular Breast Cancer Sub-Types (Fürböck, 2022) - <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-031-16449-1_27">https://link.springer.com/chapter/10.1007/978-3-031-16449-1_27</a></p></li>
-<li><p>Concept attribution: explaining CNN decisions to physicians</p></li>
-<li><p>Towards automatic concept-based explanations</p></li>
-<li><p>Chapter 10 Neural Network Interpretation &gt; Network Dissection (Molnar) - <a class="reference external" href="https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection">https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection</a></p></li>
+<li><p>Learn about Concept Activation Vectors (TCAV).</p></li>
+<li><p>Learn about how unsupervised clustering can be used to obtain concepts.</p></li>
+<li><p>Learn about what role concepts play in explainable AI.</p></li>
+<li><p>Learn about how concepts are used in network dissection.</p></li>
 </ul>
 </section>
 </section>
-<section id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
+<section id="related-work">
+<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">#</a></h2>
 <section id="network-dissection">
 <h3>Network dissection<a class="headerlink" href="#network-dissection" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Original version: Chapter 10 Neural Network Interpretation &gt; Network Dissection <span id="id1">[<a class="reference internal" href="#id9" title="Christoph Molnar. Interpretable machine learning - network dissection. 2022. URL: https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection.">Molnar, 2022</a>]</span></p></li>
+</ul>
 <p>Network Dissection quantifies the interpretability of a unit of a CNN. Highly activated areas of CNN channels are linked with human concepts (objects, parts, textures, colors, …).</p>
 </section>
-<section id="concepts-in-progress">
-<h3>Concepts (in progress)<a class="headerlink" href="#concepts-in-progress" title="Permalink to this headline">#</a></h3>
-<p>Features: Position, shape, size, illumination, contrast</p>
-<p>Image descriptors, IQA,</p>
+<section id="phenotypic-concepts">
+<h3>Phenotypic Concepts<a class="headerlink" href="#phenotypic-concepts" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>Direction</p></li>
-<li><p>Gradients</p></li>
-<li><p>Edges</p></li>
-<li><p>Colour,</p></li>
+<li><p>Original version: Identifying Phenotypic Concepts Discriminating Molecular Breast Cancer Sub-Types <span id="id2">[<a class="reference internal" href="#id10" title="Christoph Fürböck, Matthias Perkonigg, Thomas Helbich, Katja Pinker, Valeria Romeo, and Georg Langs. Identifying phenotypic concepts discriminating molecular breast cancer sub-types. In International Conference on Medical Image Computing and Computer-Assisted Intervention, 276–286. Springer, 2022. URL: https://link.springer.com/chapter/10.1007/978-3-031-16449-1_27.">Fürböck <em>et al.</em>, 2022</a>]</span></p></li>
+</ul>
+</section>
+<section id="concept-attribution">
+<h3>Concept Attribution<a class="headerlink" href="#concept-attribution" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Original version: Concept attribution: explaining CNN decisions to physicians <span id="id3">[<a class="reference internal" href="#id8" title="Mara Graziani, Vincent Andrearczyk, Stéphane Marchand-Maillet, and Henning Müller. Concept attribution: explaining cnn decisions to physicians. Computers in biology and medicine, 123:103865, 2020. URL: https://www.sciencedirect.com/science/article/pii/S0010482520302225.">Graziani <em>et al.</em>, 2020</a>]</span></p></li>
+</ul>
+</section>
+<section id="concept-based-explanations">
+<h3>Concept-based explanations<a class="headerlink" href="#concept-based-explanations" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Original version: Towards automatic concept-based explanations <span id="id4">[<a class="reference internal" href="#id11" title="Amirata Ghorbani, James Wexler, James Y Zou, and Been Kim. Towards automatic concept-based explanations. Advances in neural information processing systems, 2019. URL: https://proceedings.neurips.cc/paper/2019/hash/77d2afcb31f6493e350fca61764efb9a-Abstract.html.">Ghorbani <em>et al.</em>, 2019</a>]</span></p></li>
+</ul>
+</section>
+</section>
+<section id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">#</a></h2>
+<section id="types">
+<h3>Types:<a class="headerlink" href="#types" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Image/object descriptors: position, shape, size, direction, gradients, edges, colour</p></li>
+<li><p>IQA: illumination, contrast</p></li>
 <li><p>Anatomical: vessels, optic disc, foveal avascular zone (FAZ) / macula</p></li>
 <li><p>Pathologies: drusen, scars, neovascularisation, atrophy</p></li>
 <li><p>Artefacts: Shades, Motion Artefact, Blur, Noise, Occolusion, Compression, zipper artifact, moire effect</p></li>
-<li><p>Artefacts in OCT:</p></li>
-</ul>
-<p>Projection artifact, eye movement, Low-OCT-signal, Inner layer misidentification, Outer layer misidentification, Mirror artifact, Degraded image, Out of register scan, Cut edge artifact, Off center artifact, Motion artifact, Blink artifact</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1319453414000290">https://www.sciencedirect.com/science/article/pii/S1319453414000290</a></p></li>
-</ul>
-<p>decentration, segmentation error, movement, blink, refraction shift, defocus, shadow, Z offset, tilt, projection</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://jamanetwork.com/journals/jamaophthalmology/fullarticle/2755965">https://jamanetwork.com/journals/jamaophthalmology/fullarticle/2755965</a></p></li>
-</ul>
-<p>loss of focus, broad, blink lines, motion artifact, specular dot, edge duplication.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://journals.lww.com/retinajournal/Abstract/2017/09000/IMAGE_QUALITY_AND_ARTIFACTS_ON_OPTICAL_COHERENCE.6.aspx">https://journals.lww.com/retinajournal/Abstract/2017/09000/IMAGE_QUALITY_AND_ARTIFACTS_ON_OPTICAL_COHERENCE.6.aspx</a></p></li>
-</ul>
-<ul class="simple">
-<li><p>Artefacts in MRI:
-Artifact 	Cause
-RF Offset and Quadrature Ghost	Failure of the RF detection circuitry
-RF Noise	Failure of the RF shielding
-Bo Inhomogeneity	Metal object distorting the Bo field
-Gradient 	Failure in a magnetic field gradient
-Susceptibility	Objects in the FOV with a higher or lower magnetic susceptibility
-RF Inhomogeneity 	Failure or normal operation of RF coil, and metal in the anatomy
-Motion 	Movement of the imaged object during the sequence
-Flow 	Movement of body fluids during the sequence
-Chemical Shift 	Large Bo and chemical shift difference between tissues
-Partial Volume 	Large voxel size
-Wrap Around 	Improperly chosen field of view
-Gibbs Ringing	Small image matrix and sharp signal discontinuities in an image
-Magic Angle	Angle between Bo and dipole axis in solids.
-<a class="reference external" href="https://www.cis.rit.edu/htbooks/mri/chap-11/chap-11.htm">https://www.cis.rit.edu/htbooks/mri/chap-11/chap-11.htm</a></p></li>
 </ul>
 </section>
+<section id="artefacts-in-oct">
+<h3>Artefacts in OCT:<a class="headerlink" href="#artefacts-in-oct" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Projection artifact, eye movement, Low-OCT-signal, Inner layer misidentification, Outer layer misidentification, Mirror artifact, Degraded image, Out of register scan, Cut edge artifact, Off center artifact, Motion artifact, Blink artifact
+<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1319453414000290">https://www.sciencedirect.com/science/article/pii/S1319453414000290</a></p></li>
+<li><p>decentration, segmentation error, movement, blink, refraction shift, defocus, shadow, Z offset, tilt, projection
+<a class="reference external" href="https://jamanetwork.com/journals/jamaophthalmology/fullarticle/2755965">https://jamanetwork.com/journals/jamaophthalmology/fullarticle/2755965</a></p></li>
+<li><p>loss of focus, broad, blink lines, motion artifact, specular dot, edge duplication.
+<a class="reference external" href="https://journals.lww.com/retinajournal/Abstract/2017/09000/IMAGE_QUALITY_AND_ARTIFACTS_ON_OPTICAL_COHERENCE.6.aspx">https://journals.lww.com/retinajournal/Abstract/2017/09000/IMAGE_QUALITY_AND_ARTIFACTS_ON_OPTICAL_COHERENCE.6.aspx</a></p></li>
+</ul>
+</section>
+<section id="artefacts-in-mri">
+<h3>Artefacts in MRI:<a class="headerlink" href="#artefacts-in-mri" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Content from: <a class="reference external" href="https://www.cis.rit.edu/htbooks/mri/chap-11/chap-11.htm">https://www.cis.rit.edu/htbooks/mri/chap-11/chap-11.htm</a></p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Artifact</p></th>
+<th class="head"><p>Cause</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>RF Offset and Quadrature Ghost</p></td>
+<td><p>Failure of the RF detection circuitry</p></td>
+</tr>
+<tr class="row-odd"><td><p>RF Noise</p></td>
+<td><p>Failure of the RF shielding</p></td>
+</tr>
+<tr class="row-even"><td><p>Bo Inhomogeneity</p></td>
+<td><p>Metal object distorting the Bo field</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gradient</p></td>
+<td><p>Failure in a magnetic field gradient</p></td>
+</tr>
+<tr class="row-even"><td><p>Susceptibility</p></td>
+<td><p>Objects in the FOV with a higher or lower magnetic susceptibility</p></td>
+</tr>
+<tr class="row-odd"><td><p>RF Inhomogeneity</p></td>
+<td><p>Failure or normal operation of RF coil, and metal in the anatomy</p></td>
+</tr>
+<tr class="row-even"><td><p>Motion</p></td>
+<td><p>Movement of the imaged object during the sequence</p></td>
+</tr>
+<tr class="row-odd"><td><p>Flow</p></td>
+<td><p>Movement of body fluids during the sequence</p></td>
+</tr>
+<tr class="row-even"><td><p>Chemical Shift</p></td>
+<td><p>Large Bo and chemical shift difference between tissues</p></td>
+</tr>
+<tr class="row-odd"><td><p>Partial Volume</p></td>
+<td><p>Large voxel size</p></td>
+</tr>
+<tr class="row-even"><td><p>Wrap Around</p></td>
+<td><p>Improperly chosen field of view</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gibbs Ringing</p></td>
+<td><p>Small image matrix and sharp signal discontinuities in an image</p></td>
+</tr>
+<tr class="row-even"><td><p>Magic Angle</p></td>
+<td><p>Angle between Bo and dipole axis in solids.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<div class="docutils container" id="id5">
+<dl class="citation">
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id2">FurbockPH+22</a></span></dt>
+<dd><p>Christoph Fürböck, Matthias Perkonigg, Thomas Helbich, Katja Pinker, Valeria Romeo, and Georg Langs. Identifying phenotypic concepts discriminating molecular breast cancer sub-types. In <em>International Conference on Medical Image Computing and Computer-Assisted Intervention</em>, 276–286. Springer, 2022. URL: <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-031-16449-1_27">https://link.springer.com/chapter/10.1007/978-3-031-16449-1_27</a>.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id4">GWZK19</a></span></dt>
+<dd><p>Amirata Ghorbani, James Wexler, James Y Zou, and Been Kim. Towards automatic concept-based explanations. <em>Advances in neural information processing systems</em>, 2019. URL: <a class="reference external" href="https://proceedings.neurips.cc/paper/2019/hash/77d2afcb31f6493e350fca61764efb9a-Abstract.html">https://proceedings.neurips.cc/paper/2019/hash/77d2afcb31f6493e350fca61764efb9a-Abstract.html</a>.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id3">GAMMMuller20</a></span></dt>
+<dd><p>Mara Graziani, Vincent Andrearczyk, Stéphane Marchand-Maillet, and Henning Müller. Concept attribution: explaining cnn decisions to physicians. <em>Computers in biology and medicine</em>, 123:103865, 2020. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0010482520302225">https://www.sciencedirect.com/science/article/pii/S0010482520302225</a>.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id1">Mol22</a></span></dt>
+<dd><p>Christoph Molnar. Interpretable machine learning - network dissection. 2022. URL: <a class="reference external" href="https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection">https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection</a>.</p>
+</dd>
+</dl>
+</div>
 </section>
 </section>
 
@@ -499,6 +594,24 @@ Magic Angle	Angle between Bo and dipole axis in solids.
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="dl_xai.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Explainable AI</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dl_i2i.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Image to Image translation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -517,17 +630,25 @@ Magic Angle	Angle between Bo and dipole axis in solids.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-dissection">Network dissection</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-in-progress">Concepts (in progress)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phenotypic-concepts">Phenotypic Concepts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-attribution">Concept Attribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-based-explanations">Concept-based explanations</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types">Types:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#artefacts-in-oct">Artefacts in OCT:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#artefacts-in-mri">Artefacts in MRI:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 
