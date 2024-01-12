@@ -392,15 +392,20 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pruning-types">Pruning types</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#granularity">Granularity</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-pruning">Structured Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-pruning">Kernel Pruning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-metric">Importance Metric</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weight-dependent">Weight dependent</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-based">Activation-based</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information">Mutual information</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-expansion">Taylor expansion</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ranking">Ranking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scheduling">Scheduling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">Evaluation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
@@ -424,14 +429,25 @@ document.write(`
 <li><p>Learn about the difference of local and global pruning.</p></li>
 <li><p>Learn about the difference of structured and unstructured pruning.</p></li>
 </ul>
+<!-- Sparsity in Deep Learning: Pruning and growth for efficient inference and training in neural networks -->
 </section>
 </section>
-<section id="pruning-types">
-<h2>Pruning types<a class="headerlink" href="#pruning-types" title="Permalink to this headline">#</a></h2>
+<section id="granularity">
+<h2>Granularity<a class="headerlink" href="#granularity" title="Permalink to this headline">#</a></h2>
 <section id="structured-pruning">
 <h3>Structured Pruning<a class="headerlink" href="#structured-pruning" title="Permalink to this headline">#</a></h3>
 <p>Structured pruning removes entire filters of neural networks. <span id="id1">[<a class="reference internal" href="#id13" title="Yang He and Lingao Xiao. Structured pruning for deep convolutional neural networks: a survey. arXiv preprint arXiv:2303.00566, 2023.">He and Xiao, 2023</a>]</span></p>
 </section>
+<section id="kernel-pruning">
+<h3>Kernel Pruning<a class="headerlink" href="#kernel-pruning" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>progressive kernel pruning (PKP)</p></li>
+</ul>
+</section>
+</section>
+<section id="importance-metric">
+<h2>Importance Metric<a class="headerlink" href="#importance-metric" title="Permalink to this headline">#</a></h2>
+<p>The distribution of the low ranking filters is interesting. Most of the filters pruned are from the deeper layer. Here is a peek of which filters were pruned after the first iteration - <a class="reference external" href="https://jacobgil.github.io/deeplearning/pruning-deep-learning">https://jacobgil.github.io/deeplearning/pruning-deep-learning</a></p>
 <section id="weight-dependent">
 <h3>Weight dependent<a class="headerlink" href="#weight-dependent" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
@@ -449,9 +465,32 @@ document.write(`
 <h3>Taylor expansion<a class="headerlink" href="#taylor-expansion" title="Permalink to this headline">#</a></h3>
 </section>
 </section>
-<section id="ranking">
-<h2>Ranking<a class="headerlink" href="#ranking" title="Permalink to this headline">#</a></h2>
-<p>The distribution of the low ranking filters is interesting. Most of the filters pruned are from the deeper layer. Here is a peek of which filters were pruned after the first iteration - <a class="reference external" href="https://jacobgil.github.io/deeplearning/pruning-deep-learning">https://jacobgil.github.io/deeplearning/pruning-deep-learning</a></p>
+<section id="scheduling">
+<h2>Scheduling<a class="headerlink" href="#scheduling" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>One-shot Pruning</p></li>
+<li><p>Iterative Pruning</p></li>
+<li><p>Original version: <a class="reference external" href="https://nathanhubens.github.io/posts/deep%20learning/2020/05/22/pruning.html">https://nathanhubens.github.io/posts/deep learning/2020/05/22/pruning.html</a></p></li>
+</ul>
+</section>
+<section id="evaluation">
+<h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Compression Ratio = total_params/nonzero_params</p></li>
+<li><p>Theoretical Speedup = total_flops/nonzero_flops</p></li>
+<li><p>Original version: <a class="reference external" href="https://nathanhubens.github.io/posts/deep%20learning/2020/05/22/pruning.html">https://nathanhubens.github.io/posts/deep learning/2020/05/22/pruning.html</a></p></li>
+</ul>
+<!--
+Email: 
+Before answering you question, I would like to clarify the terms that are employed in my work to avoid any ambiguity (there is often a lot of confusion in literature). When I speak about pruning, it means « physically » remove the parameters from the network, leading to a change in its architecture. If the parameters are still there, but are zeroed out or masked, I use the term sparsifying. Also, I use the term filter to designate a full convolution filter in a layer (i.e. a 3d tensor) , each of those filters being composed of kernels (i.e. 2d tensors).
+
+To answer your question, doing kernel-level pruning cannot really be achieved as, if you are removing some kernels in each filter, and that there are no correspondance between them, there is no way to « physically » remove them without messing with the architecture.
+
+A way that I found to overcome this is by pruning what I called shared-kernels, which are corresponding kernels that are shared between all filters in a layer. By doing so, you can then prune the kernels. You can find a visual explanation in my library FasterAI: https://nathanhubens.github.io/fasterai/core.granularity.html#d-blocks-3
+
+In practice, pruning shared-kernels in a layer has the same impact on the architecture as pruning filters. The only difference is on the decision of which parameter to prune, that can depend on the choice of granularity. To convince you, please take a look at the very last figure of the following article. You will see that if we remove a filter in layer i , we should then remove the corresponding feature map, and then the corresponding kernels in layer i+1. You can then look at it the other way around, if we would like to remove shared-kernels in layer i+1, we also should remove the corresponding feature map in the previous layer and thus the corresponding filter.
+
+-->
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
@@ -518,15 +557,20 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pruning-types">Pruning types</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#granularity">Granularity</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-pruning">Structured Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-pruning">Kernel Pruning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-metric">Importance Metric</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weight-dependent">Weight dependent</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-based">Activation-based</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information">Mutual information</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-expansion">Taylor expansion</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ranking">Ranking</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scheduling">Scheduling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">Evaluation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
