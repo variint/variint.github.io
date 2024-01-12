@@ -1,26 +1,30 @@
 # Retinal Imaging
 
-## Skill
+## Introduction
 
 ### Description
 
 ### Goals
+* Learn about the difference between invasive and non-invasive imaging modalities.
+* Learn about time-domain and Fourier-domain OCT imagers.
+* Learn about the Fourier-domain OCT imagers based on spectrometer vs swept source.
 
-
-### Links
-
-
-## Background
-
+## Related Work
 
 ### Fluorescein Angiography
+* Invasive imaging technique. Especially useful for vessel disease.
+
+### Optical Coherence Tomography (OCT)
+* Original version: https://www.aao.org/eye-health/treatments/what-is-optical-coherence-tomography
+
+### Optical Coherence Tomography Angiography (OCTA)
+* Original version: {cite}`rocholz2019octa`
 
 
-### OCT
+### Colour Fundus Photography (CFP)
 
 
-
-### OCTA
-
-
-### Colour Fundus Photography 
+## References
+```{bibliography}
+:filter: docname in docnames
+```

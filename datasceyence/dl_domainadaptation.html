@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'dl_domainadaptation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="dl_mm.html" />
+    <link rel="next" title="Multi-modality" href="dl_mm.html" />
     <link rel="prev" title="Image to Image translation" href="dl_i2i.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -183,7 +183,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Domains</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_i2i.html">Image to Image translation</a></li>
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Domain Adaptation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_mm.html">Multi-modality</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Medical</span></p>
 <ul class="nav bd-sidenav">
@@ -395,9 +397,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adversarial-noise">Adversarial noise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodal-unsupervised-image-to-image-translation-munit">Multimodal Unsupervised Image-to-Image Translation (MUNIT)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -416,6 +419,7 @@ document.write(`
 <section id="description">
 <h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h3>
 <p>Domain Adaptation aims to mitigate the domain shift problem when transferring knowledge from one domain into another domain. Domain adaptation can be solved by (but not limited to) generative-based, pseudo labelling-based or reconstruction-based approaches.</p>
+<p>A model’s ability to maintain the desired behaviour across domain changes is also referred to as out-of-distribution generalisation.</p>
 </section>
 <section id="goals">
 <h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h3>
@@ -434,17 +438,25 @@ document.write(`
 <li><p>Original version: PhD Thesis: Improving the domain generalization and robustness of neural networks for medical imaging (Chen, 2022) - <a class="reference external" href="https://spiral.imperial.ac.uk/handle/10044/1/94593">https://spiral.imperial.ac.uk/handle/10044/1/94593</a></p></li>
 </ul>
 </section>
+<section id="multimodal-unsupervised-image-to-image-translation-munit">
+<h3>Multimodal Unsupervised Image-to-Image Translation (MUNIT)<a class="headerlink" href="#multimodal-unsupervised-image-to-image-translation-munit" title="Permalink to this headline">#</a></h3>
+<p>MUNIT is an architecture that learns the content and style separately. Domain adaptation is introduced by image generation. The content of one modality is combined with the style from another modality.
+<a class="reference external" href="https://arxiv.org/pdf/1804.04732.pdf">https://arxiv.org/pdf/1804.04732.pdf</a></p>
+<!--
+## Other
+* Github Link Collection: awesome domain adaptation - https://github.com/zhaoxin94/awesome-domain-adaptation
+* Review paper: Unsupervised Domain Adaptation in Semantic Segmentation: a Review - https://arxiv.org/pdf/2005.10876.pdf
+* A Survey of Unsupervised Domain Adaptation for Visual Recognition - https://arxiv.org/pdf/2112.06745.pdf
+
+* Gradient Regularized Contrastive Learning for Continual Domain Adaptation (Tang et al., 2021) - https://arxiv.org/abs/2103.12294v1
+* Domain Invariant Representation Learning with Domain Density Transformations https://arxiv.org/pdf/2102.05082.pdf
+
+-->
 </section>
-<section id="other">
-<h2>Other<a class="headerlink" href="#other" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Github Link Collection: awesome domain adaptation - <a class="github reference external" href="https://github.com/zhaoxin94/awesome-domain-adaptation">zhaoxin94/awesome-domain-adaptation</a></p></li>
-<li><p>Review paper: Unsupervised Domain Adaptation in Semantic Segmentation: a Review - <a class="reference external" href="https://arxiv.org/pdf/2005.10876.pdf">https://arxiv.org/pdf/2005.10876.pdf</a></p></li>
-<li><p>A Survey of Unsupervised Domain Adaptation for Visual Recognition - <a class="reference external" href="https://arxiv.org/pdf/2112.06745.pdf">https://arxiv.org/pdf/2112.06745.pdf</a></p></li>
-<li><p>Gradient Regularized Contrastive Learning for Continual Domain Adaptation (Tang et al., 2021) - <a class="reference external" href="https://arxiv.org/abs/2103.12294v1">https://arxiv.org/abs/2103.12294v1</a></p></li>
-<li><p>Domain Invariant Representation Learning with Domain Density Transformations <a class="reference external" href="https://arxiv.org/pdf/2102.05082.pdf">https://arxiv.org/pdf/2102.05082.pdf</a></p></li>
-</ul>
 </section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<span class="target" id="id1"></span></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -492,7 +504,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Multi-modality</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -521,9 +533,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adversarial-noise">Adversarial noise</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodal-unsupervised-image-to-image-translation-munit">Multimodal Unsupervised Image-to-Image Translation (MUNIT)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 

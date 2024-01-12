@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Explainable AI &#8212; Datasceyence</title>
+    <title>Network pruning &#8212; Datasceyence</title>
   
   
   
@@ -61,11 +61,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'dl_xai';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'dl_pruning';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Concept Learning" href="dl_concept.html" />
-    <link rel="prev" title="Growing neural networks" href="dl_growing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -176,8 +174,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="dl_growing.html">Growing neural networks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Human-centered AI</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Explainable AI</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_xai.html">Explainable AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_concept.html">Concept Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Domains</span></p>
@@ -268,7 +266,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/variint/variint.github.io/issues/new?title=Issue%20on%20page%20%2Fdl_xai.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/variint/variint.github.io/issues/new?title=Issue%20on%20page%20%2Fdl_pruning.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -298,7 +296,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/dl_xai.md" target="_blank"
+      <li><a href="_sources/dl_pruning.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -380,7 +378,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Explainable AI</h1>
+    <h1>Network pruning</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -391,36 +389,18 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisation">Visualisation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-map">Feature Map</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-wise-relevance-propagation-lrp">Layer-wise Relevance Propagation (LRP)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deconvnet">DeconvNet</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-backprop">Guided Backprop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saliency-maps">Saliency Maps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-saliency">Guided Saliency</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-decomposition-integrated-gradients-2017">Taylor Decomposition - Integrated Gradients (2017)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-lift">Deep LiFT</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-gradients">Integrated Gradients</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lime">LIME</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shap">SHAP</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deepdream">DeepDream</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cam">CAM</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#occlusion">Occlusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pruning-types">Pruning types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-pruning">Structured Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weight-dependent">Weight dependent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-based">Activation-based</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information">Mutual information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-expansion">Taylor expansion</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architectures">Architectures</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-convnet">All ConvNet</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality-reduction">Dimensionality reduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t-sne">t-SNE</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">PCA</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ranking">Ranking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
@@ -433,102 +413,56 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="explainable-ai">
-<h1>Explainable AI<a class="headerlink" href="#explainable-ai" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="network-pruning">
+<h1>Network pruning<a class="headerlink" href="#network-pruning" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<section id="description">
-<h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h3>
-<p>Feature visualisation.</p>
-</section>
 <section id="goals">
 <h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>Learn about saliency maps.</p></li>
-<li><p>Learn about guided backpropagation.</p></li>
+<li><p>Learn about sparse vs dense networks.</p></li>
+<li><p>Learn about the difference of local and global pruning.</p></li>
+<li><p>Learn about the difference of structured and unstructured pruning.</p></li>
 </ul>
 </section>
 </section>
-<section id="visualisation">
-<h2>Visualisation<a class="headerlink" href="#visualisation" title="Permalink to this headline">#</a></h2>
-<section id="feature-map">
-<h3>Feature Map<a class="headerlink" href="#feature-map" title="Permalink to this headline">#</a></h3>
+<section id="pruning-types">
+<h2>Pruning types<a class="headerlink" href="#pruning-types" title="Permalink to this headline">#</a></h2>
+<section id="structured-pruning">
+<h3>Structured Pruning<a class="headerlink" href="#structured-pruning" title="Permalink to this headline">#</a></h3>
+<p>Structured pruning removes entire filters of neural networks. <span id="id1">[<a class="reference internal" href="#id13" title="Yang He and Lingao Xiao. Structured pruning for deep convolutional neural networks: a survey. arXiv preprint arXiv:2303.00566, 2023.">He and Xiao, 2023</a>]</span></p>
 </section>
-<section id="layer-wise-relevance-propagation-lrp">
-<h3>Layer-wise Relevance Propagation (LRP)<a class="headerlink" href="#layer-wise-relevance-propagation-lrp" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="deconvnet">
-<h3>DeconvNet<a class="headerlink" href="#deconvnet" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="guided-backprop">
-<h3>Guided Backprop<a class="headerlink" href="#guided-backprop" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="saliency-maps">
-<h3>Saliency Maps<a class="headerlink" href="#saliency-maps" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="guided-saliency">
-<h3>Guided Saliency<a class="headerlink" href="#guided-saliency" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="taylor-decomposition-integrated-gradients-2017">
-<h3>Taylor Decomposition - Integrated Gradients (2017)<a class="headerlink" href="#taylor-decomposition-integrated-gradients-2017" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="deep-lift">
-<h3>Deep LiFT<a class="headerlink" href="#deep-lift" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="integrated-gradients">
-<h3>Integrated Gradients<a class="headerlink" href="#integrated-gradients" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="lime">
-<h3>LIME<a class="headerlink" href="#lime" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="shap">
-<h3>SHAP<a class="headerlink" href="#shap" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="deepdream">
-<h3>DeepDream<a class="headerlink" href="#deepdream" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="cam">
-<h3>CAM<a class="headerlink" href="#cam" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="occlusion">
-<h3>Occlusion<a class="headerlink" href="#occlusion" title="Permalink to this headline">#</a></h3>
-</section>
-</section>
-<section id="architectures">
-<h2>Architectures<a class="headerlink" href="#architectures" title="Permalink to this headline">#</a></h2>
-<section id="all-convnet">
-<h3>All ConvNet<a class="headerlink" href="#all-convnet" title="Permalink to this headline">#</a></h3>
+<section id="weight-dependent">
+<h3>Weight dependent<a class="headerlink" href="#weight-dependent" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>STRIVING FOR SIMPLICITY: THE ALL CONVOLUTIONAL NET</p></li>
+<li><p>Filter norm</p></li>
+<li><p>Filter correlation</p></li>
 </ul>
 </section>
+<section id="activation-based">
+<h3>Activation-based<a class="headerlink" href="#activation-based" title="Permalink to this headline">#</a></h3>
 </section>
-<section id="dimensionality-reduction">
-<h2>Dimensionality reduction<a class="headerlink" href="#dimensionality-reduction" title="Permalink to this headline">#</a></h2>
-<section id="t-sne">
-<h3>t-SNE<a class="headerlink" href="#t-sne" title="Permalink to this headline">#</a></h3>
+<section id="mutual-information">
+<h3>Mutual information<a class="headerlink" href="#mutual-information" title="Permalink to this headline">#</a></h3>
 </section>
-<section id="pca">
-<h3>PCA<a class="headerlink" href="#pca" title="Permalink to this headline">#</a></h3>
-<!-- 
-
-### Links
-* Distilled Notes for Stanford CS231n: Convolutional Neural Networks for Visual Recognition (Chadha, 2020) - https://aman.ai/cs231n/visualization/
-* Stanford CS231n: Lecture 14: Visualizing and Understanding (Fei-Fei Li & Justin Johnson & Serena Yeung, 2019) - http://cs231n.stanford.edu/slides/2019/cs231n_2019_lecture13.pdf
-* Article: Feature Visualization (Olah et al., 2017) - https://distill.pub/2017/feature-visualization/
-* Book (GitHub): Interpretable Machine Learning: A Guide for Making Black Box Models Explainable (Molnar) - https://christophm.github.io/interpretable-ml-book/
-* Code (GitHub): Convolutional Neural Network Visualizations (Ozbulak, 2019) - https://github.com/utkuozbulak/pytorch-cnn-visualizations
-* https://towardsdatascience.com/explainable-neural-networks-recent-advancements-part-4-73cacc910fef
-
-### Youtube
-* Human-centered AI (non-technical): https://www.youtube.com/watch?v=ZxPV_KVq-tI
-
--->
+<section id="taylor-expansion">
+<h3>Taylor expansion<a class="headerlink" href="#taylor-expansion" title="Permalink to this headline">#</a></h3>
 </section>
+</section>
+<section id="ranking">
+<h2>Ranking<a class="headerlink" href="#ranking" title="Permalink to this headline">#</a></h2>
+<p>The distribution of the low ranking filters is interesting. Most of the filters pruned are from the deeper layer. Here is a peek of which filters were pruned after the first iteration - <a class="reference external" href="https://jacobgil.github.io/deeplearning/pruning-deep-learning">https://jacobgil.github.io/deeplearning/pruning-deep-learning</a></p>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
-<span class="target" id="id1"></span></section>
+<div class="docutils container" id="id2">
+<dl class="citation">
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id1">HX23</a></span></dt>
+<dd><p>Yang He and Lingao Xiao. Structured pruning for deep convolutional neural networks: a survey. <em>arXiv preprint arXiv:2303.00566</em>, 2023.</p>
+</dd>
+</dl>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -562,24 +496,6 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="dl_growing.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Growing neural networks</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="dl_concept.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Concept Learning</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -599,36 +515,18 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisation">Visualisation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-map">Feature Map</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-wise-relevance-propagation-lrp">Layer-wise Relevance Propagation (LRP)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deconvnet">DeconvNet</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-backprop">Guided Backprop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saliency-maps">Saliency Maps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-saliency">Guided Saliency</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-decomposition-integrated-gradients-2017">Taylor Decomposition - Integrated Gradients (2017)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-lift">Deep LiFT</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-gradients">Integrated Gradients</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lime">LIME</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shap">SHAP</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deepdream">DeepDream</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cam">CAM</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#occlusion">Occlusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pruning-types">Pruning types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-pruning">Structured Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weight-dependent">Weight dependent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-based">Activation-based</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information">Mutual information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-expansion">Taylor expansion</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architectures">Architectures</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-convnet">All ConvNet</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality-reduction">Dimensionality reduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t-sne">t-SNE</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pca">PCA</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ranking">Ranking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>

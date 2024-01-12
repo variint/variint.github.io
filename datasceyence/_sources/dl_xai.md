@@ -1,14 +1,69 @@
 # Explainable AI
 
-## Skill
+## Introduction
 
 ### Description
 Feature visualisation.
 
 ### Goals
-* I know what saliency maps are.
-* I know what guided backpropagation is.
+* Learn about saliency maps.
+* Learn about guided backpropagation.
 
+## Visualisation
+
+### Feature Map
+
+### Layer-wise Relevance Propagation (LRP)
+
+### DeconvNet
+
+### Guided Backprop
+
+
+### Saliency Maps
+
+### Guided Saliency
+
+### Taylor Decomposition - Integrated Gradients (2017)
+
+### Deep LiFT
+
+
+### Integrated Gradients
+
+
+### LIME
+
+
+### SHAP 
+
+
+### DeepDream
+
+
+### CAM
+
+
+### Occlusion
+
+
+
+
+## Architectures
+
+### All ConvNet
+* STRIVING FOR SIMPLICITY: THE ALL CONVOLUTIONAL NET
+
+
+
+## Dimensionality reduction
+
+### t-SNE
+
+### PCA
+
+
+<!-- 
 
 ### Links
 * Distilled Notes for Stanford CS231n: Convolutional Neural Networks for Visual Recognition (Chadha, 2020) - https://aman.ai/cs231n/visualization/
@@ -18,8 +73,12 @@ Feature visualisation.
 * Code (GitHub): Convolutional Neural Network Visualizations (Ozbulak, 2019) - https://github.com/utkuozbulak/pytorch-cnn-visualizations
 * https://towardsdatascience.com/explainable-neural-networks-recent-advancements-part-4-73cacc910fef
 
-## Background
-* Layer-wise Relevance Propagation
-* Taylor Decomposition - Integrated Gradients (2017)
-* Deep LiFT
-* LIME, SHAP 
+### Youtube
+* Human-centered AI (non-technical): https://www.youtube.com/watch?v=ZxPV_KVq-tI
+
+-->
+
+## References
+```{bibliography}
+:filter: docname in docnames
+```

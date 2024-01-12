@@ -185,7 +185,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Domains</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_i2i.html">Image to Image translation</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_mm.html">Multi-modality</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Medical</span></p>
 <ul class="nav bd-sidenav">
@@ -395,19 +397,20 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biologically-inspired-modular-neural-networks">Biologically Inspired Modular Neural Networks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#life-and-death-of-a-neuron">Life and Death of a Neuron</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-for-modular-networks">Motivation for modular networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implicitly-introduced-modularity">Implicitly introduced modularity</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-inspired-modular-training">Brain-Inspired Modular Training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-sculpting">Neural Sculpting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modular-sparsification">Modular sparsification</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-stuff">Other stuff</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#libertarian-free-will-neuroscientific-and-philosophical-evidence">Libertarian Free Will: Neuroscientific and Philosophical Evidence</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#information-as-pattern-decoding">Information as pattern decoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explicitly-introduced-modularity">Explicitly introduced modularity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capsule-networks">Capsule networks</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-conciousness">What is Conciousness</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revolution-of-the-mind-inspirations-and-resources">Revolution of the Mind: Inspirations and Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolution-and-biology">Evolution and biology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#life-and-death-of-a-neuron">Life and Death of a Neuron</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baldwin-effect">Baldwin Effect</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
@@ -434,23 +437,28 @@ document.write(`
 <h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Learn about explicit and implicit modularity in neural networks.</p></li>
+<li><p>Learn about evolutionary origins of modular networks.</p></li>
 </ul>
+<!--
+### Biologically Inspired Modular Neural Networks
+* Original version: PhD Thesis: Biologically Inspired Modular Neural Networks - https://vtechworks.lib.vt.edu/bitstream/handle/10919/27998/etd.pdf
+-->
 </section>
 </section>
-<section id="related-work">
-<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">#</a></h2>
-<section id="biologically-inspired-modular-neural-networks">
-<h3>Biologically Inspired Modular Neural Networks<a class="headerlink" href="#biologically-inspired-modular-neural-networks" title="Permalink to this headline">#</a></h3>
+<section id="motivation-for-modular-networks">
+<h2>Motivation for modular networks<a class="headerlink" href="#motivation-for-modular-networks" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Original version: PhD Thesis: Biologically Inspired Modular Neural Networks - <a class="reference external" href="https://vtechworks.lib.vt.edu/bitstream/handle/10919/27998/etd.pdf">https://vtechworks.lib.vt.edu/bitstream/handle/10919/27998/etd.pdf</a></p></li>
+<li><p>Model complexity reduction</p></li>
+<li><p>Robistness</p></li>
+<li><p>Scalability</p></li>
+<li><p>Computational Efficency</p></li>
+<li><p>Interpretability</p></li>
 </ul>
+<p>Original version: <span id="id1">[<a class="reference internal" href="#id18" title="Farooq Azam. Biologically inspired modular neural networks. PhD thesis, Virginia Polytechnic Institute and State University, 2000.">Azam, 2000</a>]</span></p>
 </section>
-<section id="life-and-death-of-a-neuron">
-<h3>Life and Death of a Neuron<a class="headerlink" href="#life-and-death-of-a-neuron" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Original version: Brain Basics: The Life and Death of a Neuron - <a class="reference external" href="https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-life-and-death-neuron">https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-life-and-death-neuron</a></p></li>
-</ul>
-</section>
+<section id="implicitly-introduced-modularity">
+<h2>Implicitly introduced modularity<a class="headerlink" href="#implicitly-introduced-modularity" title="Permalink to this headline">#</a></h2>
+<p>Modules emerge from a non-modular network.</p>
 <section id="brain-inspired-modular-training">
 <h3>Brain-Inspired Modular Training<a class="headerlink" href="#brain-inspired-modular-training" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
@@ -468,73 +476,135 @@ document.write(`
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">Connection between pixels in Biolonear2D filters (3D setup - [m, n, Y])</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id1">
+<figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="_images/bimt_neuron_biolinear.png"><img alt="_images/bimt_neuron_biolinear.png" src="_images/bimt_neuron_biolinear.png" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Connection between Biolonear2D filters (3D flattened setup - [X=m*n, Y])</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="_images/bimt_geometry.png"><img alt="_images/bimt_geometry.png" src="_images/bimt_geometry.png" style="height: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Geometrical space (2D setup - [X, Y)])</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Connection between Biolonear2D filters (3D flattened setup - [X=m*n, Y])</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="_images/bimt_geometry.png"><img alt="_images/bimt_geometry.png" src="_images/bimt_geometry.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Geometrical space (2D setup - [X, Y)])</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="_images/bimt_neuron.png"><img alt="_images/bimt_neuron.png" src="_images/bimt_neuron.png" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">A neuron and incoming/outgoing weights (2D setup - [X, Y])</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">A neuron and incoming/outgoing weights (2D setup - [X, Y])</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
+<section id="neural-sculpting">
+<h3>Neural Sculpting<a class="headerlink" href="#neural-sculpting" title="Permalink to this headline">#</a></h3>
+<p>Neural sculpting is an iterative pruning and clustering concept.</p>
 </section>
-<section id="other-stuff">
-<h2>Other stuff<a class="headerlink" href="#other-stuff" title="Permalink to this headline">#</a></h2>
-<section id="libertarian-free-will-neuroscientific-and-philosophical-evidence">
-<h3>Libertarian Free Will: Neuroscientific and Philosophical Evidence<a class="headerlink" href="#libertarian-free-will-neuroscientific-and-philosophical-evidence" title="Permalink to this headline">#</a></h3>
-<section id="information-as-pattern-decoding">
-<h4>Information as pattern decoding<a class="headerlink" href="#information-as-pattern-decoding" title="Permalink to this headline">#</a></h4>
-<p><a class="reference external" href="https://www.youtube.com/watch?v=IfjSzRsPmsI">https://www.youtube.com/watch?v=IfjSzRsPmsI</a></p>
-<p>THIS IS COPIED FROM THE YOUTUBE VIDEO!!!</p>
+<section id="modular-sparsification">
+<h3>Modular sparsification<a class="headerlink" href="#modular-sparsification" title="Permalink to this headline">#</a></h3>
+<p>CRESPR: Modular sparsification of DNNs to improve pruning performance
+and model interpretability - Cluster-Restricted Extreme Sparsity Pruning of Redundancy (CRESPR) in DNN</p>
+</section>
+</section>
+<section id="explicitly-introduced-modularity">
+<h2>Explicitly introduced modularity<a class="headerlink" href="#explicitly-introduced-modularity" title="Permalink to this headline">#</a></h2>
+<section id="capsule-networks">
+<h3>Capsule networks<a class="headerlink" href="#capsule-networks" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="evolution-and-biology">
+<h2>Evolution and biology<a class="headerlink" href="#evolution-and-biology" title="Permalink to this headline">#</a></h2>
+<section id="life-and-death-of-a-neuron">
+<h3>Life and Death of a Neuron<a class="headerlink" href="#life-and-death-of-a-neuron" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>information and (downward) informational causation is fundamentally realized in and is about <em>patterns</em> of energy,
-not amounts of energy.</p></li>
-<li><p>it makes sense to reduce global forces to the sum of local forces, and total amounts to the sum of local parts’ amounts</p></li>
-<li><p>this kind of reductionism does not make sense at all for patterns. Reductionism of global patterns to local parts of patterns and to local particle interactions fails as a program because patterns are inherently relational over space, time, and other dimensions (e.g. color relationships, social relationships, and so on).</p></li>
+<li><p>Original version: Brain Basics: The Life and Death of a Neuron - <a class="reference external" href="https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-life-and-death-neuron">https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-life-and-death-neuron</a></p></li>
 </ul>
-<p>That is, patterns and relationships are not localistic.</p>
-<p>Patterns cannot be reduced to a level below the level where the relationships that a decoder
+</section>
+<section id="baldwin-effect">
+<h3>Baldwin Effect<a class="headerlink" href="#baldwin-effect" title="Permalink to this headline">#</a></h3>
+<p>Evolution tends to select individuals who already (by effect of random mutations) have some of the useful features that would otherwise be learned.
+Better accepted than the theory of direct assimilation of lifetime modification by evolutionary mechanisms.
+The morphology and behaviour of neurons is similar across animals.
+Evolution of the brain mainly occurred on the architecture level or connectivity of neural networks.
+Something about that neurons don’t really change by evolution - similar across mammals - but the architecture changes + the connectivity of neurons. Something with strength of connectivity between the neurons.
+<span id="id5">[<a class="reference internal" href="#id15" title="Dario Floreano and Claudio Mattiussi. Bio-inspired artificial intelligence: theories, methods, and technologies. MIT press, 2008.">Floreano and Mattiussi, 2008</a>]</span></p>
+<p>The Baldwin effect, Lamarck’s theory of evolution, Darwinian evolution, and Waddington’s genetic assimilation. All the theories offer explanations of how organisms respond to a changed environment with adaptive inherited change. - <a class="reference external" href="https://en.wikipedia.org/wiki/Baldwin_effect">https://en.wikipedia.org/wiki/Baldwin_effect</a></p>
+<!--
+## Other stuff
+
+### Libertarian Free Will: Neuroscientific and Philosophical Evidence
+
+#### Information as pattern decoding
+https://www.youtube.com/watch?v=IfjSzRsPmsI
+
+THIS IS COPIED FROM THE YOUTUBE VIDEO!!!
+
+* information and (downward) informational causation is fundamentally realized in and is about *patterns* of energy,
+not amounts of energy.
+
+* it makes sense to reduce global forces to the sum of local forces, and total amounts to the sum of local parts’ amounts
+
+* this kind of reductionism does not make sense at all for patterns. Reductionism of global patterns to local parts of patterns and to local particle interactions fails as a program because patterns are inherently relational over space, time, and other dimensions (e.g. color relationships, social relationships, and so on).
+
+That is, patterns and relationships are not localistic.
+
+Patterns cannot be reduced to a level below the level where the relationships that a decoder
 responds to are present, or the pattern of relationships to which a decoder is sensitive
-will be lost.</p>
-<p>But if an act of decoding can trigger a change in a physical system, say a neuron that is
+will be lost.
+
+But if an act of decoding can trigger a change in a physical system, say a neuron that is
 tuned to a face detects a face in the visual input and then fires, thereby influencing
 other neurons, then reductionistic physicalism won’t work at all, because then even non-informational
-causal chains, say among local particles, become influenced by global energetic relationships.</p>
-<p>That is, once patterns and information become causal in the universe, because of the evolution
+causal chains, say among local particles, become influenced by global energetic relationships.
+
+
+That is, once patterns and information become causal in the universe, because of the evolution
 of decoders, like neurons, that do things if patterns are present, like fire or trigger
-behaviors of animals in the world, then reductionistic physicalism fails.</p>
-<p>It requires understanding how decoders trigger other decoders, and also how decoders reparameterize
-each other for possible future acts of now altered decoding.</p>
-<p>The technical word for energetic relationships is phase (e.g., a sine and cosine wave of
+behaviors of animals in the world, then reductionistic physicalism fails.
+
+It requires understanding how decoders trigger other decoders, and also how decoders reparameterize
+each other for possible future acts of now altered decoding.
+
+
+The technical word for energetic relationships is phase (e.g., a sine and cosine wave of
 the same amplitude and frequency have a phase difference of ninety degrees).
 Spatial phase arises from spatial relationships (i.e. patterns), and is related to the everyday
-idea of shape.</p>
-<p>Temporal phase is related to the idea of timing.</p>
-<p>mass, momentum, wavelength or position.</p>
-</section>
-</section>
-<section id="what-is-conciousness">
-<h3>What is Conciousness<a class="headerlink" href="#what-is-conciousness" title="Permalink to this headline">#</a></h3>
-<p>conciousness is flexible but slow, automation is fast and energy saving</p>
-</section>
-<section id="revolution-of-the-mind-inspirations-and-resources">
-<h3>Revolution of the Mind: Inspirations and Resources<a class="headerlink" href="#revolution-of-the-mind-inspirations-and-resources" title="Permalink to this headline">#</a></h3>
-<p><a class="reference external" href="https://www.garethmlong.com/blog/d14nmw7v91vczeez29fl9dq6dkwfc2">https://www.garethmlong.com/blog/d14nmw7v91vczeez29fl9dq6dkwfc2</a></p>
+idea of shape.
+
+Temporal phase is related to the idea of timing.
+
+mass, momentum, wavelength or position.
+
+
+
+
+###  What is Conciousness
+
+
+conciousness is flexible but slow, automation is fast and energy saving
+
+
+
+
+### Revolution of the Mind: Inspirations and Resources
+https://www.garethmlong.com/blog/d14nmw7v91vczeez29fl9dq6dkwfc2
+
+
+-->
 </section>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
-<span class="target" id="id4"></span></section>
+<div class="docutils container" id="id6">
+<dl class="citation">
+<dt class="label" id="id18"><span class="brackets"><a class="fn-backref" href="#id1">Aza00</a></span></dt>
+<dd><p>Farooq Azam. <em>Biologically inspired modular neural networks</em>. PhD thesis, Virginia Polytechnic Institute and State University, 2000.</p>
+</dd>
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id5">FM08</a></span></dt>
+<dd><p>Dario Floreano and Claudio Mattiussi. <em>Bio-inspired artificial intelligence: theories, methods, and technologies</em>. MIT press, 2008.</p>
+</dd>
+</dl>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -609,19 +679,20 @@ idea of shape.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biologically-inspired-modular-neural-networks">Biologically Inspired Modular Neural Networks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#life-and-death-of-a-neuron">Life and Death of a Neuron</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-for-modular-networks">Motivation for modular networks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implicitly-introduced-modularity">Implicitly introduced modularity</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-inspired-modular-training">Brain-Inspired Modular Training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-sculpting">Neural Sculpting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modular-sparsification">Modular sparsification</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-stuff">Other stuff</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#libertarian-free-will-neuroscientific-and-philosophical-evidence">Libertarian Free Will: Neuroscientific and Philosophical Evidence</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#information-as-pattern-decoding">Information as pattern decoding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explicitly-introduced-modularity">Explicitly introduced modularity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capsule-networks">Capsule networks</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-conciousness">What is Conciousness</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revolution-of-the-mind-inspirations-and-resources">Revolution of the Mind: Inspirations and Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolution-and-biology">Evolution and biology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#life-and-death-of-a-neuron">Life and Death of a Neuron</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baldwin-effect">Baldwin Effect</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>

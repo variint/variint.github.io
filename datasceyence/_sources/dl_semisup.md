@@ -1,26 +1,16 @@
 # Semi-Supervised learning (SSL)
 
-## Skill
+## Introduction
 
 ### Description
 Semi-supervised learning combines a (small) labelled with a (bigger) unlabelled dataset to perform a task such as classification or segmentation.
 
 ### Goals
-* I know the difference between self-training and co-training.
-* I know multiple ways to implement SSL.
-* I can explain the mean teacher approach.
-* I can name the main assumptions in SSL.
+* Learn about what the difference between self-training and co-training.
+* Learn about multiple ways to implement SSL.
+* Learn about the mean teacher approach.
 
-### Links
-* Contribution paper: Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results (Tarvainen et al., 2017) - https://arxiv.org/abs/1703.01780
-* Review paper: Not-so-supervised: A survey of semi-supervised, multi-instance, and transfer learning in medical image analysis (Cheplygina et al., 2019) - https://arxiv.org/abs/1804.06353
-* Review paper: An Overview of Deep Semi-Supervised Learning (Ouali et al., 2020) - https://arxiv.org/abs/2006.05278
-* Github repository with papers: Semi-supervised-learning-for-medical-image-segmentation - https://github.com/HiLab-git/SSL4MIS
-* Contribution paper: Temporal Ensembling for Semi-Supervised Learning (Laine and Aila, 2017) - https://arxiv.org/pdf/1610.02242.pdf
-* GitHub repository with implementations: https://github.com/ZHKKKe/PixelSSL/tree/master/pixelssl/ssl_algorithm
-
-
-## Background
+## Related Work
 
 Over the past decades, there were many approaches introduced to tackle semi-supervised learning. Semi-supervised learning (SSL) is halfway between supervised and unsupervised learning, using both, labelled and unlabelled data for training.
 
@@ -57,3 +47,17 @@ MixMatch performs linear interpolation to mix both labelled and unlabeled images
 
 ### FixMatch 
 FixmMatch enforces the prediction consistency between weakly augmented images and strongly augmented images. <!-- \citep{sohn2020fixmatch} -->
+
+### Links
+
+* Contribution paper: Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results (Tarvainen et al., 2017) - https://arxiv.org/abs/1703.01780
+* Review paper: Not-so-supervised: A survey of semi-supervised, multi-instance, and transfer learning in medical image analysis (Cheplygina et al., 2019) - https://arxiv.org/abs/1804.06353
+* Review paper: An Overview of Deep Semi-Supervised Learning (Ouali et al., 2020) - https://arxiv.org/abs/2006.05278
+* Github repository with papers: Semi-supervised-learning-for-medical-image-segmentation - https://github.com/HiLab-git/SSL4MIS
+* Contribution paper: Temporal Ensembling for Semi-Supervised Learning (Laine and Aila, 2017) - https://arxiv.org/pdf/1610.02242.pdf
+* GitHub repository with implementations: https://github.com/ZHKKKe/PixelSSL/tree/master/pixelssl/ssl_algorithm
+
+## References
+```{bibliography}
+:filter: docname in docnames
+```

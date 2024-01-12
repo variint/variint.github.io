@@ -1,23 +1,22 @@
-# Deep Learning Basics
+# Deep learning basics
 
-## Loss
 
-### Segmentation Loss for Vessel Segmentation
+## Related Work
 
-* Graph Cuts Loss: The graph cuts loss function optimises both the region and boundary penalties.
-Paper: https://openaccess.thecvf.com/content/ICCV2021W/CVAMD/papers/Zheng_Graph_Cuts_Loss_To_Boost_Model_Accuracy_and_Generalizability_for_ICCVW_2021_paper.pdf 
-PyTorch implementation on GitHub: https://github.com/zzhenggit/graph_cuts_loss/ 
+| Model | paper | task |
+|---|---|---|
+| Faster R-CNN | Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks | Object detection |
 
-* "Beyond the Pixel-Wise Loss for Topology-Aware Delineation" - Connected Component Loss
-Paper: https://openaccess.thecvf.com/content_cvpr_2018/papers/Mosinska_Beyond_the_Pixel-Wise_CVPR_2018_paper.pdf
-PyTorch implementation on GitHub: https://github.com/dingmyu/Pytorch-Topology-Aware-Delineation
 
-## Metrics
-
-### Segmentation Metrics
-
-* https://www.kaggle.com/code/yassinealouini/all-the-segmentation-metrics
-* https://github.com/hsiangyuzhao/Segmentation-Metrics-PyTorch
+| Survey | task |
+|---|---|
+| A Survey of Deep Learning-based Object Detection | object detection |
 
 
 
+## Courses
+
+| Course | link | topic |
+|---|---|---|
+| 30 Days Deep Learning | https://github.com/patty-13/30_Days_Deeplearning | deep learning | 
+| Stanford CS 330: Deep Multi-Task and Meta Learning | https://cs330.stanford.edu/ | |

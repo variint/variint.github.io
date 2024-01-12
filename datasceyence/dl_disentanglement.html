@@ -183,7 +183,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Domains</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_i2i.html">Image to Image translation</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_mm.html">Multi-modality</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Medical</span></p>
 <ul class="nav bd-sidenav">
@@ -388,31 +390,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-links">Other links:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disentanglement-content-style-disentanglement-csd">Disentanglement | Content-style disentanglement (CSD)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content-style-disentanglement-enforcing-models">Content-Style Disentanglement Enforcing Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encoder-blocks">Encoder-blocks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decoder-blocks">Decoder-blocks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latent-space">Latent Space</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-shift">Domain Shift</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-generative-models">Basic Generative Models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-style-disentanglement-enforcing-models">Content-Style Disentanglement Enforcing Models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encoder">Encoder</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decoder">Decoder</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Latent Space</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#synthesis">Synthesis</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -426,10 +419,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="disentangled-learning">
 <h1>Disentangled learning<a class="headerlink" href="#disentangled-learning" title="Permalink to this headline">#</a></h1>
-<section id="skill">
-<h2>Skill<a class="headerlink" href="#skill" title="Permalink to this headline">#</a></h2>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <section id="description">
 <h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h3>
+<p>Disentangled features mean that individual network units detect specific real world concepts <span id="id1">[<a class="reference internal" href="#id6" title="Christoph Molnar. Interpretable machine learning - network dissection. 2022. URL: https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection.">Molnar, 2022</a>]</span>.</p>
+<p>In disentanglement, main factors of variation that are present in a data distribution are separated. Typically factors are decomposed into a single vector representation.</p>
+<p><em>Content-style disentanglement (CSD)</em>, decomposes the image into the domain-specific and domain-invariant representations/latent variables.</p>
+<p><em>Latent space</em> (latent feature space, embedding space) is a representation of compressed data in which similar data points are closer together in space.</p>
+<p><em>Domain-specific</em> (“the difference”) representations describes the style of an image, precisely this could be colour, intensities, and noise. This information may be encoded as a vector latent variable “z”.</p>
+<p><em>Domain-invariant</em> (“the similarity”) representations describe the content of an image, hence the geometry. In order to preserve spatial correlations, this can be encoded in a spatial (tensor) latent variable “C”.</p>
 </section>
 <section id="goals">
 <h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h3>
@@ -437,136 +436,27 @@ document.write(`
 <li><p>I know metrics for measuring the level of disentanglement.</p></li>
 <li><p>I know the difference between domain-specific and domain-invariant representations.</p></li>
 </ul>
-</section>
-<section id="links">
-<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Modified PhD thesis excerpt (GitHub): Induction, Inductive Biases, and Infusing Knowledge into Learned Representations (Finlayson, 2020) - <a class="reference external" href="https://sgfin.github.io/2020/06/22/Induction-Intro/">https://sgfin.github.io/2020/06/22/Induction-Intro/</a></p></li>
-<li><p>Review Paper: Review of Disentanglement Approaches for Medical Applications (Fragemann, 2022) - <a class="reference external" href="https://arxiv.org/abs/2203.11132">https://arxiv.org/abs/2203.11132</a></p></li>
-<li><p>Review paper: Learning Disentangled Representations in the Imaging Domain (Liu, 2022) - <a class="reference external" href="https://arxiv.org/abs/2108.12043">https://arxiv.org/abs/2108.12043</a></p></li>
-<li><p>Book (GitHub): Network Dissection (Molnar) - <a class="reference external" href="https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection">https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection</a></p></li>
-</ul>
-</section>
-<section id="other-links">
-<h3>Other links:<a class="headerlink" href="#other-links" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Domain Agnostic Learning with Disentangled Representations (Peng et al., 2019) - <a class="reference external" href="http://proceedings.mlr.press/v97/peng19b/peng19b.pdf">http://proceedings.mlr.press/v97/peng19b/peng19b.pdf</a></p></li>
-<li><p>Style and Content Disentanglement in Generative Adversarial Networks - <a class="reference external" href="https://arxiv.org/pdf/1811.05621.pdf">https://arxiv.org/pdf/1811.05621.pdf</a></p></li>
-<li><p>Artifact Disentanglement Network for Unsupervised Metal Artifact Reduction - <a class="reference external" href="https://arxiv.org/pdf/1906.01806.pdf">https://arxiv.org/pdf/1906.01806.pdf</a></p></li>
-<li><p>Mutual Information-based Disentangled Neural Networks for Classifying Unseen Categories in Different Domains: Application to Fetal Ultrasound Imaging - <a class="reference external" href="https://arxiv.org/pdf/2011.00739.pdf">https://arxiv.org/pdf/2011.00739.pdf</a></p></li>
-<li><p>MUNIT - Multimodal Unsupervised Image-to-Image Translation - <a class="reference external" href="https://arxiv.org/pdf/1804.04732.pdf">https://arxiv.org/pdf/1804.04732.pdf</a></p></li>
-</ul>
-</section>
-</section>
-<section id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
-<!-- ### Representation Learning
-
-Finding good representations for a task is fundamental.
--->
-<section id="disentanglement-content-style-disentanglement-csd">
-<h3>Disentanglement | Content-style disentanglement (CSD)<a class="headerlink" href="#disentanglement-content-style-disentanglement-csd" title="Permalink to this headline">#</a></h3>
-<!-- Disentangled representations can address some of the chal-
-lenges described until now by learning representations with
-equi/in-variances to specific undesired variables, whilst consid-
-ering the data generation process and potential domain shifts.
-Although a widely accepted definition of disentangled repre-
-sentations is yet to be defined, the main intuition is that by dis-
-entangling, we separate out the main factors of variation that
-are present in our data distribution (Bengio et al., 2013; Hig-
-gins et al., 2018; Caselles-Dupr ́e et al., 2019; Locatello et al.,
-2019b). We characterise a factor as “disentangled” when any
-intervention on this factor results in a specific change in the gen-
-erated data (Caselles-Dupr ́e et al., 2019; Thomas et al., 2017). -->
-<p>In disentanglement, main factors of variation that are present in a data distribution are separated. Typically factors are decomposed into a single vector representation.
-A recent trend in disentanglement focuses on the decomposition of the input image into different latent variables that encode different properties (e.g. style and content)</p>
-<p>One specific version of disentanglement is the <em>content-style disentanglement (CSD)</em>, which has the goal to decompose the image into the domain-specific and domain-invariant representations.</p>
-</section>
-<section id="latent-space">
-<h3>Latent Space<a class="headerlink" href="#latent-space" title="Permalink to this headline">#</a></h3>
-<p><em>Latent space</em> (latent feature space, embedding space) is a representation of compressed data in which similar data points are closer together in space</p>
-<p><em>Domain-specific</em> (“the difference”) representations describes the style of an image, precisely this could be colour, intensities, and noise. This information may be encoded as a vector latent variable “z”.</p>
-<p><em>Domain-invariant</em> (“the similarity”) representations describe the content of an image, hence the geometry. In order to preserve spatial correlations, this can be encoded in a spatial (tensor) latent variable “C”.</p>
-</section>
-<section id="domain-shift">
-<h3>Domain Shift<a class="headerlink" href="#domain-shift" title="Permalink to this headline">#</a></h3>
-<p>Non-synthetic datasets are biased due to the ifinite nature of the acquired data.</p>
-<p>A model’s ability to maintain the desired behaviour across domain changes is also referred to as out-of-distribution generalisation.</p>
-<!-- An i.i.d. data distribution is easy to consider but forms a
-strong and often unrealistic assumption. All non-synthetic
-datasets are somewhat biased due to the finite nature of the ac-
-quired data. If learning algorithms are trained with standard
-supervised learning (Vapnik, 1999) without additional assump-
-tions, there is little hope that the learned function will be ro-
-bust to domain shifts. A model’s ability to maintain the de-
-sired behaviour across domain changes is also referred to as
-out-of-distribution generalisation (Shen et al., 2021). For the
-brain tumour detection example, both CT or MRI scanners ac-
-quire images, but we might know that a given hospital uses CT.
-In this case, modality-related factors are linked to the hospital-
-related variables. Therefore, understanding the data generation
-process and the underlying relations between variables can help
-to distill the important visual information, and to create mech-
-anisms that are more generalisable. Such reasoning enables the
-design of principled strategies for mitigating the data bias (Cas-
-tro et al., 2020). In fact, we can explicitly define the changes
-we want our model to be invariant or equivariant to, by model-
-ing domain shifts such as: i) population, i.e. different cohorts,
-ii) acquisition, i.e. different cameras, sites or scanners, and iii)
-annotation shift, i.e. different annotators. -->
 <!-- 
-### Domain Knowledge
+## Related Work
 
-Inductive Bias
+### Inductive bias
+* Original version: Induction, Inductive Biases, and Infusing Knowledge into Learned Representations (Finlayson, 2020) - https://sgfin.github.io/2020/06/22/Induction-Intro/
 
-Inductive bias refers to a set of assumptions made by a learning algorithm in order to predict outputs of given inputs that it has not encountered. The goal is to generalize a finite set of observation (training data) into a general model of the domain. 
+* Review Paper: Review of Disentanglement Approaches for Medical Applications (Fragemann, 2022) - https://arxiv.org/abs/2203.11132
+* Review paper: Learning Disentangled Representations in the Imaging Domain (Liu, 2022) - https://arxiv.org/abs/2108.12043
 
-There are two types of inductive biases. Relational inductive biases represent the relationship between entities in a network. Non-relational inductive biases is a set of techniques that further constrain the learning algorithm.
 
-
-Disentanglement as inductive bias
-The solution to identifiability is the use of domain knowl-
-edge, i.e. the inductive bias, instead of using explicit supervi-
-sion (Locatello et al., 2019b; Peters et al., 2017; Khemakhem
-et al., 2020). Current representation learning already benefits
-from the inductive biases of Convolutional Neural Networks
-(CNNs) (Lecun et al., 1998) and Recurrent Neural Networks
-(RNNs) (Graves et al., 2013). Outside of the visual domain,
-language has been modeled with recurrent neural networks that
-capture the sequential nature of data for making predictions
-(LeCun et al., 2015). Recent attention and self-attention mod-
-els, such as the transformer architecture (Vaswani et al., 2017),
-focus on learning the internal structure of the input data. These
-self-attention models essentially learn the best inductive biases
-for each sample in the data distribution.
-Overall, disentanglement priors add structure to the learned
-representations to better correspond to the underlying genera-
-tion process. It is this useful bias that makes the utilised models
-identifiable. One of the goals of this paper is to highlight the
-various inductive biases used
+### Other links:
+* Domain Agnostic Learning with Disentangled Representations (Peng et al., 2019) - http://proceedings.mlr.press/v97/peng19b/peng19b.pdf
+* Style and Content Disentanglement in Generative Adversarial Networks - https://arxiv.org/pdf/1811.05621.pdf
+* Artifact Disentanglement Network for Unsupervised Metal Artifact Reduction - https://arxiv.org/pdf/1906.01806.pdf
+* Mutual Information-based Disentangled Neural Networks for Classifying Unseen Categories in Different Domains: Application to Fetal Ultrasound Imaging - https://arxiv.org/pdf/2011.00739.pdf
+* MUNIT - Multimodal Unsupervised Image-to-Image Translation - https://arxiv.org/pdf/1804.04732.pdf
 -->
-<!-- We can categorize inductive biases into two different groups called relational and non-relational. The former represents the relationship between entities in the network, while the latter is a set of techniques that further constrain the learning algorithm. -->
-<!-- Without a bias of that kind, induction would not be possible, since the observations can normally be generalized in many ways. Treating all these possibilities in equally, i.e., without any bias in the sense of a preference for specific types of generalization (reflecting background knowledge about the target function to be learned), predictions for new situations could not be made. -->
 </section>
-</section>
-<section id="architecture">
-<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">#</a></h2>
-<section id="basic-generative-models">
-<h3>Basic Generative Models<a class="headerlink" href="#basic-generative-models" title="Permalink to this headline">#</a></h3>
-<figure class="align-right" id="directive-fig">
-<a class="reference internal image-reference" href="_images/generative_models.png"><img alt="_images/generative_models.png" src="_images/generative_models.png" style="height: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Generative Models</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<ul class="simple">
-<li><p><em>Auto-encoders / Variational Auto Encoders (VAEs) / Masked auto-encoders</em> compose factors via image reconstruction. A typical VAE, discovers and disentangles factors of variation by forcing independence between different dimensions of z, while reconstructing the input.</p></li>
-<li><p><em>Normalising flows (NFs)</em> are a family of invertible probabilistic models that can compute the exact likelihood (not the approximated as in VAEs).</p></li>
-<li><p><em>Generative adversarial networks (GANs)</em> typically employ a generator G and a discriminator D in an adversarial game. G generates an image by sampling from an isotropic Gaussian distribution, while D is given the synthetic image and a real one, and tries to identify which input is real/fake. Especially CycleGAN.</p></li>
-</ul>
 </section>
 <section id="content-style-disentanglement-enforcing-models">
-<h3>Content-Style Disentanglement Enforcing Models<a class="headerlink" href="#content-style-disentanglement-enforcing-models" title="Permalink to this headline">#</a></h3>
+<h2>Content-Style Disentanglement Enforcing Models<a class="headerlink" href="#content-style-disentanglement-enforcing-models" title="Permalink to this headline">#</a></h2>
 <!--*Unsupervised Image-to-Image Translation (UNIT)* consists of two VAE-GANs. The latent space is fully shared. -->
 <!--Concepts used: Cycle-Consistency, GAN, VAE, Gaussian latent space assumption, -->
 <!--https://arxiv.org/pdf/1703.00848.pdf-->
@@ -577,43 +467,43 @@ various inductive biases used
 <li><p><em>Disentangled Anatomy Arithmetic GAN (DAA-GAN)</em> disentangles images into spatial anatomy (tensor) factors and accompanying imaging (vector) representations. - <a class="github reference external" href="https://github.com/spthermo/DAA-GAN">spthermo/DAA-GAN</a></p></li>
 <li><p><em>Spatial Decomposition Network (SDNet)</em> disentangles anatomy (content) and modality (style). - <a class="github reference external" href="https://github.com/spthermo/SDNet">spthermo/SDNet</a></p></li>
 <li><p><em>Mutual Information-based Disentangled Neural Networks (MIDNet)</em> separate digital features (categorical features) from domain features to obtain generalized digital features. - <a class="reference external" href="https://arxiv.org/abs/2011.00739">https://arxiv.org/abs/2011.00739</a></p></li>
+<li><p><em>Style and Content Disentanglement in Generative Adversarial Networks</em> - <a class="reference external" href="https://arxiv.org/pdf/1811.05621.pdf">https://arxiv.org/pdf/1811.05621.pdf</a></p></li>
+</ul>
+<section id="encoder-blocks">
+<h3>Encoder-blocks<a class="headerlink" href="#encoder-blocks" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><em>Instance Normalisation</em> for style removal</p></li>
+<li><p><em>Avarage Pooling</em> for content removal</p></li>
+<li><p><em>Parsimony</em> - Vector Quantisation (VQ) restricts the amount of information in a latent space</p></li>
 </ul>
 </section>
-<section id="encoder">
-<h3>Encoder<a class="headerlink" href="#encoder" title="Permalink to this headline">#</a></h3>
-<p><em>Instance Normalisation</em> for style removal</p>
-<p><em>Avarage Pooling</em> for content removal</p>
-<p><em>Parsimony</em> - Vector Quantisation (VQ) restricts the amount of information in a latent space</p>
-</section>
-<section id="decoder">
-<h3>Decoder<a class="headerlink" href="#decoder" title="Permalink to this headline">#</a></h3>
+<section id="decoder-blocks">
+<h3>Decoder-blocks<a class="headerlink" href="#decoder-blocks" title="Permalink to this headline">#</a></h3>
 <p>Effective recombination or entanglement of the content and style representations in a decoder is vital.</p>
-<p><em>Concatenation</em></p>
-<p><em>Adaptive Instance Normalisation (AdaIN)</em> combines a content and style representation.</p>
-<p><em>Feature-wise Linear Modulation (FiLM)</em></p>
-<p><em>Spatially-Adaptive Denormalisation (SPADE)</em></p>
+<ul class="simple">
+<li><p><em>Concatenation</em></p></li>
+<li><p><em>Adaptive Instance Normalisation (AdaIN)</em> combines a content and style representation.</p></li>
+<li><p><em>Feature-wise Linear Modulation (FiLM)</em></p></li>
+<li><p><em>Spatially-Adaptive Denormalisation (SPADE)</em></p></li>
+</ul>
 </section>
-<section id="id1">
-<h3>Latent Space<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<section id="latent-space">
+<h3>Latent Space<a class="headerlink" href="#latent-space" title="Permalink to this headline">#</a></h3>
 <p>Operations and priors can be applied on a latent space to encourage disentanglement.</p>
-<p><em>Gaussian prior</em> - Encouraging the distribution of the encoded (vector) latent representation to match a Gaussian is a common prior.</p>
-<p><em>Task priors</em> - Task losses, such as the segmentation loss, also contribute at learning a disentangled content representation</p>
-<p><em>Gradient reversal layer</em></p>
-<p><em>Latent projection</em></p>
-<p><em>Frequency Decomposition</em></p>
-<p><em>Structured latent</em></p>
-<!-- ### Learning-based
-
-*Cycle-consistency*
-
-*Latent regression*
--->
+<ul class="simple">
+<li><p><em>Gaussian prior</em> - Encouraging the distribution of the encoded (vector) latent representation to match a Gaussian is a common prior.</p></li>
+<li><p><em>Task priors</em> - Task losses, such as the segmentation loss, also contribute at learning a disentangled content representation</p></li>
+<li><p><em>Gradient reversal layer</em></p></li>
+<li><p><em>Latent projection</em></p></li>
+<li><p><em>Frequency Decomposition</em></p></li>
+<li><p><em>Structured latent</em></p></li>
+</ul>
 </section>
 </section>
 <section id="applications">
 <h2>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p><em>Synthesis</em>: I2I translation, artefact reduction, casual synthesis, disease decomposition, harmonisation, controllable synthesis</p></li>
+<li><p><em>Synthesis</em>: I2I translation, artefact reduction, casual synthesis, disease decomposition, harmonisation, controllable synthesis, domain adaptation</p></li>
 <li><p><em>Segmentation</em>: single-modal vs multi-modal</p></li>
 <li><p><em>Classification</em></p></li>
 <li><p><em>Registration</em></p></li>
@@ -623,6 +513,16 @@ various inductive biases used
 <h3>Synthesis<a class="headerlink" href="#synthesis" title="Permalink to this headline">#</a></h3>
 <p><em>Image-to-image (I2I) translation</em> is one spatially equivariant application of CSD. The goal is to translate one image representation into another where a specific factor differs (e.g. style) while others are maintained. One architecture to use is the MUNIT: To translate an image to another domain, they recombine its content code with a random style code sampled from the style space of the target domain. The network consists of two encoder-decoder pairs for two domains.</p>
 </section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<div class="docutils container" id="id2">
+<dl class="citation">
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id1">Mol22</a></span></dt>
+<dd><p>Christoph Molnar. Interpretable machine learning - network dissection. 2022. URL: <a class="reference external" href="https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection">https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection</a>.</p>
+</dd>
+</dl>
+</div>
 </section>
 </section>
 
@@ -693,31 +593,22 @@ various inductive biases used
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-links">Other links:</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disentanglement-content-style-disentanglement-csd">Disentanglement | Content-style disentanglement (CSD)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#content-style-disentanglement-enforcing-models">Content-Style Disentanglement Enforcing Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encoder-blocks">Encoder-blocks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decoder-blocks">Decoder-blocks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latent-space">Latent Space</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-shift">Domain Shift</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-generative-models">Basic Generative Models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-style-disentanglement-enforcing-models">Content-Style Disentanglement Enforcing Models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encoder">Encoder</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decoder">Decoder</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Latent Space</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#synthesis">Synthesis</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 

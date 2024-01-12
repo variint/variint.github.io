@@ -1,24 +1,35 @@
 # Modular Networks
 
-## Skill
+## Introduction
 
 ### Description
+A modular neural network is composed of functions (modules) that can be combined to solve a given task.
 
 ### Goals
+* Learn about explicit and implicit modularity in neural networks.
+* Learn about evolutionary origins of modular networks.
+
+<!--
+### Biologically Inspired Modular Neural Networks
+* Original version: PhD Thesis: Biologically Inspired Modular Neural Networks - https://vtechworks.lib.vt.edu/bitstream/handle/10919/27998/etd.pdf
+-->
+
+## Motivation for modular networks
+* Model complexity reduction
+* Robistness
+* Scalability
+* Computational Efficency
+* Interpretability
+
+Original version: {cite}`azam2000biologically`
 
 
-### Links
-* PhD Thesis: Biologically Inspired Modular Neural Networks (Azam, 2000) - https://vtechworks.lib.vt.edu/bitstream/handle/10919/27998/etd.pdf
-* Preprint: Seeing is Believing: Brain-Inspired Modular Training for Mechanistic Interpretability (Liu, 2023) - https://arxiv.org/abs/2305.08746, https://github.com/KindXiaoming/BIMT
-* Wiki: Brain Basics: The Life and Death of a Neuron - https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-life-and-death-neuron
-
-
-
-
-## Background
-
+## Implicitly introduced modularity
+Modules emerge from a non-modular network.
 
 ### Brain-Inspired Modular Training
+
+* Original version: Seeing is Believing: Brain-Inspired Modular Training for Mechanistic Interpretability (Liu, 2023) - https://arxiv.org/abs/2305.08746, https://github.com/KindXiaoming/BIMT
 
 * can use L1 or L2 penalty
 * we have neuron layers (ni) and weight layers (wi)
@@ -62,6 +73,43 @@ align: center
 ---
 A neuron and incoming/outgoing weights (2D setup - [X, Y])
 ```
+
+
+### Neural Sculpting
+Neural sculpting is an iterative pruning and clustering concept.
+
+
+### Modular sparsification
+CRESPR: Modular sparsification of DNNs to improve pruning performance
+and model interpretability - Cluster-Restricted Extreme Sparsity Pruning of Redundancy (CRESPR) in DNN
+
+
+## Explicitly introduced modularity
+
+### Capsule networks
+
+
+
+
+## Evolution and biology
+
+### Life and Death of a Neuron
+
+* Original version: Brain Basics: The Life and Death of a Neuron - https://www.ninds.nih.gov/health-information/public-education/brain-basics/brain-basics-life-and-death-neuron
+
+### Baldwin Effect
+Evolution tends to select individuals who already (by effect of random mutations) have some of the useful features that would otherwise be learned. 
+Better accepted than the theory of direct assimilation of lifetime modification by evolutionary mechanisms.
+The morphology and behaviour of neurons is similar across animals. 
+Evolution of the brain mainly occurred on the architecture level or connectivity of neural networks.
+Something about that neurons don't really change by evolution - similar across mammals - but the architecture changes + the connectivity of neurons. Something with strength of connectivity between the neurons.
+{cite}`floreano2008bio`
+
+The Baldwin effect, Lamarck's theory of evolution, Darwinian evolution, and Waddington's genetic assimilation. All the theories offer explanations of how organisms respond to a changed environment with adaptive inherited change. - https://en.wikipedia.org/wiki/Baldwin_effect
+
+
+<!--
+## Other stuff
 
 ### Libertarian Free Will: Neuroscientific and Philosophical Evidence
 
@@ -119,3 +167,13 @@ conciousness is flexible but slow, automation is fast and energy saving
 
 ### Revolution of the Mind: Inspirations and Resources
 https://www.garethmlong.com/blog/d14nmw7v91vczeez29fl9dq6dkwfc2
+
+
+-->
+
+
+
+## References
+```{bibliography}
+:filter: docname in docnames
+```

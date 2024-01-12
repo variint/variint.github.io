@@ -183,7 +183,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Domains</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_i2i.html">Image to Image translation</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_mm.html">Multi-modality</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Medical</span></p>
 <ul class="nav bd-sidenav">
@@ -388,10 +390,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introdcution">Introdcution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-annotation-tools">Data Annotation Tools</a><ul class="nav section-nav flex-column">
@@ -399,6 +399,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imagej">ImageJ</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architectures">Architectures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gans">GANs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -412,26 +417,41 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="supervised-learning">
 <h1>Supervised learning<a class="headerlink" href="#supervised-learning" title="Permalink to this headline">#</a></h1>
-<section id="skill">
-<h2>Skill<a class="headerlink" href="#skill" title="Permalink to this headline">#</a></h2>
+<section id="introdcution">
+<h2>Introdcution<a class="headerlink" href="#introdcution" title="Permalink to this headline">#</a></h2>
 <section id="description">
 <h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="goals">
-<h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="links">
-<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h3>
+<p>In supervised learning, a function is used to measure how close a predicted output f(x) is to a target label y. The goal is to quantify some cost, loss, regret, distance or price paid for inaccurate prediction. The resulting total cost over a collection of input-output pairs is used to measure the performance of the function. <span id="id1">[<a class="reference internal" href="#id12" title="Yivan Zhang and Masashi Sugiyama. Enriching disentanglement: definitions to metrics. arXiv preprint arXiv:2305.11512, 2023.">Zhang and Sugiyama, 2023</a>]</span></p>
 </section>
 </section>
 <section id="data-annotation-tools">
 <h2>Data Annotation Tools<a class="headerlink" href="#data-annotation-tools" title="Permalink to this headline">#</a></h2>
+<p>A data annotation tool is used to create the target label/ground truth.</p>
 <section id="makesense-ai">
 <h3><a class="reference external" href="http://Makesense.ai">Makesense.ai</a><a class="headerlink" href="#makesense-ai" title="Permalink to this headline">#</a></h3>
 </section>
 <section id="imagej">
 <h3>ImageJ<a class="headerlink" href="#imagej" title="Permalink to this headline">#</a></h3>
 </section>
+</section>
+<section id="architectures">
+<h2>Architectures<a class="headerlink" href="#architectures" title="Permalink to this headline">#</a></h2>
+<section id="gans">
+<h3>GANs<a class="headerlink" href="#gans" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><em>Generative adversarial networks (GANs)</em> typically employ a generator G and a discriminator D in an adversarial game. G generates an image by sampling from an isotropic Gaussian distribution, while D is given the synthetic image and a real one, and tries to identify which input is real/fake. Especially CycleGAN.</p></li>
+</ul>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<div class="docutils container" id="id2">
+<dl class="citation">
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id1">ZS23</a></span></dt>
+<dd><p>Yivan Zhang and Masashi Sugiyama. Enriching disentanglement: definitions to metrics. <em>arXiv preprint arXiv:2305.11512</em>, 2023.</p>
+</dd>
+</dl>
+</div>
 </section>
 </section>
 
@@ -502,10 +522,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introdcution">Introdcution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-annotation-tools">Data Annotation Tools</a><ul class="nav section-nav flex-column">
@@ -513,6 +531,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imagej">ImageJ</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architectures">Architectures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gans">GANs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 

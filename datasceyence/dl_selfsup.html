@@ -183,7 +183,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Domains</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_i2i.html">Image to Image translation</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_mm.html">Multi-modality</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Medical</span></p>
 <ul class="nav bd-sidenav">
@@ -388,18 +390,26 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-self-predictive">Generative / Self-predictive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contrastive-consistency">Contrastive / Consistency</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#innate-relationship">Innate relationship</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-approaches">Generative approaches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auto-encoders-variational-auto-encoders-vaes-masked-auto-encoders">Auto-encoders / Variational Auto Encoders (VAEs) / Masked auto-encoders</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalising-flows">Normalising Flows</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contrastive-learning-approaches">Contrastive Learning approaches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simclr">SimCLR</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#innate-relationship-approaches">Innate relationship approaches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudo-labels">Pseudo labels</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -413,44 +423,65 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="self-supervised-learning">
 <h1>Self-supervised learning<a class="headerlink" href="#self-supervised-learning" title="Permalink to this headline">#</a></h1>
-<section id="skill">
-<h2>Skill<a class="headerlink" href="#skill" title="Permalink to this headline">#</a></h2>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <section id="description">
 <h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h3>
-<p>Self-supervised learning doesn’t use labels. This step can be used as pre-training or for a representation learning.</p>
+<p>Self-supervised learning doesn’t use labels. This step can be used as pre-training or for representation learning.</p>
 </section>
 <section id="goals">
 <h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h3>
-</section>
-<section id="links">
-<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>Review paper: Self-supervised learning for medical image classification: a systematic review and implementation guidelines (Huang, 2023) - <a class="reference external" href="https://www.nature.com/articles/s41746-023-00811-0">https://www.nature.com/articles/s41746-023-00811-0</a></p></li>
+<li><p>Learn about the different approaches for self-supervised learning.</p></li>
 </ul>
 </section>
 </section>
-<section id="architecture">
-<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">#</a></h2>
-<section id="generative-self-predictive">
-<h3>Generative / Self-predictive<a class="headerlink" href="#generative-self-predictive" title="Permalink to this headline">#</a></h3>
+<section id="related-work">
+<h2>Related work<a class="headerlink" href="#related-work" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>VAE</p></li>
-<li><p>Masked VAE</p></li>
+<li><p>Original Work: Self-supervised learning for medical image classification: a systematic review and implementation guidelines (Huang, 2023) - <a class="reference external" href="https://www.nature.com/articles/s41746-023-00811-0">https://www.nature.com/articles/s41746-023-00811-0</a></p></li>
 </ul>
 </section>
-<section id="contrastive-consistency">
-<h3>Contrastive / Consistency<a class="headerlink" href="#contrastive-consistency" title="Permalink to this headline">#</a></h3>
+<section id="generative-approaches">
+<h2>Generative approaches<a class="headerlink" href="#generative-approaches" title="Permalink to this headline">#</a></h2>
+<figure class="align-right" id="directive-fig">
+<a class="reference internal image-reference" href="_images/generative_models.png"><img alt="_images/generative_models.png" src="_images/generative_models.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Generative Models</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="auto-encoders-variational-auto-encoders-vaes-masked-auto-encoders">
+<h3>Auto-encoders / Variational Auto Encoders (VAEs) / Masked auto-encoders<a class="headerlink" href="#auto-encoders-variational-auto-encoders-vaes-masked-auto-encoders" title="Permalink to this headline">#</a></h3>
+<p>Auto encoders (and variants) compose factors via image reconstruction. A typical VAE, discovers and disentangles factors of variation by forcing independence between different dimensions of z, while reconstructing the input.</p>
 <ul class="simple">
-<li><p>Similar to FixMatch</p></li>
+<li><p>Original version: Masked Autoencoders Are Scalable Vision Learners - <a class="reference external" href="https://arxiv.org/pdf/2111.06377.pdf">https://arxiv.org/pdf/2111.06377.pdf</a></p></li>
 </ul>
 </section>
-<section id="innate-relationship">
-<h3>Innate relationship<a class="headerlink" href="#innate-relationship" title="Permalink to this headline">#</a></h3>
+<section id="normalising-flows">
+<h3>Normalising Flows<a class="headerlink" href="#normalising-flows" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><em>Normalising flows (NFs)</em> are a family of invertible probabilistic models that can compute the exact likelihood (not the approximated as in VAEs).</p></li>
+</ul>
+</section>
+</section>
+<section id="contrastive-learning-approaches">
+<h2>Contrastive Learning approaches<a class="headerlink" href="#contrastive-learning-approaches" title="Permalink to this headline">#</a></h2>
+<section id="simclr">
+<h3>SimCLR<a class="headerlink" href="#simclr" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="innate-relationship-approaches">
+<h2>Innate relationship approaches<a class="headerlink" href="#innate-relationship-approaches" title="Permalink to this headline">#</a></h2>
+<section id="pseudo-labels">
+<h3>Pseudo labels<a class="headerlink" href="#pseudo-labels" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Reverse engineer the augmentation - e.g. model predicts rotation degree (e.g. 90 deg)</p></li>
 </ul>
 </section>
 </section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<span class="target" id="id1"></span></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -520,18 +551,26 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-self-predictive">Generative / Self-predictive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contrastive-consistency">Contrastive / Consistency</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#innate-relationship">Innate relationship</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-approaches">Generative approaches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auto-encoders-variational-auto-encoders-vaes-masked-auto-encoders">Auto-encoders / Variational Auto Encoders (VAEs) / Masked auto-encoders</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalising-flows">Normalising Flows</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contrastive-learning-approaches">Contrastive Learning approaches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simclr">SimCLR</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#innate-relationship-approaches">Innate relationship approaches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudo-labels">Pseudo labels</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 

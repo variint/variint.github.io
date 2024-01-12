@@ -1,6 +1,6 @@
 # Anatomy of the Retina
 
-## Skill
+## Introduction
 
 ### Description
 The retina is the sensory portion of an eye.
@@ -12,17 +12,25 @@ The retina is the sensory portion of an eye.
 * The Organization of the Retina and Visual System (Helga Kolb, Eduardo Fernandez, and Ralph Nelson)
 * Segregation of neuronal-vascular components in a retinal nerve fiber layer (Ai Ping Yow, et al.)
 
+## The eye
 
-## Macula
+### Macula
 
-## Fovea
+### Fovea
 
-## FAZ
+### FAZ
 
-## Optic Disc
+### Optic Disc / Optic Nerve Head
 
-## Layers
+### Optic Cup
 
-## Vascular components
+### Layers
 
-## Neural components
+### Vascular components
+
+### Neural components
+
+## References
+```{bibliography}
+:filter: docname in docnames
+```

@@ -183,7 +183,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Domains</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Image to Image translation</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_mm.html">Multi-modality</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Medical</span></p>
 <ul class="nav bd-sidenav">
@@ -388,17 +390,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Image to Image translation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#munit">MUNIT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-image-editing">Poisson Image Editing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-based">Generative-based</a></li>
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal">Multi-modal</a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -421,17 +428,25 @@ Poisson image editing - Seamless cloning: The goal of seamless cloning is to avo
 <section id="goals">
 <h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>I know about Guided Interpolation and Poisson partial differential equations.</p></li>
-<li><p>I know about the seamless importation of a source image region into a destination region.</p></li>
-<li><p>I can distinguish between the seamless cloning types (1) importing gradients and (2) mixing gradients.</p></li>
-<li><p>I can list image transformation techniques that are defined by using a guidance field depending entirely on the original image.</p></li>
+<li><p>Learn about Guided Interpolation and Poisson partial differential equations.</p></li>
+<li><p>Learn about the seamless combination of a source image region into a destination region.</p></li>
+<li><p>Learn about the seamless cloning types (1) importing gradients and (2) mixing gradients.</p></li>
+<li><p>Learn about image transformation techniques that are defined by using a guidance field depending entirely on the original image.</p></li>
 </ul>
 </section>
-<section id="links">
-<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="related-work">
+<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">#</a></h2>
+<section id="poisson-image-editing">
+<h3>Poisson Image Editing<a class="headerlink" href="#poisson-image-editing" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Contribution paper: Poisson Image Editing (Perez et al., 2003) - <a class="reference external" href="https://www.cs.jhu.edu/~misha/Fall07/Papers/Perez03.pdf">https://www.cs.jhu.edu/~misha/Fall07/Papers/Perez03.pdf</a></p></li>
 <li><p>Tutorial: Seamless Cloning using OpenCV (Python, C++) - <a class="reference external" href="https://learnopencv.com/seamless-cloning-using-opencv-python-cpp/">https://learnopencv.com/seamless-cloning-using-opencv-python-cpp/</a></p></li>
+</ul>
+</section>
+<section id="generative-based">
+<h3>Generative-based<a class="headerlink" href="#generative-based" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
 <li><p>Cycle-GAN: unsupervised</p></li>
 <li><p>Cross-Domain Auto-Encoder and Decoder</p></li>
 <li><p>Fourier domain adaptation</p></li>
@@ -441,20 +456,16 @@ Poisson image editing - Seamless cloning: The goal of seamless cloning is to avo
 <li><p>NICE-GAN</p></li>
 <li><p>pix2pix: requires image pairs</p></li>
 </ul>
-<p>Multi-modal:</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="multi-modal">
+<h1>Multi-modal<a class="headerlink" href="#multi-modal" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>MUNIT</p></li>
 <li><p>DRIT++</p></li>
 <li><p>DSMAP</p></li>
 </ul>
-</section>
-</section>
-<section id="architecture">
-<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">#</a></h2>
-<section id="munit">
-<h3>MUNIT<a class="headerlink" href="#munit" title="Permalink to this headline">#</a></h3>
-</section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -524,17 +535,22 @@ Poisson image editing - Seamless cloning: The goal of seamless cloning is to avo
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Image to Image translation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#munit">MUNIT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-image-editing">Poisson Image Editing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-based">Generative-based</a></li>
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal">Multi-modal</a></li>
+</ul>
+
   </nav></div>
 
 </div></div>

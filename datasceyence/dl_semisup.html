@@ -183,7 +183,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Domains</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_i2i.html">Image to Image translation</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_mm.html">Multi-modality</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Medical</span></p>
 <ul class="nav bd-sidenav">
@@ -388,13 +390,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entropy-minimisation">Entropy minimisation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-regularisation">Consistency regularisation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudo-labelling">Pseudo-labelling</a></li>
@@ -407,8 +408,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-adversarial-training-vat">Virtual Adversarial Training (VAT)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mixmatch">MixMatch</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixmatch">FixMatch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -422,8 +425,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="semi-supervised-learning-ssl">
 <h1>Semi-Supervised learning (SSL)<a class="headerlink" href="#semi-supervised-learning-ssl" title="Permalink to this headline">#</a></h1>
-<section id="skill">
-<h2>Skill<a class="headerlink" href="#skill" title="Permalink to this headline">#</a></h2>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <section id="description">
 <h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h3>
 <p>Semi-supervised learning combines a (small) labelled with a (bigger) unlabelled dataset to perform a task such as classification or segmentation.</p>
@@ -431,26 +434,14 @@ document.write(`
 <section id="goals">
 <h3>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>I know the difference between self-training and co-training.</p></li>
-<li><p>I know multiple ways to implement SSL.</p></li>
-<li><p>I can explain the mean teacher approach.</p></li>
-<li><p>I can name the main assumptions in SSL.</p></li>
-</ul>
-</section>
-<section id="links">
-<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Contribution paper: Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results (Tarvainen et al., 2017) - <a class="reference external" href="https://arxiv.org/abs/1703.01780">https://arxiv.org/abs/1703.01780</a></p></li>
-<li><p>Review paper: Not-so-supervised: A survey of semi-supervised, multi-instance, and transfer learning in medical image analysis (Cheplygina et al., 2019) - <a class="reference external" href="https://arxiv.org/abs/1804.06353">https://arxiv.org/abs/1804.06353</a></p></li>
-<li><p>Review paper: An Overview of Deep Semi-Supervised Learning (Ouali et al., 2020) - <a class="reference external" href="https://arxiv.org/abs/2006.05278">https://arxiv.org/abs/2006.05278</a></p></li>
-<li><p>Github repository with papers: Semi-supervised-learning-for-medical-image-segmentation - <a class="github reference external" href="https://github.com/HiLab-git/SSL4MIS">HiLab-git/SSL4MIS</a></p></li>
-<li><p>Contribution paper: Temporal Ensembling for Semi-Supervised Learning (Laine and Aila, 2017) - <a class="reference external" href="https://arxiv.org/pdf/1610.02242.pdf">https://arxiv.org/pdf/1610.02242.pdf</a></p></li>
-<li><p>GitHub repository with implementations: <a class="github reference external" href="https://github.com/ZHKKKe/PixelSSL/tree/master/pixelssl/ssl_algorithm">ZHKKKe/PixelSSL</a></p></li>
+<li><p>Learn about what the difference between self-training and co-training.</p></li>
+<li><p>Learn about multiple ways to implement SSL.</p></li>
+<li><p>Learn about the mean teacher approach.</p></li>
 </ul>
 </section>
 </section>
-<section id="background">
-<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">#</a></h2>
+<section id="related-work">
+<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">#</a></h2>
 <p>Over the past decades, there were many approaches introduced to tackle semi-supervised learning. Semi-supervised learning (SSL) is halfway between supervised and unsupervised learning, using both, labelled and unlabelled data for training.</p>
 <p>We want to introduce three main concepts, entropy minimisation, consistency regularisation and pseudo labelling.</p>
 <section id="entropy-minimisation">
@@ -494,7 +485,21 @@ One of its drawbacks is that given a large number of epochs, the teacher modelâ€
 <h3>FixMatch<a class="headerlink" href="#fixmatch" title="Permalink to this headline">#</a></h3>
 <p>FixmMatch enforces the prediction consistency between weakly augmented images and strongly augmented images. <!-- \citep{sohn2020fixmatch} --></p>
 </section>
+<section id="links">
+<h3>Links<a class="headerlink" href="#links" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Contribution paper: Mean teachers are better role models: Weight-averaged consistency targets improve semi-supervised deep learning results (Tarvainen et al., 2017) - <a class="reference external" href="https://arxiv.org/abs/1703.01780">https://arxiv.org/abs/1703.01780</a></p></li>
+<li><p>Review paper: Not-so-supervised: A survey of semi-supervised, multi-instance, and transfer learning in medical image analysis (Cheplygina et al., 2019) - <a class="reference external" href="https://arxiv.org/abs/1804.06353">https://arxiv.org/abs/1804.06353</a></p></li>
+<li><p>Review paper: An Overview of Deep Semi-Supervised Learning (Ouali et al., 2020) - <a class="reference external" href="https://arxiv.org/abs/2006.05278">https://arxiv.org/abs/2006.05278</a></p></li>
+<li><p>Github repository with papers: Semi-supervised-learning-for-medical-image-segmentation - <a class="github reference external" href="https://github.com/HiLab-git/SSL4MIS">HiLab-git/SSL4MIS</a></p></li>
+<li><p>Contribution paper: Temporal Ensembling for Semi-Supervised Learning (Laine and Aila, 2017) - <a class="reference external" href="https://arxiv.org/pdf/1610.02242.pdf">https://arxiv.org/pdf/1610.02242.pdf</a></p></li>
+<li><p>GitHub repository with implementations: <a class="github reference external" href="https://github.com/ZHKKKe/PixelSSL/tree/master/pixelssl/ssl_algorithm">ZHKKKe/PixelSSL</a></p></li>
+</ul>
 </section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<span class="target" id="id1"></span></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -564,13 +569,12 @@ One of its drawbacks is that given a large number of epochs, the teacher modelâ€
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skill">Skill</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entropy-minimisation">Entropy minimisation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-regularisation">Consistency regularisation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pseudo-labelling">Pseudo-labelling</a></li>
@@ -583,8 +587,10 @@ One of its drawbacks is that given a large number of epochs, the teacher modelâ€
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-adversarial-training-vat">Virtual Adversarial Training (VAT)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mixmatch">MixMatch</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixmatch">FixMatch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links">Links</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 

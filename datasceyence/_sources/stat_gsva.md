@@ -1,6 +1,6 @@
 # Gene Set Variation Analysis (GSVA)
 
-## Skill
+## Introduction
 
 ### Description
 Gene Set Variation Analysis (GSVA) is a unsupervised Gene set enrichment (GSE) method for estimating variation of pathway activity over a sample population within highly heterogeneous data sets.
@@ -11,3 +11,9 @@ Gene Set Variation Analysis (GSVA) is a unsupervised Gene set enrichment (GSE) m
 
 ### Links
 * Contribution paper: GSVA: gene set variation analysis for microarray and RNA-Seq data (Hänzelmann, et al., 2013) - https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-14-7
+
+
+## References
+```{bibliography}
+:filter: docname in docnames
+```
