@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'dl_modularity';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Growing neural networks" href="dl_growing.html" />
+    <link rel="next" title="Network pruning" href="dl_pruning.html" />
     <link rel="prev" title="Disentangled learning" href="dl_disentanglement.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -164,10 +164,13 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Training strategies</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Deep learning basics</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="dl_sup.html">Supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Partial labels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_mil.html">Multiple-Instance Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
 </ul>
@@ -175,6 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Modular Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_pruning.html">Network pruning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_growing.html">Growing neural networks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Human-centered AI</span></p>
@@ -408,6 +412,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capsule-networks">Capsule networks</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchical-graph-drawing">Hierarchical Graph Drawing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolution-and-biology">Evolution and biology</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#life-and-death-of-a-neuron">Life and Death of a Neuron</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baldwin-effect">Baldwin Effect</a></li>
@@ -510,6 +515,18 @@ and model interpretability - Cluster-Restricted Extreme Sparsity Pruning of Redu
 <section id="capsule-networks">
 <h3>Capsule networks<a class="headerlink" href="#capsule-networks" title="Permalink to this headline">#</a></h3>
 </section>
+</section>
+<section id="hierarchical-graph-drawing">
+<h2>Hierarchical Graph Drawing<a class="headerlink" href="#hierarchical-graph-drawing" title="Permalink to this headline">#</a></h2>
+<p>Review</p>
+<ul class="simple">
+<li><p>Original version: <a class="reference external" href="https://cs.brown.edu/people/rtamassi/gdhandbook/chapters/hierarchical.pdf">https://cs.brown.edu/people/rtamassi/gdhandbook/chapters/hierarchical.pdf</a></p></li>
+</ul>
+<p>Tabu search</p>
+<ul class="simple">
+<li><p>Original version: <a class="reference external" href="https://link.springer.com/chapter/10.1007/0-387-33416-5_3">https://link.springer.com/chapter/10.1007/0-387-33416-5_3</a></p></li>
+</ul>
+<p>Tabu search is often benchmarked against other metaheuristic methods — such as simulated annealing, genetic algorithms, ant colony optimization algorithms, reactive search optimization, guided local search, or greedy randomized adaptive search.</p>
 </section>
 <section id="evolution-and-biology">
 <h2>Evolution and biology<a class="headerlink" href="#evolution-and-biology" title="Permalink to this headline">#</a></h2>
@@ -648,11 +665,11 @@ https://www.garethmlong.com/blog/d14nmw7v91vczeez29fl9dq6dkwfc2
       </div>
     </a>
     <a class="right-next"
-       href="dl_growing.html"
+       href="dl_pruning.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Growing neural networks</p>
+        <p class="prev-next-title">Network pruning</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -690,6 +707,7 @@ https://www.garethmlong.com/blog/d14nmw7v91vczeez29fl9dq6dkwfc2
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capsule-networks">Capsule networks</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchical-graph-drawing">Hierarchical Graph Drawing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evolution-and-biology">Evolution and biology</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#life-and-death-of-a-neuron">Life and Death of a Neuron</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baldwin-effect">Baldwin Effect</a></li>

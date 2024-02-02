@@ -90,6 +90,16 @@ and model interpretability - Cluster-Restricted Extreme Sparsity Pruning of Redu
 
 
 
+## Hierarchical Graph Drawing
+
+Review
+* Original version: https://cs.brown.edu/people/rtamassi/gdhandbook/chapters/hierarchical.pdf
+
+Tabu search
+* Original version: https://link.springer.com/chapter/10.1007/0-387-33416-5_3
+
+ Tabu search is often benchmarked against other metaheuristic methods — such as simulated annealing, genetic algorithms, ant colony optimization algorithms, reactive search optimization, guided local search, or greedy randomized adaptive search. 
+
 
 ## Evolution and biology
 

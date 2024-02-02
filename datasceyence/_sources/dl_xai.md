@@ -9,7 +9,14 @@ Feature visualisation.
 * Learn about saliency maps.
 * Learn about guided backpropagation.
 
+### Libraries
+* DoWhy: Intro to Causal AI Using the DoWhy Library in Python
+* Leap AI: https://docs.tryleap.ai/
+* https://raw.githubusercontent.com/bdcht/grandalf/master/doc/hgd.pdf
+
 ## Visualisation
+
+* Original version: https://theaisummer.com/xai/
 
 ### Feature Map
 

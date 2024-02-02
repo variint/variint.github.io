@@ -1,6 +1,6 @@
 # Image to Image translation
 
-## Skill
+## Introduction
 
 ### Description
 There are multiple ways of performing the related tasks: image-to-image translation, image synthesis, texture synthesis and texture transfer. The common goal is to transfer a source object/texture/illumination/colour into a destination image.
@@ -12,12 +12,12 @@ Poisson image editing - Seamless cloning: The goal of seamless cloning is to avo
 * Learn about the seamless cloning types (1) importing gradients and (2) mixing gradients.
 * Learn about image transformation techniques that are defined by using a guidance field depending entirely on the original image.
 
+
 ## Related Work
 
 ### Poisson Image Editing
 * Contribution paper: Poisson Image Editing (Perez et al., 2003) - https://www.cs.jhu.edu/~misha/Fall07/Papers/Perez03.pdf
 * Tutorial: Seamless Cloning using OpenCV (Python, C++) - https://learnopencv.com/seamless-cloning-using-opencv-python-cpp/
-
 
 
 ### Generative-based
@@ -36,3 +36,7 @@ Poisson image editing - Seamless cloning: The goal of seamless cloning is to avo
 * DSMAP
 
 
+## References
+```{bibliography}
+:filter: docname in docnames
+```

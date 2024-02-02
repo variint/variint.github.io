@@ -162,10 +162,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Training strategies</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Deep learning basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_sup.html">Supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Partial labels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_mil.html">Multiple-Instance Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
 </ul>
@@ -173,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_disentanglement.html">Disentangled learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_modularity.html">Modular Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_pruning.html">Network pruning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_growing.html">Growing neural networks</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Human-centered AI</span></p>
@@ -401,6 +404,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-attribution">Concept Attribution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-based-explanations">Concept-based explanations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-activation-vector-cav">Concept activation vector (CAV)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-concepts">Visual concepts</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts</a><ul class="nav section-nav flex-column">
@@ -444,7 +448,7 @@ document.write(`
 <section id="network-dissection">
 <h3>Network dissection<a class="headerlink" href="#network-dissection" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>Original version: Chapter 10 Neural Network Interpretation &gt; Network Dissection <span id="id1">[<a class="reference internal" href="#id9" title="Christoph Molnar. Interpretable machine learning - network dissection. 2022. URL: https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection.">Molnar, 2022</a>]</span>
+<li><p>Original version: Chapter 10 Neural Network Interpretation &gt; Network Dissection <span id="id1">[<a class="reference internal" href="dl_disentanglement.html#id6" title="Christoph Molnar. Interpretable machine learning - network dissection. 2022. URL: https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection.">Molnar, 2022</a>]</span>
 Network Dissection quantifies the interpretability of a unit of a CNN. Highly activated areas of CNN channels are linked with human concepts (objects, parts, textures, colors, …).</p></li>
 </ul>
 </section>
@@ -468,6 +472,15 @@ Network Dissection quantifies the interpretability of a unit of a CNN. Highly ac
 </section>
 <section id="concept-activation-vector-cav">
 <h3>Concept activation vector (CAV)<a class="headerlink" href="#concept-activation-vector-cav" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)</p></li>
+</ul>
+</section>
+<section id="visual-concepts">
+<h3>Visual concepts<a class="headerlink" href="#visual-concepts" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Original version: Visual Concept Learning: Combining Machine Vision and Bayesian Generalization on Concept Hierarchies</p></li>
+</ul>
 </section>
 </section>
 <section id="concepts">
@@ -647,6 +660,7 @@ Network Dissection quantifies the interpretability of a unit of a CNN. Highly ac
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-attribution">Concept Attribution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-based-explanations">Concept-based explanations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-activation-vector-cav">Concept activation vector (CAV)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-concepts">Visual concepts</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts</a><ul class="nav section-nav flex-column">

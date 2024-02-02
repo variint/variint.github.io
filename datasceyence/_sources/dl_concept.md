@@ -32,6 +32,11 @@ Network Dissection quantifies the interpretability of a unit of a CNN. Highly ac
 
 ### Concept activation vector (CAV)
 
+* Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)
+
+### Visual concepts
+* Original version: Visual Concept Learning: Combining Machine Vision and Bayesian Generalization on Concept Hierarchies
+
 
 ## Concepts
 

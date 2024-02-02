@@ -13,3 +13,8 @@ Meta-learning (or learning to learn) tries to solve the problem of the bias/vari
 ## Related work
 * Review paper: Known Operator Learning and Hybrid Machine Learning in Medical Imaging -- A Review of the Past, the Present, and the Future (Maier et al., 2021) - https://arxiv.org/abs/2108.04543
 * Contribution paper: Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks (Finn et al., 2017) - https://arxiv.org/abs/1703.03400
+
+## References
+```{bibliography}
+:filter: docname in docnames
+```
