@@ -163,11 +163,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Training strategies</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Deep learning basics</a></li>
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Partial labels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Weakly supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_mil.html">Multiple-Instance Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
@@ -179,15 +178,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="dl_pruning.html">Network pruning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_growing.html">Growing neural networks</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Human-centered AI</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Explainability</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_mi.html">Mechanistic interpretability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_xai.html">Explainable AI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_concept.html">Concept Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_concept.html">Concept Alignment</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Domains</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_i2i.html">Image to Image translation</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_mm.html">Multi-modality</a></li>
 </ul>
@@ -404,7 +403,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architectures">Architectures</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gans">GANs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn">CNN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unet">UNet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gan">GAN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer">Transformer</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
@@ -433,18 +435,29 @@ document.write(`
 <p>A data annotation tool is used to create the target label/ground truth.</p>
 <section id="makesense-ai">
 <h3><a class="reference external" href="http://Makesense.ai">Makesense.ai</a><a class="headerlink" href="#makesense-ai" title="Permalink to this headline">#</a></h3>
+<p><a class="reference external" href="http://makesense.ai">makesense.ai</a> is a free-to-use online tool for labeling pictures</p>
 </section>
 <section id="imagej">
 <h3>ImageJ<a class="headerlink" href="#imagej" title="Permalink to this headline">#</a></h3>
+<p><a class="reference external" href="https://imagej.net/imaging/annotating-images">https://imagej.net/imaging/annotating-images</a></p>
 </section>
 </section>
 <section id="architectures">
 <h2>Architectures<a class="headerlink" href="#architectures" title="Permalink to this headline">#</a></h2>
-<section id="gans">
-<h3>GANs<a class="headerlink" href="#gans" title="Permalink to this headline">#</a></h3>
+<section id="cnn">
+<h3>CNN<a class="headerlink" href="#cnn" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="unet">
+<h3>UNet<a class="headerlink" href="#unet" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="gan">
+<h3>GAN<a class="headerlink" href="#gan" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><em>Generative adversarial networks (GANs)</em> typically employ a generator G and a discriminator D in an adversarial game. G generates an image by sampling from an isotropic Gaussian distribution, while D is given the synthetic image and a real one, and tries to identify which input is real/fake. Especially CycleGAN.</p></li>
 </ul>
+</section>
+<section id="transformer">
+<h3>Transformer<a class="headerlink" href="#transformer" title="Permalink to this headline">#</a></h3>
 </section>
 </section>
 <section id="references">
@@ -536,7 +549,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architectures">Architectures</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gans">GANs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cnn">CNN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unet">UNet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gan">GAN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer">Transformer</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>

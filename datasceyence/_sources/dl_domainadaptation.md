@@ -14,7 +14,7 @@ A model’s ability to maintain the desired behaviour across domain changes is a
 * I know how semi-supervised learning can be applied for domain adaptation.
 
 
-## Related Work
+## Methods
 
 ### Adversarial noise
 * Original version: PhD Thesis: Improving the domain generalization and robustness of neural networks for medical imaging (Chen, 2022) - https://spiral.imperial.ac.uk/handle/10044/1/94593

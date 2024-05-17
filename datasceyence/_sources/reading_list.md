@@ -4,6 +4,18 @@
 
 Everything that is not part of another chapter
 
+
+### 2024
+| Paper | reference | status | learned |
+|---|---|---|---|
+| Grokking |
+| Multi-modality |
+| Capsule networks |
+| Neural Networks and the Chomsky Hierarchy |
+| Break It Down: Evidence for Structural Compositionality in Neural Networks |
+
+
+### 2023
 | Paper | reference | status | learned |
 |---|---|---|---|
 | Perspectives on the State and Future of Deep Learning--2023 | {cite}`goldblum2023perspectives` | todo ||

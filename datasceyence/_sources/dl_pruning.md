@@ -48,7 +48,25 @@ Structured pruning removes entire filters of neural networks. {cite}`he2023struc
 
 ## Importance Metric
 
-The distribution of the low ranking filters is interesting. Most of the filters pruned are from the deeper layer. Here is a peek of which filters were pruned after the first iteration - https://jacobgil.github.io/deeplearning/pruning-deep-learning
+{cite}`Molchanov2017`
+
+
+### Minimum weight
+* Magnitude of kernel weights
+* Simplest criterion
+
+### Activation
+* ReLU activation is sparse. We can assume, that a small activation value is not important
+
+### Mutual information
+* Measure of how much information is present in two different kernels. 
+* Information gain is the reduction in entropy or surprise.
+
+### Taylor expansion
+* Optimisation problem
+
+<!--The distribution of the low ranking filters is interesting. Most of the filters pruned are from the deeper layer. Here is a peek of which filters were pruned after the first iteration - https://jacobgil.github.io/deeplearning/pruning-deep-learning
+-->
 
 * Magnitude
 * Clustering
@@ -129,6 +147,9 @@ Speedup uses flops
 * Original version: https://nathanhubens.github.io/posts/deep%20learning/2020/05/22/pruning.html
 
 
+## Other
+
+* The “lottery ticket hypothesis” refers to the claim that a randomly-initialized neural network contains a sub-network that can match or outperform the trained network when trained in isolation - https://arxiv.org/pdf/2212.13881.pdf
 
 <!--
 Email: 

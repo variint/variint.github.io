@@ -17,7 +17,7 @@ Favourite sources to learn the basics!!
 | PyTorch docs | https://pytorch.org/tutorials/beginner/data_loading_tutorial.html | load data and train a model | beginner |
 | PyTorch notebooks 'Deep Learning 1 (PyTorch)' | https://uvadlc-notebooks.readthedocs.io/en/latest/tutorial_notebooks/tutorial2/Introduction_to_PyTorch.html | Model types - ready to train, with explanations | multiple |
 
-# Surveys
+## Surveys
 
 | Survey | task | level |
 |---|---|---|
@@ -40,3 +40,25 @@ Favourite sources to learn the basics!!
 
 
 * Spearman’s rank correlation (not commonly used for deep learning)
+
+
+## Layer types:
+
+### Pooling
+Pooling is a poor way to do dynamic routing. - https://www.lesswrong.com/posts/PQu2YPtcm2dQLSsu9/the-unreasonable-effectiveness-of-deep-learning
+
+
+## Regularisation
+
+### Early Stopping
+Is used to stop the training if there is no improvement after a given number of events
+
+### Grokking
+Grokking refers to the phenomenon of deep networks exhibiting a dramatic increase in test accuracy when training past the point where training accuracy is 100% - https://arxiv.org/pdf/2212.13881.pdf
+
+
+## References
+```{bibliography}
+:filter: docname in docnames
+```
+

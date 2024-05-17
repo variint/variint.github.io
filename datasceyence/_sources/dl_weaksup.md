@@ -1,4 +1,4 @@
-# Partial labels
+# Weakly supervised learning
 
 ## Introduction
 

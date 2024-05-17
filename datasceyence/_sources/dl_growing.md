@@ -1,7 +1,7 @@
 # Growing neural networks
 
 
-## Related Work
+## Methods
 
 ### Neural cellular automata (NCA)
 

@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Domain Adaptation" href="dl_domainadaptation.html" />
-    <link rel="prev" title="Concept Learning" href="dl_concept.html" />
+    <link rel="prev" title="Concept Alignment" href="dl_concept.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -163,11 +163,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Training strategies</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Deep learning basics</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="dl_sup.html">Supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Partial labels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Weakly supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_mil.html">Multiple-Instance Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
@@ -179,15 +178,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="dl_pruning.html">Network pruning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_growing.html">Growing neural networks</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Human-centered AI</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Explainability</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_mi.html">Mechanistic interpretability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_xai.html">Explainable AI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_concept.html">Concept Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_concept.html">Concept Alignment</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Domains</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Image to Image translation</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_mm.html">Multi-modality</a></li>
 </ul>
@@ -394,25 +393,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Image to Image translation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-image-editing">Poisson Image Editing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-based">Generative-based</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal">Multi-modal</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal">Multi-modal</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -442,8 +435,8 @@ Poisson image editing - Seamless cloning: The goal of seamless cloning is to avo
 </ul>
 </section>
 </section>
-<section id="related-work">
-<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">#</a></h2>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">#</a></h2>
 <section id="poisson-image-editing">
 <h3>Poisson Image Editing<a class="headerlink" href="#poisson-image-editing" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
@@ -464,15 +457,15 @@ Poisson image editing - Seamless cloning: The goal of seamless cloning is to avo
 <li><p>pix2pix: requires image pairs</p></li>
 </ul>
 </section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="multi-modal">
-<h1>Multi-modal<a class="headerlink" href="#multi-modal" title="Permalink to this headline">#</a></h1>
+<section id="multi-modal">
+<h3>Multi-modal<a class="headerlink" href="#multi-modal" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>MUNIT</p></li>
 <li><p>DRIT++</p></li>
 <li><p>DSMAP</p></li>
 </ul>
+</section>
+</section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <span class="target" id="id1"></span></section>
@@ -515,7 +508,7 @@ Poisson image editing - Seamless cloning: The goal of seamless cloning is to avo
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Concept Learning</p>
+        <p class="prev-next-title">Concept Alignment</p>
       </div>
     </a>
     <a class="right-next"
@@ -545,25 +538,19 @@ Poisson image editing - Seamless cloning: The goal of seamless cloning is to avo
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Image to Image translation</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poisson-image-editing">Poisson Image Editing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-based">Generative-based</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal">Multi-modal</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-modal">Multi-modal</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>

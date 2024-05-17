@@ -13,7 +13,7 @@ Poisson image editing - Seamless cloning: The goal of seamless cloning is to avo
 * Learn about image transformation techniques that are defined by using a guidance field depending entirely on the original image.
 
 
-## Related Work
+## Methods
 
 ### Poisson Image Editing
 * Contribution paper: Poisson Image Editing (Perez et al., 2003) - https://www.cs.jhu.edu/~misha/Fall07/Papers/Perez03.pdf
@@ -30,7 +30,7 @@ Poisson image editing - Seamless cloning: The goal of seamless cloning is to avo
 * NICE-GAN
 * pix2pix: requires image pairs
 
-# Multi-modal
+### Multi-modal
 * MUNIT
 * DRIT++
 * DSMAP

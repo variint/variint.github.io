@@ -163,11 +163,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Training strategies</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Deep learning basics</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="dl_sup.html">Supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Partial labels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Weakly supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_mil.html">Multiple-Instance Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
@@ -179,15 +178,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="dl_pruning.html">Network pruning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_growing.html">Growing neural networks</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Human-centered AI</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Explainability</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_mi.html">Mechanistic interpretability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_xai.html">Explainable AI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_concept.html">Concept Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_concept.html">Concept Alignment</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Domains</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_i2i.html">Image to Image translation</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Multi-modality</a></li>
 </ul>
@@ -394,6 +393,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introdcution">Introdcution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-distillation">Knowledge distillation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contrastive-learning">Contrastive learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datasceyence-column">DatascEYEnce! column</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
@@ -408,6 +417,27 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="multi-modality">
 <h1>Multi-modality<a class="headerlink" href="#multi-modality" title="Permalink to this headline">#</a></h1>
+<section id="introdcution">
+<h2>Introdcution<a class="headerlink" href="#introdcution" title="Permalink to this headline">#</a></h2>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">#</a></h3>
+<p>Multi-modal image analysis uses a variety of images from the same object. We perform knowledge fusion in order to take advantage of the different types of images.</p>
+</section>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">#</a></h2>
+<section id="knowledge-distillation">
+<h3>Knowledge distillation<a class="headerlink" href="#knowledge-distillation" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="contrastive-learning">
+<h3>Contrastive learning<a class="headerlink" href="#contrastive-learning" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="datasceyence-column">
+<h3>DatascEYEnce! column<a class="headerlink" href="#datasceyence-column" title="Permalink to this headline">#</a></h3>
+<p>I did conduct an interview about knowledge distillation for multi-modal retinal images:
+<a class="reference external" href="https://www.rsipvision.com/ComputerVisionNews-2024January/22/">https://www.rsipvision.com/ComputerVisionNews-2024January/22/</a></p>
+</section>
+</section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <span class="target" id="id1"></span></section>
@@ -480,6 +510,16 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introdcution">Introdcution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-distillation">Knowledge distillation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contrastive-learning">Contrastive learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#datasceyence-column">DatascEYEnce! column</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>

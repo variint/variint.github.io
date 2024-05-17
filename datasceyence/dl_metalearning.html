@@ -163,11 +163,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Training strategies</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Deep learning basics</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="dl_sup.html">Supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Partial labels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Weakly supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_mil.html">Multiple-Instance Learning</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Meta-learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
@@ -179,15 +178,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="dl_pruning.html">Network pruning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_growing.html">Growing neural networks</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Human-centered AI</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Explainability</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_mi.html">Mechanistic interpretability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_xai.html">Explainable AI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_concept.html">Concept Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_concept.html">Concept Alignment</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Domains</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_i2i.html">Image to Image translation</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_mm.html">Multi-modality</a></li>
 </ul>
@@ -399,7 +398,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#known-operator-learning">Known Operator Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-agnostic-meta-learning">Model-Agnostic Meta-Learning</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
@@ -429,12 +432,20 @@ document.write(`
 </ul>
 </section>
 </section>
-<section id="related-work">
-<h2>Related work<a class="headerlink" href="#related-work" title="Permalink to this headline">#</a></h2>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">#</a></h2>
+<section id="known-operator-learning">
+<h3>Known Operator Learning<a class="headerlink" href="#known-operator-learning" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Review paper: Known Operator Learning and Hybrid Machine Learning in Medical Imaging – A Review of the Past, the Present, and the Future (Maier et al., 2021) - <a class="reference external" href="https://arxiv.org/abs/2108.04543">https://arxiv.org/abs/2108.04543</a></p></li>
+</ul>
+</section>
+<section id="model-agnostic-meta-learning">
+<h3>Model-Agnostic Meta-Learning<a class="headerlink" href="#model-agnostic-meta-learning" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
 <li><p>Contribution paper: Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks (Finn et al., 2017) - <a class="reference external" href="https://arxiv.org/abs/1703.03400">https://arxiv.org/abs/1703.03400</a></p></li>
 </ul>
+</section>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
@@ -513,7 +524,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related work</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#known-operator-learning">Known Operator Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-agnostic-meta-learning">Model-Agnostic Meta-Learning</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>

@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'dl_growing';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Explainable AI" href="dl_xai.html" />
+    <link rel="next" title="Mechanistic interpretability" href="dl_mi.html" />
     <link rel="prev" title="Network pruning" href="dl_pruning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -163,11 +163,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Training strategies</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Deep learning basics</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="dl_sup.html">Supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Partial labels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Weakly supervised learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_mil.html">Multiple-Instance Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
@@ -179,15 +178,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="dl_pruning.html">Network pruning</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Growing neural networks</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Human-centered AI</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Explainability</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_mi.html">Mechanistic interpretability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_xai.html">Explainable AI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dl_concept.html">Concept Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_concept.html">Concept Alignment</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Domains</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="dl_i2i.html">Image to Image translation</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="dl_domainadaptation.html">Domain Adaptation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dl_mm.html">Multi-modality</a></li>
 </ul>
@@ -394,7 +393,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-cellular-automata-nca">Neural cellular automata (NCA)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-architecture-search-nas">Neural architecture search (NAS)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-multiple-tasks-iteratively">Adding multiple tasks iteratively</a></li>
@@ -414,8 +413,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="growing-neural-networks">
 <h1>Growing neural networks<a class="headerlink" href="#growing-neural-networks" title="Permalink to this headline">#</a></h1>
-<section id="related-work">
-<h2>Related Work<a class="headerlink" href="#related-work" title="Permalink to this headline">#</a></h2>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">#</a></h2>
 <section id="neural-cellular-automata-nca">
 <h3>Neural cellular automata (NCA)<a class="headerlink" href="#neural-cellular-automata-nca" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
@@ -491,11 +490,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="dl_xai.html"
+       href="dl_mi.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Explainable AI</p>
+        <p class="prev-next-title">Mechanistic interpretability</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -517,7 +516,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#related-work">Related Work</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-cellular-automata-nca">Neural cellular automata (NCA)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-architecture-search-nas">Neural architecture search (NAS)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-multiple-tasks-iteratively">Adding multiple tasks iteratively</a></li>

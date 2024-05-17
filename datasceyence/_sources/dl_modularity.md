@@ -9,12 +9,7 @@ A modular neural network is composed of functions (modules) that can be combined
 * Learn about explicit and implicit modularity in neural networks.
 * Learn about evolutionary origins of modular networks.
 
-<!--
-### Biologically Inspired Modular Neural Networks
-* Original version: PhD Thesis: Biologically Inspired Modular Neural Networks - https://vtechworks.lib.vt.edu/bitstream/handle/10919/27998/etd.pdf
--->
-
-## Motivation for modular networks
+### Motivation for modular networks
 * Model complexity reduction
 * Robistness
 * Scalability
@@ -22,6 +17,10 @@ A modular neural network is composed of functions (modules) that can be combined
 * Interpretability
 
 Original version: {cite}`azam2000biologically`
+<!--
+### Biologically Inspired Modular Neural Networks
+* Original version: PhD Thesis: Biologically Inspired Modular Neural Networks - https://vtechworks.lib.vt.edu/bitstream/handle/10919/27998/etd.pdf
+-->
 
 
 ## Implicitly introduced modularity
