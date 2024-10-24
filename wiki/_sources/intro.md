@@ -1,8 +1,8 @@
-# Datasceyence
+# Wiki
 
 Hello everyone!
 
-This is a document with everything I come across that has to do with deep learning and ophthalmology.
+This is my (constantly changing) jupyterbook with my favourite deep learning topics! A lot of stuff may be wrong, please make sure to read proper sources from the internet before using this mess <3
 
 ```{tableofcontents}
 ```

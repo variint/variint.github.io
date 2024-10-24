@@ -2,7 +2,6 @@
 
 Favourite sources to learn the basics!!
 
-
 ## Courses
 
 | Course | link | topic | level |
@@ -12,6 +11,7 @@ Favourite sources to learn the basics!!
 | Stanford CS 330: Deep Multi-Task and Meta Learning | https://cs330.stanford.edu/ | meta learning | intermediate |
 
 ## Coding sources
+
 | Docs | link | topic | level |
 |---|---|---|---|
 | PyTorch docs | https://pytorch.org/tutorials/beginner/data_loading_tutorial.html | load data and train a model | beginner |
@@ -23,22 +23,20 @@ Favourite sources to learn the basics!!
 |---|---|---|
 | A Survey of Deep Learning-based Object Detection | object detection | Intermediate |
 
-
 ## Models
 
 | Model | paper | task | level | 
 |---|---|---|---|
 | Faster R-CNN | Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks | Object detection | Intermediate |
 
-
-## Evaluation and Plots
+## Metrics
 
 * F1 Score
 * Accuracy
 * ROC AUC
 * Prec-Recall curve
 
-
+## Other metrics
 * Spearman’s rank correlation (not commonly used for deep learning)
 
 
@@ -56,6 +54,11 @@ Is used to stop the training if there is no improvement after a given number of 
 ### Grokking
 Grokking refers to the phenomenon of deep networks exhibiting a dramatic increase in test accuracy when training past the point where training accuracy is 100% - https://arxiv.org/pdf/2212.13881.pdf
 
+
+## Bias
+
+### Inductive bias 
+Inductive bias refers to the set of assumptions that a model makes to predict outputs for inputs it has never seen.
 
 ## References
 ```{bibliography}
