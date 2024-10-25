@@ -200,7 +200,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Interpretability</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="int_basics.html">Interpretablility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Mechanistic interpretability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Behavioural interpretability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_attributional.html">Attributional interpretablility</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_concept.html">Concept Alignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_mechanistic.html">Mechanistic interpretability</a></li>
@@ -438,6 +438,18 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#synthesis">Synthesis</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics-to-measure-disentanglement">Metrics to measure disentanglement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information-gap-mig">Mutual Information Gap (MIG)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beta-vae-score">Beta-VAE Score</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorvae-score">FactorVAE Score</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disentanglement-score-dscore">Disentanglement Score (Dscore)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-bottleneck-ib-method">Information Bottleneck (IB) Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independence-metric-indep">Independence Metric (Indep)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-information-bottleneck-vib">Variational Information Bottleneck (VIB)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latent-traversal">Latent Traversal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorized-representation">Factorized Representation</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
@@ -454,7 +466,7 @@ document.write(`
 <h1>Disentangled learning<a class="headerlink" href="#disentangled-learning" title="Link to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>Disentangled features mean that individual network units detect specific real world concepts <span id="id1">[<a class="reference internal" href="int_concept.html#id9" title="Christoph Molnar. Interpretable machine learning - network dissection. 2022. URL: https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection.">Mol22</a>]</span>.</p>
+<p>Disentangled features mean that individual network units detect specific real world concepts <span id="id1">[<a class="reference internal" href="int_concept.html#id38" title="Christoph Molnar. Interpretable machine learning - network dissection. 2022. URL: https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection.">Mol22</a>]</span>.</p>
 <p>In disentanglement, main factors of variation that are present in a data distribution are separated. Typically factors are decomposed into a single vector representation.</p>
 <section id="key-takeaways">
 <h3>Key takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h3>
@@ -533,6 +545,81 @@ document.write(`
 <section id="synthesis">
 <h3>Synthesis<a class="headerlink" href="#synthesis" title="Link to this heading">#</a></h3>
 <p><em>Image-to-image (I2I) translation</em> is one spatially equivariant application of CSD. The goal is to translate one image representation into another where a specific factor differs (e.g. style) while others are maintained. One architecture to use is the MUNIT: To translate an image to another domain, they recombine its content code with a random style code sampled from the style space of the target domain. The network consists of two encoder-decoder pairs for two domains.</p>
+</section>
+</section>
+<section id="metrics-to-measure-disentanglement">
+<h2>Metrics to measure disentanglement<a class="headerlink" href="#metrics-to-measure-disentanglement" title="Link to this heading">#</a></h2>
+<section id="mutual-information-gap-mig">
+<h3>Mutual Information Gap (MIG)<a class="headerlink" href="#mutual-information-gap-mig" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures the difference between the mutual information between latent variables and the ground truth factors of variation.</p></li>
+<li><p><strong>Formula</strong>: [ \text{MIG} = \frac{\text{MI}<em>{\text{latent}, \text{ground truth}} - \text{MI}</em>{\text{latent}, \text{random}}}{\text{MI}_{\text{ground truth}, \text{random}}} ]</p></li>
+<li><p><strong>Usage</strong>: Evaluates how well latent factors correspond to ground truth factors, with higher values indicating better disentanglement.</p></li>
+</ul>
+</section>
+<section id="beta-vae-score">
+<h3>Beta-VAE Score<a class="headerlink" href="#beta-vae-score" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Evaluates the extent of disentanglement in Variational Autoencoders (VAEs) by comparing the mutual information between latent variables and the ground truth.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Beta-VAE Score} = \frac{\text{MI}<em>{\text{latent}, \text{ground truth}}}{\text{MI}</em>{\text{latent}, \text{reconstructed}}} ]</p></li>
+<li><p><strong>Usage</strong>: Assesses how well the latent variables capture distinct and meaningful factors of variation in the data.</p></li>
+</ul>
+</section>
+<section id="factorvae-score">
+<h3>FactorVAE Score<a class="headerlink" href="#factorvae-score" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures disentanglement by evaluating the mutual information between latent variables and the ground truth while penalizing entanglement in the VAE.</p></li>
+<li><p><strong>Formula</strong>: [ \text{FactorVAE Score} = \frac{\text{MI}<em>{\text{latent}, \text{ground truth}}}{\text{MI}</em>{\text{latent}, \text{random}}} ]</p></li>
+<li><p><strong>Usage</strong>: Quantifies the ability of the model to disentangle factors by comparing latent variable mutual information with both ground truth and random distributions.</p></li>
+</ul>
+</section>
+<section id="disentanglement-score-dscore">
+<h3>Disentanglement Score (Dscore)<a class="headerlink" href="#disentanglement-score-dscore" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: A metric that measures the degree of disentanglement based on the ability of the model to represent factors independently.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Dscore} = \frac{\text{MI}<em>{\text{latent}, \text{ground truth}}}{\text{MI}</em>{\text{latent}, \text{reconstructed}}} ]</p></li>
+<li><p><strong>Usage</strong>: Assesses how effectively the model separates different factors of variation in the latent space.</p></li>
+</ul>
+</section>
+<section id="information-bottleneck-ib-method">
+<h3>Information Bottleneck (IB) Method<a class="headerlink" href="#information-bottleneck-ib-method" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures how much information about the input is retained in the latent representation while discarding irrelevant information.</p></li>
+<li><p><strong>Formula</strong>: [ \text{IB} = I(X; Z) - I(Z; Y) ]</p></li>
+<li><p><strong>Usage</strong>: Evaluates the trade-off between retaining relevant information and discarding irrelevant information in the latent space.</p></li>
+</ul>
+</section>
+<section id="independence-metric-indep">
+<h3>Independence Metric (Indep)<a class="headerlink" href="#independence-metric-indep" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Quantifies the statistical independence between latent variables to assess disentanglement.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Indep} = 1 - \text{MI}_{\text{latent variables}} ]</p></li>
+<li><p><strong>Usage</strong>: Measures how independent the latent variables are from each other, with higher values indicating better disentanglement.</p></li>
+</ul>
+</section>
+<section id="variational-information-bottleneck-vib">
+<h3>Variational Information Bottleneck (VIB)<a class="headerlink" href="#variational-information-bottleneck-vib" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures the trade-off between the information retained about the input and the complexity of the latent representation.</p></li>
+<li><p><strong>Formula</strong>: [ \text{VIB} = I(X; Z) - \beta I(Z; Y) ]</p></li>
+<li><p><strong>Usage</strong>: Assesses how well the model balances between capturing useful information and reducing redundancy in the latent space.</p></li>
+</ul>
+</section>
+<section id="latent-traversal">
+<h3>Latent Traversal<a class="headerlink" href="#latent-traversal" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Evaluates the quality of disentangled representations by traversing the latent space and checking if each dimension corresponds to a specific factor of variation.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Latent Traversal} = \frac{\text{Number of interpretable factors}}{\text{Total number of latent dimensions}} ]</p></li>
+<li><p><strong>Usage</strong>: Assesses how well changes in individual latent dimensions correspond to meaningful changes in the data.</p></li>
+</ul>
+</section>
+<section id="factorized-representation">
+<h3>Factorized Representation<a class="headerlink" href="#factorized-representation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures the extent to which the latent space can be factorized into distinct, interpretable components.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Factorized Representation} = \frac{\text{Number of independent factors}}{\text{Total number of latent dimensions}} ]</p></li>
+<li><p><strong>Usage</strong>: Evaluates how effectively the latent representation can be decomposed into separate, interpretable factors.</p></li>
+</ul>
 <!-- 
 ## Related Work
 
@@ -556,7 +643,7 @@ document.write(`
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <div class="docutils container" id="id2">
 <div role="list" class="citation-list">
-<div class="citation" id="id6" role="doc-biblioentry">
+<div class="citation" id="id33" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Mol22</a><span class="fn-bracket">]</span></span>
 <p>Christoph Molnar. Interpretable machine learning - network dissection. 2022. URL: <a class="reference external" href="https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection">https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection</a>.</p>
 </div>
@@ -645,6 +732,18 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#synthesis">Synthesis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics-to-measure-disentanglement">Metrics to measure disentanglement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information-gap-mig">Mutual Information Gap (MIG)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beta-vae-score">Beta-VAE Score</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorvae-score">FactorVAE Score</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disentanglement-score-dscore">Disentanglement Score (Dscore)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-bottleneck-ib-method">Information Bottleneck (IB) Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independence-metric-indep">Independence Metric (Indep)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-information-bottleneck-vib">Variational Information Bottleneck (VIB)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latent-traversal">Latent Traversal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorized-representation">Factorized Representation</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>

@@ -200,7 +200,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Interpretability</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="int_basics.html">Interpretablility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Mechanistic interpretability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Behavioural interpretability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_attributional.html">Attributional interpretablility</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_concept.html">Concept Alignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_mechanistic.html">Mechanistic interpretability</a></li>
@@ -421,7 +421,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key takeaways</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularisation">Regularisation</a><ul class="nav section-nav flex-column">
@@ -442,7 +442,7 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-metric">Importance Metric</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-metric-pruning-conditions">Importance Metric / Pruning Conditions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-weight">Minimum weight</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation">Activation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information">Mutual information</a></li>
@@ -459,9 +459,33 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hessian-matrix">Hessian Matrix</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitude-based-pruning">Magnitude-Based Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-norm-pruning">L1 Norm Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l2-norm-pruning">L2 Norm Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-based-pruning">Gradient-Based Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-based-pruning">Variance-Based Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-based-pruning">Activation-Based Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-pruning">Connection Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Structured Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-regularization">Sparse Regularization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-pruning">Dynamic Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-based-pruning">Sensitivity-Based Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weight-sparsity">Weight Sparsity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-compression-ratio">Model Compression Ratio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-drop">Accuracy Drop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flops-reduction">FLOPs Reduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-reduction">Parameter Reduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-latency">Model Latency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-footprint">Memory Footprint</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruction-error">Reconstruction Error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#efficiency-metrics">Efficiency Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-analysis">Sensitivity Analysis</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scheduling">Scheduling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">Evaluation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Other</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
@@ -478,8 +502,8 @@ document.write(`
 <h1>Network pruning<a class="headerlink" href="#network-pruning" title="Link to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<section id="goals">
-<h3>Goals<a class="headerlink" href="#goals" title="Link to this heading">#</a></h3>
+<section id="key-takeaways">
+<h3>Key takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Learn about sparse vs dense networks.</p></li>
 <li><p>Learn about the difference of local and global pruning.</p></li>
@@ -501,11 +525,11 @@ document.write(`
 <h2>Granularity<a class="headerlink" href="#granularity" title="Link to this heading">#</a></h2>
 <section id="unstructured-pruning">
 <h3>Unstructured pruning<a class="headerlink" href="#unstructured-pruning" title="Link to this heading">#</a></h3>
-<p>Unstructured Pruning removes connections (weights). Requires specific hardware or library support for realistic accelearation. <span id="id1">[<a class="reference internal" href="#id19" title="Yang He and Lingao Xiao. Structured pruning for deep convolutional neural networks: a survey. arXiv preprint arXiv:2303.00566, 2023.">HX23</a>]</span></p>
+<p>Unstructured Pruning removes connections (weights). Requires specific hardware or library support for realistic accelearation. <span id="id1">[<a class="reference internal" href="#id29" title="Yang He and Lingao Xiao. Structured pruning for deep convolutional neural networks: a survey. arXiv preprint arXiv:2303.00566, 2023.">HX23</a>]</span></p>
 </section>
 <section id="structured-pruning">
 <h3>Structured pruning<a class="headerlink" href="#structured-pruning" title="Link to this heading">#</a></h3>
-<p>Structured pruning removes entire filters of neural networks. <span id="id2">[<a class="reference internal" href="#id19" title="Yang He and Lingao Xiao. Structured pruning for deep convolutional neural networks: a survey. arXiv preprint arXiv:2303.00566, 2023.">HX23</a>]</span></p>
+<p>Structured pruning removes entire filters of neural networks. <span id="id2">[<a class="reference internal" href="#id29" title="Yang He and Lingao Xiao. Structured pruning for deep convolutional neural networks: a survey. arXiv preprint arXiv:2303.00566, 2023.">HX23</a>]</span></p>
 <section id="filter-wise-pruning">
 <h4>Filter-wise pruning<a class="headerlink" href="#filter-wise-pruning" title="Link to this heading">#</a></h4>
 </section>
@@ -532,8 +556,8 @@ document.write(`
 </section>
 </section>
 </section>
-<section id="importance-metric">
-<h2>Importance Metric<a class="headerlink" href="#importance-metric" title="Link to this heading">#</a></h2>
+<section id="importance-metric-pruning-conditions">
+<h2>Importance Metric / Pruning Conditions<a class="headerlink" href="#importance-metric-pruning-conditions" title="Link to this heading">#</a></h2>
 <p><span id="id3">[]</span></p>
 <section id="minimum-weight">
 <h3>Minimum weight<a class="headerlink" href="#minimum-weight" title="Link to this heading">#</a></h3>
@@ -575,7 +599,7 @@ document.write(`
 <h3>Weight dependent<a class="headerlink" href="#weight-dependent" title="Link to this heading">#</a></h3>
 <section id="filter-norm">
 <h4>Filter norm<a class="headerlink" href="#filter-norm" title="Link to this heading">#</a></h4>
-<p>Uses a single filter, no input data needed <span id="id4">[<a class="reference internal" href="#id19" title="Yang He and Lingao Xiao. Structured pruning for deep convolutional neural networks: a survey. arXiv preprint arXiv:2303.00566, 2023.">HX23</a>]</span></p>
+<p>Uses a single filter, no input data needed <span id="id4">[<a class="reference internal" href="#id29" title="Yang He and Lingao Xiao. Structured pruning for deep convolutional neural networks: a survey. arXiv preprint arXiv:2303.00566, 2023.">HX23</a>]</span></p>
 <p>all kind of mean the same: norm, length, magnitude, distance</p>
 <ul class="simple">
 <li><p>L0 norm = Hamming distance</p></li>
@@ -587,7 +611,7 @@ document.write(`
 <section id="filter-correlation">
 <h4>Filter correlation<a class="headerlink" href="#filter-correlation" title="Link to this heading">#</a></h4>
 <p>Compares multiple filter in a layer, no input data needed</p>
-<p>Filter correlation follows the “smaller-norm-less-informative” assumption. Finds redundant filters by exploiting relationships among filters of the same layer. <span id="id5">[<a class="reference internal" href="#id19" title="Yang He and Lingao Xiao. Structured pruning for deep convolutional neural networks: a survey. arXiv preprint arXiv:2303.00566, 2023.">HX23</a>]</span></p>
+<p>Filter correlation follows the “smaller-norm-less-informative” assumption. Finds redundant filters by exploiting relationships among filters of the same layer. <span id="id5">[<a class="reference internal" href="#id29" title="Yang He and Lingao Xiao. Structured pruning for deep convolutional neural networks: a survey. arXiv preprint arXiv:2303.00566, 2023.">HX23</a>]</span></p>
 <ul class="simple">
 <li><p>Filter pruning via Geometric Median: Filters close to the geometric median are considered to be redundant</p></li>
 <li><p>RED: Scalar hashing on weights in each layer. Redundant filters are merged based on relative similarity of filters. Uneven depthwise separation technique for pruning.</p></li>
@@ -624,6 +648,177 @@ document.write(`
 <h3>Hessian Matrix<a class="headerlink" href="#hessian-matrix" title="Link to this heading">#</a></h3>
 </section>
 </section>
+<section id="other">
+<h2>Other<a class="headerlink" href="#other" title="Link to this heading">#</a></h2>
+<section id="magnitude-based-pruning">
+<h3>Magnitude-Based Pruning<a class="headerlink" href="#magnitude-based-pruning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Prunes weights or neurons based on their magnitude.</p></li>
+<li><p><strong>Condition</strong>: Weights or neurons with values below a certain threshold are removed.</p></li>
+<li><p><strong>Usage</strong>: Simple and effective; commonly used to prune less significant weights or neurons.</p></li>
+</ul>
+</section>
+<section id="l1-norm-pruning">
+<h3>L1 Norm Pruning<a class="headerlink" href="#l1-norm-pruning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Prunes weights or neurons based on the L1 norm of their values.</p></li>
+<li><p><strong>Condition</strong>: Weights or neurons with the smallest L1 norm are removed.</p></li>
+<li><p><strong>Usage</strong>: Useful for creating sparse models by removing less influential components.</p></li>
+</ul>
+</section>
+<section id="l2-norm-pruning">
+<h3>L2 Norm Pruning<a class="headerlink" href="#l2-norm-pruning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Prunes weights or neurons based on the L2 norm of their values.</p></li>
+<li><p><strong>Condition</strong>: Weights or neurons with the smallest L2 norm are removed.</p></li>
+<li><p><strong>Usage</strong>: Helps in reducing redundancy and focusing on more significant weights.</p></li>
+</ul>
+</section>
+<section id="gradient-based-pruning">
+<h3>Gradient-Based Pruning<a class="headerlink" href="#gradient-based-pruning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Prunes weights or neurons based on the gradient of their loss function.</p></li>
+<li><p><strong>Condition</strong>: Weights or neurons with the smallest gradients are removed.</p></li>
+<li><p><strong>Usage</strong>: Targets components with the least impact on the model’s training process.</p></li>
+</ul>
+</section>
+<section id="variance-based-pruning">
+<h3>Variance-Based Pruning<a class="headerlink" href="#variance-based-pruning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Prunes weights or neurons based on their variance.</p></li>
+<li><p><strong>Condition</strong>: Weights or neurons with low variance in their activations are removed.</p></li>
+<li><p><strong>Usage</strong>: Identifies and removes components that contribute minimally to the model’s variability.</p></li>
+</ul>
+</section>
+<section id="activation-based-pruning">
+<h3>Activation-Based Pruning<a class="headerlink" href="#activation-based-pruning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Prunes weights or neurons based on their activation levels.</p></li>
+<li><p><strong>Condition</strong>: Weights or neurons with activations below a certain threshold are removed.</p></li>
+<li><p><strong>Usage</strong>: Focuses on components that have minimal impact on the output activations.</p></li>
+</ul>
+</section>
+<section id="connection-pruning">
+<h3>Connection Pruning<a class="headerlink" href="#connection-pruning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Prunes entire connections between layers based on their importance.</p></li>
+<li><p><strong>Condition</strong>: Connections with the lowest importance scores (e.g., based on magnitude or gradient) are removed.</p></li>
+<li><p><strong>Usage</strong>: Reduces complexity by removing less significant connections.</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>Structured Pruning<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Prunes entire structures, such as filters or channels, instead of individual weights.</p></li>
+<li><p><strong>Condition</strong>: Entire structures with low importance or contribution to performance are removed.</p></li>
+<li><p><strong>Usage</strong>: Helps in maintaining efficiency while reducing the model size.</p></li>
+</ul>
+</section>
+<section id="sparse-regularization">
+<h3>Sparse Regularization<a class="headerlink" href="#sparse-regularization" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Uses regularization techniques to induce sparsity in the model.</p></li>
+<li><p><strong>Condition</strong>: Regularization terms in the loss function encourage sparsity in weights or activations.</p></li>
+<li><p><strong>Usage</strong>: Integrates pruning into the training process by promoting sparsity.</p></li>
+</ul>
+</section>
+<section id="dynamic-pruning">
+<h3>Dynamic Pruning<a class="headerlink" href="#dynamic-pruning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Prunes weights or neurons dynamically during the training process.</p></li>
+<li><p><strong>Condition</strong>: Components are pruned based on their performance metrics or importance, which can change over time.</p></li>
+<li><p><strong>Usage</strong>: Allows for adaptive pruning based on the evolving training state.</p></li>
+</ul>
+</section>
+<section id="sensitivity-based-pruning">
+<h3>Sensitivity-Based Pruning<a class="headerlink" href="#sensitivity-based-pruning" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Prunes components based on their sensitivity to perturbations in the input data.</p></li>
+<li><p><strong>Condition</strong>: Components that show minimal sensitivity to input variations are removed.</p></li>
+<li><p><strong>Usage</strong>: Focuses on retaining components that are crucial for robust performance.</p></li>
+</ul>
+</section>
+<section id="weight-sparsity">
+<h3>Weight Sparsity<a class="headerlink" href="#weight-sparsity" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures the proportion of zero weights in the pruned model.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Weight Sparsity} = \frac{\text{Number of zero weights}}{\text{Total number of weights}} ]</p></li>
+<li><p><strong>Usage</strong>: Indicates the extent to which weights have been removed, with higher values suggesting greater sparsity.</p></li>
+</ul>
+</section>
+<section id="model-compression-ratio">
+<h3>Model Compression Ratio<a class="headerlink" href="#model-compression-ratio" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Ratio of the size of the pruned model to the size of the original model.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Compression Ratio} = \frac{\text{Size of pruned model}}{\text{Size of original model}} ]</p></li>
+<li><p><strong>Usage</strong>: Evaluates the reduction in model size due to pruning, with lower ratios indicating more effective compression.</p></li>
+</ul>
+</section>
+<section id="accuracy-drop">
+<h3>Accuracy Drop<a class="headerlink" href="#accuracy-drop" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures the change in model performance (accuracy) due to pruning.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Accuracy Drop} = \text{Accuracy}<em>{\text{original}} - \text{Accuracy}</em>{\text{pruned}} ]</p></li>
+<li><p><strong>Usage</strong>: Assesses the impact of pruning on the model’s predictive performance, with smaller drops indicating better preservation of accuracy.</p></li>
+</ul>
+</section>
+<section id="flops-reduction">
+<h3>FLOPs Reduction<a class="headerlink" href="#flops-reduction" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures the reduction in the number of floating-point operations (FLOPs) after pruning.</p></li>
+<li><p><strong>Formula</strong>: [ \text{FLOPs Reduction} = \frac{\text{FLOPs}<em>{\text{original}} - \text{FLOPs}</em>{\text{pruned}}}{\text{FLOPs}_{\text{original}}} ]</p></li>
+<li><p><strong>Usage</strong>: Evaluates the computational efficiency gained through pruning, with higher reductions indicating more effective pruning.</p></li>
+</ul>
+</section>
+<section id="parameter-reduction">
+<h3>Parameter Reduction<a class="headerlink" href="#parameter-reduction" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures the reduction in the total number of parameters due to pruning.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Parameter Reduction} = \frac{\text{Number of parameters}<em>{\text{original}} - \text{Number of parameters}</em>{\text{pruned}}}{\text{Number of parameters}_{\text{original}}} ]</p></li>
+<li><p><strong>Usage</strong>: Indicates how much the model size has been reduced by pruning, with higher reductions suggesting more aggressive pruning.</p></li>
+</ul>
+</section>
+<section id="model-latency">
+<h3>Model Latency<a class="headerlink" href="#model-latency" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures the change in the time required for the model to make predictions after pruning.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Model Latency} = \text{Latency}<em>{\text{pruned}} - \text{Latency}</em>{\text{original}} ]</p></li>
+<li><p><strong>Usage</strong>: Assesses the impact of pruning on inference time, with lower latencies indicating improved efficiency.</p></li>
+</ul>
+</section>
+<section id="memory-footprint">
+<h3>Memory Footprint<a class="headerlink" href="#memory-footprint" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures the reduction in the memory required to store the pruned model.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Memory Footprint} = \frac{\text{Memory}<em>{\text{original}} - \text{Memory}</em>{\text{pruned}}}{\text{Memory}_{\text{original}}} ]</p></li>
+<li><p><strong>Usage</strong>: Evaluates how pruning affects the memory usage of the model, with higher reductions indicating more efficient memory utilization.</p></li>
+</ul>
+</section>
+<section id="reconstruction-error">
+<h3>Reconstruction Error<a class="headerlink" href="#reconstruction-error" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures the error between the original model’s outputs and those of the pruned model on the same inputs.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Reconstruction Error} = \frac{1}{N} \sum_{i=1}^N |f_{\text{original}}(x_i) - f_{\text{pruned}}(x_i)| ]</p></li>
+<li><p><strong>Usage</strong>: Assesses how well the pruned model approximates the behavior of the original model, with lower errors indicating better preservation of the original model’s functionality.</p></li>
+</ul>
+</section>
+<section id="efficiency-metrics">
+<h3>Efficiency Metrics<a class="headerlink" href="#efficiency-metrics" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Assesses the trade-off between efficiency gains (e.g., speed, memory) and the loss of accuracy due to pruning.</p></li>
+<li><p><strong>Formula</strong>: Efficiency metrics can be domain-specific and may involve a combination of FLOPs reduction, latency, and accuracy drop.</p></li>
+<li><p><strong>Usage</strong>: Provides a holistic view of the effectiveness of pruning in terms of efficiency versus accuracy.</p></li>
+</ul>
+</section>
+<section id="sensitivity-analysis">
+<h3>Sensitivity Analysis<a class="headerlink" href="#sensitivity-analysis" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures the model’s sensitivity to pruning, i.e., how pruning affects different parts of the model.</p></li>
+<li><p><strong>Formula</strong>: Typically involves evaluating performance changes with various levels of pruning.</p></li>
+<li><p><strong>Usage</strong>: Helps understand which layers or components of the model are more sensitive to pruning and may guide more targeted pruning strategies.</p></li>
+</ul>
+</section>
+</section>
 <section id="scheduling">
 <h2>Scheduling<a class="headerlink" href="#scheduling" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -641,8 +836,8 @@ Speedup uses flops</p></li>
 <li><p>Original version: <a class="reference external" href="https://nathanhubens.github.io/posts/deep%20learning/2020/05/22/pruning.html">https://nathanhubens.github.io/posts/deep learning/2020/05/22/pruning.html</a></p></li>
 </ul>
 </section>
-<section id="other">
-<h2>Other<a class="headerlink" href="#other" title="Link to this heading">#</a></h2>
+<section id="id9">
+<h2>Other<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>The “lottery ticket hypothesis” refers to the claim that a randomly-initialized neural network contains a sub-network that can match or outperform the trained network when trained in isolation - <a class="reference external" href="https://arxiv.org/pdf/2212.13881.pdf">https://arxiv.org/pdf/2212.13881.pdf</a></p></li>
 </ul>
@@ -678,9 +873,9 @@ In practice, pruning shared-kernels in a layer has the same impact on the archit
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
-<div class="docutils container" id="id8">
+<div class="docutils container" id="id10">
 <div role="list" class="citation-list">
-<div class="citation" id="id19" role="doc-biblioentry">
+<div class="citation" id="id29" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>HX23<span class="fn-bracket">]</span></span>
 <span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>,<a role="doc-backlink" href="#id4">3</a>,<a role="doc-backlink" href="#id5">4</a>)</span>
 <p>Yang He and Lingao Xiao. Structured pruning for deep convolutional neural networks: a survey. <em>arXiv preprint arXiv:2303.00566</em>, 2023.</p>
@@ -755,7 +950,7 @@ In practice, pruning shared-kernels in a layer has the same impact on the archit
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key takeaways</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularisation">Regularisation</a><ul class="nav section-nav flex-column">
@@ -776,7 +971,7 @@ In practice, pruning shared-kernels in a layer has the same impact on the archit
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-metric">Importance Metric</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importance-metric-pruning-conditions">Importance Metric / Pruning Conditions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-weight">Minimum weight</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation">Activation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information">Mutual information</a></li>
@@ -793,9 +988,33 @@ In practice, pruning shared-kernels in a layer has the same impact on the archit
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hessian-matrix">Hessian Matrix</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitude-based-pruning">Magnitude-Based Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-norm-pruning">L1 Norm Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l2-norm-pruning">L2 Norm Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-based-pruning">Gradient-Based Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-based-pruning">Variance-Based Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-based-pruning">Activation-Based Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-pruning">Connection Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Structured Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-regularization">Sparse Regularization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-pruning">Dynamic Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-based-pruning">Sensitivity-Based Pruning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weight-sparsity">Weight Sparsity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-compression-ratio">Model Compression Ratio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-drop">Accuracy Drop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flops-reduction">FLOPs Reduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-reduction">Parameter Reduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-latency">Model Latency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-footprint">Memory Footprint</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruction-error">Reconstruction Error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#efficiency-metrics">Efficiency Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-analysis">Sensitivity Analysis</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scheduling">Scheduling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation">Evaluation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other">Other</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Other</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>

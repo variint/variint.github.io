@@ -200,7 +200,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Interpretability</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="int_basics.html">Interpretablility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Mechanistic interpretability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Behavioural interpretability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_attributional.html">Attributional interpretablility</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_concept.html">Concept Alignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_mechanistic.html">Mechanistic interpretability</a></li>
@@ -421,10 +421,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gini-coefficient">Gini Coefficient</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean">Mean</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#median">Median</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance">Variance</a></li>
@@ -443,10 +444,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-entropy">Cross-Entropy</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisation">Visualisation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot">Box Plot</a></li>
-</ul>
-</li>
 </ul>
             </nav>
         </div>
@@ -462,15 +459,21 @@ document.write(`
 <h1>Distribution-Based Metrics<a class="headerlink" href="#distribution-based-metrics" title="Link to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<section id="goals">
-<h3>Goals<a class="headerlink" href="#goals" title="Link to this heading">#</a></h3>
+<section id="key-takeaways">
+<h3>Key Takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Learn about performance metrics</p></li>
+<li><p>Learn about distribution metrics</p></li>
 </ul>
 </section>
 </section>
 <section id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h2>
+<section id="gini-coefficient">
+<h3>Gini Coefficient<a class="headerlink" href="#gini-coefficient" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Measures the inequality of a frequency distribution, often used in credit scoring.</p></li>
+</ul>
+</section>
 <section id="mean">
 <h3>Mean<a class="headerlink" href="#mean" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -568,15 +571,6 @@ document.write(`
 </ul>
 </section>
 </section>
-<section id="visualisation">
-<h2>Visualisation<a class="headerlink" href="#visualisation" title="Link to this heading">#</a></h2>
-<section id="box-plot">
-<h3>Box Plot<a class="headerlink" href="#box-plot" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Includes the interquartile range (IQR), which is the range between the first and third quartiles, and identifies outliers as points outside 1.5 times the IQR from the quartiles.</p></li>
-</ul>
-</section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -644,10 +638,11 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gini-coefficient">Gini Coefficient</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean">Mean</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#median">Median</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance">Variance</a></li>
@@ -664,10 +659,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wasserstein-distance">Wasserstein Distance</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entropy">Entropy</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-entropy">Cross-Entropy</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisation">Visualisation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot">Box Plot</a></li>
 </ul>
 </li>
 </ul>

@@ -3,14 +3,11 @@
 ## Introduction
 
 
-### Description
-
-
-### Goals
+### Key takeaways
 * Learn about performance metrics
 
 
-## Classification
+## Methods (Classification)
 
 ### Accuracy
 - Proportion of true results among all cases examined.
@@ -42,12 +39,11 @@
 ### Lift and Gain Charts
 - Visual tools for comparing model performance to random guessing.
 
-### Gini Coefficient
-- Measures the inequality of a frequency distribution, often used in credit scoring.
 
 
 
-## Segmentation
+## Methods (Segmentation)
+
 ### Intersection over Union (IoU)
 - Measures the overlap between predicted and ground truth segments.
 
@@ -86,7 +82,8 @@
 
 
 
-## Statistics
+## Methods (Statistics)
+
 ### Stability Metric
 - Measures the consistency of performance across different data subsets or over time.
 

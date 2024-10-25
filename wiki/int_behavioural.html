@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Mechanistic interpretability &#8212; My sample book</title>
+    <title>Behavioural interpretability &#8212; My sample book</title>
   
   
   
@@ -200,7 +200,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Interpretability</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="int_basics.html">Interpretablility</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Mechanistic interpretability</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Behavioural interpretability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_attributional.html">Attributional interpretablility</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_concept.html">Concept Alignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_mechanistic.html">Mechanistic interpretability</a></li>
@@ -410,7 +410,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Mechanistic interpretability</h1>
+    <h1>Behavioural interpretability</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -422,8 +422,21 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introdcution">Introdcution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">8. <strong>Cross-Validation</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-attribution-consistency">1. <strong>Feature Attribution Consistency</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactual-explanations">2. <strong>Counterfactual Explanations</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-fidelity">3. <strong>Model Fidelity</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#human-evaluation">4. <strong>Human Evaluation</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbation-analysis">5. <strong>Perturbation Analysis</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-perturbation-check">1. <strong>= Input Perturbation Check</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-with-known-facts">6. <strong>Consistency with Known Facts</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-vs-global-consistency">7. <strong>Local vs. Global Consistency</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-comparison">8. <strong>Visualization Comparison</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robustness-testing">9. <strong>Robustness Testing</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplification-test">10. <strong>Simplification Test</strong></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -435,15 +448,115 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="mechanistic-interpretability">
-<h1>Mechanistic interpretability<a class="headerlink" href="#mechanistic-interpretability" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="behavioural-interpretability">
+<h1>Behavioural interpretability<a class="headerlink" href="#behavioural-interpretability" title="Link to this heading">#</a></h1>
 <section id="introdcution">
 <h2>Introdcution<a class="headerlink" href="#introdcution" title="Link to this heading">#</a></h2>
 <section id="description">
 <h3>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h3>
-<p>Behavioral interpretability analyses input-output relations.</p>
+<p>Behavioral interpretability analyses input-output relations.
+May also be used for Measuring Faithfulness of Explainable Techniques</p>
+</section>
+<section id="cross-validation">
+<h3>8. <strong>Cross-Validation</strong><a class="headerlink" href="#cross-validation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Checks if the result hold up across different subsets of data or during cross-validation.</p></li>
+<li><p><strong>Method</strong>: Validate the result different folds or splits of the data.</p></li>
+<li><p><strong>Purpose</strong>: Ensures that the result are generalizable and not specific to a particular subset of data.</p></li>
+</ul>
+</section>
+<section id="feature-attribution-consistency">
+<h3>1. <strong>Feature Attribution Consistency</strong><a class="headerlink" href="#feature-attribution-consistency" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures whether the importance scores assigned to features remain consistent under slight perturbations.</p></li>
+<li><p><strong>Method</strong>: Evaluate if small changes in input lead to consistent changes in feature attributions.</p></li>
+<li><p><strong>Metric</strong>: Consistency score or stability measure of feature importance across perturbations.</p></li>
+</ul>
+</section>
+<section id="counterfactual-explanations">
+<h3>2. <strong>Counterfactual Explanations</strong><a class="headerlink" href="#counterfactual-explanations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Examines if the explanations correctly predict the output changes when certain features are altered.</p></li>
+<li><p><strong>Method</strong>: Generate counterfactuals and check if the explanation aligns with the changes in the model’s predictions.</p></li>
+<li><p><strong>Metric</strong>: Accuracy of the explanation in predicting the outcome of counterfactual scenarios.</p></li>
+</ul>
+</section>
+<section id="model-fidelity">
+<h3>3. <strong>Model Fidelity</strong><a class="headerlink" href="#model-fidelity" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Assesses how well the explanation technique reflects the behavior of the model it is explaining.</p></li>
+<li><p><strong>Method</strong>: Compare explanations generated by the technique with the model’s decision boundaries or learned features.</p></li>
+<li><p><strong>Metric</strong>: Fidelity score or agreement rate between the explanation and model’s internal representations.</p></li>
+</ul>
+</section>
+<section id="human-evaluation">
+<h3>4. <strong>Human Evaluation</strong><a class="headerlink" href="#human-evaluation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Involves human judges assessing the quality and reliability of the explanations.</p></li>
+<li><p><strong>Method</strong>: Collect feedback from domain experts or end-users on how well the explanations align with their understanding of the model’s behavior.</p></li>
+<li><p><strong>Metric</strong>: Qualitative scores or ratings from human evaluators regarding the clarity and accuracy of the explanations.</p></li>
+</ul>
+</section>
+<section id="perturbation-analysis">
+<h3>5. <strong>Perturbation Analysis</strong><a class="headerlink" href="#perturbation-analysis" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Tests if explanations change in a meaningful way when input data is perturbed.</p></li>
+<li><p><strong>Method</strong>: Apply perturbations to input data and observe if the explanations adjust accordingly.</p></li>
+<li><p><strong>Metric</strong>: Degree of change in explanations relative to changes in input data.</p></li>
+</ul>
+</section>
+<section id="input-perturbation-check">
+<h3>1. <strong>= Input Perturbation Check</strong><a class="headerlink" href="#input-perturbation-check" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Evaluates how small changes in the input affect the model’s output.</p></li>
+<li><p><strong>Method</strong>: Apply small perturbations to the input data and observe if the model’s predictions or explanations change in a consistent manner.</p></li>
+<li><p><strong>Purpose</strong>: Ensures that the model and its explanations respond appropriately to slight variations in input.</p></li>
+</ul>
+</section>
+<section id="consistency-with-known-facts">
+<h3>6. <strong>Consistency with Known Facts</strong><a class="headerlink" href="#consistency-with-known-facts" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Evaluates if the explanations are consistent with established knowledge or domain-specific facts.</p></li>
+<li><p><strong>Method</strong>: Compare explanations with known information or domain expertise to assess alignment.</p></li>
+<li><p><strong>Metric</strong>: Accuracy of explanations in reflecting established knowledge.</p></li>
+</ul>
+</section>
+<section id="local-vs-global-consistency">
+<h3>7. <strong>Local vs. Global Consistency</strong><a class="headerlink" href="#local-vs-global-consistency" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures if the explanations are consistent at both local (individual predictions) and global (overall model behavior) levels.</p></li>
+<li><p><strong>Method</strong>: Assess if local explanations for specific predictions align with global trends or patterns.</p></li>
+<li><p><strong>Metric</strong>: Consistency score between local explanations and global model behavior.</p></li>
+</ul>
+</section>
+<section id="visualization-comparison">
+<h3>8. <strong>Visualization Comparison</strong><a class="headerlink" href="#visualization-comparison" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Compares visual explanations with model predictions to check for alignment.</p></li>
+<li><p><strong>Method</strong>: Use visualization tools to interpret explanations and compare them with model outputs.</p></li>
+<li><p><strong>Metric</strong>: Visual alignment score or agreement between visual explanations and model predictions.</p></li>
+</ul>
+</section>
+<section id="robustness-testing">
+<h3>9. <strong>Robustness Testing</strong><a class="headerlink" href="#robustness-testing" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Assesses if the explanation technique is robust to changes in model parameters or training data.</p></li>
+<li><p><strong>Method</strong>: Test explanations across different model versions or datasets to evaluate robustness.</p></li>
+<li><p><strong>Metric</strong>: Robustness score based on changes in explanations across different model settings.</p></li>
+</ul>
+</section>
+<section id="simplification-test">
+<h3>10. <strong>Simplification Test</strong><a class="headerlink" href="#simplification-test" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Evaluates if simplifying the explanation maintains its accuracy in reflecting the model’s behavior.</p></li>
+<li><p><strong>Method</strong>: Simplify explanations and check if the simplified versions still accurately represent the model’s decisions.</p></li>
+<li><p><strong>Metric</strong>: Accuracy of simplified explanations compared to original, detailed explanations.</p></li>
+</ul>
 </section>
 </section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<span class="target" id="id1"></span></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -512,8 +625,21 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introdcution">Introdcution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">8. <strong>Cross-Validation</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-attribution-consistency">1. <strong>Feature Attribution Consistency</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactual-explanations">2. <strong>Counterfactual Explanations</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-fidelity">3. <strong>Model Fidelity</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#human-evaluation">4. <strong>Human Evaluation</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbation-analysis">5. <strong>Perturbation Analysis</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-perturbation-check">1. <strong>= Input Perturbation Check</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-with-known-facts">6. <strong>Consistency with Known Facts</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-vs-global-consistency">7. <strong>Local vs. Global Consistency</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-comparison">8. <strong>Visualization Comparison</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robustness-testing">9. <strong>Robustness Testing</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplification-test">10. <strong>Simplification Test</strong></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 

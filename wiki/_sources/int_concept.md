@@ -2,7 +2,10 @@
 
 ## Introduction
 
-Concept alignment has the goal to increase the interpretability of a convolutional neural network by aligning features with human understanable concepts.
+- Uses high-level concepts or human-understandable features to explain the model’s behavior, assessing how well these concepts align with the model’s internal mechanisms.
+
+Concept alignment has the goal to interpreting a convolutional neural network by aligning features with human understanable concepts.
+
 
 ### Key takeaways
 * Learn about Concept Activation Vectors (CAV).
@@ -13,7 +16,6 @@ Concept alignment has the goal to increase the interpretability of a convolution
 ### Keywords:
 * Concept-alignment
 * TCAV
-
 
 
 ## Methods
@@ -30,7 +32,15 @@ Network Dissection quantifies the interpretability of a unit of a CNN. Highly ac
 * Original version: Towards automatic concept-based explanations {cite}`ghorbani2019concept`
 
 ### Testing with concept activation vector (TCAV)
-* Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)
+- Measures how well a specific concept is represented within a neural network by comparing activation vectors of examples belonging to that concept.
+
+* Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV) {cite}`kim2018interpretability`
+https://arxiv.org/pdf/1711.11279
+
+
+### TCAV + Deep dream
+Empirical deepdream using CAVs for each layer in a ConvNet {cite}`kim2018interpretability`
+https://arxiv.org/pdf/1711.11279
 
 ### Testing with Concept Activation Regions (TCAR)
 
@@ -71,6 +81,7 @@ Network Dissection quantifies the interpretability of a unit of a CNN. Highly ac
 ### Phenotypic Concepts
 Using TCAV.
 * Original version: Identifying Phenotypic Concepts Discriminating Molecular Breast Cancer Sub-Types {cite}`furbock2022identifying`
+
 
 
 ## References

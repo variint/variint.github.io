@@ -200,7 +200,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Interpretability</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="int_basics.html">Interpretablility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Mechanistic interpretability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Behavioural interpretability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_attributional.html">Attributional interpretablility</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_concept.html">Concept Alignment</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Mechanistic interpretability</a></li>
@@ -421,7 +421,13 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introdcution">Introdcution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-circuit-discovery">Methods (Circuit discovery)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subnetwork-probing">Subnetwork Probing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deepdream">DeepDream</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-ablation-test">2. <strong>Feature Ablation Test</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -438,7 +444,7 @@ document.write(`
 <section id="introdcution">
 <h2>Introdcution<a class="headerlink" href="#introdcution" title="Link to this heading">#</a></h2>
 <p>Mechanistic interpretability is the study of reverse engineering the weights and interactions in a trained network. The goal is to uncover precise causal mechanisms
-from inputs to outputs. <a class="reference external" href="https://arxiv.org/pdf/2404.14082">https://arxiv.org/pdf/2404.14082</a></p>
+from inputs to outputs. <span id="id1">[<a class="reference internal" href="#id8" title="Leonard Bereska and Efstratios Gavves. Mechanistic interpretability for ai safety–a review. arXiv preprint arXiv:2404.14082, 2024.">BG24</a>]</span></p>
 <p>Key takeaways:
 *
 *
@@ -455,8 +461,37 @@ from inputs to outputs. <a class="reference external" href="https://arxiv.org/pd
 <li><p>visual model interpretation: feature visualisation</p></li>
 </ul>
 </section>
-<section id="methods">
-<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h2>
+<section id="methods-circuit-discovery">
+<h2>Methods (Circuit discovery)<a class="headerlink" href="#methods-circuit-discovery" title="Link to this heading">#</a></h2>
+<section id="subnetwork-probing">
+<h3>Subnetwork Probing<a class="headerlink" href="#subnetwork-probing" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Investigates the roles of specific subnetworks or components within a larger model to understand their contributions to the overall model performance.</p></li>
+</ul>
+</section>
+<section id="deepdream">
+<h3>DeepDream<a class="headerlink" href="#deepdream" title="Link to this heading">#</a></h3>
+<p>A technique that enhances patterns in images by maximizing the activation of specific layers in a neural network.</p>
+</section>
+<section id="feature-ablation-test">
+<h3>2. <strong>Feature Ablation Test</strong><a class="headerlink" href="#feature-ablation-test" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Assesses the impact of removing or modifying individual features on the model’s output.</p></li>
+<li><p><strong>Method</strong>: Systematically remove or alter features and observe changes in the model’s performance or explanation.</p></li>
+<li><p><strong>Purpose</strong>: Verifies if the model’s reliance on specific features aligns with the explanations provided.</p></li>
+</ul>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id2">
+<div role="list" class="citation-list">
+<div class="citation" id="id8" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">BG24</a><span class="fn-bracket">]</span></span>
+<p>Leonard Bereska and Efstratios Gavves. Mechanistic interpretability for ai safety–a review. <em>arXiv preprint arXiv:2404.14082</em>, 2024.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -525,7 +560,13 @@ from inputs to outputs. <a class="reference external" href="https://arxiv.org/pd
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introdcution">Introdcution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-circuit-discovery">Methods (Circuit discovery)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subnetwork-probing">Subnetwork Probing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deepdream">DeepDream</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-ablation-test">2. <strong>Feature Ablation Test</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 

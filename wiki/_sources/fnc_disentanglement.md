@@ -79,6 +79,55 @@ Operations and priors can be applied on a latent space to encourage disentanglem
 *Image-to-image (I2I) translation* is one spatially equivariant application of CSD. The goal is to translate one image representation into another where a specific factor differs (e.g. style) while others are maintained. One architecture to use is the MUNIT: To translate an image to another domain, they recombine its content code with a random style code sampled from the style space of the target domain. The network consists of two encoder-decoder pairs for two domains.
 
 
+## Metrics to measure disentanglement
+
+### Mutual Information Gap (MIG)
+- **Definition**: Measures the difference between the mutual information between latent variables and the ground truth factors of variation.
+- **Formula**: \[ \text{MIG} = \frac{\text{MI}_{\text{latent}, \text{ground truth}} - \text{MI}_{\text{latent}, \text{random}}}{\text{MI}_{\text{ground truth}, \text{random}}} \]
+- **Usage**: Evaluates how well latent factors correspond to ground truth factors, with higher values indicating better disentanglement.
+
+### Beta-VAE Score
+- **Definition**: Evaluates the extent of disentanglement in Variational Autoencoders (VAEs) by comparing the mutual information between latent variables and the ground truth.
+- **Formula**: \[ \text{Beta-VAE Score} = \frac{\text{MI}_{\text{latent}, \text{ground truth}}}{\text{MI}_{\text{latent}, \text{reconstructed}}} \]
+- **Usage**: Assesses how well the latent variables capture distinct and meaningful factors of variation in the data.
+
+### FactorVAE Score
+- **Definition**: Measures disentanglement by evaluating the mutual information between latent variables and the ground truth while penalizing entanglement in the VAE.
+- **Formula**: \[ \text{FactorVAE Score} = \frac{\text{MI}_{\text{latent}, \text{ground truth}}}{\text{MI}_{\text{latent}, \text{random}}} \]
+- **Usage**: Quantifies the ability of the model to disentangle factors by comparing latent variable mutual information with both ground truth and random distributions.
+
+### Disentanglement Score (Dscore)
+- **Definition**: A metric that measures the degree of disentanglement based on the ability of the model to represent factors independently.
+- **Formula**: \[ \text{Dscore} = \frac{\text{MI}_{\text{latent}, \text{ground truth}}}{\text{MI}_{\text{latent}, \text{reconstructed}}} \]
+- **Usage**: Assesses how effectively the model separates different factors of variation in the latent space.
+
+### Information Bottleneck (IB) Method
+- **Definition**: Measures how much information about the input is retained in the latent representation while discarding irrelevant information.
+- **Formula**: \[ \text{IB} = I(X; Z) - I(Z; Y) \]
+- **Usage**: Evaluates the trade-off between retaining relevant information and discarding irrelevant information in the latent space.
+
+### Independence Metric (Indep)
+- **Definition**: Quantifies the statistical independence between latent variables to assess disentanglement.
+- **Formula**: \[ \text{Indep} = 1 - \text{MI}_{\text{latent variables}} \]
+- **Usage**: Measures how independent the latent variables are from each other, with higher values indicating better disentanglement.
+
+### Variational Information Bottleneck (VIB)
+- **Definition**: Measures the trade-off between the information retained about the input and the complexity of the latent representation.
+- **Formula**: \[ \text{VIB} = I(X; Z) - \beta I(Z; Y) \]
+- **Usage**: Assesses how well the model balances between capturing useful information and reducing redundancy in the latent space.
+
+### Latent Traversal
+- **Definition**: Evaluates the quality of disentangled representations by traversing the latent space and checking if each dimension corresponds to a specific factor of variation.
+- **Formula**: \[ \text{Latent Traversal} = \frac{\text{Number of interpretable factors}}{\text{Total number of latent dimensions}} \]
+- **Usage**: Assesses how well changes in individual latent dimensions correspond to meaningful changes in the data.
+
+### Factorized Representation
+- **Definition**: Measures the extent to which the latent space can be factorized into distinct, interpretable components.
+- **Formula**: \[ \text{Factorized Representation} = \frac{\text{Number of independent factors}}{\text{Total number of latent dimensions}} \]
+- **Usage**: Evaluates how effectively the latent representation can be decomposed into separate, interpretable factors.
+
+
+
 
 <!-- 
 ## Related Work

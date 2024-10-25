@@ -200,7 +200,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Interpretability</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="int_basics.html">Interpretablility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Mechanistic interpretability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Behavioural interpretability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_attributional.html">Attributional interpretablility</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_concept.html">Concept Alignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_mechanistic.html">Mechanistic interpretability</a></li>
@@ -420,7 +420,29 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot">Box Plot</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-types-for-visualizing-results">Plot Types for Visualizing Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-plot">Line Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">Scatter Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-chart">Bar Chart</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">Histogram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Box Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap">Heatmap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curve">ROC Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-recall-curve">Precision-Recall Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auc-roc-curve">AUC-ROC Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-surface-plot">3D Surface Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#violin-plot">Violin Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pair-plot">Pair Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-bar-plot">Error Bar Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contour-plot">Contour Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stacked-bar-chart">Stacked Bar Chart</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cumulative-gain-lift-chart">Cumulative Gain/Lift Chart</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -448,6 +470,128 @@ document.write(`
 <li><p>Visualizing embeddings: Graphical representation of embeddings, an essential building block for many NLP and computer vision applications, in a low-dimensional space to unveil their relationships and semantic similarity.</p></li>
 </ul>
 <p><a class="reference external" href="https://neptune.ai/blog/deep-learning-visualization">https://neptune.ai/blog/deep-learning-visualization</a></p>
+<section id="box-plot">
+<h3>Box Plot<a class="headerlink" href="#box-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>For distribution analysis</p></li>
+<li><p>Includes the interquartile range (IQR), which is the range between the first and third quartiles, and identifies outliers as points outside 1.5 times the IQR from the quartiles.</p></li>
+</ul>
+</section>
+</section>
+<section id="plot-types-for-visualizing-results">
+<h2>Plot Types for Visualizing Results<a class="headerlink" href="#plot-types-for-visualizing-results" title="Link to this heading">#</a></h2>
+<section id="line-plot">
+<h3>Line Plot<a class="headerlink" href="#line-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Shows trends over time or continuous data. Useful for displaying changes and comparisons across different variables.</p></li>
+<li><p><strong>Example</strong>: Performance metrics (e.g., accuracy, loss) over epochs.</p></li>
+</ul>
+</section>
+<section id="scatter-plot">
+<h3>Scatter Plot<a class="headerlink" href="#scatter-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Illustrates the relationship between two continuous variables. Helpful for identifying correlations and clustering.</p></li>
+<li><p><strong>Example</strong>: Comparing predicted vs. actual values, feature importance.</p></li>
+</ul>
+</section>
+<section id="bar-chart">
+<h3>Bar Chart<a class="headerlink" href="#bar-chart" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Compares discrete categories or groups. Useful for summarizing categorical data and differences between groups.</p></li>
+<li><p><strong>Example</strong>: Model performance across different methods, accuracy by class.</p></li>
+</ul>
+</section>
+<section id="histogram">
+<h3>Histogram<a class="headerlink" href="#histogram" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Displays the distribution of a single continuous variable. Useful for understanding data distribution and frequency.</p></li>
+<li><p><strong>Example</strong>: Distribution of errors or activations.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h3>Box Plot<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Shows the distribution and spread of data, including median, quartiles, and outliers. Useful for comparing distributions.</p></li>
+<li><p><strong>Example</strong>: Distribution of performance metrics across different runs or models.</p></li>
+</ul>
+</section>
+<section id="heatmap">
+<h3>Heatmap<a class="headerlink" href="#heatmap" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Represents data values in a matrix format using color coding. Useful for visualizing correlation matrices and confusion matrices.</p></li>
+<li><p><strong>Example</strong>: Correlation between features, confusion matrix of classification results.</p></li>
+</ul>
+</section>
+<section id="roc-curve">
+<h3>ROC Curve<a class="headerlink" href="#roc-curve" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Illustrates the performance of a binary classifier by plotting the true positive rate against the false positive rate.</p></li>
+<li><p><strong>Example</strong>: Comparing classification performance of different models.</p></li>
+</ul>
+</section>
+<section id="precision-recall-curve">
+<h3>Precision-Recall Curve<a class="headerlink" href="#precision-recall-curve" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Shows the trade-off between precision and recall for different thresholds. Useful for evaluating classification performance, especially with imbalanced datasets.</p></li>
+<li><p><strong>Example</strong>: Performance of a classifier in detecting rare events.</p></li>
+</ul>
+</section>
+<section id="auc-roc-curve">
+<h3>AUC-ROC Curve<a class="headerlink" href="#auc-roc-curve" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Displays the area under the ROC curve to summarize classifier performance. Higher AUC indicates better model performance.</p></li>
+<li><p><strong>Example</strong>: Comparing overall performance of different models.</p></li>
+</ul>
+</section>
+<section id="d-surface-plot">
+<h3>3D Surface Plot<a class="headerlink" href="#d-surface-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Visualizes three-dimensional data and relationships between three variables. Useful for understanding complex relationships and interactions.</p></li>
+<li><p><strong>Example</strong>: Performance metrics across two hyperparameters.</p></li>
+</ul>
+</section>
+<section id="violin-plot">
+<h3>Violin Plot<a class="headerlink" href="#violin-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Combines box plot and density plot to show data distribution, highlighting the density of data at different values.</p></li>
+<li><p><strong>Example</strong>: Distribution of performance metrics across different models.</p></li>
+</ul>
+</section>
+<section id="pair-plot">
+<h3>Pair Plot<a class="headerlink" href="#pair-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Displays pairwise relationships and distributions between multiple variables. Useful for exploring interactions and correlations.</p></li>
+<li><p><strong>Example</strong>: Relationships between multiple features or model parameters.</p></li>
+</ul>
+</section>
+<section id="error-bar-plot">
+<h3>Error Bar Plot<a class="headerlink" href="#error-bar-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Shows the variability or uncertainty of data points with error bars. Useful for visualizing confidence intervals or standard deviations.</p></li>
+<li><p><strong>Example</strong>: Performance metrics with confidence intervals across different models or experiments.</p></li>
+</ul>
+</section>
+<section id="contour-plot">
+<h3>Contour Plot<a class="headerlink" href="#contour-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Represents the density or intensity of data in two dimensions using contour lines. Useful for visualizing the relationship between variables in a continuous space.</p></li>
+<li><p><strong>Example</strong>: Decision boundaries or error surfaces.</p></li>
+</ul>
+</section>
+<section id="stacked-bar-chart">
+<h3>Stacked Bar Chart<a class="headerlink" href="#stacked-bar-chart" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Compares the total size across categories while breaking down each category into sub-groups. Useful for visualizing the composition of categories.</p></li>
+<li><p><strong>Example</strong>: Breakdown of errors or performance across different classes.</p></li>
+</ul>
+</section>
+<section id="cumulative-gain-lift-chart">
+<h3>Cumulative Gain/Lift Chart<a class="headerlink" href="#cumulative-gain-lift-chart" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Shows the improvement of a model’s performance over random guessing. Useful for evaluating the effectiveness of classification models.</p></li>
+<li><p><strong>Example</strong>: Performance of a model in ranking or targeting tasks.</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -515,7 +659,29 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot">Box Plot</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-types-for-visualizing-results">Plot Types for Visualizing Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-plot">Line Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">Scatter Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-chart">Bar Chart</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">Histogram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Box Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap">Heatmap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curve">ROC Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-recall-curve">Precision-Recall Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auc-roc-curve">AUC-ROC Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-surface-plot">3D Surface Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#violin-plot">Violin Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pair-plot">Pair Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-bar-plot">Error Bar Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contour-plot">Contour Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stacked-bar-chart">Stacked Bar Chart</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cumulative-gain-lift-chart">Cumulative Gain/Lift Chart</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-### Goals
+### Key takeaways
 * Learn about sparse vs dense networks.
 * Learn about the difference of local and global pruning.
 * Learn about the difference of structured and unstructured pruning.
@@ -46,7 +46,7 @@ Structured pruning removes entire filters of neural networks. {cite}`he2023struc
 
 
 
-## Importance Metric
+## Importance Metric / Pruning Conditions
 
 {cite}`Molchanov2017`
 
@@ -112,9 +112,6 @@ Filter correlation follows the "smaller-norm-less-informative" assumption. Finds
 
 * Original version: Importance Estimation for Neural Network Pruning
 
-
-
-
 ### Least absolute shrinkage and selection operator (Lasso)
 * performs variable selection and regularisation.
 * LASSO identifies the variables that are strongly associated with the response variable.
@@ -122,6 +119,116 @@ Filter correlation follows the "smaller-norm-less-informative" assumption. Finds
 * LASSO is used when you want a sparse model.
 
 ### Hessian Matrix
+
+## Other
+
+### Magnitude-Based Pruning
+- **Definition**: Prunes weights or neurons based on their magnitude.
+- **Condition**: Weights or neurons with values below a certain threshold are removed.
+- **Usage**: Simple and effective; commonly used to prune less significant weights or neurons.
+
+### L1 Norm Pruning
+- **Definition**: Prunes weights or neurons based on the L1 norm of their values.
+- **Condition**: Weights or neurons with the smallest L1 norm are removed.
+- **Usage**: Useful for creating sparse models by removing less influential components.
+
+### L2 Norm Pruning
+- **Definition**: Prunes weights or neurons based on the L2 norm of their values.
+- **Condition**: Weights or neurons with the smallest L2 norm are removed.
+- **Usage**: Helps in reducing redundancy and focusing on more significant weights.
+
+### Gradient-Based Pruning
+- **Definition**: Prunes weights or neurons based on the gradient of their loss function.
+- **Condition**: Weights or neurons with the smallest gradients are removed.
+- **Usage**: Targets components with the least impact on the model’s training process.
+
+### Variance-Based Pruning
+- **Definition**: Prunes weights or neurons based on their variance.
+- **Condition**: Weights or neurons with low variance in their activations are removed.
+- **Usage**: Identifies and removes components that contribute minimally to the model’s variability.
+
+### Activation-Based Pruning
+- **Definition**: Prunes weights or neurons based on their activation levels.
+- **Condition**: Weights or neurons with activations below a certain threshold are removed.
+- **Usage**: Focuses on components that have minimal impact on the output activations.
+
+### Connection Pruning
+- **Definition**: Prunes entire connections between layers based on their importance.
+- **Condition**: Connections with the lowest importance scores (e.g., based on magnitude or gradient) are removed.
+- **Usage**: Reduces complexity by removing less significant connections.
+
+### Structured Pruning
+- **Definition**: Prunes entire structures, such as filters or channels, instead of individual weights.
+- **Condition**: Entire structures with low importance or contribution to performance are removed.
+- **Usage**: Helps in maintaining efficiency while reducing the model size.
+
+### Sparse Regularization
+- **Definition**: Uses regularization techniques to induce sparsity in the model.
+- **Condition**: Regularization terms in the loss function encourage sparsity in weights or activations.
+- **Usage**: Integrates pruning into the training process by promoting sparsity.
+
+### Dynamic Pruning
+- **Definition**: Prunes weights or neurons dynamically during the training process.
+- **Condition**: Components are pruned based on their performance metrics or importance, which can change over time.
+- **Usage**: Allows for adaptive pruning based on the evolving training state.
+
+### Sensitivity-Based Pruning
+- **Definition**: Prunes components based on their sensitivity to perturbations in the input data.
+- **Condition**: Components that show minimal sensitivity to input variations are removed.
+- **Usage**: Focuses on retaining components that are crucial for robust performance.
+
+
+
+### Weight Sparsity
+- **Definition**: Measures the proportion of zero weights in the pruned model.
+- **Formula**: \[ \text{Weight Sparsity} = \frac{\text{Number of zero weights}}{\text{Total number of weights}} \]
+- **Usage**: Indicates the extent to which weights have been removed, with higher values suggesting greater sparsity.
+
+### Model Compression Ratio
+- **Definition**: Ratio of the size of the pruned model to the size of the original model.
+- **Formula**: \[ \text{Compression Ratio} = \frac{\text{Size of pruned model}}{\text{Size of original model}} \]
+- **Usage**: Evaluates the reduction in model size due to pruning, with lower ratios indicating more effective compression.
+
+### Accuracy Drop
+- **Definition**: Measures the change in model performance (accuracy) due to pruning.
+- **Formula**: \[ \text{Accuracy Drop} = \text{Accuracy}_{\text{original}} - \text{Accuracy}_{\text{pruned}} \]
+- **Usage**: Assesses the impact of pruning on the model’s predictive performance, with smaller drops indicating better preservation of accuracy.
+
+### FLOPs Reduction
+- **Definition**: Measures the reduction in the number of floating-point operations (FLOPs) after pruning.
+- **Formula**: \[ \text{FLOPs Reduction} = \frac{\text{FLOPs}_{\text{original}} - \text{FLOPs}_{\text{pruned}}}{\text{FLOPs}_{\text{original}}} \]
+- **Usage**: Evaluates the computational efficiency gained through pruning, with higher reductions indicating more effective pruning.
+
+### Parameter Reduction
+- **Definition**: Measures the reduction in the total number of parameters due to pruning.
+- **Formula**: \[ \text{Parameter Reduction} = \frac{\text{Number of parameters}_{\text{original}} - \text{Number of parameters}_{\text{pruned}}}{\text{Number of parameters}_{\text{original}}} \]
+- **Usage**: Indicates how much the model size has been reduced by pruning, with higher reductions suggesting more aggressive pruning.
+
+### Model Latency
+- **Definition**: Measures the change in the time required for the model to make predictions after pruning.
+- **Formula**: \[ \text{Model Latency} = \text{Latency}_{\text{pruned}} - \text{Latency}_{\text{original}} \]
+- **Usage**: Assesses the impact of pruning on inference time, with lower latencies indicating improved efficiency.
+
+### Memory Footprint
+- **Definition**: Measures the reduction in the memory required to store the pruned model.
+- **Formula**: \[ \text{Memory Footprint} = \frac{\text{Memory}_{\text{original}} - \text{Memory}_{\text{pruned}}}{\text{Memory}_{\text{original}}} \]
+- **Usage**: Evaluates how pruning affects the memory usage of the model, with higher reductions indicating more efficient memory utilization.
+
+### Reconstruction Error
+- **Definition**: Measures the error between the original model's outputs and those of the pruned model on the same inputs.
+- **Formula**: \[ \text{Reconstruction Error} = \frac{1}{N} \sum_{i=1}^N \|f_{\text{original}}(x_i) - f_{\text{pruned}}(x_i)\| \]
+- **Usage**: Assesses how well the pruned model approximates the behavior of the original model, with lower errors indicating better preservation of the original model’s functionality.
+
+### Efficiency Metrics
+- **Definition**: Assesses the trade-off between efficiency gains (e.g., speed, memory) and the loss of accuracy due to pruning.
+- **Formula**: Efficiency metrics can be domain-specific and may involve a combination of FLOPs reduction, latency, and accuracy drop.
+- **Usage**: Provides a holistic view of the effectiveness of pruning in terms of efficiency versus accuracy.
+
+### Sensitivity Analysis
+- **Definition**: Measures the model’s sensitivity to pruning, i.e., how pruning affects different parts of the model.
+- **Formula**: Typically involves evaluating performance changes with various levels of pruning.
+- **Usage**: Helps understand which layers or components of the model are more sensitive to pruning and may guide more targeted pruning strategies.
+
 
 
 ## Scheduling

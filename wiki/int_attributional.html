@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Concept Alignment" href="int_concept.html" />
-    <link rel="prev" title="Mechanistic interpretability" href="int_behavioural.html" />
+    <link rel="prev" title="Behavioural interpretability" href="int_behavioural.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -200,7 +200,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Interpretability</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="int_basics.html">Interpretablility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Mechanistic interpretability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Behavioural interpretability</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Attributional interpretablility</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_concept.html">Concept Alignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_mechanistic.html">Mechanistic interpretability</a></li>
@@ -433,16 +433,30 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-backprop">Guided Backprop</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saliency-maps">Saliency Maps</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-saliency">Guided Saliency</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-decomposition-integrated-gradients-2017">Taylor Decomposition - Integrated Gradients (2017)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-lift">Deep LiFT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-decomposition">Taylor Decomposition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-gradients">Integrated Gradients</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lime">LIME</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shap">SHAP</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deepdream">DeepDream</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cam">CAM</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradcam">GradCAM</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#occlusion">Occlusion</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-convnet-architectures">All ConvNet Architectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-lift">Deep LiFT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-gradients-with-perturbations">Integrated Gradients with Perturbations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lime-local-interpretable-model-agnostic-explanations">LIME (Local Interpretable Model-agnostic Explanations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shap-shapley-additive-explanations">SHAP (SHapley Additive exPlanations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cam-class-activation-mapping">CAM (Class Activation Mapping)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradcam-gradient-weighted-class-activation-mapping">GradCAM (Gradient-weighted Class Activation Mapping)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#occlusion-sensitivity">Occlusion Sensitivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-ablation">Feature Ablation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-analysis">Sensitivity Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactual-explanations">Counterfactual Explanations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-perturbations">Guided Perturbations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance">Feature Importance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">SHAP (SHapley Additive exPlanations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">LIME (Local Interpretable Model-agnostic Explanations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-dependence-plots-pdps">Partial Dependence Plots (PDPs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-conditional-expectation-ice-plots">Individual Conditional Expectation (ICE) Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permutation-importance">Permutation Importance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rule-based-explanations">Rule-Based Explanations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-maps">Activation Maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-maps">Attention Maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-distillation">Model Distillation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#surrogate-models">Surrogate Models</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
@@ -494,54 +508,132 @@ Many methods focus on some sort of gradient visualisation.</p>
 </ul>
 <section id="feature-map">
 <h3>Feature Map<a class="headerlink" href="#feature-map" title="Link to this heading">#</a></h3>
+<p>Visual representation of the outputs from various layers in a neural network, highlighting how features are detected.</p>
 </section>
 <section id="layer-wise-relevance-propagation-lrp">
 <h3>Layer-wise Relevance Propagation (LRP)<a class="headerlink" href="#layer-wise-relevance-propagation-lrp" title="Link to this heading">#</a></h3>
+<p>A technique that assigns relevance scores to each input feature based on the model’s output, helping to explain predictions.</p>
+<ul class="simple">
+<li><p>A technique for backpropagating the relevance scores through the network to identify which parts of the input were most influential for the prediction.</p></li>
+</ul>
 </section>
 <section id="deconvnet">
 <h3>DeconvNet<a class="headerlink" href="#deconvnet" title="Link to this heading">#</a></h3>
+<p>A method for visualizing features learned by a convolutional network by reversing the forward pass to project back to the input space.</p>
 </section>
 <section id="guided-backprop">
 <h3>Guided Backprop<a class="headerlink" href="#guided-backprop" title="Link to this heading">#</a></h3>
+<p>A technique that enhances the backpropagation of gradients to visualize important regions in an image influencing predictions.</p>
 </section>
 <section id="saliency-maps">
 <h3>Saliency Maps<a class="headerlink" href="#saliency-maps" title="Link to this heading">#</a></h3>
+<p>Visualizations that highlight which parts of an input (e.g., image pixels) most influence the model’s prediction.</p>
+<ul class="simple">
+<li><p>Visualizations that highlight which parts of the input (e.g., image pixels) contribute most to a model’s prediction, providing insight into how specific features affect outcomes.</p></li>
+</ul>
 </section>
 <section id="guided-saliency">
 <h3>Guided Saliency<a class="headerlink" href="#guided-saliency" title="Link to this heading">#</a></h3>
+<p>An improved version of saliency maps that considers the gradients of the activation function to emphasize important input regions.</p>
 </section>
-<section id="taylor-decomposition-integrated-gradients-2017">
-<h3>Taylor Decomposition - Integrated Gradients (2017)<a class="headerlink" href="#taylor-decomposition-integrated-gradients-2017" title="Link to this heading">#</a></h3>
-</section>
-<section id="deep-lift">
-<h3>Deep LiFT<a class="headerlink" href="#deep-lift" title="Link to this heading">#</a></h3>
+<section id="taylor-decomposition">
+<h3>Taylor Decomposition<a class="headerlink" href="#taylor-decomposition" title="Link to this heading">#</a></h3>
+<p>A method that decomposes the output of a neural network into contributions from different input features to explain predictions.</p>
 </section>
 <section id="integrated-gradients">
 <h3>Integrated Gradients<a class="headerlink" href="#integrated-gradients" title="Link to this heading">#</a></h3>
+<p>A method for attributing the output of a neural network to its input features based on the integral of gradients along a path from a baseline.</p>
 </section>
-<section id="lime">
-<h3>LIME<a class="headerlink" href="#lime" title="Link to this heading">#</a></h3>
+<section id="deep-lift">
+<h3>Deep LiFT<a class="headerlink" href="#deep-lift" title="Link to this heading">#</a></h3>
+<p>A method that assigns importance scores to input features based on how the model’s output changes relative to a baseline input.</p>
 </section>
-<section id="shap">
-<h3>SHAP<a class="headerlink" href="#shap" title="Link to this heading">#</a></h3>
+<section id="integrated-gradients-with-perturbations">
+<h3>Integrated Gradients with Perturbations<a class="headerlink" href="#integrated-gradients-with-perturbations" title="Link to this heading">#</a></h3>
+<p>Perturbs input images along a baseline path to evaluate how important each pixel is to the model output.</p>
 </section>
-<section id="deepdream">
-<h3>DeepDream<a class="headerlink" href="#deepdream" title="Link to this heading">#</a></h3>
+<section id="lime-local-interpretable-model-agnostic-explanations">
+<h3>LIME (Local Interpretable Model-agnostic Explanations)<a class="headerlink" href="#lime-local-interpretable-model-agnostic-explanations" title="Link to this heading">#</a></h3>
+<p>Perturbs image pixels to approximate a local, interpretable model that explains a specific prediction.</p>
 </section>
-<section id="cam">
-<h3>CAM<a class="headerlink" href="#cam" title="Link to this heading">#</a></h3>
+<section id="shap-shapley-additive-explanations">
+<h3>SHAP (SHapley Additive exPlanations)<a class="headerlink" href="#shap-shapley-additive-explanations" title="Link to this heading">#</a></h3>
+<p>Calculates Shapley values by adding and removing pixel groups to quantify each region’s contribution to the prediction.</p>
 </section>
-<section id="gradcam">
-<h3>GradCAM<a class="headerlink" href="#gradcam" title="Link to this heading">#</a></h3>
+<section id="cam-class-activation-mapping">
+<h3>CAM (Class Activation Mapping)<a class="headerlink" href="#cam-class-activation-mapping" title="Link to this heading">#</a></h3>
+<p>Uses class-specific weights to generate heatmaps indicating which parts of an image contribute most to a given class prediction.</p>
 </section>
-<section id="occlusion">
-<h3>Occlusion<a class="headerlink" href="#occlusion" title="Link to this heading">#</a></h3>
-</section>
-<section id="all-convnet-architectures">
-<h3>All ConvNet Architectures<a class="headerlink" href="#all-convnet-architectures" title="Link to this heading">#</a></h3>
+<section id="gradcam-gradient-weighted-class-activation-mapping">
+<h3>GradCAM (Gradient-weighted Class Activation Mapping)<a class="headerlink" href="#gradcam-gradient-weighted-class-activation-mapping" title="Link to this heading">#</a></h3>
+<p>A visualization technique that uses the gradients of the model to identify which regions of an image are most important for a specific prediction.</p>
 <ul class="simple">
-<li><p>STRIVING FOR SIMPLICITY: THE ALL CONVOLUTIONAL NET</p></li>
+<li><p>Visualizes the areas of an input image that most influence the model’s prediction by combining gradients with activation maps from convolutional layers.</p></li>
 </ul>
+</section>
+<section id="occlusion-sensitivity">
+<h3>Occlusion Sensitivity<a class="headerlink" href="#occlusion-sensitivity" title="Link to this heading">#</a></h3>
+<p>Analyzes the effect on predictions by masking parts of an image to reveal important regions for the model’s decision.</p>
+</section>
+<section id="feature-ablation">
+<h3>Feature Ablation<a class="headerlink" href="#feature-ablation" title="Link to this heading">#</a></h3>
+<p>Sequentially removes image features (like superpixels) to determine their importance by measuring prediction changes.</p>
+</section>
+<section id="sensitivity-analysis">
+<h3>Sensitivity Analysis<a class="headerlink" href="#sensitivity-analysis" title="Link to this heading">#</a></h3>
+<p>Introduces small perturbations across an image to see which regions lead to the largest changes in prediction confidence.</p>
+</section>
+<section id="counterfactual-explanations">
+<h3>Counterfactual Explanations<a class="headerlink" href="#counterfactual-explanations" title="Link to this heading">#</a></h3>
+<p>Alters key image features to create a minimally modified version of the input that changes the model’s prediction.</p>
+</section>
+<section id="guided-perturbations">
+<h3>Guided Perturbations<a class="headerlink" href="#guided-perturbations" title="Link to this heading">#</a></h3>
+<p>Systematically distorts specific visual patterns in the image to highlight areas the model relies on for its decision.</p>
+</section>
+<section id="feature-importance">
+<h3>Feature Importance<a class="headerlink" href="#feature-importance" title="Link to this heading">#</a></h3>
+<p>Measures the contribution of each feature to the model’s predictions, often assessed through methods like permutation importance or SHAP.</p>
+</section>
+<section id="id1">
+<h3>SHAP (SHapley Additive exPlanations)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Provides a unified measure of feature importance and model explainability by attributing each prediction to the contribution of each feature using cooperative game theory.</p>
+</section>
+<section id="id2">
+<h3>LIME (Local Interpretable Model-agnostic Explanations)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Creates locally interpretable models to approximate the behavior of a more complex model in the vicinity of a particular prediction, helping to understand individual predictions.</p>
+</section>
+<section id="partial-dependence-plots-pdps">
+<h3>Partial Dependence Plots (PDPs)<a class="headerlink" href="#partial-dependence-plots-pdps" title="Link to this heading">#</a></h3>
+<p>Illustrates the relationship between a feature and the predicted outcome, averaging the effects of all other features to show how changes in the feature affect predictions.</p>
+</section>
+<section id="individual-conditional-expectation-ice-plots">
+<h3>Individual Conditional Expectation (ICE) Plots<a class="headerlink" href="#individual-conditional-expectation-ice-plots" title="Link to this heading">#</a></h3>
+<p>Displays the effect of a feature on the prediction for individual instances, providing insight into how feature values influence predictions on a case-by-case basis.</p>
+</section>
+<section id="permutation-importance">
+<h3>Permutation Importance<a class="headerlink" href="#permutation-importance" title="Link to this heading">#</a></h3>
+<p>Measures the change in model performance when the values of a feature are randomly shuffled, which helps assess the feature’s impact on model accuracy.</p>
+</section>
+<section id="rule-based-explanations">
+<h3>Rule-Based Explanations<a class="headerlink" href="#rule-based-explanations" title="Link to this heading">#</a></h3>
+<p>Generates human-understandable rules that approximate the decision-making process of the model, often used in models like decision trees or rule-based classifiers.</p>
+</section>
+<section id="activation-maps">
+<h3>Activation Maps<a class="headerlink" href="#activation-maps" title="Link to this heading">#</a></h3>
+<p>Shows which parts of a neural network’s layers are activated by a given input, providing insight into the features and patterns that the network is focusing on.</p>
+</section>
+<section id="attention-maps">
+<h3>Attention Maps<a class="headerlink" href="#attention-maps" title="Link to this heading">#</a></h3>
+<p>Used in models with attention mechanisms to visualize which parts of the input are being focused on for a given prediction, often used in natural language processing.</p>
+</section>
+<section id="model-distillation">
+<h3>Model Distillation<a class="headerlink" href="#model-distillation" title="Link to this heading">#</a></h3>
+<p>Involves training a simpler, interpretable model to mimic the behavior of a complex model, providing insights into the complex model’s decision-making process.</p>
+</section>
+<section id="surrogate-models">
+<h3>Surrogate Models<a class="headerlink" href="#surrogate-models" title="Link to this heading">#</a></h3>
+<p>Employs simpler, interpretable models to approximate the behavior of more complex models, helping to understand the decision-making process of the complex model.</p>
 <!-- 
 
 ### Links
@@ -560,7 +652,7 @@ Many methods focus on some sort of gradient visualisation.</p>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
-<span class="target" id="id1"></span></section>
+<span class="target" id="id3"></span></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -599,7 +691,7 @@ Many methods focus on some sort of gradient visualisation.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Mechanistic interpretability</p>
+        <p class="prev-next-title">Behavioural interpretability</p>
       </div>
     </a>
     <a class="right-next"
@@ -640,16 +732,30 @@ Many methods focus on some sort of gradient visualisation.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-backprop">Guided Backprop</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saliency-maps">Saliency Maps</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-saliency">Guided Saliency</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-decomposition-integrated-gradients-2017">Taylor Decomposition - Integrated Gradients (2017)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-lift">Deep LiFT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-decomposition">Taylor Decomposition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-gradients">Integrated Gradients</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lime">LIME</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shap">SHAP</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deepdream">DeepDream</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cam">CAM</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradcam">GradCAM</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#occlusion">Occlusion</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-convnet-architectures">All ConvNet Architectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-lift">Deep LiFT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-gradients-with-perturbations">Integrated Gradients with Perturbations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lime-local-interpretable-model-agnostic-explanations">LIME (Local Interpretable Model-agnostic Explanations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shap-shapley-additive-explanations">SHAP (SHapley Additive exPlanations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cam-class-activation-mapping">CAM (Class Activation Mapping)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradcam-gradient-weighted-class-activation-mapping">GradCAM (Gradient-weighted Class Activation Mapping)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#occlusion-sensitivity">Occlusion Sensitivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-ablation">Feature Ablation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-analysis">Sensitivity Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactual-explanations">Counterfactual Explanations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-perturbations">Guided Perturbations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance">Feature Importance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">SHAP (SHapley Additive exPlanations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">LIME (Local Interpretable Model-agnostic Explanations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-dependence-plots-pdps">Partial Dependence Plots (PDPs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-conditional-expectation-ice-plots">Individual Conditional Expectation (ICE) Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permutation-importance">Permutation Importance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rule-based-explanations">Rule-Based Explanations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-maps">Activation Maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-maps">Attention Maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-distillation">Model Distillation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#surrogate-models">Surrogate Models</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>

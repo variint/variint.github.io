@@ -200,7 +200,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Interpretability</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="int_basics.html">Interpretablility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Mechanistic interpretability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Behavioural interpretability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_attributional.html">Attributional interpretablility</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_concept.html">Concept Alignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_mechanistic.html">Mechanistic interpretability</a></li>
@@ -422,48 +422,24 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explainability-metrics">Explainability Metrics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance">Feature Importance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shap-shapley-additive-explanations">SHAP (SHapley Additive exPlanations)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lime-local-interpretable-model-agnostic-explanations">LIME (Local Interpretable Model-agnostic Explanations)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-dependence-plots-pdps">Partial Dependence Plots (PDPs)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-conditional-expectation-ice-plots">Individual Conditional Expectation (ICE) Plots</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permutation-importance">Permutation Importance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactual-explanations">Counterfactual Explanations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rule-based-explanations">Rule-Based Explanations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saliency-maps">Saliency Maps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-maps">Activation Maps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grad-cam-gradient-weighted-class-activation-mapping">Grad-CAM (Gradient-weighted Class Activation Mapping)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-maps">Attention Maps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-distillation">Model Distillation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#surrogate-models">Surrogate Models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-ablation">Feature Ablation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanistic-interpretability-metrics">Mechanistic Interpretability Metrics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-activation-vectors-cavs">Concept Activation Vectors (CAVs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-mechanistic-interpretability-metrics">Methods (Mechanistic Interpretability Metrics)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-maximization">Activation Maximization</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neuron-attribution">Neuron Attribution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-wise-relevance-propagation-lrp">Layer-wise Relevance Propagation (LRP)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Saliency Maps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Grad-CAM (Gradient-weighted Class Activation Mapping)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-attribution">Feature Attribution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Counterfactual Explanations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactual-explanations">Counterfactual Explanations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-state-analysis">Internal State Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-based-explanations">Concept-Based Explanations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subnetwork-probing">Subnetwork Probing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attribution-maps">Attribution Maps</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-visualization">Feature Visualization</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decomposition-methods">Decomposition Methods</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Model Distillation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-distillation">Model Distillation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-analysis">Sensitivity Analysis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-drift-detection">Concept Drift Detection</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-metrics-for-adversarial-attacks">Distance Metrics for Adversarial Attacks</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-metrics-for-adversarial-attacks">Distance Metrics (for Adversarial Attacks)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l2-distance">L2 Distance</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-distance-infinity-norm">L∞ Distance (Infinity Norm)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-distance-manhattan-distance">L1 Distance (Manhattan Distance)</a></li>
@@ -475,80 +451,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-variation-distance">Total Variation Distance</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disentanglement-metrics">Disentanglement Metrics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information-gap-mig">Mutual Information Gap (MIG)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beta-vae-score">Beta-VAE Score</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorvae-score">FactorVAE Score</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disentanglement-score-dscore">Disentanglement Score (Dscore)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-bottleneck-ib-method">Information Bottleneck (IB) Method</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independence-metric-indep">Independence Metric (Indep)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-information-bottleneck-vib">Variational Information Bottleneck (VIB)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latent-traversal">Latent Traversal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorized-representation">Factorized Representation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pruning-metrics">Pruning Metrics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weight-sparsity">Weight Sparsity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-compression-ratio">Model Compression Ratio</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-drop">Accuracy Drop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flops-reduction">FLOPs Reduction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-reduction">Parameter Reduction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-latency">Model Latency</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-footprint">Memory Footprint</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruction-error">Reconstruction Error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#efficiency-metrics">Efficiency Metrics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Sensitivity Analysis</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pruning-conditions">Pruning Conditions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitude-based-pruning">Magnitude-Based Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-norm-pruning">L1 Norm Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l2-norm-pruning">L2 Norm Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-based-pruning">Gradient-Based Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-based-pruning">Variance-Based Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-based-pruning">Activation-Based Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-pruning">Connection Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-pruning">Structured Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-regularization">Sparse Regularization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-pruning">Dynamic Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-based-pruning">Sensitivity-Based Pruning</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-types-for-visualizing-results">Plot Types for Visualizing Results</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-plot">Line Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">Scatter Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-chart">Bar Chart</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">Histogram</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot">Box Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap">Heatmap</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curve">ROC Curve</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-recall-curve">Precision-Recall Curve</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auc-roc-curve">AUC-ROC Curve</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-surface-plot">3D Surface Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#violin-plot">Violin Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pair-plot">Pair Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-bar-plot">Error Bar Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contour-plot">Contour Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stacked-bar-chart">Stacked Bar Chart</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cumulative-gain-lift-chart">Cumulative Gain/Lift Chart</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-faithfulness-of-explainable-techniques">Measuring Faithfulness of Explainable Techniques</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-attribution-consistency">1. <strong>Feature Attribution Consistency</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. <strong>Counterfactual Explanations</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-fidelity">3. <strong>Model Fidelity</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#human-evaluation">4. <strong>Human Evaluation</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbation-analysis">5. <strong>Perturbation Analysis</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-with-known-facts">6. <strong>Consistency with Known Facts</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-vs-global-consistency">7. <strong>Local vs. Global Consistency</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-comparison">8. <strong>Visualization Comparison</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robustness-testing">9. <strong>Robustness Testing</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplification-test">10. <strong>Simplification Test</strong></a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-sanity-checks">Types of Sanity Checks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-perturbation-check">1. <strong>Input Perturbation Check</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-ablation-test">2. <strong>Feature Ablation Test</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#label-consistency-check">3. <strong>Label Consistency Check</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#randomness-check">4. <strong>Randomness Check</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-across-models">5. <strong>Consistency Across Models</strong></a></li>
@@ -556,7 +459,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monotonicity-check">7. <strong>Monotonicity Check</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-of-explanations">8. <strong>Cross-Validation of Explanations</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#human-validation-check">9. <strong>Human Validation Check</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">10. <strong>Consistency with Known Facts</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-with-known-facts">10. <strong>Consistency with Known Facts</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-stability-check">11. <strong>Training Stability Check</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explanation-plausibility">12. <strong>Explanation Plausibility</strong></a></li>
 </ul>
@@ -579,115 +482,16 @@ document.write(`
 <section id="description">
 <h3>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h3>
 </section>
-<section id="goals">
-<h3>Goals<a class="headerlink" href="#goals" title="Link to this heading">#</a></h3>
+<section id="key-takeaways">
+<h3>Key Takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Learn about performance metrics</p></li>
 <li><p>Learn about faithfullness of xAI</p></li>
 </ul>
 </section>
 </section>
-<section id="explainability-metrics">
-<h2>Explainability Metrics<a class="headerlink" href="#explainability-metrics" title="Link to this heading">#</a></h2>
-<section id="feature-importance">
-<h3>Feature Importance<a class="headerlink" href="#feature-importance" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Measures the contribution of each feature to the model’s predictions, often assessed through methods like permutation importance or SHAP (SHapley Additive exPlanations).</p></li>
-</ul>
-</section>
-<section id="shap-shapley-additive-explanations">
-<h3>SHAP (SHapley Additive exPlanations)<a class="headerlink" href="#shap-shapley-additive-explanations" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Provides a unified measure of feature importance and model explainability by attributing each prediction to the contribution of each feature using cooperative game theory.</p></li>
-</ul>
-</section>
-<section id="lime-local-interpretable-model-agnostic-explanations">
-<h3>LIME (Local Interpretable Model-agnostic Explanations)<a class="headerlink" href="#lime-local-interpretable-model-agnostic-explanations" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Creates locally interpretable models to approximate the behavior of a more complex model in the vicinity of a particular prediction, helping to understand individual predictions.</p></li>
-</ul>
-</section>
-<section id="partial-dependence-plots-pdps">
-<h3>Partial Dependence Plots (PDPs)<a class="headerlink" href="#partial-dependence-plots-pdps" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Illustrates the relationship between a feature and the predicted outcome, averaging the effects of all other features to show how changes in the feature affect predictions.</p></li>
-</ul>
-</section>
-<section id="individual-conditional-expectation-ice-plots">
-<h3>Individual Conditional Expectation (ICE) Plots<a class="headerlink" href="#individual-conditional-expectation-ice-plots" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Displays the effect of a feature on the prediction for individual instances, providing insight into how feature values influence predictions on a case-by-case basis.</p></li>
-</ul>
-</section>
-<section id="permutation-importance">
-<h3>Permutation Importance<a class="headerlink" href="#permutation-importance" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Measures the change in model performance when the values of a feature are randomly shuffled, which helps assess the feature’s impact on model accuracy.</p></li>
-</ul>
-</section>
-<section id="counterfactual-explanations">
-<h3>Counterfactual Explanations<a class="headerlink" href="#counterfactual-explanations" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Provides explanations by showing how the input features would need to change for the model’s prediction to be different, offering insight into decision boundaries.</p></li>
-</ul>
-</section>
-<section id="rule-based-explanations">
-<h3>Rule-Based Explanations<a class="headerlink" href="#rule-based-explanations" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Generates human-understandable rules that approximate the decision-making process of the model, often used in models like decision trees or rule-based classifiers.</p></li>
-</ul>
-</section>
-<section id="saliency-maps">
-<h3>Saliency Maps<a class="headerlink" href="#saliency-maps" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Visualizations that highlight which parts of an input (e.g., image pixels) have the most influence on the model’s prediction, commonly used in image classification tasks.</p></li>
-</ul>
-</section>
-<section id="activation-maps">
-<h3>Activation Maps<a class="headerlink" href="#activation-maps" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Shows which parts of a neural network’s layers are activated by a given input, providing insight into the features and patterns that the network is focusing on.</p></li>
-</ul>
-</section>
-<section id="grad-cam-gradient-weighted-class-activation-mapping">
-<h3>Grad-CAM (Gradient-weighted Class Activation Mapping)<a class="headerlink" href="#grad-cam-gradient-weighted-class-activation-mapping" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>A technique for visualizing which regions of an image are important for a specific prediction by combining the gradients of the output with the activations of convolutional layers.</p></li>
-</ul>
-</section>
-<section id="attention-maps">
-<h3>Attention Maps<a class="headerlink" href="#attention-maps" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Used in models with attention mechanisms to visualize which parts of the input are being focused on for a given prediction, often used in natural language processing.</p></li>
-</ul>
-</section>
-<section id="model-distillation">
-<h3>Model Distillation<a class="headerlink" href="#model-distillation" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Involves training a simpler, interpretable model to mimic the behavior of a complex model, providing insights into the complex model’s decision-making process.</p></li>
-</ul>
-</section>
-<section id="surrogate-models">
-<h3>Surrogate Models<a class="headerlink" href="#surrogate-models" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Employs simpler, interpretable models to approximate the behavior of more complex models, helping to understand the decision-making process of the complex model.</p></li>
-</ul>
-</section>
-<section id="feature-ablation">
-<h3>Feature Ablation<a class="headerlink" href="#feature-ablation" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Systematically removes features from the model and observes the impact on performance, helping to identify which features are crucial for the model’s predictions.</p></li>
-</ul>
-</section>
-</section>
-<section id="mechanistic-interpretability-metrics">
-<h2>Mechanistic Interpretability Metrics<a class="headerlink" href="#mechanistic-interpretability-metrics" title="Link to this heading">#</a></h2>
-<section id="concept-activation-vectors-cavs">
-<h3>Concept Activation Vectors (CAVs)<a class="headerlink" href="#concept-activation-vectors-cavs" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Measures how well a specific concept is represented within a neural network by comparing activation vectors of examples belonging to that concept.</p></li>
-</ul>
-</section>
+<section id="methods-mechanistic-interpretability-metrics">
+<h2>Methods (Mechanistic Interpretability Metrics)<a class="headerlink" href="#methods-mechanistic-interpretability-metrics" title="Link to this heading">#</a></h2>
 <section id="activation-maximization">
 <h3>Activation Maximization<a class="headerlink" href="#activation-maximization" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -700,32 +504,14 @@ document.write(`
 <li><p>Determines the contribution of individual neurons to the final prediction, often used to understand the role of specific neurons in the model’s decision-making process.</p></li>
 </ul>
 </section>
-<section id="layer-wise-relevance-propagation-lrp">
-<h3>Layer-wise Relevance Propagation (LRP)<a class="headerlink" href="#layer-wise-relevance-propagation-lrp" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>A technique for backpropagating the relevance scores through the network to identify which parts of the input were most influential for the prediction.</p></li>
-</ul>
-</section>
-<section id="id1">
-<h3>Saliency Maps<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Visualizations that highlight which parts of the input (e.g., image pixels) contribute most to a model’s prediction, providing insight into how specific features affect outcomes.</p></li>
-</ul>
-</section>
-<section id="id2">
-<h3>Grad-CAM (Gradient-weighted Class Activation Mapping)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Visualizes the areas of an input image that most influence the model’s prediction by combining gradients with activation maps from convolutional layers.</p></li>
-</ul>
-</section>
 <section id="feature-attribution">
 <h3>Feature Attribution<a class="headerlink" href="#feature-attribution" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Quantifies the importance of each feature in making a prediction, often using methods like SHAP (SHapley Additive exPlanations) or LIME (Local Interpretable Model-agnostic Explanations).</p></li>
 </ul>
 </section>
-<section id="id3">
-<h3>Counterfactual Explanations<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="counterfactual-explanations">
+<h3>Counterfactual Explanations<a class="headerlink" href="#counterfactual-explanations" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Provides explanations by generating input variations that would lead to different predictions, helping to understand the decision boundaries of the model.</p></li>
 </ul>
@@ -734,18 +520,6 @@ document.write(`
 <h3>Internal State Analysis<a class="headerlink" href="#internal-state-analysis" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Examines the internal activations or state changes within the model to understand how different inputs are processed and how they affect the final output.</p></li>
-</ul>
-</section>
-<section id="concept-based-explanations">
-<h3>Concept-Based Explanations<a class="headerlink" href="#concept-based-explanations" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Uses high-level concepts or human-understandable features to explain the model’s behavior, assessing how well these concepts align with the model’s internal mechanisms.</p></li>
-</ul>
-</section>
-<section id="subnetwork-probing">
-<h3>Subnetwork Probing<a class="headerlink" href="#subnetwork-probing" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Investigates the roles of specific subnetworks or components within a larger model to understand their contributions to the overall model performance.</p></li>
 </ul>
 </section>
 <section id="attribution-maps">
@@ -766,8 +540,8 @@ document.write(`
 <li><p>Analyzes the model’s decisions by decomposing the contributions of various parts of the network, helping to identify which components are critical for specific predictions.</p></li>
 </ul>
 </section>
-<section id="id4">
-<h3>Model Distillation<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<section id="model-distillation">
+<h3>Model Distillation<a class="headerlink" href="#model-distillation" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Simplifies a complex model into a more interpretable model while preserving its behavior, allowing for easier analysis and understanding of the model’s decision-making process.</p></li>
 </ul>
@@ -786,7 +560,7 @@ document.write(`
 </section>
 </section>
 <section id="distance-metrics-for-adversarial-attacks">
-<h2>Distance Metrics for Adversarial Attacks<a class="headerlink" href="#distance-metrics-for-adversarial-attacks" title="Link to this heading">#</a></h2>
+<h2>Distance Metrics (for Adversarial Attacks)<a class="headerlink" href="#distance-metrics-for-adversarial-attacks" title="Link to this heading">#</a></h2>
 <section id="l2-distance">
 <h3>L2 Distance<a class="headerlink" href="#l2-distance" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -860,471 +634,8 @@ document.write(`
 </ul>
 </section>
 </section>
-<section id="disentanglement-metrics">
-<h2>Disentanglement Metrics<a class="headerlink" href="#disentanglement-metrics" title="Link to this heading">#</a></h2>
-<section id="mutual-information-gap-mig">
-<h3>Mutual Information Gap (MIG)<a class="headerlink" href="#mutual-information-gap-mig" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Measures the difference between the mutual information between latent variables and the ground truth factors of variation.</p></li>
-<li><p><strong>Formula</strong>: [ \text{MIG} = \frac{\text{MI}<em>{\text{latent}, \text{ground truth}} - \text{MI}</em>{\text{latent}, \text{random}}}{\text{MI}_{\text{ground truth}, \text{random}}} ]</p></li>
-<li><p><strong>Usage</strong>: Evaluates how well latent factors correspond to ground truth factors, with higher values indicating better disentanglement.</p></li>
-</ul>
-</section>
-<section id="beta-vae-score">
-<h3>Beta-VAE Score<a class="headerlink" href="#beta-vae-score" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Evaluates the extent of disentanglement in Variational Autoencoders (VAEs) by comparing the mutual information between latent variables and the ground truth.</p></li>
-<li><p><strong>Formula</strong>: [ \text{Beta-VAE Score} = \frac{\text{MI}<em>{\text{latent}, \text{ground truth}}}{\text{MI}</em>{\text{latent}, \text{reconstructed}}} ]</p></li>
-<li><p><strong>Usage</strong>: Assesses how well the latent variables capture distinct and meaningful factors of variation in the data.</p></li>
-</ul>
-</section>
-<section id="factorvae-score">
-<h3>FactorVAE Score<a class="headerlink" href="#factorvae-score" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Measures disentanglement by evaluating the mutual information between latent variables and the ground truth while penalizing entanglement in the VAE.</p></li>
-<li><p><strong>Formula</strong>: [ \text{FactorVAE Score} = \frac{\text{MI}<em>{\text{latent}, \text{ground truth}}}{\text{MI}</em>{\text{latent}, \text{random}}} ]</p></li>
-<li><p><strong>Usage</strong>: Quantifies the ability of the model to disentangle factors by comparing latent variable mutual information with both ground truth and random distributions.</p></li>
-</ul>
-</section>
-<section id="disentanglement-score-dscore">
-<h3>Disentanglement Score (Dscore)<a class="headerlink" href="#disentanglement-score-dscore" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: A metric that measures the degree of disentanglement based on the ability of the model to represent factors independently.</p></li>
-<li><p><strong>Formula</strong>: [ \text{Dscore} = \frac{\text{MI}<em>{\text{latent}, \text{ground truth}}}{\text{MI}</em>{\text{latent}, \text{reconstructed}}} ]</p></li>
-<li><p><strong>Usage</strong>: Assesses how effectively the model separates different factors of variation in the latent space.</p></li>
-</ul>
-</section>
-<section id="information-bottleneck-ib-method">
-<h3>Information Bottleneck (IB) Method<a class="headerlink" href="#information-bottleneck-ib-method" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Measures how much information about the input is retained in the latent representation while discarding irrelevant information.</p></li>
-<li><p><strong>Formula</strong>: [ \text{IB} = I(X; Z) - I(Z; Y) ]</p></li>
-<li><p><strong>Usage</strong>: Evaluates the trade-off between retaining relevant information and discarding irrelevant information in the latent space.</p></li>
-</ul>
-</section>
-<section id="independence-metric-indep">
-<h3>Independence Metric (Indep)<a class="headerlink" href="#independence-metric-indep" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Quantifies the statistical independence between latent variables to assess disentanglement.</p></li>
-<li><p><strong>Formula</strong>: [ \text{Indep} = 1 - \text{MI}_{\text{latent variables}} ]</p></li>
-<li><p><strong>Usage</strong>: Measures how independent the latent variables are from each other, with higher values indicating better disentanglement.</p></li>
-</ul>
-</section>
-<section id="variational-information-bottleneck-vib">
-<h3>Variational Information Bottleneck (VIB)<a class="headerlink" href="#variational-information-bottleneck-vib" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Measures the trade-off between the information retained about the input and the complexity of the latent representation.</p></li>
-<li><p><strong>Formula</strong>: [ \text{VIB} = I(X; Z) - \beta I(Z; Y) ]</p></li>
-<li><p><strong>Usage</strong>: Assesses how well the model balances between capturing useful information and reducing redundancy in the latent space.</p></li>
-</ul>
-</section>
-<section id="latent-traversal">
-<h3>Latent Traversal<a class="headerlink" href="#latent-traversal" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Evaluates the quality of disentangled representations by traversing the latent space and checking if each dimension corresponds to a specific factor of variation.</p></li>
-<li><p><strong>Formula</strong>: [ \text{Latent Traversal} = \frac{\text{Number of interpretable factors}}{\text{Total number of latent dimensions}} ]</p></li>
-<li><p><strong>Usage</strong>: Assesses how well changes in individual latent dimensions correspond to meaningful changes in the data.</p></li>
-</ul>
-</section>
-<section id="factorized-representation">
-<h3>Factorized Representation<a class="headerlink" href="#factorized-representation" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Measures the extent to which the latent space can be factorized into distinct, interpretable components.</p></li>
-<li><p><strong>Formula</strong>: [ \text{Factorized Representation} = \frac{\text{Number of independent factors}}{\text{Total number of latent dimensions}} ]</p></li>
-<li><p><strong>Usage</strong>: Evaluates how effectively the latent representation can be decomposed into separate, interpretable factors.</p></li>
-</ul>
-</section>
-</section>
-<section id="pruning-metrics">
-<h2>Pruning Metrics<a class="headerlink" href="#pruning-metrics" title="Link to this heading">#</a></h2>
-<section id="weight-sparsity">
-<h3>Weight Sparsity<a class="headerlink" href="#weight-sparsity" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Measures the proportion of zero weights in the pruned model.</p></li>
-<li><p><strong>Formula</strong>: [ \text{Weight Sparsity} = \frac{\text{Number of zero weights}}{\text{Total number of weights}} ]</p></li>
-<li><p><strong>Usage</strong>: Indicates the extent to which weights have been removed, with higher values suggesting greater sparsity.</p></li>
-</ul>
-</section>
-<section id="model-compression-ratio">
-<h3>Model Compression Ratio<a class="headerlink" href="#model-compression-ratio" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Ratio of the size of the pruned model to the size of the original model.</p></li>
-<li><p><strong>Formula</strong>: [ \text{Compression Ratio} = \frac{\text{Size of pruned model}}{\text{Size of original model}} ]</p></li>
-<li><p><strong>Usage</strong>: Evaluates the reduction in model size due to pruning, with lower ratios indicating more effective compression.</p></li>
-</ul>
-</section>
-<section id="accuracy-drop">
-<h3>Accuracy Drop<a class="headerlink" href="#accuracy-drop" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Measures the change in model performance (accuracy) due to pruning.</p></li>
-<li><p><strong>Formula</strong>: [ \text{Accuracy Drop} = \text{Accuracy}<em>{\text{original}} - \text{Accuracy}</em>{\text{pruned}} ]</p></li>
-<li><p><strong>Usage</strong>: Assesses the impact of pruning on the model’s predictive performance, with smaller drops indicating better preservation of accuracy.</p></li>
-</ul>
-</section>
-<section id="flops-reduction">
-<h3>FLOPs Reduction<a class="headerlink" href="#flops-reduction" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Measures the reduction in the number of floating-point operations (FLOPs) after pruning.</p></li>
-<li><p><strong>Formula</strong>: [ \text{FLOPs Reduction} = \frac{\text{FLOPs}<em>{\text{original}} - \text{FLOPs}</em>{\text{pruned}}}{\text{FLOPs}_{\text{original}}} ]</p></li>
-<li><p><strong>Usage</strong>: Evaluates the computational efficiency gained through pruning, with higher reductions indicating more effective pruning.</p></li>
-</ul>
-</section>
-<section id="parameter-reduction">
-<h3>Parameter Reduction<a class="headerlink" href="#parameter-reduction" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Measures the reduction in the total number of parameters due to pruning.</p></li>
-<li><p><strong>Formula</strong>: [ \text{Parameter Reduction} = \frac{\text{Number of parameters}<em>{\text{original}} - \text{Number of parameters}</em>{\text{pruned}}}{\text{Number of parameters}_{\text{original}}} ]</p></li>
-<li><p><strong>Usage</strong>: Indicates how much the model size has been reduced by pruning, with higher reductions suggesting more aggressive pruning.</p></li>
-</ul>
-</section>
-<section id="model-latency">
-<h3>Model Latency<a class="headerlink" href="#model-latency" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Measures the change in the time required for the model to make predictions after pruning.</p></li>
-<li><p><strong>Formula</strong>: [ \text{Model Latency} = \text{Latency}<em>{\text{pruned}} - \text{Latency}</em>{\text{original}} ]</p></li>
-<li><p><strong>Usage</strong>: Assesses the impact of pruning on inference time, with lower latencies indicating improved efficiency.</p></li>
-</ul>
-</section>
-<section id="memory-footprint">
-<h3>Memory Footprint<a class="headerlink" href="#memory-footprint" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Measures the reduction in the memory required to store the pruned model.</p></li>
-<li><p><strong>Formula</strong>: [ \text{Memory Footprint} = \frac{\text{Memory}<em>{\text{original}} - \text{Memory}</em>{\text{pruned}}}{\text{Memory}_{\text{original}}} ]</p></li>
-<li><p><strong>Usage</strong>: Evaluates how pruning affects the memory usage of the model, with higher reductions indicating more efficient memory utilization.</p></li>
-</ul>
-</section>
-<section id="reconstruction-error">
-<h3>Reconstruction Error<a class="headerlink" href="#reconstruction-error" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Measures the error between the original model’s outputs and those of the pruned model on the same inputs.</p></li>
-<li><p><strong>Formula</strong>: [ \text{Reconstruction Error} = \frac{1}{N} \sum_{i=1}^N |f_{\text{original}}(x_i) - f_{\text{pruned}}(x_i)| ]</p></li>
-<li><p><strong>Usage</strong>: Assesses how well the pruned model approximates the behavior of the original model, with lower errors indicating better preservation of the original model’s functionality.</p></li>
-</ul>
-</section>
-<section id="efficiency-metrics">
-<h3>Efficiency Metrics<a class="headerlink" href="#efficiency-metrics" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Assesses the trade-off between efficiency gains (e.g., speed, memory) and the loss of accuracy due to pruning.</p></li>
-<li><p><strong>Formula</strong>: Efficiency metrics can be domain-specific and may involve a combination of FLOPs reduction, latency, and accuracy drop.</p></li>
-<li><p><strong>Usage</strong>: Provides a holistic view of the effectiveness of pruning in terms of efficiency versus accuracy.</p></li>
-</ul>
-</section>
-<section id="id5">
-<h3>Sensitivity Analysis<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Measures the model’s sensitivity to pruning, i.e., how pruning affects different parts of the model.</p></li>
-<li><p><strong>Formula</strong>: Typically involves evaluating performance changes with various levels of pruning.</p></li>
-<li><p><strong>Usage</strong>: Helps understand which layers or components of the model are more sensitive to pruning and may guide more targeted pruning strategies.</p></li>
-</ul>
-</section>
-</section>
-<section id="pruning-conditions">
-<h2>Pruning Conditions<a class="headerlink" href="#pruning-conditions" title="Link to this heading">#</a></h2>
-<section id="magnitude-based-pruning">
-<h3>Magnitude-Based Pruning<a class="headerlink" href="#magnitude-based-pruning" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Prunes weights or neurons based on their magnitude.</p></li>
-<li><p><strong>Condition</strong>: Weights or neurons with values below a certain threshold are removed.</p></li>
-<li><p><strong>Usage</strong>: Simple and effective; commonly used to prune less significant weights or neurons.</p></li>
-</ul>
-</section>
-<section id="l1-norm-pruning">
-<h3>L1 Norm Pruning<a class="headerlink" href="#l1-norm-pruning" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Prunes weights or neurons based on the L1 norm of their values.</p></li>
-<li><p><strong>Condition</strong>: Weights or neurons with the smallest L1 norm are removed.</p></li>
-<li><p><strong>Usage</strong>: Useful for creating sparse models by removing less influential components.</p></li>
-</ul>
-</section>
-<section id="l2-norm-pruning">
-<h3>L2 Norm Pruning<a class="headerlink" href="#l2-norm-pruning" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Prunes weights or neurons based on the L2 norm of their values.</p></li>
-<li><p><strong>Condition</strong>: Weights or neurons with the smallest L2 norm are removed.</p></li>
-<li><p><strong>Usage</strong>: Helps in reducing redundancy and focusing on more significant weights.</p></li>
-</ul>
-</section>
-<section id="gradient-based-pruning">
-<h3>Gradient-Based Pruning<a class="headerlink" href="#gradient-based-pruning" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Prunes weights or neurons based on the gradient of their loss function.</p></li>
-<li><p><strong>Condition</strong>: Weights or neurons with the smallest gradients are removed.</p></li>
-<li><p><strong>Usage</strong>: Targets components with the least impact on the model’s training process.</p></li>
-</ul>
-</section>
-<section id="variance-based-pruning">
-<h3>Variance-Based Pruning<a class="headerlink" href="#variance-based-pruning" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Prunes weights or neurons based on their variance.</p></li>
-<li><p><strong>Condition</strong>: Weights or neurons with low variance in their activations are removed.</p></li>
-<li><p><strong>Usage</strong>: Identifies and removes components that contribute minimally to the model’s variability.</p></li>
-</ul>
-</section>
-<section id="activation-based-pruning">
-<h3>Activation-Based Pruning<a class="headerlink" href="#activation-based-pruning" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Prunes weights or neurons based on their activation levels.</p></li>
-<li><p><strong>Condition</strong>: Weights or neurons with activations below a certain threshold are removed.</p></li>
-<li><p><strong>Usage</strong>: Focuses on components that have minimal impact on the output activations.</p></li>
-</ul>
-</section>
-<section id="connection-pruning">
-<h3>Connection Pruning<a class="headerlink" href="#connection-pruning" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Prunes entire connections between layers based on their importance.</p></li>
-<li><p><strong>Condition</strong>: Connections with the lowest importance scores (e.g., based on magnitude or gradient) are removed.</p></li>
-<li><p><strong>Usage</strong>: Reduces complexity by removing less significant connections.</p></li>
-</ul>
-</section>
-<section id="structured-pruning">
-<h3>Structured Pruning<a class="headerlink" href="#structured-pruning" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Prunes entire structures, such as filters or channels, instead of individual weights.</p></li>
-<li><p><strong>Condition</strong>: Entire structures with low importance or contribution to performance are removed.</p></li>
-<li><p><strong>Usage</strong>: Helps in maintaining efficiency while reducing the model size.</p></li>
-</ul>
-</section>
-<section id="sparse-regularization">
-<h3>Sparse Regularization<a class="headerlink" href="#sparse-regularization" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Uses regularization techniques to induce sparsity in the model.</p></li>
-<li><p><strong>Condition</strong>: Regularization terms in the loss function encourage sparsity in weights or activations.</p></li>
-<li><p><strong>Usage</strong>: Integrates pruning into the training process by promoting sparsity.</p></li>
-</ul>
-</section>
-<section id="dynamic-pruning">
-<h3>Dynamic Pruning<a class="headerlink" href="#dynamic-pruning" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Prunes weights or neurons dynamically during the training process.</p></li>
-<li><p><strong>Condition</strong>: Components are pruned based on their performance metrics or importance, which can change over time.</p></li>
-<li><p><strong>Usage</strong>: Allows for adaptive pruning based on the evolving training state.</p></li>
-</ul>
-</section>
-<section id="sensitivity-based-pruning">
-<h3>Sensitivity-Based Pruning<a class="headerlink" href="#sensitivity-based-pruning" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Prunes components based on their sensitivity to perturbations in the input data.</p></li>
-<li><p><strong>Condition</strong>: Components that show minimal sensitivity to input variations are removed.</p></li>
-<li><p><strong>Usage</strong>: Focuses on retaining components that are crucial for robust performance.</p></li>
-</ul>
-</section>
-</section>
-<section id="plot-types-for-visualizing-results">
-<h2>Plot Types for Visualizing Results<a class="headerlink" href="#plot-types-for-visualizing-results" title="Link to this heading">#</a></h2>
-<section id="line-plot">
-<h3>Line Plot<a class="headerlink" href="#line-plot" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Usage</strong>: Shows trends over time or continuous data. Useful for displaying changes and comparisons across different variables.</p></li>
-<li><p><strong>Example</strong>: Performance metrics (e.g., accuracy, loss) over epochs.</p></li>
-</ul>
-</section>
-<section id="scatter-plot">
-<h3>Scatter Plot<a class="headerlink" href="#scatter-plot" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Usage</strong>: Illustrates the relationship between two continuous variables. Helpful for identifying correlations and clustering.</p></li>
-<li><p><strong>Example</strong>: Comparing predicted vs. actual values, feature importance.</p></li>
-</ul>
-</section>
-<section id="bar-chart">
-<h3>Bar Chart<a class="headerlink" href="#bar-chart" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Usage</strong>: Compares discrete categories or groups. Useful for summarizing categorical data and differences between groups.</p></li>
-<li><p><strong>Example</strong>: Model performance across different methods, accuracy by class.</p></li>
-</ul>
-</section>
-<section id="histogram">
-<h3>Histogram<a class="headerlink" href="#histogram" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Usage</strong>: Displays the distribution of a single continuous variable. Useful for understanding data distribution and frequency.</p></li>
-<li><p><strong>Example</strong>: Distribution of errors or activations.</p></li>
-</ul>
-</section>
-<section id="box-plot">
-<h3>Box Plot<a class="headerlink" href="#box-plot" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Usage</strong>: Shows the distribution and spread of data, including median, quartiles, and outliers. Useful for comparing distributions.</p></li>
-<li><p><strong>Example</strong>: Distribution of performance metrics across different runs or models.</p></li>
-</ul>
-</section>
-<section id="heatmap">
-<h3>Heatmap<a class="headerlink" href="#heatmap" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Usage</strong>: Represents data values in a matrix format using color coding. Useful for visualizing correlation matrices and confusion matrices.</p></li>
-<li><p><strong>Example</strong>: Correlation between features, confusion matrix of classification results.</p></li>
-</ul>
-</section>
-<section id="roc-curve">
-<h3>ROC Curve<a class="headerlink" href="#roc-curve" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Usage</strong>: Illustrates the performance of a binary classifier by plotting the true positive rate against the false positive rate.</p></li>
-<li><p><strong>Example</strong>: Comparing classification performance of different models.</p></li>
-</ul>
-</section>
-<section id="precision-recall-curve">
-<h3>Precision-Recall Curve<a class="headerlink" href="#precision-recall-curve" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Usage</strong>: Shows the trade-off between precision and recall for different thresholds. Useful for evaluating classification performance, especially with imbalanced datasets.</p></li>
-<li><p><strong>Example</strong>: Performance of a classifier in detecting rare events.</p></li>
-</ul>
-</section>
-<section id="auc-roc-curve">
-<h3>AUC-ROC Curve<a class="headerlink" href="#auc-roc-curve" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Usage</strong>: Displays the area under the ROC curve to summarize classifier performance. Higher AUC indicates better model performance.</p></li>
-<li><p><strong>Example</strong>: Comparing overall performance of different models.</p></li>
-</ul>
-</section>
-<section id="d-surface-plot">
-<h3>3D Surface Plot<a class="headerlink" href="#d-surface-plot" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Usage</strong>: Visualizes three-dimensional data and relationships between three variables. Useful for understanding complex relationships and interactions.</p></li>
-<li><p><strong>Example</strong>: Performance metrics across two hyperparameters.</p></li>
-</ul>
-</section>
-<section id="violin-plot">
-<h3>Violin Plot<a class="headerlink" href="#violin-plot" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Usage</strong>: Combines box plot and density plot to show data distribution, highlighting the density of data at different values.</p></li>
-<li><p><strong>Example</strong>: Distribution of performance metrics across different models.</p></li>
-</ul>
-</section>
-<section id="pair-plot">
-<h3>Pair Plot<a class="headerlink" href="#pair-plot" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Usage</strong>: Displays pairwise relationships and distributions between multiple variables. Useful for exploring interactions and correlations.</p></li>
-<li><p><strong>Example</strong>: Relationships between multiple features or model parameters.</p></li>
-</ul>
-</section>
-<section id="error-bar-plot">
-<h3>Error Bar Plot<a class="headerlink" href="#error-bar-plot" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Usage</strong>: Shows the variability or uncertainty of data points with error bars. Useful for visualizing confidence intervals or standard deviations.</p></li>
-<li><p><strong>Example</strong>: Performance metrics with confidence intervals across different models or experiments.</p></li>
-</ul>
-</section>
-<section id="contour-plot">
-<h3>Contour Plot<a class="headerlink" href="#contour-plot" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Usage</strong>: Represents the density or intensity of data in two dimensions using contour lines. Useful for visualizing the relationship between variables in a continuous space.</p></li>
-<li><p><strong>Example</strong>: Decision boundaries or error surfaces.</p></li>
-</ul>
-</section>
-<section id="stacked-bar-chart">
-<h3>Stacked Bar Chart<a class="headerlink" href="#stacked-bar-chart" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Usage</strong>: Compares the total size across categories while breaking down each category into sub-groups. Useful for visualizing the composition of categories.</p></li>
-<li><p><strong>Example</strong>: Breakdown of errors or performance across different classes.</p></li>
-</ul>
-</section>
-<section id="cumulative-gain-lift-chart">
-<h3>Cumulative Gain/Lift Chart<a class="headerlink" href="#cumulative-gain-lift-chart" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Usage</strong>: Shows the improvement of a model’s performance over random guessing. Useful for evaluating the effectiveness of classification models.</p></li>
-<li><p><strong>Example</strong>: Performance of a model in ranking or targeting tasks.</p></li>
-</ul>
-</section>
-</section>
-<section id="measuring-faithfulness-of-explainable-techniques">
-<h2>Measuring Faithfulness of Explainable Techniques<a class="headerlink" href="#measuring-faithfulness-of-explainable-techniques" title="Link to this heading">#</a></h2>
-<section id="feature-attribution-consistency">
-<h3>1. <strong>Feature Attribution Consistency</strong><a class="headerlink" href="#feature-attribution-consistency" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Measures whether the importance scores assigned to features remain consistent under slight perturbations.</p></li>
-<li><p><strong>Method</strong>: Evaluate if small changes in input lead to consistent changes in feature attributions.</p></li>
-<li><p><strong>Metric</strong>: Consistency score or stability measure of feature importance across perturbations.</p></li>
-</ul>
-</section>
-<section id="id6">
-<h3>2. <strong>Counterfactual Explanations</strong><a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Examines if the explanations correctly predict the output changes when certain features are altered.</p></li>
-<li><p><strong>Method</strong>: Generate counterfactuals and check if the explanation aligns with the changes in the model’s predictions.</p></li>
-<li><p><strong>Metric</strong>: Accuracy of the explanation in predicting the outcome of counterfactual scenarios.</p></li>
-</ul>
-</section>
-<section id="model-fidelity">
-<h3>3. <strong>Model Fidelity</strong><a class="headerlink" href="#model-fidelity" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Assesses how well the explanation technique reflects the behavior of the model it is explaining.</p></li>
-<li><p><strong>Method</strong>: Compare explanations generated by the technique with the model’s decision boundaries or learned features.</p></li>
-<li><p><strong>Metric</strong>: Fidelity score or agreement rate between the explanation and model’s internal representations.</p></li>
-</ul>
-</section>
-<section id="human-evaluation">
-<h3>4. <strong>Human Evaluation</strong><a class="headerlink" href="#human-evaluation" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Involves human judges assessing the quality and reliability of the explanations.</p></li>
-<li><p><strong>Method</strong>: Collect feedback from domain experts or end-users on how well the explanations align with their understanding of the model’s behavior.</p></li>
-<li><p><strong>Metric</strong>: Qualitative scores or ratings from human evaluators regarding the clarity and accuracy of the explanations.</p></li>
-</ul>
-</section>
-<section id="perturbation-analysis">
-<h3>5. <strong>Perturbation Analysis</strong><a class="headerlink" href="#perturbation-analysis" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Tests if explanations change in a meaningful way when input data is perturbed.</p></li>
-<li><p><strong>Method</strong>: Apply perturbations to input data and observe if the explanations adjust accordingly.</p></li>
-<li><p><strong>Metric</strong>: Degree of change in explanations relative to changes in input data.</p></li>
-</ul>
-</section>
-<section id="consistency-with-known-facts">
-<h3>6. <strong>Consistency with Known Facts</strong><a class="headerlink" href="#consistency-with-known-facts" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Evaluates if the explanations are consistent with established knowledge or domain-specific facts.</p></li>
-<li><p><strong>Method</strong>: Compare explanations with known information or domain expertise to assess alignment.</p></li>
-<li><p><strong>Metric</strong>: Accuracy of explanations in reflecting established knowledge.</p></li>
-</ul>
-</section>
-<section id="local-vs-global-consistency">
-<h3>7. <strong>Local vs. Global Consistency</strong><a class="headerlink" href="#local-vs-global-consistency" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Measures if the explanations are consistent at both local (individual predictions) and global (overall model behavior) levels.</p></li>
-<li><p><strong>Method</strong>: Assess if local explanations for specific predictions align with global trends or patterns.</p></li>
-<li><p><strong>Metric</strong>: Consistency score between local explanations and global model behavior.</p></li>
-</ul>
-</section>
-<section id="visualization-comparison">
-<h3>8. <strong>Visualization Comparison</strong><a class="headerlink" href="#visualization-comparison" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Compares visual explanations with model predictions to check for alignment.</p></li>
-<li><p><strong>Method</strong>: Use visualization tools to interpret explanations and compare them with model outputs.</p></li>
-<li><p><strong>Metric</strong>: Visual alignment score or agreement between visual explanations and model predictions.</p></li>
-</ul>
-</section>
-<section id="robustness-testing">
-<h3>9. <strong>Robustness Testing</strong><a class="headerlink" href="#robustness-testing" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Assesses if the explanation technique is robust to changes in model parameters or training data.</p></li>
-<li><p><strong>Method</strong>: Test explanations across different model versions or datasets to evaluate robustness.</p></li>
-<li><p><strong>Metric</strong>: Robustness score based on changes in explanations across different model settings.</p></li>
-</ul>
-</section>
-<section id="simplification-test">
-<h3>10. <strong>Simplification Test</strong><a class="headerlink" href="#simplification-test" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Evaluates if simplifying the explanation maintains its accuracy in reflecting the model’s behavior.</p></li>
-<li><p><strong>Method</strong>: Simplify explanations and check if the simplified versions still accurately represent the model’s decisions.</p></li>
-<li><p><strong>Metric</strong>: Accuracy of simplified explanations compared to original, detailed explanations.</p></li>
-</ul>
-</section>
-</section>
 <section id="types-of-sanity-checks">
 <h2>Types of Sanity Checks<a class="headerlink" href="#types-of-sanity-checks" title="Link to this heading">#</a></h2>
-<section id="input-perturbation-check">
-<h3>1. <strong>Input Perturbation Check</strong><a class="headerlink" href="#input-perturbation-check" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Evaluates how small changes in the input affect the model’s output.</p></li>
-<li><p><strong>Method</strong>: Apply small perturbations to the input data and observe if the model’s predictions or explanations change in a consistent manner.</p></li>
-<li><p><strong>Purpose</strong>: Ensures that the model and its explanations respond appropriately to slight variations in input.</p></li>
-</ul>
-</section>
-<section id="feature-ablation-test">
-<h3>2. <strong>Feature Ablation Test</strong><a class="headerlink" href="#feature-ablation-test" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Definition</strong>: Assesses the impact of removing or modifying individual features on the model’s output.</p></li>
-<li><p><strong>Method</strong>: Systematically remove or alter features and observe changes in the model’s performance or explanation.</p></li>
-<li><p><strong>Purpose</strong>: Verifies if the model’s reliance on specific features aligns with the explanations provided.</p></li>
-</ul>
-</section>
 <section id="label-consistency-check">
 <h3>3. <strong>Label Consistency Check</strong><a class="headerlink" href="#label-consistency-check" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -1381,8 +692,8 @@ document.write(`
 <li><p><strong>Purpose</strong>: Provides qualitative validation to complement quantitative sanity checks.</p></li>
 </ul>
 </section>
-<section id="id7">
-<h3>10. <strong>Consistency with Known Facts</strong><a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<section id="consistency-with-known-facts">
+<h3>10. <strong>Consistency with Known Facts</strong><a class="headerlink" href="#consistency-with-known-facts" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Definition</strong>: Ensures that the model’s explanations align with established knowledge or domain-specific facts.</p></li>
 <li><p><strong>Method</strong>: Compare explanations with known domain knowledge to validate their accuracy.</p></li>
@@ -1474,48 +785,24 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explainability-metrics">Explainability Metrics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance">Feature Importance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shap-shapley-additive-explanations">SHAP (SHapley Additive exPlanations)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lime-local-interpretable-model-agnostic-explanations">LIME (Local Interpretable Model-agnostic Explanations)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-dependence-plots-pdps">Partial Dependence Plots (PDPs)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-conditional-expectation-ice-plots">Individual Conditional Expectation (ICE) Plots</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permutation-importance">Permutation Importance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactual-explanations">Counterfactual Explanations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rule-based-explanations">Rule-Based Explanations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saliency-maps">Saliency Maps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-maps">Activation Maps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grad-cam-gradient-weighted-class-activation-mapping">Grad-CAM (Gradient-weighted Class Activation Mapping)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-maps">Attention Maps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-distillation">Model Distillation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#surrogate-models">Surrogate Models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-ablation">Feature Ablation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mechanistic-interpretability-metrics">Mechanistic Interpretability Metrics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-activation-vectors-cavs">Concept Activation Vectors (CAVs)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-mechanistic-interpretability-metrics">Methods (Mechanistic Interpretability Metrics)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-maximization">Activation Maximization</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neuron-attribution">Neuron Attribution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-wise-relevance-propagation-lrp">Layer-wise Relevance Propagation (LRP)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Saliency Maps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Grad-CAM (Gradient-weighted Class Activation Mapping)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-attribution">Feature Attribution</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Counterfactual Explanations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactual-explanations">Counterfactual Explanations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-state-analysis">Internal State Analysis</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-based-explanations">Concept-Based Explanations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subnetwork-probing">Subnetwork Probing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attribution-maps">Attribution Maps</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-visualization">Feature Visualization</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decomposition-methods">Decomposition Methods</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Model Distillation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-distillation">Model Distillation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-analysis">Sensitivity Analysis</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-drift-detection">Concept Drift Detection</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-metrics-for-adversarial-attacks">Distance Metrics for Adversarial Attacks</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-metrics-for-adversarial-attacks">Distance Metrics (for Adversarial Attacks)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l2-distance">L2 Distance</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-distance-infinity-norm">L∞ Distance (Infinity Norm)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-distance-manhattan-distance">L1 Distance (Manhattan Distance)</a></li>
@@ -1527,80 +814,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-variation-distance">Total Variation Distance</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#disentanglement-metrics">Disentanglement Metrics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information-gap-mig">Mutual Information Gap (MIG)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beta-vae-score">Beta-VAE Score</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorvae-score">FactorVAE Score</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#disentanglement-score-dscore">Disentanglement Score (Dscore)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-bottleneck-ib-method">Information Bottleneck (IB) Method</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#independence-metric-indep">Independence Metric (Indep)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-information-bottleneck-vib">Variational Information Bottleneck (VIB)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#latent-traversal">Latent Traversal</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#factorized-representation">Factorized Representation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pruning-metrics">Pruning Metrics</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weight-sparsity">Weight Sparsity</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-compression-ratio">Model Compression Ratio</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-drop">Accuracy Drop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flops-reduction">FLOPs Reduction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-reduction">Parameter Reduction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-latency">Model Latency</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-footprint">Memory Footprint</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reconstruction-error">Reconstruction Error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#efficiency-metrics">Efficiency Metrics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Sensitivity Analysis</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pruning-conditions">Pruning Conditions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magnitude-based-pruning">Magnitude-Based Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-norm-pruning">L1 Norm Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l2-norm-pruning">L2 Norm Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-based-pruning">Gradient-Based Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variance-based-pruning">Variance-Based Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-based-pruning">Activation-Based Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-pruning">Connection Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-pruning">Structured Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-regularization">Sparse Regularization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-pruning">Dynamic Pruning</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-based-pruning">Sensitivity-Based Pruning</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-types-for-visualizing-results">Plot Types for Visualizing Results</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-plot">Line Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">Scatter Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-chart">Bar Chart</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">Histogram</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot">Box Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap">Heatmap</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curve">ROC Curve</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-recall-curve">Precision-Recall Curve</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auc-roc-curve">AUC-ROC Curve</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-surface-plot">3D Surface Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#violin-plot">Violin Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pair-plot">Pair Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-bar-plot">Error Bar Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contour-plot">Contour Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stacked-bar-chart">Stacked Bar Chart</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cumulative-gain-lift-chart">Cumulative Gain/Lift Chart</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-faithfulness-of-explainable-techniques">Measuring Faithfulness of Explainable Techniques</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-attribution-consistency">1. <strong>Feature Attribution Consistency</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2. <strong>Counterfactual Explanations</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-fidelity">3. <strong>Model Fidelity</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#human-evaluation">4. <strong>Human Evaluation</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbation-analysis">5. <strong>Perturbation Analysis</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-with-known-facts">6. <strong>Consistency with Known Facts</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-vs-global-consistency">7. <strong>Local vs. Global Consistency</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-comparison">8. <strong>Visualization Comparison</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robustness-testing">9. <strong>Robustness Testing</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplification-test">10. <strong>Simplification Test</strong></a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-sanity-checks">Types of Sanity Checks</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-perturbation-check">1. <strong>Input Perturbation Check</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-ablation-test">2. <strong>Feature Ablation Test</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#label-consistency-check">3. <strong>Label Consistency Check</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#randomness-check">4. <strong>Randomness Check</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-across-models">5. <strong>Consistency Across Models</strong></a></li>
@@ -1608,7 +822,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monotonicity-check">7. <strong>Monotonicity Check</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-of-explanations">8. <strong>Cross-Validation of Explanations</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#human-validation-check">9. <strong>Human Validation Check</strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">10. <strong>Consistency with Known Facts</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-with-known-facts">10. <strong>Consistency with Known Facts</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-stability-check">11. <strong>Training Stability Check</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explanation-plausibility">12. <strong>Explanation Plausibility</strong></a></li>
 </ul>

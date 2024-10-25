@@ -200,7 +200,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Interpretability</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="int_basics.html">Interpretablility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Mechanistic interpretability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Behavioural interpretability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_attributional.html">Attributional interpretablility</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_concept.html">Concept Alignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_mechanistic.html">Mechanistic interpretability</a></li>
@@ -421,11 +421,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key takeaways</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-classification">Methods (Classification)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy">Accuracy</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision">Precision</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recall-sensitivity">Recall (Sensitivity)</a></li>
@@ -436,10 +435,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kappa-statistic">Kappa Statistic</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-recall-auc">Precision-Recall AUC</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lift-and-gain-charts">Lift and Gain Charts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gini-coefficient">Gini Coefficient</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation">Segmentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-segmentation">Methods (Segmentation)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersection-over-union-iou">Intersection over Union (IoU)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dice-coefficient">Dice Coefficient</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pixel-accuracy">Pixel Accuracy</a></li>
@@ -456,7 +454,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explained-variance-score">Explained Variance Score</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics">Statistics</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-statistics">Methods (Statistics)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-metric">Stability Metric</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#throughput">Throughput</a></li>
 </ul>
@@ -476,18 +474,15 @@ document.write(`
 <h1>Performance metrics<a class="headerlink" href="#performance-metrics" title="Link to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<section id="description">
-<h3>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h3>
-</section>
-<section id="goals">
-<h3>Goals<a class="headerlink" href="#goals" title="Link to this heading">#</a></h3>
+<section id="key-takeaways">
+<h3>Key takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Learn about performance metrics</p></li>
 </ul>
 </section>
 </section>
-<section id="classification">
-<h2>Classification<a class="headerlink" href="#classification" title="Link to this heading">#</a></h2>
+<section id="methods-classification">
+<h2>Methods (Classification)<a class="headerlink" href="#methods-classification" title="Link to this heading">#</a></h2>
 <section id="accuracy">
 <h3>Accuracy<a class="headerlink" href="#accuracy" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -548,15 +543,9 @@ document.write(`
 <li><p>Visual tools for comparing model performance to random guessing.</p></li>
 </ul>
 </section>
-<section id="gini-coefficient">
-<h3>Gini Coefficient<a class="headerlink" href="#gini-coefficient" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Measures the inequality of a frequency distribution, often used in credit scoring.</p></li>
-</ul>
 </section>
-</section>
-<section id="segmentation">
-<h2>Segmentation<a class="headerlink" href="#segmentation" title="Link to this heading">#</a></h2>
+<section id="methods-segmentation">
+<h2>Methods (Segmentation)<a class="headerlink" href="#methods-segmentation" title="Link to this heading">#</a></h2>
 <section id="intersection-over-union-iou">
 <h3>Intersection over Union (IoU)<a class="headerlink" href="#intersection-over-union-iou" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -627,8 +616,8 @@ document.write(`
 </ul>
 </section>
 </section>
-<section id="statistics">
-<h2>Statistics<a class="headerlink" href="#statistics" title="Link to this heading">#</a></h2>
+<section id="methods-statistics">
+<h2>Methods (Statistics)<a class="headerlink" href="#methods-statistics" title="Link to this heading">#</a></h2>
 <section id="stability-metric">
 <h3>Stability Metric<a class="headerlink" href="#stability-metric" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -709,11 +698,10 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goals">Goals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key takeaways</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-classification">Methods (Classification)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy">Accuracy</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision">Precision</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recall-sensitivity">Recall (Sensitivity)</a></li>
@@ -724,10 +712,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kappa-statistic">Kappa Statistic</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-recall-auc">Precision-Recall AUC</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lift-and-gain-charts">Lift and Gain Charts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gini-coefficient">Gini Coefficient</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#segmentation">Segmentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-segmentation">Methods (Segmentation)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersection-over-union-iou">Intersection over Union (IoU)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dice-coefficient">Dice Coefficient</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pixel-accuracy">Pixel Accuracy</a></li>
@@ -744,7 +731,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explained-variance-score">Explained Variance Score</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics">Statistics</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-statistics">Methods (Statistics)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stability-metric">Stability Metric</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#throughput">Throughput</a></li>
 </ul>

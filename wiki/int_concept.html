@@ -200,7 +200,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Interpretability</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="int_basics.html">Interpretablility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Mechanistic interpretability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Behavioural interpretability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_attributional.html">Attributional interpretablility</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Concept Alignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="int_mechanistic.html">Mechanistic interpretability</a></li>
@@ -430,6 +430,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-attribution">Concept Attribution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-based-explanations">Concept-based explanations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-with-concept-activation-vector-tcav">Testing with concept activation vector (TCAV)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tcav-deep-dream">TCAV + Deep dream</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-with-concept-activation-regions-tcar">Testing with Concept Activation Regions (TCAR)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretable-basis-decomposition-ibd">Interpretable Basis Decomposition (IBD)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-concept-effect-cace">Causal Concept Effect (CaCE)</a></li>
@@ -468,7 +469,10 @@ document.write(`
 <h1>Concept Alignment<a class="headerlink" href="#concept-alignment" title="Link to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>Concept alignment has the goal to increase the interpretability of a convolutional neural network by aligning features with human understanable concepts.</p>
+<ul class="simple">
+<li><p>Uses high-level concepts or human-understandable features to explain the model’s behavior, assessing how well these concepts align with the model’s internal mechanisms.</p></li>
+</ul>
+<p>Concept alignment has the goal to interpreting a convolutional neural network by aligning features with human understanable concepts.</p>
 <section id="key-takeaways">
 <h3>Key takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -492,27 +496,36 @@ document.write(`
 <section id="network-dissection">
 <h3>Network dissection<a class="headerlink" href="#network-dissection" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Original version: Chapter 10 Neural Network Interpretation &gt; Network Dissection <span id="id1">[<a class="reference internal" href="#id9" title="Christoph Molnar. Interpretable machine learning - network dissection. 2022. URL: https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection.">Mol22</a>]</span>
+<li><p>Original version: Chapter 10 Neural Network Interpretation &gt; Network Dissection <span id="id1">[<a class="reference internal" href="#id38" title="Christoph Molnar. Interpretable machine learning - network dissection. 2022. URL: https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection.">Mol22</a>]</span>
 Network Dissection quantifies the interpretability of a unit of a CNN. Highly activated areas of CNN channels are linked with human concepts (objects, parts, textures, colors, …).</p></li>
 </ul>
 </section>
 <section id="concept-attribution">
 <h3>Concept Attribution<a class="headerlink" href="#concept-attribution" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Original version: Concept attribution: explaining CNN decisions to physicians <span id="id2">[<a class="reference internal" href="#id8" title="Mara Graziani, Vincent Andrearczyk, Stéphane Marchand-Maillet, and Henning Müller. Concept attribution: explaining cnn decisions to physicians. Computers in biology and medicine, 123:103865, 2020. URL: https://www.sciencedirect.com/science/article/pii/S0010482520302225.">GAMMMuller20</a>]</span></p></li>
+<li><p>Original version: Concept attribution: explaining CNN decisions to physicians <span id="id2">[]</span></p></li>
 </ul>
 </section>
 <section id="concept-based-explanations">
 <h3>Concept-based explanations<a class="headerlink" href="#concept-based-explanations" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Original version: Towards automatic concept-based explanations <span id="id3">[<a class="reference internal" href="#id11" title="Amirata Ghorbani, James Wexler, James Y Zou, and Been Kim. Towards automatic concept-based explanations. Advances in neural information processing systems, 2019. URL: https://proceedings.neurips.cc/paper/2019/hash/77d2afcb31f6493e350fca61764efb9a-Abstract.html.">GWZK19</a>]</span></p></li>
+<li><p>Original version: Towards automatic concept-based explanations <span id="id3">[<a class="reference internal" href="#id23" title="Amirata Ghorbani, James Wexler, James Y Zou, and Been Kim. Towards automatic concept-based explanations. Advances in neural information processing systems, 2019. URL: https://proceedings.neurips.cc/paper/2019/hash/77d2afcb31f6493e350fca61764efb9a-Abstract.html.">GWZK19</a>]</span></p></li>
 </ul>
 </section>
 <section id="testing-with-concept-activation-vector-tcav">
 <h3>Testing with concept activation vector (TCAV)<a class="headerlink" href="#testing-with-concept-activation-vector-tcav" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)</p></li>
+<li><p>Measures how well a specific concept is represented within a neural network by comparing activation vectors of examples belonging to that concept.</p></li>
 </ul>
+<ul class="simple">
+<li><p>Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV) <span id="id4">[<a class="reference internal" href="#id30" title="Been Kim, Martin Wattenberg, Justin Gilmer, Carrie Cai, James Wexler, Fernanda Viegas, and others. Interpretability beyond feature attribution: quantitative testing with concept activation vectors (tcav). In International conference on machine learning, 2668–2677. PMLR, 2018.">KWG+18</a>]</span>
+<a class="reference external" href="https://arxiv.org/pdf/1711.11279">https://arxiv.org/pdf/1711.11279</a></p></li>
+</ul>
+</section>
+<section id="tcav-deep-dream">
+<h3>TCAV + Deep dream<a class="headerlink" href="#tcav-deep-dream" title="Link to this heading">#</a></h3>
+<p>Empirical deepdream using CAVs for each layer in a ConvNet <span id="id5">[<a class="reference internal" href="#id30" title="Been Kim, Martin Wattenberg, Justin Gilmer, Carrie Cai, James Wexler, Fernanda Viegas, and others. Interpretability beyond feature attribution: quantitative testing with concept activation vectors (tcav). In International conference on machine learning, 2668–2677. PMLR, 2018.">KWG+18</a>]</span>
+<a class="reference external" href="https://arxiv.org/pdf/1711.11279">https://arxiv.org/pdf/1711.11279</a></p>
 </section>
 <section id="testing-with-concept-activation-regions-tcar">
 <h3>Testing with Concept Activation Regions (TCAR)<a class="headerlink" href="#testing-with-concept-activation-regions-tcar" title="Link to this heading">#</a></h3>
@@ -572,27 +585,28 @@ Network Dissection quantifies the interpretability of a unit of a CNN. Highly ac
 <h3>Phenotypic Concepts<a class="headerlink" href="#phenotypic-concepts" title="Link to this heading">#</a></h3>
 <p>Using TCAV.</p>
 <ul class="simple">
-<li><p>Original version: Identifying Phenotypic Concepts Discriminating Molecular Breast Cancer Sub-Types <span id="id4">[<a class="reference internal" href="#id10" title="Christoph Fürböck, Matthias Perkonigg, Thomas Helbich, Katja Pinker, Valeria Romeo, and Georg Langs. Identifying phenotypic concepts discriminating molecular breast cancer sub-types. In International Conference on Medical Image Computing and Computer-Assisted Intervention, 276–286. Springer, 2022. URL: https://link.springer.com/chapter/10.1007/978-3-031-16449-1_27.">FurbockPH+22</a>]</span></p></li>
+<li><p>Original version: Identifying Phenotypic Concepts Discriminating Molecular Breast Cancer Sub-Types <span id="id6">[<a class="reference internal" href="#id20" title="Christoph Fürböck, Matthias Perkonigg, Thomas Helbich, Katja Pinker, Valeria Romeo, and Georg Langs. Identifying phenotypic concepts discriminating molecular breast cancer sub-types. In International Conference on Medical Image Computing and Computer-Assisted Intervention, 276–286. Springer, 2022.">FurbockPH+22</a>]</span></p></li>
 </ul>
 </section>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
-<div class="docutils container" id="id5">
+<div class="docutils container" id="id7">
 <div role="list" class="citation-list">
-<div class="citation" id="id10" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">FurbockPH+22</a><span class="fn-bracket">]</span></span>
-<p>Christoph Fürböck, Matthias Perkonigg, Thomas Helbich, Katja Pinker, Valeria Romeo, and Georg Langs. Identifying phenotypic concepts discriminating molecular breast cancer sub-types. In <em>International Conference on Medical Image Computing and Computer-Assisted Intervention</em>, 276–286. Springer, 2022. URL: <a class="reference external" href="https://link.springer.com/chapter/10.1007/978-3-031-16449-1_27">https://link.springer.com/chapter/10.1007/978-3-031-16449-1_27</a>.</p>
+<div class="citation" id="id20" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">FurbockPH+22</a><span class="fn-bracket">]</span></span>
+<p>Christoph Fürböck, Matthias Perkonigg, Thomas Helbich, Katja Pinker, Valeria Romeo, and Georg Langs. Identifying phenotypic concepts discriminating molecular breast cancer sub-types. In <em>International Conference on Medical Image Computing and Computer-Assisted Intervention</em>, 276–286. Springer, 2022.</p>
 </div>
-<div class="citation" id="id11" role="doc-biblioentry">
+<div class="citation" id="id23" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">GWZK19</a><span class="fn-bracket">]</span></span>
 <p>Amirata Ghorbani, James Wexler, James Y Zou, and Been Kim. Towards automatic concept-based explanations. <em>Advances in neural information processing systems</em>, 2019. URL: <a class="reference external" href="https://proceedings.neurips.cc/paper/2019/hash/77d2afcb31f6493e350fca61764efb9a-Abstract.html">https://proceedings.neurips.cc/paper/2019/hash/77d2afcb31f6493e350fca61764efb9a-Abstract.html</a>.</p>
 </div>
-<div class="citation" id="id8" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">GAMMMuller20</a><span class="fn-bracket">]</span></span>
-<p>Mara Graziani, Vincent Andrearczyk, Stéphane Marchand-Maillet, and Henning Müller. Concept attribution: explaining cnn decisions to physicians. <em>Computers in biology and medicine</em>, 123:103865, 2020. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0010482520302225">https://www.sciencedirect.com/science/article/pii/S0010482520302225</a>.</p>
+<div class="citation" id="id30" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>KWG+18<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id4">1</a>,<a role="doc-backlink" href="#id5">2</a>)</span>
+<p>Been Kim, Martin Wattenberg, Justin Gilmer, Carrie Cai, James Wexler, Fernanda Viegas, and others. Interpretability beyond feature attribution: quantitative testing with concept activation vectors (tcav). In <em>International conference on machine learning</em>, 2668–2677. PMLR, 2018.</p>
 </div>
-<div class="citation" id="id9" role="doc-biblioentry">
+<div class="citation" id="id38" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Mol22</a><span class="fn-bracket">]</span></span>
 <p>Christoph Molnar. Interpretable machine learning - network dissection. 2022. URL: <a class="reference external" href="https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection">https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection</a>.</p>
 </div>
@@ -675,6 +689,7 @@ Network Dissection quantifies the interpretability of a unit of a CNN. Highly ac
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-attribution">Concept Attribution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-based-explanations">Concept-based explanations</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-with-concept-activation-vector-tcav">Testing with concept activation vector (TCAV)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tcav-deep-dream">TCAV + Deep dream</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-with-concept-activation-regions-tcar">Testing with Concept Activation Regions (TCAR)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretable-basis-decomposition-ibd">Interpretable Basis Decomposition (IBD)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-concept-effect-cace">Causal Concept Effect (CaCE)</a></li>

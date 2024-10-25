@@ -2,15 +2,14 @@
 
 ## Introduction
 
-
-
-### Goals
-* Learn about performance metrics
-
-
+### Key Takeaways
+* Learn about distribution metrics
 
 
 ## Methods
+
+### Gini Coefficient
+- Measures the inequality of a frequency distribution, often used in credit scoring.
 
 ### Mean
 - The average value of a dataset, calculated by summing all values and dividing by the number of values.
@@ -32,7 +31,6 @@
 
 ### Quantiles
 - Values that divide the dataset into equal parts, including quartiles (dividing into four parts), deciles (ten parts), and percentiles (hundred parts), providing insight into the data distribution.
-
 
 ### Kolmogorov-Smirnov Test
 - A statistical test that compares the distribution of a sample with a reference probability distribution to assess whether the sample comes from the specified distribution.
@@ -61,11 +59,3 @@
 ### Cross-Entropy
 - Measures the difference between two probability distributions for a given random variable, commonly used in classification problems to quantify the loss between predicted and true distributions.
 
-
-
-
-
-## Visualisation
-
-### Box Plot
-- Includes the interquartile range (IQR), which is the range between the first and third quartiles, and identifies outliers as points outside 1.5 times the IQR from the quartiles.
