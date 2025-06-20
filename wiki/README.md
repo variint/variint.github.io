@@ -1,4 +1,4 @@
-# Interpretability and Modularity wiki
+# wiki
 
 wiki
 
@@ -6,7 +6,7 @@ wiki
 
 ### Building the book
 
-If you'd like to develop and/or build the Interpretability and Modularity wiki book, you should:
+If you'd like to develop and/or build the wiki book, you should:
 
 1. Clone this repository
 2. Run `pip install -r requirements.txt` (it is recommended you do this within a virtual environment)
