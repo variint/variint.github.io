@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: wiki
 parts:
 - caption: Getting started
   chapters: 
@@ -30,7 +30,7 @@ parts:
   chapters:
     - file: fnc_sparsity
     - file: fnc_modularity
-    - file: fnc_pruning
+    - file: pruning
     - file: fnc_growing
     - file: fnc_disentanglement
 - caption: Evaluation
