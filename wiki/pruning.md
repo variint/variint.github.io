@@ -1,12 +1,18 @@
 # Network pruning
 
-## Learn about
-- regularisation, granularity, scheduling, criteria and evaluation of pruning.
+- keywords: regularisation, granularity, scheduling, criteria and evaluation of pruning.
+
+
+## Definitions
+Sources: {cite:p}`hoefler2021sparsity`
+Selectively pruning components reduces the size of neural networks.
+ 
 
 ## Hypothesis
 
 ### Lottery ticket hypothesis
-The “lottery ticket hypothesis” refers to the claim that a randomly-initialized neural network contains a sub-network that can match or outperform the trained network when trained in isolation - {cite:p}`radhakrishnan2022mechanism`
+Sources: {cite:p}`radhakrishnan2022mechanism`
+The “lottery ticket hypothesis” refers to the claim that a randomly-initialized neural network contains a sub-network that can match or outperform the trained network when trained in isolation.
 
 
 ## Methods
