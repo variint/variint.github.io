@@ -8,9 +8,9 @@ parts:
   chapters: 
     - file: reading_list
 - caption: Fun topics
-   chapters:
-    - inspiration
-    - shape_of_knowledge
+  chapters:
+    - file: inspiration
+    - file: shape_of_knowledge
 - caption: Deep learning basics
   chapters:
     - file: dl_basics
