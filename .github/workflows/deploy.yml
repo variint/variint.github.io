@@ -23,12 +23,12 @@ jobs:
       run: pip install jupyter-book ghp-import
 
     - name: Build Jupyter Book
-      run: jupyter-book build wiki/wiki/
+      run: jupyter-book build wiki/
 
     - name: Prepare deployment folder
       run: |
         mkdir deploy
-        cp -r wiki/wiki/_build/html deploy/wiki
+        cp -r wiki/_build/html deploy/wiki
         cp -r *.html deploy/
         if [ -d "assets" ]; then cp -r assets deploy/; fi  # if you have CSS/js/images
 
