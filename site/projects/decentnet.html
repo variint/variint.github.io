@@ -1,0 +1,193 @@
+<!-- -->
+
+<div class="col-md-6">
+	<h3>About</h3>
+  <p>DecentNet is a network that makes use of modularity and disentanglement in early layers.</p>
+  <p>In the first instance, we explored explicit modularity with early-layer disentanglement and a fusion layer</p>
+  <p>As part of my thesis, I have worked with semi-supervised learning and multi-modal image-to-image translation (MUNIT) which is used for content and style disentanglement.</p>
+  <p>Currently, implicit modularity in a convnet inspired by Brain-Inspired Modular Training (BIMT) and Neural Cellular Automata (NCA) is the focus of the research project.</p>
+  <!--
+	<p>
+	    DecentNet is a network that makes use of modularity and disentanglement in early layers. Each module (DecentBlock) is trained on a single concept which is derived from clustering small image patches. In order not to limit the network in learning complex representations, the DecentBlocks feed into a fusion module and subsequently into combined layers. We focus on the explainability of the fusion module's layers and channels that are the bridge between the DecentBlocks and combined layers to understand which of the less abstract early layer features contribute most to a prediction.
+	</p>
+	<p>
+		The definition of a "concept" requires further investigation. For the time being we define a concept as a group of patches that show similar features that may be clustered by an algorithm such as k-means.
+	</p>-->
+</div>
+
+
+
+
+
+<!-- -->
+<div class="col-md-6">
+<h3>Milestones</h3>
+<p>
+	<ul>
+    <li>2023: Preparation of a conference paper, focusing on implicit modularity</li>
+    <li>2023: Master thesis: Optic disc segmentation with Image-to-image translation for Domain Adaptation, focusing on domain adaptation and disentanglement</li> 
+		<li>2022: Start of project as university coursework, focusing on explicit modularity</li>
+	</ul>
+</p>
+</div>
+
+
+
+
+
+<!-- -->
+
+<!--
+<h3>Experiment: Clustering of Concepts - explicitly introduce trainable modules (April 2023)</h3>
+
+<div class="col-md-6">
+<b>Summary:</b>
+<p>
+	Multiple DecentBlocks are trained on different concepts and therefore should show different activations. The concepts are derived from clustered feature vectors of patches extracted from the image dataset. Since the concepts are based on clustering, a single concept could be verbalised as "optic disc is present in a range of patches in this cluster" or "small vessels are present ...". 
+</p>
+</div>
+
+<div class="col-md-6">
+<b>Pipeline:</b>
+<p>
+	<ol>
+		<li>Extract patches from each image. Overlapping patches. Excluding patches that are black.</li>
+		<li>Feature vectors for each patch were derived via a ShuffleNet that has been pre-trained on the ImageNet dataset.</li>
+		<li>Clustering of the feature vectors were performed with k-means with k clusters. Random filtering of n samples for each cluster.</li>
+		<li>DeepDream like images are generated. A single patch is used for a single quilted image. Image quilting is a technique for texture synthesis.</li>
+		<li>Save images: per cluster, since each patch is in only one cluster</li>
+		<li>Training of k DecentBlocks. 1 positive class, k-1 negative classes. Dataset imbalance is removed with Mixed Batch Sampler. Supervised Contrastive Loss is used due to it's nature of disentangling features</li>
+	</ol>
+</p>
+</div>
+
+<div class="col-md-6">
+<b>Results:</b>
+<p>
+	Fundus image with AMD, including exudates, hemorrhages and scars. The DecentBlock was trained on the first cluster (c0). The cluster covers optic disc (not primary cluster for optic disc) and lesions.
+	<ul>
+		<li>Boxplots of the clusters showed that there are slight similarities between the cluster results and the human annotated segmentation masks. </li>
+		<li>Activation maps showed that slightly different parts of the image were activated. The difference of activation maps from a concept-trained ShuffleNet compared to the ImageNet-trained ShuffleNet were bigger than two ShuffleNets trained on 2 different concepts.</li>
+		<li>It can be seen, that DeepDream shows activation at the optic disc in the fundus image, and in a similar position on the noise image. Furthermore, there is activation that may be related to lesions, the region seems to be random in both the fundus and noise image.
+	</ul>
+</p>
+</div>
+
+						
+
+<div class="col-md-6">
+<b>Conclusion:</b>
+<p>
+	<ul>
+		<li>The problem seems to be in the definition of a concept. Multiple classes may include vessels. Currently we take one class as the positive class and all others for the negative class. Hence, vessels can appear in both positive and negative classes.</li>
+		<li>k-means may not be the best clustering technique since their clusters are approximately of the same size. Due to imbalanced feature types (lesions) the clusters should be density based. If using k-means, the elbow technique should be applied.</li>
+	</ul>
+</p>
+</div>
+
+
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="row">
+                          <img class="card-img-top" src="assets\img\projects\decentnet\concept_feature_map.png" alt="Card image cap">
+                          <div class="card-body">
+                            <p class="card-text">Feature Map. ShuffleNet trained on 1 positive vs k-1 negative concepts.</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="row">
+                          <img class="card-img-top" src="assets\img\projects\decentnet\imagenet_feature_map.png" alt="Card image cap">
+                          <div class="card-body">
+                            <p class="card-text">Feature Map. ShuffleNet trained on ImageNet.</p>
+                          </div>
+                        </div>
+                    </div>
+
+
+					<div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="row">
+                          <img class="card-img-top" src="assets\img\projects\decentnet\concept_layer10_filter5_heatmap_img.png" alt="DeepDream - concepts">
+                          <div class="card-body">
+                            <p class="card-text">Guided Backpropagation Heatmap. ShuffleNet trained on 1 positive vs k-1 negative concepts.</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="row">
+                          <img class="card-img-top" src="assets\img\projects\decentnet\imagenet_layer10_filter5_heatmap_img.png" alt="DeepDream - ImageNet">
+                          <div class="card-body">
+                            <p class="card-text">Guided Backpropagation Heatmap. ShuffleNet trained on ImageNet.</p>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="row">
+                          <img class="card-img-top" src="assets\img\projects\decentnet\concept_eye_deepdream.png" alt="DeepDream - concepts">
+                          <div class="card-body">
+                            <p class="card-text">DeepDream with fundus image. ShuffleNet trained on 1 positive vs k-1 negative concepts.</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="row">
+                          <img class="card-img-top" src="assets\img\projects\decentnet\imagenet_eye_deepdream.png" alt="DeepDream - ImageNet">
+                          <div class="card-body">
+                            <p class="card-text">DeepDream with fundus image. ShuffleNet trained on ImageNet.</p>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="row">
+                          <img class="card-img-top" src="assets\img\projects\decentnet\concept_noise_deepdream.png" alt="Card image cap">
+                          <div class="card-body">
+                            <p class="card-text">DeepDream with noise image. ShuffleNet trained on 1 positive vs k-1 negative concepts.</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="row">
+                          <img class="card-img-top" src="assets\img\projects\decentnet\imagenet_noise_deepdream.png" alt="Card image cap">
+                          <div class="card-body">
+                            <p class="card-text">DeepDream with noise image. ShuffleNet trained on ImageNet.</p>
+                          </div>
+                        </div>
+                    </div>
+-->
+
+<!--
+<h3>Experiment: Use Concepts from Segmentation Masks (April 2023)</h3>
+
+<div class="col-md-6">
+<b>Summary:</b>
+<p>
+		Due to non satisfactory results from the clustering, the manual segmentation masks were used to define concepts. In a later experiment this should be done by a revised clustering mechanism. For now we just want to proof, that the DecentBlocks actually differ if trained on different concepts. Each DecentBlock will again be trained by a positive and a negative class. This time it will be "vessel" vs "non-vessel", "drusen" vs "non-drusen", ...
+</p>
+</div>
+
+<div class="col-md-6">
+<b>Pipeline:</b>
+<p>
+	<ol>
+		<li>No changes.</li>
+		<li>Removed.</li>
+		<li>Instead of clusters, we define the positive and negative class with a True/False (1/0) label for each concept in a patch.</li>
+		<li>No changes.</li>
+		<li>Save images: per image, since each patch can be in multiple concepts. A csv is used to keep track of positive and negative classes.</li>
+		<li>No changes.</li>
+	</ol>
+</p>
+</div>
+
+<div class="col-md-6">
+<b>Results:</b>
+</div>
+
+<div class="col-md-6">
+<b>Conclusion:</b>
+</div>
+
+
+
+-->
