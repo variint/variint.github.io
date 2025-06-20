@@ -1,0 +1,37 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - main  # or your default branch
+    
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install Jupyter Book
+      run: pip install jupyter-book ghp-import
+
+    - name: Build Jupyter Book
+      run: jupyter-book build wiki/
+
+    - name: Prepare deployment folder
+      run: |
+        mkdir deploy
+        cp -r wiki/_build/html deploy/wiki
+        cp -r *.html deploy/
+        if [ -d "assets" ]; then cp -r assets deploy/; fi  # if you have CSS/js/images
+
+    - name: Deploy to GitHub Pages
+      run: |
+        ghp-import -n -p -f deploy
