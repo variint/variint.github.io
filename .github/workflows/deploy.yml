@@ -1,11 +1,10 @@
-name: Deploy Website and Wiki
+name: deploy
 
 on:
   push:
     branches:
       - main  # or your default branch
-    paths:
-      - wiki
+    
 
 jobs:
   build-deploy:
