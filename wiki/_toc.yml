@@ -7,6 +7,10 @@ parts:
 - caption: Getting started
   chapters: 
     - file: reading_list
+- caption: Fun topics
+   chapters:
+    - inspiration
+    - shape_of_knowledge
 - caption: Deep learning basics
   chapters:
     - file: dl_basics
@@ -29,8 +33,9 @@ parts:
 - caption: Subfunctions and modules
   chapters:
     - file: fnc_sparsity
-    - file: fnc_modularity
+    - file: modularity
     - file: pruning
+    - file: DAG
     - file: fnc_growing
     - file: fnc_disentanglement
 - caption: Evaluation
