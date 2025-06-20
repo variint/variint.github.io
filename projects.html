@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Variint</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/logos/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <!-- JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+
+
+
+    <body id="page-top">
+        <header class="masthead">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg" id="mainNav"> </nav>
+        <!-- Masthead-->
+            
+        <div id="myBtnContainer">
+
+          <button class="btn" id="decentnet" onclick="filterSelection('decentnet')"><i class="fa fa-laptop-medical"></i> DecentNet<br>Explainability</button>
+          <button class="btn" id="multitask" onclick="filterSelection('multitask')"><i class="fa fa-laptop-medical"></i> AgentF<br>Multi-task</button>
+          <button class="btn" id="semisup" onclick="filterSelection('semisup')"><i class="fa fa-laptop-medical"></i> Feta<br>Semi-sup</button>
+          <button class="btn" id="cytotoxicity" onclick="filterSelection('cytotoxicity')"><i class="fa fa-laptop-medical"></i> SISSI/CellLab<br>Weak labels</button>
+          <!--<button class="btn" onclick="filterSelection('read')"><i class="fa fa-laptop-medical"></i> Reading</button> -->
+          
+          <button class="btn" id="astraeus" onclick="filterSelection('astraeus')"><i class="fa fa-satellite"></i> Astraeus<br>Titan</button>
+          <button class="btn" id="arcanum" onclick="filterSelection('arcanum')"> <i class="fa fa-satellite"></i> Arcanum<br>Neptune</button>
+          <button class="btn" id="rubiks" onclick="filterSelection('rubiks')"> <i class="fa fa-satellite"></i> Rubiks<br>CubeSat</button>
+          <button class="btn" id="chimera" onclick="filterSelection('chimera')"> <i class="fa fa-satellite"></i> Chimera<br>Rocket</button>
+          <button class="btn" id="hovi" onclick="filterSelection('hovi')"> <i class="fa fa-satellite"></i> Hovi<br>Quadrotor</button>
+          
+          <!--<button class="btn" onclick="filterSelection('sgac')"> <i class="fa fa-pen"></i> Titan</button>-->
+          <button class="btn" id="tallinn" onclick="filterSelection('tallinn')"> <i class="fa fa-pen"></i> Storytelling<br>Summer school</button>
+        </div>
+
+        </header>
+
+
+        <section class="page-section bg-white">
+
+
+            <main class="container" id="projects">
+
+            <!--<div class="container" id="projects"> -->
+
+                <!-- project -->
+                <div class="filterDiv decentnet project">
+                    <div class="row">
+                        <div class="text-center project-head">
+                                <h4 class="section-heading text-uppercase">DecentNet</h4>
+                                <h3 class="section-subheading text-muted">Christina Bornberg and Nisma Amjad</h3>
+                        </div>
+                        <div class="row" id="decentnet_content"></div> 
+                        
+                        <div class="col-xl-5">
+                            <!--<img class="img-fluid project-image" src="assets/img/projects/multi.PNG" alt="Blockdiagrams" />-->
+                        </div>
+                    </div>
+                </div>
+                <!-- project end -->
+
+                <!-- project -->
+                <div id="multitask" class="filterDiv multitask project">
+                    <div class="row">
+                        <div class="text-center project-head">
+                                <h4 class="section-heading text-uppercase">Multi-task classification of ordinal data applied to ophthalmology</h4>
+                                <h3 class="section-subheading text-muted">Medical University of Vienna</h3>
+                        </div>
+
+                        <div class="col-xl-7">
+                            <h3>About</h3>
+                            <p>At the Ophthalmology department of the Medical University of Vienna, I was working on the classification of Fluorescent Angiography images while using a multi-task ResNet.</p>
+                            <p>
+                                <b>Milestones</b>
+                                <ul>
+                                    <li>2020: Start of project</li>
+                                </ul>
+                            </p>
+                        </div> 
+                        <div class="col-xl-5">
+                            <img class="img-fluid project-image" src="assets/img/projects/multi.PNG" alt="Blockdiagrams" />
+                        </div>
+                    </div>
+                </div>
+                <!-- project end -->
+
+                <!-- project -->
+                <div class="filterDiv semisup project">
+                    <div class="row">
+                        <div class="text-center project-head">
+                                <h4 class="section-heading text-uppercase">Semi-supervised vessel segmentation applied to fetoscopy</h4>
+                                <h3 class="section-subheading text-muted">University College London (UCL), 2021-2022</h3>
+                        </div>
+
+                        <div class="col-xl-7">
+                            <h3>About</h3>
+                            <p>I was working on a semi-supervised vessel segmentation project at WEISS/University College London in the summer of 2021.</p>
+                            <p>
+                                <h3>Milestones</h3>
+                                <ul>
+                                    <li>2022: Presented at CRAS 2022</li>
+                                    <li>2021: Featured in RSIP Vision's Computer Vision News</li>
+                                    <li>2021: Start of project / Summer internship at UCL</li>
+                                </ul>
+                            </p>
+                        </div> 
+                        <div class="col-xl-5">
+                            <img class="img-fluid project-image" src="assets/img/projects/semi_sup_ucl.jpg" alt="Semi-supervised" />
+                        </div>
+                    </div>
+                </div>
+                <!-- project end -->
+
+                <!-- project -->
+                <div class="filterDiv cytotoxicity project">
+                    <div class="row">
+                        <div class="text-center project-head">
+                                <h4 class="section-heading text-uppercase">SISSI: Seamless Iterative Semi-Supervised correction of Imperfect labels</h4>
+                                <h3 class="section-subheading text-muted">University of Applied Sciences Technikum Wien, University of Cassino, 2019-2022</h3>
+                        </div>
+
+                        <div class="col-xl-7">
+                            <h3>About</h3>
+                            <p>The idea is to increase recognition for in-vitro and in-chemico tests by digitalising the biotechnology field. Labels were generated with image processing filters and therefore were considered weak labels. The project was started under the name CellLab. An instance segmentation model was trained to determine cell death in microscopy images in a standard supervised manner. The follow-up project SISSI used a more sophisticated approach, where semi-supervised learning is applied. Additionally the concept of synthetic-like images was introduced, where background blurring was used to remove non-detected cells from the pseudo-labelled images.</p>
+                            <p>
+                                <h3>Milestones</h3>
+                                <ul>
+                                    <li>2022: MICCAI DARTS Workshop: Best paper award for "SISSI - Seamless Iterative Semi-Supervised correction of Imperfect labels"</li>
+                                    <li>2022: Continue project as university coursework. Contribution: semi-supervised network with synthetic-like image generation for solving the partial label problem</li>
+                                    <li>2022: Outreach at Lange Nacht der Forschung (Long night of research): "Kann KI die Versuchskaninchen retten?" (Can AI save rabbits from animal testing?)
+                                    <li>2020: MICCAI LABELS workshop: Presentation of abstract "Training data preparation with computer vision algorithms for a Mask R-CNN"</li>
+                                    <li>2020: imGraetzl.at: 4th supporter team for founders, freelancers and makers, 4 months programme, attended workshops: website check, graphics check, social media check, funding check</li>
+                                    <li>2019: Vienna Techstars Startup Weekend Women: Attended mentoring and workshops, Pitching CellLab</li>
+                                    <li>2019: Start of project as Bachelor's thesis: CellLab - Cell segmentation for cytotoxicity grading</li>
+                                </ul>
+                            </p>
+                        </div> 
+                        <div class="col-xl-5">
+                            <img class="img-fluid project-image" src="assets/img/projects/cell_lab.png" alt="Blockdiagrams" />
+                        </div>
+                    </div>
+                </div>
+                <!-- project end -->
+
+                <!-- project -->
+                <div class="filterDiv astraeus project">
+                    <div class="row">
+                        <div class="text-center project-head">
+                                <h4 class="section-heading text-uppercase">Astraeus</h4>
+                                <h3 class="section-subheading text-muted">Conex Research, 2022-2023</h3>
+                        </div>
+
+                        <div class="col-xl-7">
+                            <h3>About</h3>
+                            <p>Astraeus is the second mission proposal of Conex research. The mission includes a plane-submarine, that can both observe the atmosphere and Titan's liquid surface lakes.</p>
+                            <p>
+                                <h3>Milestones</h3>
+                                <ul>
+                                    <li>2023: Left the project</li>
+                                    <li>2022: Presented at IAC</li>
+                                    <li>2022: Start of project</li>
+                                </ul>
+                            </p>
+                        </div> 
+                        <div class="col-xl-5">
+                            <img class="img-fluid project-image" src="assets/img/projects/astraeus.jpg" alt="Titan" />
+                        </div>
+                    </div>
+                </div>
+                <!-- project end -->
+
+
+                <!-- project -->
+                <div class="filterDiv arcanum project">
+                    <div class="row">
+                        <div class="text-center project-head">
+                                <h4 class="section-heading text-uppercase">Arcanum</h4>
+                                <h3 class="section-subheading text-muted">Conex Research, 2020-2023</h3>
+                        </div>
+
+                        <div class="col-xl-7">
+                            <h3>About</h3>
+                            <p>The Arcanum mission is an L-class spacecraft consisting of an orbiter and space telescope around Neptune called Somerville and landers for Triton, including the soft lander Bingham as well as two penetrators.</p>
+                            <p>
+                                <h3>Milestones</h3>
+                                <ul>
+                                    <li>2023: Left the project</li>
+                                    <li>2022: Presented at IAC</li>
+                                    <li>2021: Featured in MIT Tech review</li>
+                                    <li>2021: Presented at IAC, winner of Interactive Presentation (Category D)</li>
+                                    <li>2021: Presented at BIS Reinventing Space</li>
+                                    <li>2021: Presented at GLEX</li>
+                                    <li>2020: Start of project</li>
+                                </ul>
+                            </p>
+                        </div> 
+                        <div class="col-xl-5">
+                            <img class="img-fluid project-image" src="assets/img/projects/arcanum.jpg" alt="Somerville orbiter" />
+                        </div>
+                    </div>
+                </div>
+                <!-- project end -->
+
+                <!-- project -->
+                <div class="filterDiv chimera project">
+                    <div class="row">
+                        <div class="text-center project-head">
+                                <h4 class="section-heading text-uppercase">Chimera hybrid model rocket engine</h4>
+                                <h3 class="section-subheading text-muted">Loughborough space 2019</h3>
+                        </div>
+
+                        <div class="col-xl-7">
+                            <p>Home, away from home. Loughborough University is a wonderful place to meet people from around the world. Besides a great study environment, the students union offers a lot of societies such as Loughborough Space, where we were building the rocket engine for Chimera in 2018/19.</p>
+                            <p> Chimara is the hybrid model rocket engine, built by Loughborough Space. 
+                                A prototype engine was successfully tested. The electronics part focused on opening and closing of a solenoid valve and a valve regulated with a stepper motor. Forthermore, communications with LoRa, a GNSS (GPS, Galileo) module and a 10 DOF sensor were tested. The fuel used for the ground test was HDPE, with gaseous oxygen as ignition medium.
+                            </p>
+                            <p>
+                                <h3>Milestones</h3>
+                                <ul>
+                                    <li>2019: Successful test of engine</li>
+                                    <li>2018: Start of project</li>
+                                </ul>
+                            </p>
+                        </div> 
+                        <div class="col-xl-5">
+                            <img class="img-fluid project-image" src="assets/img/projects/chimera.jpg" alt="Blockdiagrams" />
+                        </div>
+                    </div>
+                </div>
+                <!-- project end -->
+
+                <!-- project -->
+                <div class="filterDiv hovi project">
+                    <div class="row">
+                        <div class="text-center project-head">
+                                <h4 class="section-heading text-uppercase">Hovering Steward - the autonomous flying waiter</h4>
+                                <h3 class="section-subheading text-muted">A-levels project, HTL Rennweg Vienna</h3>
+                        </div>
+
+                        <div class="col-xl-7">
+                            <p>The idea of the project was a concept study of a logistics system. The use case of the project is the gastronomy industry and is implemented with a hex-rotor. To put it in a nutshell, the drone should be able to serve cupcakes in a restaurant. To make the system autonomous, a digital menu is programmed.</p>
+                            <p>
+                                <h3>Milestones</h3>
+                                <ul>
+                                    <li>2017: Award "Top 10" - Smart Engineering Award 2017 (FH St. Poelten)
+                                    <li>2016: Finish of concept study</li>
+                                    <li>2016: Award "Finalist" - Accenture HTL Challence 2016 - Accenture
+                                    <li>2016: Award "4th place" - 12. ITs Project Award 2016 (FH Salzburg)
+                                    <li>2016: Award "One of the best projects in technology and sience" - Maturaprojekt-Wettbewerb 2016 (FH Kaernten)
+                                    <li>2016: Presentation at ECER 2016 - European Conference on Educational Robotics (PRIA)
+                                    <li>2016: Award "Semi-Finalist" - Best of Rennweg (HTL Rennweg)
+                                    <li>2016: Award "Recognition price" - Jugend Innovativ 
+                                    <li>2015: Start of project</li>
+                                </ul>
+                            </p>
+                        </div> 
+                        <div class="col-xl-5">
+                            <img class="img-fluid project-image" src="assets/img/projects/ecer.jpg" alt="ECER 2016" />
+                        </div>
+                    </div>
+                </div>
+                <!-- project end -->
+
+                <!-- project -->
+                <div class="filterDiv tallinn project">
+                    <div class="row">
+                        <div class="text-center project-head">
+                                <h4 class="section-heading text-uppercase">Storytelling, Comics and Illustration</h4>
+                                <h3 class="section-subheading text-muted">Tallinn Summer School 2019</h3>
+                        </div>
+
+                        <div class="col-xl-7">             
+                        <p>The Storytelling, Comics and Illustration summer school took place between the 29 July and 2 August 2019 in the capital of Estonia.</p>
+                        <p><b>We are part of the summer school</b><br>
+                        The happiness was enormous, when we (Kathi, Betty and Chrisy) got the confirmation, that we are able to attend Tallinn Summer School. We arrived in Tallinn on Sunday and used the first afternoon for a little walk through the city. The following days were quite busy - everyone had 5 days time to think of a story, design characters and create a whole comic. Therefore, we were working every day after the instructive lectures from our teachers Joonas and Veiko to achieve our goals.</p>
+                        <p><b>Daily life</b><br>
+                        Our days started with a lecture by Joonas or Veiko. After lectures we were usually working on the comics followed by a little break in the old town where we had dinner. On Monday we had a city tour organized by the summer school, the rest of the days we were exploring Tallinn on our own. The evenings where then used again to work on our comics.
+                        </p>
+                        <p><b>Introduction</b><br>
+                        On the first day, we had an introduction in storytelling and comics. The story we wanted to tell should be about somebody with whom we have empathy. The main character should have a goal he or she wants to achieve, which should be difficult, but possible.
+                        </p>
+                        <p><b>Lectures</b><br>
+                        The lectures were there, to show us how to tell a story and visualise it in the best way. Topics included:
+                        <ul>
+                            <li>The unforeseen: Zombie attacks, declaration of love and other sudden scenes should always be on the next page of a comic as we don't want to spoiler a part of the story.</li>
+                            <li>Torchlighting and foreshadowing</li>
+                            <li>Shots: There are three different ways to take a shot: close up, medium shot and full shot.</li>
+                            <li>Environment design and composition.</li>
+                            <li>Expressions: We learned how to give our characters expressions and move them within the comic.</li>
+                        </ul>
+                        </p>
+                        <p><b>Thank you to our teachers</b><br>
+                        A big thank you goes to our two teachers Joonas and Veiko who helped us in the concept stage of our stories and gave us valuable feedback on our comics that we will present now!
+                        </p>
+                        <p>
+                        <b>It's rocket science (Christina)</b><br>
+                        Christinas' comic was about two scientists who are working on a space mission to fight the Qingchu, creatures that are able to beam people far away to unknown places. While working on the mission, the Qingchu found the scientists and separated them with their power. However, the scientists didn't give up; they continued working until the day they were reunited. While doing research, they figured out that Qingchu can't survive the beaming procedure themselves. Therefore, a teleporter was developed, alongside a Qingchu-detecting device. After testing the payload and the spacecraft, they were able to detect the creatures which already tried to separate them again. Through the teleporter, the scientists were able to escape and the Qingchu extinguished themselves. Now the scientists can carry on research and start their next space mission!
+                        </p>
+                        <p>
+                        <b>The magic of a first kiss (Katharina)</b><br>
+                        Kathis story was about the magic of a first kiss. A young guy asked his girlfriend out to an elegant restaurant. The clumsy girl managed to made a mess and endet up having spaghetti sauce all over her face. She didn't feel comfortable in this situation but the guy made the best of it, leant in and gave her a kiss. Now, both have sauce in their face and he just started laughing with the words "Tastes good!".
+                        </p>
+                        <p><b>LabDay (Beate)</b><br>
+                        Last but surely not least, Betty's comic was about a game she created within twonodes. The game is called LabDay and during the summer school, the whole background story of the game was created. Here you can see the main characters of the story.
+                        </p>
+                        <p>
+                        We are already looking forward to the next creative summer school!
+                        </p>
+                        <p>
+                        Authors: Christina Bornberg, Katharina Joksch, Beate Weghofer
+                        </p>
+                        </div> 
+                        <div class="col-xl-5">
+                            <img class="img-fluid project-image" src="assets/img/projects/comic.png" alt="Comic" />
+                        </div>
+                    </div>
+                </div>
+                <!-- project end -->
+
+                <!-- project -->
+                <div class="filterDiv rubiks project">
+                    <div class="row">
+                        <div class="text-center project-head">
+                                <h4 class="section-heading text-uppercase">RUBIKS Earth observation mission</h4>
+                                <h3 class="section-subheading text-muted">Summer School Alpbach 2019</h3>
+                        </div>
+
+                        <div class="col-xl-7">
+                            <p>
+                            The topic of the summer school was "Geophysics from Space using Micro- or Nano-Satellite Constellations" and took place from July 16-25.
+                            </p>
+                            <p>
+                            It was the end of April when an email starting with the sentence "We are pleased to inform you that your application has been accepted and that we can offer you a place in the Summer School Alpbach 2019." made me smile. I was accepted, alongside 59 other students from the ESA membership countries to the 43rd summer school in Alpbach, Austria.                           
+                            </p>
+                            <p>
+                            <b>Team Red</b><br>
+                            On Tuesday everything started. After the first lectures about magnetic and gravity fields, we were assigned to teams. My team was team red - the team name "Red Hot Chili Plumes" was established very early and the mission name "RUBIKS - Reconstruction of Undercrust Behaviour with Interconnected (K)cubeSats" was also not long in coming. One of my favourite moments in the summer school was, when a team member of the science group started the Mission Objectives and Requirements Review-presentation with "And this is what our engineers were doing for the past three days", while showing our logo.
+                            </p>
+                            <p>
+                            <b>Mission Objectives</b><br>
+                            The RUBIKS mission had the purpose to investigate mantle composition and dynamics - particularly mantle plume formation and their role in plate tectonics. It was a joint mission of the magnetic field and gravity field. One objective was the lower mantle density, which should be evaluated by the gravity measurements. The second objective was measuring and detecting the magnetic field of the induced current.
+                            </p>
+                            <p>
+                            The mission required two constellations with 4 CubeSats each. Two cartwheel-helix formations were chosen with a distance of 100-200 km between the satellites within the formation.
+                            </p>
+                            <p>
+                            <b>Diurnal and Nocturnal</b><br>
+                            In Alpbach, there was basically no time for sleeping. Lectures started at 9 a.m. and due to mission preparation, evenings (or nights) were never-ending. And this was exactly, what I liked so much about the summer school. We ate together, worked together and did yoga together - everything was very familial and making friends in this atmosphere was quite easy. The most special moments in these 10 days were:
+                            <ul>
+                                <li>Late Night Yoga: To take a break, we decided to do a bit of yoga in the sports hall of the school house. We had a very good photographer who was always in the right place at the right time and therefore this picture was taken.</li>
+                                <li>Lunar Eclipse: At the beginning of the summer school, we were already able to see a lunar eclipse - a perfect start for a space-related summer school!</li>
+                                <li>CubeSat Model: We started to create a model of our RUBIKS CubeSat. One version on the computer, and one out of some cardboard boxes. There's always a difference between expectation and reality.</li>
+                                <li>50th Anniversary of Apollo 11: The 50th anniversary made the summer school even more special.</li>
+                                <li>Hiking in the Alps: Whilst in one of the most beautiful parts of Austria, we couldn't miss out on doing a hike. Besides reaching the summit cross, we went swimming in a lake, saw some cows and took a ride with an alpine toboggan - I don't know if this translates well, we call it "Sommerrodelbahn".</li>
+                                <li>Birthday Cake: In the course of the summer school, four birthdays were celebrated. One of them was my 22nd birthday when I got an amazing chocolate cake and the whole summer school sang happy birthday.</li>
+                            </ul>
+                            </p>
+                            <p>
+                            <b>Scientists vs. Engineers</b><br>
+                            We were in the same room, but communication was a big issue not only between the scientists and the engineers, but also within each group. Nevertheless, we were a team and therefore we needed to talk to each other to understand the requirements of both parties - if this was a good idea? It depends (because it always depends when scientists start talking). At first, it came out that we needed 14.000 CubeSats, which is not only expensive but also ridiculous to plan and develop. The engineers started with 3 CubeSats and so, after a big discussion, we were able to meet somewhere in the middle and decided to use eight satellites.
+                            </p>
+                            <p>
+                            <b>Last Moments in Alpbach</b><br>
+                            The last couple of hours before the deadline on Wednesday midnight were very stressful. We were writing our report and created a presentation. Afterwards I was literally falling into my bed and barely came out of bed for the presentations, which started at 9 in the morning. By totally ignoring the outreach part in the presentation, the jury asked us to create a slogan for the mission and incredibly in less than one minute, a team member came up with "RUBIKS - Solving the puzzle of the Earth’s mantle" which was followed by a big applause.
+                            </p>
+                            <p>
+                            In the evening we had a big farewell dinner at the congress centre and won the award for the most innovative mission. I'm very glad, that I was able to attend this summer school and want to thank FFG and ESA for this great opportunity and Jacob Smith for helping me with the blog post!
+                        </div> 
+                        <div class="col-xl-5">
+                            <img class="img-fluid project-image" src="assets/img/projects/alpbach.jpg" alt="Teampicture" />
+                        </div>
+                    </div>
+                </div>
+                <!-- project end -->
+
+
+               
+
+
+            </main> <!-- div -->
+        </section>
+        
+        
+
+        <!-- Footer-->
+        <footer id="footer_content" class="footer py-4 bg-blue"></footer>
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="js/projects.js"></script>
+
+    </body>
+</html>
