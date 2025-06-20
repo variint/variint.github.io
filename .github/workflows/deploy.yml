@@ -41,7 +41,7 @@ jobs:
       # Build the book
       - name: Build the book
         run: |
-          jupyter-book build nodes_and_edges
+          jupyter-book build wiki
 
       # Upload the book's HTML as an artifact
       - name: Upload artifact
