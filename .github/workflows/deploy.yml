@@ -23,7 +23,7 @@ jobs:
       run: pip install jupyter-book ghp-import
 
     - name: Build Jupyter Book
-      run: jupyter-book build wiki/
+      run: jupyter-book build wiki/wiki/
 
     - name: Prepare deployment folder
       run: |
