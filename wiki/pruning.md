@@ -1,5 +1,7 @@
 # Network pruning
 
+## Learn about
+- regularisation, granularity, scheduling, criteria and evaluation of pruning.
 
 ## Hypothesis
 
@@ -8,6 +10,19 @@ The “lottery ticket hypothesis” refers to the claim that a randomly-initiali
 
 
 ## Methods
+
+### Regularisation
+Sources: {cite:p}`he2023structured`, {cite:p}`zhan2019directed`
+
+Regularization can be used for learning structured sparse
+networks by adding different sparsity regularizers.
+
+Examples:
+- Group Lasso 
+
+
+Group Lasso regularization is commonly used to sparsify filters in a structured manner. It can effectively zero out all weights in groups, thus filter-wise group lasso would zero out a whole filter and then the filter is removed from the convolution layer
+
 
 ### Granularity
 Sources: {cite:p}`hubens2020pruning`
@@ -38,16 +53,6 @@ Examples:
 - Filter Correlation
 - Taylor expansion
 - Mutual information
-
-### Regularisation
-Sources: {cite:p}`he2023structured`
-
-Regularization can be used for learning structured sparse
-networks by adding different sparsity regularizers.
-
-Examples:
-- Group Lasso regularization is commonly used
-to sparsify filters in a structured manner.
 
 ### Evaluation
 Sources: {cite:p}`hubens2020pruning`
