@@ -3,7 +3,44 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+- caption: Getting started
+  chapters: 
+    - file: reading_list
+- caption: Deep learning basics
+  chapters:
+    - file: dl_basics
+    - file: dl_sup
+    - file: dl_selfsup
+    - file: dl_semisup
+    - file: dl_weaksup
+    - file: dl_mil
+    - file: dl_metalearning
+    - file: dl_multitask
+    - file: dl_mm
+    - file: dl_domain
+- caption: Interpretability
+  chapters:
+    - file: int_basics
+    - file: int_behavioural
+    - file: int_attributional
+    - file: int_concept
+    - file: int_mechanistic
+- caption: Subfunctions and modules
+  chapters:
+    - file: fnc_sparsity
+    - file: fnc_modularity
+    - file: fnc_pruning
+    - file: fnc_growing
+    - file: fnc_disentanglement
+- caption: Evaluation
+  chapters: 
+    - file: eval_performance_metrics
+    - file: eval_distribution_metrics
+    - file: eval_other_metrics
+    - file: eval_visualisation
+- caption: Retinal Images
+  chapters:
+    - file: retina_datasets
+    - file: retina_concepts
+    - file: retina_analysis
