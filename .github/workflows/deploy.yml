@@ -45,14 +45,15 @@ jobs:
 
       - name: Move to /wiki/ subfolder
         run: |
-          mkdir -p wiki
-          cp -r wiki/_build/html/* wiki/
+          mkdir -p variint/wiki
+          cp -r wiki/_build/html/* variint/wiki/
+          cp -r *.html variint/
 
       # Upload the book's HTML as an artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "wiki/_build/html"
+          path: variint
 
       # Deploy the book's HTML to GitHub Pages
       - name: Deploy to GitHub Pages
