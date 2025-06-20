@@ -73,6 +73,7 @@ Sources: {cite:p}`hubens2020pruning`
 
 
 
+## References
 ```{bibliography}
 :filter: docname in docnames
 ```
