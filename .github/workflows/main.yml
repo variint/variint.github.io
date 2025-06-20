@@ -11,10 +11,10 @@ on:
     # folder has been modified.
     #
     paths:
-    - wiki
+    - wiki/
 
 env:
-  BASE_URL: /${{ github.event.repository.name }}/wiki
+  BASE_URL: /${{ github.event.repository.name }}
 
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
