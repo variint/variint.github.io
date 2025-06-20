@@ -1,0 +1,739 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Plotting &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/datasceyence_css.css?v=7cc0456d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'eval_visualisation';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Datasets" href="retina_datasets.html" />
+    <link rel="prev" title="Metrics" href="eval_other_metrics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Wiki
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="reading_list.html">My reading list</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep learning basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Deep learning basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_sup.html">Supervised learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Weakly supervised learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_mil.html">Multiple-Instance Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_mm.html">Multi-modality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_domain.html">Domain Adaptation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interpretability</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="int_basics.html">Interpretablility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Behavioural interpretability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_attributional.html">Attributional interpretablility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_concept.html">Concept Alignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_mechanistic.html">Mechanistic interpretability</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Subfunctions and modules</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fnc_sparsity.html">Sparsity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fnc_modularity.html">Modular Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fnc_pruning.html">Network pruning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fnc_growing.html">Growing neural networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fnc_disentanglement.html">Disentangled learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Evaluation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="eval_performance_metrics.html">Performance metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eval_distribution_metrics.html">Distribution-Based Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eval_other_metrics.html">Metrics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Plotting</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Retinal Images</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="retina_datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_concepts.html">Concepts in the retina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_analysis.html">Deep Learning for Retinal Imaging</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Feval_visualisation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/eval_visualisation.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Plotting</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot">Box Plot</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-types-for-visualizing-results">Plot Types for Visualizing Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-plot">Line Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">Scatter Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-chart">Bar Chart</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">Histogram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Box Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap">Heatmap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curve">ROC Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-recall-curve">Precision-Recall Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auc-roc-curve">AUC-ROC Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-surface-plot">3D Surface Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#violin-plot">Violin Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pair-plot">Pair Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-bar-plot">Error Bar Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contour-plot">Contour Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stacked-bar-chart">Stacked Bar Chart</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cumulative-gain-lift-chart">Cumulative Gain/Lift Chart</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="plotting">
+<h1>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h1>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Deep learning model architecture visualization: Graph-like representation of a neural network with nodes representing layers and edges representing connections between neurons.</p></li>
+<li><p>Activation heatmap: Layer-wise visualization of activations in a deep neural network that provides insights into what input elements a model is sensitive to.</p></li>
+<li><p>Feature visualization: Heatmaps that visualize what features or patterns a deep learning model can detect in its input.</p></li>
+<li><p>Deep feature factorization: Advanced method to uncover high-level concepts a deep learning model learned during training.</p></li>
+<li><p>Training dynamics plots: Visualization of model performance metrics across training epochs.</p></li>
+<li><p>Gradient plots: Representation of the loss function gradients at different layers within a deep learning model. Data scientists often use these plots to detect exploding or vanishing gradients during model training.</p></li>
+<li><p>Loss landscape: Three-dimensional representation of the loss function’s value across a deep learning model’s input space.</p></li>
+<li><p>Visualizing attention: Heatmap and graph-like visual representations of a transformer-model’s attention that can be used, e.g., to verify if a model focuses on the correct parts of the input data.</p></li>
+<li><p>Visualizing embeddings: Graphical representation of embeddings, an essential building block for many NLP and computer vision applications, in a low-dimensional space to unveil their relationships and semantic similarity.</p></li>
+</ul>
+<p><a class="reference external" href="https://neptune.ai/blog/deep-learning-visualization">https://neptune.ai/blog/deep-learning-visualization</a></p>
+<section id="box-plot">
+<h3>Box Plot<a class="headerlink" href="#box-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>For distribution analysis</p></li>
+<li><p>Includes the interquartile range (IQR), which is the range between the first and third quartiles, and identifies outliers as points outside 1.5 times the IQR from the quartiles.</p></li>
+</ul>
+</section>
+</section>
+<section id="plot-types-for-visualizing-results">
+<h2>Plot Types for Visualizing Results<a class="headerlink" href="#plot-types-for-visualizing-results" title="Link to this heading">#</a></h2>
+<section id="line-plot">
+<h3>Line Plot<a class="headerlink" href="#line-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Shows trends over time or continuous data. Useful for displaying changes and comparisons across different variables.</p></li>
+<li><p><strong>Example</strong>: Performance metrics (e.g., accuracy, loss) over epochs.</p></li>
+</ul>
+</section>
+<section id="scatter-plot">
+<h3>Scatter Plot<a class="headerlink" href="#scatter-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Illustrates the relationship between two continuous variables. Helpful for identifying correlations and clustering.</p></li>
+<li><p><strong>Example</strong>: Comparing predicted vs. actual values, feature importance.</p></li>
+</ul>
+</section>
+<section id="bar-chart">
+<h3>Bar Chart<a class="headerlink" href="#bar-chart" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Compares discrete categories or groups. Useful for summarizing categorical data and differences between groups.</p></li>
+<li><p><strong>Example</strong>: Model performance across different methods, accuracy by class.</p></li>
+</ul>
+</section>
+<section id="histogram">
+<h3>Histogram<a class="headerlink" href="#histogram" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Displays the distribution of a single continuous variable. Useful for understanding data distribution and frequency.</p></li>
+<li><p><strong>Example</strong>: Distribution of errors or activations.</p></li>
+</ul>
+</section>
+<section id="id1">
+<h3>Box Plot<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Shows the distribution and spread of data, including median, quartiles, and outliers. Useful for comparing distributions.</p></li>
+<li><p><strong>Example</strong>: Distribution of performance metrics across different runs or models.</p></li>
+</ul>
+</section>
+<section id="heatmap">
+<h3>Heatmap<a class="headerlink" href="#heatmap" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Represents data values in a matrix format using color coding. Useful for visualizing correlation matrices and confusion matrices.</p></li>
+<li><p><strong>Example</strong>: Correlation between features, confusion matrix of classification results.</p></li>
+</ul>
+</section>
+<section id="roc-curve">
+<h3>ROC Curve<a class="headerlink" href="#roc-curve" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Illustrates the performance of a binary classifier by plotting the true positive rate against the false positive rate.</p></li>
+<li><p><strong>Example</strong>: Comparing classification performance of different models.</p></li>
+</ul>
+</section>
+<section id="precision-recall-curve">
+<h3>Precision-Recall Curve<a class="headerlink" href="#precision-recall-curve" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Shows the trade-off between precision and recall for different thresholds. Useful for evaluating classification performance, especially with imbalanced datasets.</p></li>
+<li><p><strong>Example</strong>: Performance of a classifier in detecting rare events.</p></li>
+</ul>
+</section>
+<section id="auc-roc-curve">
+<h3>AUC-ROC Curve<a class="headerlink" href="#auc-roc-curve" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Displays the area under the ROC curve to summarize classifier performance. Higher AUC indicates better model performance.</p></li>
+<li><p><strong>Example</strong>: Comparing overall performance of different models.</p></li>
+</ul>
+</section>
+<section id="d-surface-plot">
+<h3>3D Surface Plot<a class="headerlink" href="#d-surface-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Visualizes three-dimensional data and relationships between three variables. Useful for understanding complex relationships and interactions.</p></li>
+<li><p><strong>Example</strong>: Performance metrics across two hyperparameters.</p></li>
+</ul>
+</section>
+<section id="violin-plot">
+<h3>Violin Plot<a class="headerlink" href="#violin-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Combines box plot and density plot to show data distribution, highlighting the density of data at different values.</p></li>
+<li><p><strong>Example</strong>: Distribution of performance metrics across different models.</p></li>
+</ul>
+</section>
+<section id="pair-plot">
+<h3>Pair Plot<a class="headerlink" href="#pair-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Displays pairwise relationships and distributions between multiple variables. Useful for exploring interactions and correlations.</p></li>
+<li><p><strong>Example</strong>: Relationships between multiple features or model parameters.</p></li>
+</ul>
+</section>
+<section id="error-bar-plot">
+<h3>Error Bar Plot<a class="headerlink" href="#error-bar-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Shows the variability or uncertainty of data points with error bars. Useful for visualizing confidence intervals or standard deviations.</p></li>
+<li><p><strong>Example</strong>: Performance metrics with confidence intervals across different models or experiments.</p></li>
+</ul>
+</section>
+<section id="contour-plot">
+<h3>Contour Plot<a class="headerlink" href="#contour-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Represents the density or intensity of data in two dimensions using contour lines. Useful for visualizing the relationship between variables in a continuous space.</p></li>
+<li><p><strong>Example</strong>: Decision boundaries or error surfaces.</p></li>
+</ul>
+</section>
+<section id="stacked-bar-chart">
+<h3>Stacked Bar Chart<a class="headerlink" href="#stacked-bar-chart" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Compares the total size across categories while breaking down each category into sub-groups. Useful for visualizing the composition of categories.</p></li>
+<li><p><strong>Example</strong>: Breakdown of errors or performance across different classes.</p></li>
+</ul>
+</section>
+<section id="cumulative-gain-lift-chart">
+<h3>Cumulative Gain/Lift Chart<a class="headerlink" href="#cumulative-gain-lift-chart" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Usage</strong>: Shows the improvement of a model’s performance over random guessing. Useful for evaluating the effectiveness of classification models.</p></li>
+<li><p><strong>Example</strong>: Performance of a model in ranking or targeting tasks.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="eval_other_metrics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Metrics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="retina_datasets.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Datasets</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot">Box Plot</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-types-for-visualizing-results">Plot Types for Visualizing Results</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-plot">Line Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plot">Scatter Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bar-chart">Bar Chart</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram">Histogram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Box Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heatmap">Heatmap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roc-curve">ROC Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-recall-curve">Precision-Recall Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#auc-roc-curve">AUC-ROC Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-surface-plot">3D Surface Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#violin-plot">Violin Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pair-plot">Pair Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-bar-plot">Error Bar Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contour-plot">Contour Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stacked-bar-chart">Stacked Bar Chart</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cumulative-gain-lift-chart">Cumulative Gain/Lift Chart</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

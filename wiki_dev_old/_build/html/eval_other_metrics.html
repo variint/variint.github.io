@@ -1,0 +1,884 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Metrics &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/datasceyence_css.css?v=7cc0456d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'eval_other_metrics';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Plotting" href="eval_visualisation.html" />
+    <link rel="prev" title="Distribution-Based Metrics" href="eval_distribution_metrics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Wiki
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="reading_list.html">My reading list</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep learning basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Deep learning basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_sup.html">Supervised learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Weakly supervised learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_mil.html">Multiple-Instance Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_mm.html">Multi-modality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_domain.html">Domain Adaptation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interpretability</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="int_basics.html">Interpretablility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Behavioural interpretability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_attributional.html">Attributional interpretablility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_concept.html">Concept Alignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_mechanistic.html">Mechanistic interpretability</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Subfunctions and modules</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fnc_sparsity.html">Sparsity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fnc_modularity.html">Modular Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fnc_pruning.html">Network pruning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fnc_growing.html">Growing neural networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fnc_disentanglement.html">Disentangled learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Evaluation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="eval_performance_metrics.html">Performance metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eval_distribution_metrics.html">Distribution-Based Metrics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eval_visualisation.html">Plotting</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Retinal Images</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="retina_datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_concepts.html">Concepts in the retina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_analysis.html">Deep Learning for Retinal Imaging</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Feval_other_metrics.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/eval_other_metrics.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Metrics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-mechanistic-interpretability-metrics">Methods (Mechanistic Interpretability Metrics)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-maximization">Activation Maximization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neuron-attribution">Neuron Attribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-attribution">Feature Attribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactual-explanations">Counterfactual Explanations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-state-analysis">Internal State Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attribution-maps">Attribution Maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-visualization">Feature Visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decomposition-methods">Decomposition Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-distillation">Model Distillation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-analysis">Sensitivity Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-drift-detection">Concept Drift Detection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-metrics-for-adversarial-attacks">Distance Metrics (for Adversarial Attacks)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l2-distance">L2 Distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-distance-infinity-norm">L∞ Distance (Infinity Norm)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-distance-manhattan-distance">L1 Distance (Manhattan Distance)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-similarity">Cosine Similarity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jaccard-distance">Jaccard Distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wasserstein-distance-earth-movers-distance">Wasserstein Distance (Earth Mover’s Distance)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hamming-distance">Hamming Distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mahalanobis-distance">Mahalanobis Distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-variation-distance">Total Variation Distance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-sanity-checks">Types of Sanity Checks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#label-consistency-check">3. <strong>Label Consistency Check</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#randomness-check">4. <strong>Randomness Check</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-across-models">5. <strong>Consistency Across Models</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-case-check">6. <strong>Boundary Case Check</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monotonicity-check">7. <strong>Monotonicity Check</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-of-explanations">8. <strong>Cross-Validation of Explanations</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#human-validation-check">9. <strong>Human Validation Check</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-with-known-facts">10. <strong>Consistency with Known Facts</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-stability-check">11. <strong>Training Stability Check</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explanation-plausibility">12. <strong>Explanation Plausibility</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="metrics">
+<h1>Metrics<a class="headerlink" href="#metrics" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h3>
+</section>
+<section id="key-takeaways">
+<h3>Key Takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Learn about performance metrics</p></li>
+<li><p>Learn about faithfullness of xAI</p></li>
+</ul>
+</section>
+</section>
+<section id="methods-mechanistic-interpretability-metrics">
+<h2>Methods (Mechanistic Interpretability Metrics)<a class="headerlink" href="#methods-mechanistic-interpretability-metrics" title="Link to this heading">#</a></h2>
+<section id="activation-maximization">
+<h3>Activation Maximization<a class="headerlink" href="#activation-maximization" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Identifies the input patterns that maximally activate a particular neuron or layer, helping to understand what features or concepts the neuron is detecting.</p></li>
+</ul>
+</section>
+<section id="neuron-attribution">
+<h3>Neuron Attribution<a class="headerlink" href="#neuron-attribution" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Determines the contribution of individual neurons to the final prediction, often used to understand the role of specific neurons in the model’s decision-making process.</p></li>
+</ul>
+</section>
+<section id="feature-attribution">
+<h3>Feature Attribution<a class="headerlink" href="#feature-attribution" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Quantifies the importance of each feature in making a prediction, often using methods like SHAP (SHapley Additive exPlanations) or LIME (Local Interpretable Model-agnostic Explanations).</p></li>
+</ul>
+</section>
+<section id="counterfactual-explanations">
+<h3>Counterfactual Explanations<a class="headerlink" href="#counterfactual-explanations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Provides explanations by generating input variations that would lead to different predictions, helping to understand the decision boundaries of the model.</p></li>
+</ul>
+</section>
+<section id="internal-state-analysis">
+<h3>Internal State Analysis<a class="headerlink" href="#internal-state-analysis" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Examines the internal activations or state changes within the model to understand how different inputs are processed and how they affect the final output.</p></li>
+</ul>
+</section>
+<section id="attribution-maps">
+<h3>Attribution Maps<a class="headerlink" href="#attribution-maps" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Visualizations that show how different parts of the input contribute to the prediction, often using techniques like integrated gradients or gradient-based methods.</p></li>
+</ul>
+</section>
+<section id="feature-visualization">
+<h3>Feature Visualization<a class="headerlink" href="#feature-visualization" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Directly visualizes the features learned by the model, such as filters in a convolutional neural network, to understand what the model is focusing on.</p></li>
+</ul>
+</section>
+<section id="decomposition-methods">
+<h3>Decomposition Methods<a class="headerlink" href="#decomposition-methods" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Analyzes the model’s decisions by decomposing the contributions of various parts of the network, helping to identify which components are critical for specific predictions.</p></li>
+</ul>
+</section>
+<section id="model-distillation">
+<h3>Model Distillation<a class="headerlink" href="#model-distillation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Simplifies a complex model into a more interpretable model while preserving its behavior, allowing for easier analysis and understanding of the model’s decision-making process.</p></li>
+</ul>
+</section>
+<section id="sensitivity-analysis">
+<h3>Sensitivity Analysis<a class="headerlink" href="#sensitivity-analysis" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Assesses how changes in the input or model parameters affect the predictions, providing insights into the robustness and stability of the model’s internal mechanisms.</p></li>
+</ul>
+</section>
+<section id="concept-drift-detection">
+<h3>Concept Drift Detection<a class="headerlink" href="#concept-drift-detection" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Monitors changes in the underlying data distribution or the model’s behavior over time, helping to understand how the model adapts to new or shifting concepts.</p></li>
+</ul>
+</section>
+</section>
+<section id="distance-metrics-for-adversarial-attacks">
+<h2>Distance Metrics (for Adversarial Attacks)<a class="headerlink" href="#distance-metrics-for-adversarial-attacks" title="Link to this heading">#</a></h2>
+<section id="l2-distance">
+<h3>L2 Distance<a class="headerlink" href="#l2-distance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Euclidean distance between the original and adversarial example.</p></li>
+<li><p><strong>Formula</strong>: [ \text{L2 Distance} = \sqrt{\sum_{i=1}^n (x_i - x_i’)^2} ]</p></li>
+<li><p><strong>Usage</strong>: Measures the overall magnitude of perturbations applied to the input, providing a sense of how much the input has been altered.</p></li>
+</ul>
+</section>
+<section id="l-distance-infinity-norm">
+<h3>L∞ Distance (Infinity Norm)<a class="headerlink" href="#l-distance-infinity-norm" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Maximum change in any single dimension of the input.</p></li>
+<li><p><strong>Formula</strong>: [ \text{L∞ Distance} = \max_i |x_i - x_i’| ]</p></li>
+<li><p><strong>Usage</strong>: Focuses on the largest single perturbation applied to any feature, indicating the most significant individual change.</p></li>
+</ul>
+</section>
+<section id="l1-distance-manhattan-distance">
+<h3>L1 Distance (Manhattan Distance)<a class="headerlink" href="#l1-distance-manhattan-distance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Sum of the absolute differences between the original and adversarial examples.</p></li>
+<li><p><strong>Formula</strong>: [ \text{L1 Distance} = \sum_{i=1}^n |x_i - x_i’| ]</p></li>
+<li><p><strong>Usage</strong>: Measures the total absolute change across all dimensions, useful for assessing overall perturbation in terms of feature-wise changes.</p></li>
+</ul>
+</section>
+<section id="cosine-similarity">
+<h3>Cosine Similarity<a class="headerlink" href="#cosine-similarity" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures the cosine of the angle between the original and adversarial examples in high-dimensional space.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Cosine Similarity} = \frac{x \cdot x’}{|x| |x’|} ]</p></li>
+<li><p><strong>Usage</strong>: Evaluates the similarity in direction between the original and adversarial examples, often used to assess how directionally close two vectors are.</p></li>
+</ul>
+</section>
+<section id="jaccard-distance">
+<h3>Jaccard Distance<a class="headerlink" href="#jaccard-distance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures dissimilarity between two sets, used in scenarios where inputs are categorical or binary.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Jaccard Distance} = 1 - \frac{|A \cap B|}{|A \cup B|} ]</p></li>
+<li><p><strong>Usage</strong>: Quantifies the proportion of non-overlapping elements between the original and adversarial sets.</p></li>
+</ul>
+</section>
+<section id="wasserstein-distance-earth-movers-distance">
+<h3>Wasserstein Distance (Earth Mover’s Distance)<a class="headerlink" href="#wasserstein-distance-earth-movers-distance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures the minimum cost to transform one probability distribution into another.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Wasserstein Distance} = \inf_{\gamma \in \Gamma(P, Q)} \mathbb{E}_{(x, y) \sim \gamma} [|x - y|] ]</p></li>
+<li><p><strong>Usage</strong>: Used to measure how much effort is required to move probability mass between distributions, applicable in scenarios with probability distributions.</p></li>
+</ul>
+</section>
+<section id="hamming-distance">
+<h3>Hamming Distance<a class="headerlink" href="#hamming-distance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures the number of positions at which the corresponding symbols differ, used for binary or categorical data.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Hamming Distance} = \sum_{i=1}^n \mathbf{1}_{x_i \ne x_i’} ]</p></li>
+<li><p><strong>Usage</strong>: Counts the number of differing elements between two binary strings or categorical inputs.</p></li>
+</ul>
+</section>
+<section id="mahalanobis-distance">
+<h3>Mahalanobis Distance<a class="headerlink" href="#mahalanobis-distance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures the distance between a point and a distribution, considering correlations between variables.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Mahalanobis Distance} = \sqrt{(x - \mu)^T S^{-1} (x - \mu)} ]</p></li>
+<li><p><strong>Usage</strong>: Takes into account the covariance of the data, providing a measure of distance in terms of statistical dispersion.</p></li>
+</ul>
+</section>
+<section id="total-variation-distance">
+<h3>Total Variation Distance<a class="headerlink" href="#total-variation-distance" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Measures the maximum difference between the probabilities assigned by two distributions.</p></li>
+<li><p><strong>Formula</strong>: [ \text{Total Variation Distance} = \frac{1}{2} \sum_{x} |P(x) - Q(x)| ]</p></li>
+<li><p><strong>Usage</strong>: Quantifies the divergence between two probability distributions, often used in the context of probabilistic models.</p></li>
+</ul>
+</section>
+</section>
+<section id="types-of-sanity-checks">
+<h2>Types of Sanity Checks<a class="headerlink" href="#types-of-sanity-checks" title="Link to this heading">#</a></h2>
+<section id="label-consistency-check">
+<h3>3. <strong>Label Consistency Check</strong><a class="headerlink" href="#label-consistency-check" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Checks if the model’s predictions are consistent with the expected output for given inputs.</p></li>
+<li><p><strong>Method</strong>: Compare model predictions with known labels or expected outcomes to ensure consistency.</p></li>
+<li><p><strong>Purpose</strong>: Ensures that the model’s predictions are accurate and align with the true labels.</p></li>
+</ul>
+</section>
+<section id="randomness-check">
+<h3>4. <strong>Randomness Check</strong><a class="headerlink" href="#randomness-check" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Verifies if the model’s explanations are consistent when applied to random or synthetic data.</p></li>
+<li><p><strong>Method</strong>: Generate random or synthetic inputs and assess if the explanations remain sensible and consistent.</p></li>
+<li><p><strong>Purpose</strong>: Checks if the explanation technique is robust and not overly sensitive to random inputs.</p></li>
+</ul>
+</section>
+<section id="consistency-across-models">
+<h3>5. <strong>Consistency Across Models</strong><a class="headerlink" href="#consistency-across-models" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Ensures that the explanations are consistent across different models or versions of the same model.</p></li>
+<li><p><strong>Method</strong>: Compare explanations from different models or model checkpoints to check for consistency.</p></li>
+<li><p><strong>Purpose</strong>: Verifies if the explanation technique provides stable and reliable insights across various model configurations.</p></li>
+</ul>
+</section>
+<section id="boundary-case-check">
+<h3>6. <strong>Boundary Case Check</strong><a class="headerlink" href="#boundary-case-check" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Evaluates how the model behaves at the boundaries or extremes of the input space.</p></li>
+<li><p><strong>Method</strong>: Test the model with boundary or edge cases and check if the explanations are still valid and coherent.</p></li>
+<li><p><strong>Purpose</strong>: Ensures that the model and its explanations handle extreme or rare cases appropriately.</p></li>
+</ul>
+</section>
+<section id="monotonicity-check">
+<h3>7. <strong>Monotonicity Check</strong><a class="headerlink" href="#monotonicity-check" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Verifies if the model’s predictions change monotonically with changes in input features.</p></li>
+<li><p><strong>Method</strong>: Observe if increasing or decreasing input feature values leads to predictable changes in the output.</p></li>
+<li><p><strong>Purpose</strong>: Ensures that the model’s behavior and explanations align with expected monotonic relationships.</p></li>
+</ul>
+</section>
+<section id="cross-validation-of-explanations">
+<h3>8. <strong>Cross-Validation of Explanations</strong><a class="headerlink" href="#cross-validation-of-explanations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Checks if the explanations hold up across different subsets of data or during cross-validation.</p></li>
+<li><p><strong>Method</strong>: Validate the consistency of explanations across different folds or splits of the data.</p></li>
+<li><p><strong>Purpose</strong>: Ensures that the explanations are generalizable and not specific to a particular subset of data.</p></li>
+</ul>
+</section>
+<section id="human-validation-check">
+<h3>9. <strong>Human Validation Check</strong><a class="headerlink" href="#human-validation-check" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Involves human judges to validate the correctness and usefulness of the model’s explanations.</p></li>
+<li><p><strong>Method</strong>: Collect feedback from domain experts or users on the quality and clarity of the explanations.</p></li>
+<li><p><strong>Purpose</strong>: Provides qualitative validation to complement quantitative sanity checks.</p></li>
+</ul>
+</section>
+<section id="consistency-with-known-facts">
+<h3>10. <strong>Consistency with Known Facts</strong><a class="headerlink" href="#consistency-with-known-facts" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Ensures that the model’s explanations align with established knowledge or domain-specific facts.</p></li>
+<li><p><strong>Method</strong>: Compare explanations with known domain knowledge to validate their accuracy.</p></li>
+<li><p><strong>Purpose</strong>: Verifies that the explanations reflect accurate and relevant domain information.</p></li>
+</ul>
+</section>
+<section id="training-stability-check">
+<h3>11. <strong>Training Stability Check</strong><a class="headerlink" href="#training-stability-check" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Assesses if the model’s explanations remain stable across different training runs or initializations.</p></li>
+<li><p><strong>Method</strong>: Train the model multiple times with different random seeds and check if explanations are consistent.</p></li>
+<li><p><strong>Purpose</strong>: Ensures that explanations are not unduly affected by randomness in training.</p></li>
+</ul>
+</section>
+<section id="explanation-plausibility">
+<h3>12. <strong>Explanation Plausibility</strong><a class="headerlink" href="#explanation-plausibility" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Definition</strong>: Evaluates if the explanations provided are plausible and make sense in the context of the model’s behavior.</p></li>
+<li><p><strong>Method</strong>: Review explanations for logical coherence and relevance to the model’s predictions.</p></li>
+<li><p><strong>Purpose</strong>: Ensures that the explanations are not only accurate but also sensible and understandable.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="eval_distribution_metrics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Distribution-Based Metrics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="eval_visualisation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Plotting</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-mechanistic-interpretability-metrics">Methods (Mechanistic Interpretability Metrics)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-maximization">Activation Maximization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neuron-attribution">Neuron Attribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-attribution">Feature Attribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactual-explanations">Counterfactual Explanations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-state-analysis">Internal State Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attribution-maps">Attribution Maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-visualization">Feature Visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#decomposition-methods">Decomposition Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-distillation">Model Distillation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-analysis">Sensitivity Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-drift-detection">Concept Drift Detection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-metrics-for-adversarial-attacks">Distance Metrics (for Adversarial Attacks)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l2-distance">L2 Distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-distance-infinity-norm">L∞ Distance (Infinity Norm)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l1-distance-manhattan-distance">L1 Distance (Manhattan Distance)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-similarity">Cosine Similarity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jaccard-distance">Jaccard Distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wasserstein-distance-earth-movers-distance">Wasserstein Distance (Earth Mover’s Distance)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hamming-distance">Hamming Distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mahalanobis-distance">Mahalanobis Distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total-variation-distance">Total Variation Distance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-sanity-checks">Types of Sanity Checks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#label-consistency-check">3. <strong>Label Consistency Check</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#randomness-check">4. <strong>Randomness Check</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-across-models">5. <strong>Consistency Across Models</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-case-check">6. <strong>Boundary Case Check</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monotonicity-check">7. <strong>Monotonicity Check</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-of-explanations">8. <strong>Cross-Validation of Explanations</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#human-validation-check">9. <strong>Human Validation Check</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consistency-with-known-facts">10. <strong>Consistency with Known Facts</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-stability-check">11. <strong>Training Stability Check</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explanation-plausibility">12. <strong>Explanation Plausibility</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

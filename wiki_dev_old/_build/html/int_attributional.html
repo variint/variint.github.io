@@ -1,0 +1,816 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Attributional interpretablility &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/datasceyence_css.css?v=7cc0456d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'int_attributional';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Concept Alignment" href="int_concept.html" />
+    <link rel="prev" title="Behavioural interpretability" href="int_behavioural.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Wiki
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="reading_list.html">My reading list</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep learning basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Deep learning basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_sup.html">Supervised learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Weakly supervised learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_mil.html">Multiple-Instance Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_mm.html">Multi-modality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_domain.html">Domain Adaptation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interpretability</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="int_basics.html">Interpretablility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Behavioural interpretability</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Attributional interpretablility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_concept.html">Concept Alignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_mechanistic.html">Mechanistic interpretability</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Subfunctions and modules</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fnc_sparsity.html">Sparsity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fnc_modularity.html">Modular Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fnc_pruning.html">Network pruning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fnc_growing.html">Growing neural networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fnc_disentanglement.html">Disentangled learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Evaluation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="eval_performance_metrics.html">Performance metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eval_distribution_metrics.html">Distribution-Based Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eval_other_metrics.html">Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eval_visualisation.html">Plotting</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Retinal Images</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="retina_datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_concepts.html">Concepts in the retina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_analysis.html">Deep Learning for Retinal Imaging</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fint_attributional.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/int_attributional.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Attributional interpretablility</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key takeaways</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keywords">Keywords</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools">Tools</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-map">Feature Map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-wise-relevance-propagation-lrp">Layer-wise Relevance Propagation (LRP)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deconvnet">DeconvNet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-backprop">Guided Backprop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saliency-maps">Saliency Maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-saliency">Guided Saliency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-decomposition">Taylor Decomposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-gradients">Integrated Gradients</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-lift">Deep LiFT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-gradients-with-perturbations">Integrated Gradients with Perturbations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lime-local-interpretable-model-agnostic-explanations">LIME (Local Interpretable Model-agnostic Explanations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shap-shapley-additive-explanations">SHAP (SHapley Additive exPlanations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cam-class-activation-mapping">CAM (Class Activation Mapping)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradcam-gradient-weighted-class-activation-mapping">GradCAM (Gradient-weighted Class Activation Mapping)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#occlusion-sensitivity">Occlusion Sensitivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-ablation">Feature Ablation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-analysis">Sensitivity Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactual-explanations">Counterfactual Explanations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-perturbations">Guided Perturbations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance">Feature Importance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">SHAP (SHapley Additive exPlanations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">LIME (Local Interpretable Model-agnostic Explanations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-dependence-plots-pdps">Partial Dependence Plots (PDPs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-conditional-expectation-ice-plots">Individual Conditional Expectation (ICE) Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permutation-importance">Permutation Importance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rule-based-explanations">Rule-Based Explanations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-maps">Activation Maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-maps">Attention Maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-distillation">Model Distillation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#surrogate-models">Surrogate Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="attributional-interpretablility">
+<h1>Attributional interpretablility<a class="headerlink" href="#attributional-interpretablility" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Attributional interpretability quantifies individual input feature influences.
+Many methods focus on some sort of gradient visualisation.</p>
+<section id="key-takeaways">
+<h3>Key takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Learn about saliency maps.</p></li>
+<li><p>Learn about guided backpropagation.</p></li>
+</ul>
+</section>
+<section id="keywords">
+<h3>Keywords<a class="headerlink" href="#keywords" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>GradCAM</p></li>
+<li><p>Gradients</p></li>
+<li><p>Heatmaps: a way for visualising important regions derived from attribution methods (e.g. GradCAM results)</p></li>
+</ul>
+</section>
+<section id="tools">
+<h3>Tools<a class="headerlink" href="#tools" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>DoWhy: Intro to Causal AI Using the DoWhy Library in Python</p></li>
+<li><p>Leap AI: <a class="reference external" href="https://docs.tryleap.ai/">https://docs.tryleap.ai/</a></p></li>
+<li><p><a class="reference external" href="https://raw.githubusercontent.com/bdcht/grandalf/master/doc/hgd.pdf">https://raw.githubusercontent.com/bdcht/grandalf/master/doc/hgd.pdf</a></p></li>
+</ul>
+</section>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Original version: <a class="reference external" href="https://theaisummer.com/xai/">https://theaisummer.com/xai/</a></p></li>
+</ul>
+<section id="feature-map">
+<h3>Feature Map<a class="headerlink" href="#feature-map" title="Link to this heading">#</a></h3>
+<p>Visual representation of the outputs from various layers in a neural network, highlighting how features are detected.</p>
+</section>
+<section id="layer-wise-relevance-propagation-lrp">
+<h3>Layer-wise Relevance Propagation (LRP)<a class="headerlink" href="#layer-wise-relevance-propagation-lrp" title="Link to this heading">#</a></h3>
+<p>A technique that assigns relevance scores to each input feature based on the model’s output, helping to explain predictions.</p>
+<ul class="simple">
+<li><p>A technique for backpropagating the relevance scores through the network to identify which parts of the input were most influential for the prediction.</p></li>
+</ul>
+</section>
+<section id="deconvnet">
+<h3>DeconvNet<a class="headerlink" href="#deconvnet" title="Link to this heading">#</a></h3>
+<p>A method for visualizing features learned by a convolutional network by reversing the forward pass to project back to the input space.</p>
+</section>
+<section id="guided-backprop">
+<h3>Guided Backprop<a class="headerlink" href="#guided-backprop" title="Link to this heading">#</a></h3>
+<p>A technique that enhances the backpropagation of gradients to visualize important regions in an image influencing predictions.</p>
+</section>
+<section id="saliency-maps">
+<h3>Saliency Maps<a class="headerlink" href="#saliency-maps" title="Link to this heading">#</a></h3>
+<p>Visualizations that highlight which parts of an input (e.g., image pixels) most influence the model’s prediction.</p>
+<ul class="simple">
+<li><p>Visualizations that highlight which parts of the input (e.g., image pixels) contribute most to a model’s prediction, providing insight into how specific features affect outcomes.</p></li>
+</ul>
+</section>
+<section id="guided-saliency">
+<h3>Guided Saliency<a class="headerlink" href="#guided-saliency" title="Link to this heading">#</a></h3>
+<p>An improved version of saliency maps that considers the gradients of the activation function to emphasize important input regions.</p>
+</section>
+<section id="taylor-decomposition">
+<h3>Taylor Decomposition<a class="headerlink" href="#taylor-decomposition" title="Link to this heading">#</a></h3>
+<p>A method that decomposes the output of a neural network into contributions from different input features to explain predictions.</p>
+</section>
+<section id="integrated-gradients">
+<h3>Integrated Gradients<a class="headerlink" href="#integrated-gradients" title="Link to this heading">#</a></h3>
+<p>A method for attributing the output of a neural network to its input features based on the integral of gradients along a path from a baseline.</p>
+</section>
+<section id="deep-lift">
+<h3>Deep LiFT<a class="headerlink" href="#deep-lift" title="Link to this heading">#</a></h3>
+<p>A method that assigns importance scores to input features based on how the model’s output changes relative to a baseline input.</p>
+</section>
+<section id="integrated-gradients-with-perturbations">
+<h3>Integrated Gradients with Perturbations<a class="headerlink" href="#integrated-gradients-with-perturbations" title="Link to this heading">#</a></h3>
+<p>Perturbs input images along a baseline path to evaluate how important each pixel is to the model output.</p>
+</section>
+<section id="lime-local-interpretable-model-agnostic-explanations">
+<h3>LIME (Local Interpretable Model-agnostic Explanations)<a class="headerlink" href="#lime-local-interpretable-model-agnostic-explanations" title="Link to this heading">#</a></h3>
+<p>Perturbs image pixels to approximate a local, interpretable model that explains a specific prediction.</p>
+</section>
+<section id="shap-shapley-additive-explanations">
+<h3>SHAP (SHapley Additive exPlanations)<a class="headerlink" href="#shap-shapley-additive-explanations" title="Link to this heading">#</a></h3>
+<p>Calculates Shapley values by adding and removing pixel groups to quantify each region’s contribution to the prediction.</p>
+</section>
+<section id="cam-class-activation-mapping">
+<h3>CAM (Class Activation Mapping)<a class="headerlink" href="#cam-class-activation-mapping" title="Link to this heading">#</a></h3>
+<p>Uses class-specific weights to generate heatmaps indicating which parts of an image contribute most to a given class prediction.</p>
+</section>
+<section id="gradcam-gradient-weighted-class-activation-mapping">
+<h3>GradCAM (Gradient-weighted Class Activation Mapping)<a class="headerlink" href="#gradcam-gradient-weighted-class-activation-mapping" title="Link to this heading">#</a></h3>
+<p>A visualization technique that uses the gradients of the model to identify which regions of an image are most important for a specific prediction.</p>
+<ul class="simple">
+<li><p>Visualizes the areas of an input image that most influence the model’s prediction by combining gradients with activation maps from convolutional layers.</p></li>
+</ul>
+</section>
+<section id="occlusion-sensitivity">
+<h3>Occlusion Sensitivity<a class="headerlink" href="#occlusion-sensitivity" title="Link to this heading">#</a></h3>
+<p>Analyzes the effect on predictions by masking parts of an image to reveal important regions for the model’s decision.</p>
+</section>
+<section id="feature-ablation">
+<h3>Feature Ablation<a class="headerlink" href="#feature-ablation" title="Link to this heading">#</a></h3>
+<p>Sequentially removes image features (like superpixels) to determine their importance by measuring prediction changes.</p>
+</section>
+<section id="sensitivity-analysis">
+<h3>Sensitivity Analysis<a class="headerlink" href="#sensitivity-analysis" title="Link to this heading">#</a></h3>
+<p>Introduces small perturbations across an image to see which regions lead to the largest changes in prediction confidence.</p>
+</section>
+<section id="counterfactual-explanations">
+<h3>Counterfactual Explanations<a class="headerlink" href="#counterfactual-explanations" title="Link to this heading">#</a></h3>
+<p>Alters key image features to create a minimally modified version of the input that changes the model’s prediction.</p>
+</section>
+<section id="guided-perturbations">
+<h3>Guided Perturbations<a class="headerlink" href="#guided-perturbations" title="Link to this heading">#</a></h3>
+<p>Systematically distorts specific visual patterns in the image to highlight areas the model relies on for its decision.</p>
+</section>
+<section id="feature-importance">
+<h3>Feature Importance<a class="headerlink" href="#feature-importance" title="Link to this heading">#</a></h3>
+<p>Measures the contribution of each feature to the model’s predictions, often assessed through methods like permutation importance or SHAP.</p>
+</section>
+<section id="id1">
+<h3>SHAP (SHapley Additive exPlanations)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Provides a unified measure of feature importance and model explainability by attributing each prediction to the contribution of each feature using cooperative game theory.</p>
+</section>
+<section id="id2">
+<h3>LIME (Local Interpretable Model-agnostic Explanations)<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Creates locally interpretable models to approximate the behavior of a more complex model in the vicinity of a particular prediction, helping to understand individual predictions.</p>
+</section>
+<section id="partial-dependence-plots-pdps">
+<h3>Partial Dependence Plots (PDPs)<a class="headerlink" href="#partial-dependence-plots-pdps" title="Link to this heading">#</a></h3>
+<p>Illustrates the relationship between a feature and the predicted outcome, averaging the effects of all other features to show how changes in the feature affect predictions.</p>
+</section>
+<section id="individual-conditional-expectation-ice-plots">
+<h3>Individual Conditional Expectation (ICE) Plots<a class="headerlink" href="#individual-conditional-expectation-ice-plots" title="Link to this heading">#</a></h3>
+<p>Displays the effect of a feature on the prediction for individual instances, providing insight into how feature values influence predictions on a case-by-case basis.</p>
+</section>
+<section id="permutation-importance">
+<h3>Permutation Importance<a class="headerlink" href="#permutation-importance" title="Link to this heading">#</a></h3>
+<p>Measures the change in model performance when the values of a feature are randomly shuffled, which helps assess the feature’s impact on model accuracy.</p>
+</section>
+<section id="rule-based-explanations">
+<h3>Rule-Based Explanations<a class="headerlink" href="#rule-based-explanations" title="Link to this heading">#</a></h3>
+<p>Generates human-understandable rules that approximate the decision-making process of the model, often used in models like decision trees or rule-based classifiers.</p>
+</section>
+<section id="activation-maps">
+<h3>Activation Maps<a class="headerlink" href="#activation-maps" title="Link to this heading">#</a></h3>
+<p>Shows which parts of a neural network’s layers are activated by a given input, providing insight into the features and patterns that the network is focusing on.</p>
+</section>
+<section id="attention-maps">
+<h3>Attention Maps<a class="headerlink" href="#attention-maps" title="Link to this heading">#</a></h3>
+<p>Used in models with attention mechanisms to visualize which parts of the input are being focused on for a given prediction, often used in natural language processing.</p>
+</section>
+<section id="model-distillation">
+<h3>Model Distillation<a class="headerlink" href="#model-distillation" title="Link to this heading">#</a></h3>
+<p>Involves training a simpler, interpretable model to mimic the behavior of a complex model, providing insights into the complex model’s decision-making process.</p>
+</section>
+<section id="surrogate-models">
+<h3>Surrogate Models<a class="headerlink" href="#surrogate-models" title="Link to this heading">#</a></h3>
+<p>Employs simpler, interpretable models to approximate the behavior of more complex models, helping to understand the decision-making process of the complex model.</p>
+<!-- 
+
+### Links
+* Distilled Notes for Stanford CS231n: Convolutional Neural Networks for Visual Recognition (Chadha, 2020) - https://aman.ai/cs231n/visualization/
+* Stanford CS231n: Lecture 14: Visualizing and Understanding (Fei-Fei Li & Justin Johnson & Serena Yeung, 2019) - http://cs231n.stanford.edu/slides/2019/cs231n_2019_lecture13.pdf
+* Article: Feature Visualization (Olah et al., 2017) - https://distill.pub/2017/feature-visualization/
+* Book (GitHub): Interpretable Machine Learning: A Guide for Making Black Box Models Explainable (Molnar) - https://christophm.github.io/interpretable-ml-book/
+* Code (GitHub): Convolutional Neural Network Visualizations (Ozbulak, 2019) - https://github.com/utkuozbulak/pytorch-cnn-visualizations
+* https://towardsdatascience.com/explainable-neural-networks-recent-advancements-part-4-73cacc910fef
+
+### Youtube
+* Human-centered AI (non-technical): https://www.youtube.com/watch?v=ZxPV_KVq-tI
+
+-->
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<span class="target" id="id3"></span></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="int_behavioural.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Behavioural interpretability</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="int_concept.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Concept Alignment</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key takeaways</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keywords">Keywords</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools">Tools</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-map">Feature Map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#layer-wise-relevance-propagation-lrp">Layer-wise Relevance Propagation (LRP)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deconvnet">DeconvNet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-backprop">Guided Backprop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saliency-maps">Saliency Maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-saliency">Guided Saliency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-decomposition">Taylor Decomposition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-gradients">Integrated Gradients</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-lift">Deep LiFT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-gradients-with-perturbations">Integrated Gradients with Perturbations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lime-local-interpretable-model-agnostic-explanations">LIME (Local Interpretable Model-agnostic Explanations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shap-shapley-additive-explanations">SHAP (SHapley Additive exPlanations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cam-class-activation-mapping">CAM (Class Activation Mapping)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gradcam-gradient-weighted-class-activation-mapping">GradCAM (Gradient-weighted Class Activation Mapping)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#occlusion-sensitivity">Occlusion Sensitivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-ablation">Feature Ablation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-analysis">Sensitivity Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counterfactual-explanations">Counterfactual Explanations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guided-perturbations">Guided Perturbations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance">Feature Importance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">SHAP (SHapley Additive exPlanations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">LIME (Local Interpretable Model-agnostic Explanations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-dependence-plots-pdps">Partial Dependence Plots (PDPs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#individual-conditional-expectation-ice-plots">Individual Conditional Expectation (ICE) Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#permutation-importance">Permutation Importance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rule-based-explanations">Rule-Based Explanations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-maps">Activation Maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-maps">Attention Maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-distillation">Model Distillation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#surrogate-models">Surrogate Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

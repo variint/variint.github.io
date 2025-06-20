@@ -1,0 +1,770 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Concept Alignment &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/datasceyence_css.css?v=7cc0456d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'int_concept';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Mechanistic interpretability" href="int_mechanistic.html" />
+    <link rel="prev" title="Attributional interpretablility" href="int_attributional.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Wiki
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="reading_list.html">My reading list</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep learning basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="dl_basics.html">Deep learning basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_sup.html">Supervised learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_selfsup.html">Self-supervised learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_semisup.html">Semi-Supervised learning (SSL)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_weaksup.html">Weakly supervised learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_mil.html">Multiple-Instance Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_metalearning.html">Meta-learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_multitask.html">Multi-task learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_mm.html">Multi-modality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dl_domain.html">Domain Adaptation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interpretability</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="int_basics.html">Interpretablility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_behavioural.html">Behavioural interpretability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_attributional.html">Attributional interpretablility</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Concept Alignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="int_mechanistic.html">Mechanistic interpretability</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Subfunctions and modules</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fnc_sparsity.html">Sparsity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fnc_modularity.html">Modular Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fnc_pruning.html">Network pruning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fnc_growing.html">Growing neural networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fnc_disentanglement.html">Disentangled learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Evaluation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="eval_performance_metrics.html">Performance metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eval_distribution_metrics.html">Distribution-Based Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eval_other_metrics.html">Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eval_visualisation.html">Plotting</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Retinal Images</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="retina_datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_concepts.html">Concepts in the retina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="retina_analysis.html">Deep Learning for Retinal Imaging</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fint_concept.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/int_concept.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Concept Alignment</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key takeaways</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keywords">Keywords:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-dissection">Network dissection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-attribution">Concept Attribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-based-explanations">Concept-based explanations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-with-concept-activation-vector-tcav">Testing with concept activation vector (TCAV)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tcav-deep-dream">TCAV + Deep dream</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-with-concept-activation-regions-tcar">Testing with Concept Activation Regions (TCAR)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretable-basis-decomposition-ibd">Interpretable Basis Decomposition (IBD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-concept-effect-cace">Causal Concept Effect (CaCE)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpm">CPM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-detection">Object detection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nd">ND</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#net2vec">Net2Vec</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gnn-ci">GNN-CI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ace">ACE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compl-aware">Compl Aware</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ice">ICE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mcd">MCD</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#craft">CRAFT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dma-ima">DMA, IMA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stce">STCE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-concepts">Visual concepts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phenotypic-concepts">Phenotypic Concepts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="concept-alignment">
+<h1>Concept Alignment<a class="headerlink" href="#concept-alignment" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Uses high-level concepts or human-understandable features to explain the model’s behavior, assessing how well these concepts align with the model’s internal mechanisms.</p></li>
+</ul>
+<p>Concept alignment has the goal to interpreting a convolutional neural network by aligning features with human understanable concepts.</p>
+<section id="key-takeaways">
+<h3>Key takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Learn about Concept Activation Vectors (CAV).</p></li>
+<li><p>Learn about how unsupervised clustering can be used to obtain concepts.</p></li>
+<li><p>Learn about what role concepts play in explainable AI.</p></li>
+<li><p>Learn about how concepts are used in network dissection.</p></li>
+</ul>
+</section>
+<section id="keywords">
+<h3>Keywords:<a class="headerlink" href="#keywords" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Concept-alignment</p></li>
+<li><p>TCAV</p></li>
+</ul>
+</section>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h2>
+<!-- https://arxiv.org/pdf/2312.12936 -->
+<section id="network-dissection">
+<h3>Network dissection<a class="headerlink" href="#network-dissection" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Original version: Chapter 10 Neural Network Interpretation &gt; Network Dissection <span id="id1">[<a class="reference internal" href="#id38" title="Christoph Molnar. Interpretable machine learning - network dissection. 2022. URL: https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection.">Mol22</a>]</span>
+Network Dissection quantifies the interpretability of a unit of a CNN. Highly activated areas of CNN channels are linked with human concepts (objects, parts, textures, colors, …).</p></li>
+</ul>
+</section>
+<section id="concept-attribution">
+<h3>Concept Attribution<a class="headerlink" href="#concept-attribution" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Original version: Concept attribution: explaining CNN decisions to physicians <span id="id2">[]</span></p></li>
+</ul>
+</section>
+<section id="concept-based-explanations">
+<h3>Concept-based explanations<a class="headerlink" href="#concept-based-explanations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Original version: Towards automatic concept-based explanations <span id="id3">[<a class="reference internal" href="#id23" title="Amirata Ghorbani, James Wexler, James Y Zou, and Been Kim. Towards automatic concept-based explanations. Advances in neural information processing systems, 2019. URL: https://proceedings.neurips.cc/paper/2019/hash/77d2afcb31f6493e350fca61764efb9a-Abstract.html.">GWZK19</a>]</span></p></li>
+</ul>
+</section>
+<section id="testing-with-concept-activation-vector-tcav">
+<h3>Testing with concept activation vector (TCAV)<a class="headerlink" href="#testing-with-concept-activation-vector-tcav" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Measures how well a specific concept is represented within a neural network by comparing activation vectors of examples belonging to that concept.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV) <span id="id4">[<a class="reference internal" href="#id30" title="Been Kim, Martin Wattenberg, Justin Gilmer, Carrie Cai, James Wexler, Fernanda Viegas, and others. Interpretability beyond feature attribution: quantitative testing with concept activation vectors (tcav). In International conference on machine learning, 2668–2677. PMLR, 2018.">KWG+18</a>]</span>
+<a class="reference external" href="https://arxiv.org/pdf/1711.11279">https://arxiv.org/pdf/1711.11279</a></p></li>
+</ul>
+</section>
+<section id="tcav-deep-dream">
+<h3>TCAV + Deep dream<a class="headerlink" href="#tcav-deep-dream" title="Link to this heading">#</a></h3>
+<p>Empirical deepdream using CAVs for each layer in a ConvNet <span id="id5">[<a class="reference internal" href="#id30" title="Been Kim, Martin Wattenberg, Justin Gilmer, Carrie Cai, James Wexler, Fernanda Viegas, and others. Interpretability beyond feature attribution: quantitative testing with concept activation vectors (tcav). In International conference on machine learning, 2668–2677. PMLR, 2018.">KWG+18</a>]</span>
+<a class="reference external" href="https://arxiv.org/pdf/1711.11279">https://arxiv.org/pdf/1711.11279</a></p>
+</section>
+<section id="testing-with-concept-activation-regions-tcar">
+<h3>Testing with Concept Activation Regions (TCAR)<a class="headerlink" href="#testing-with-concept-activation-regions-tcar" title="Link to this heading">#</a></h3>
+</section>
+<section id="interpretable-basis-decomposition-ibd">
+<h3>Interpretable Basis Decomposition (IBD)<a class="headerlink" href="#interpretable-basis-decomposition-ibd" title="Link to this heading">#</a></h3>
+</section>
+<section id="causal-concept-effect-cace">
+<h3>Causal Concept Effect (CaCE)<a class="headerlink" href="#causal-concept-effect-cace" title="Link to this heading">#</a></h3>
+</section>
+<section id="cpm">
+<h3>CPM<a class="headerlink" href="#cpm" title="Link to this heading">#</a></h3>
+</section>
+<section id="object-detection">
+<h3>Object detection<a class="headerlink" href="#object-detection" title="Link to this heading">#</a></h3>
+</section>
+<section id="nd">
+<h3>ND<a class="headerlink" href="#nd" title="Link to this heading">#</a></h3>
+</section>
+<section id="net2vec">
+<h3>Net2Vec<a class="headerlink" href="#net2vec" title="Link to this heading">#</a></h3>
+</section>
+<section id="gnn-ci">
+<h3>GNN-CI<a class="headerlink" href="#gnn-ci" title="Link to this heading">#</a></h3>
+</section>
+<section id="ace">
+<h3>ACE<a class="headerlink" href="#ace" title="Link to this heading">#</a></h3>
+</section>
+<section id="compl-aware">
+<h3>Compl Aware<a class="headerlink" href="#compl-aware" title="Link to this heading">#</a></h3>
+</section>
+<section id="ice">
+<h3>ICE<a class="headerlink" href="#ice" title="Link to this heading">#</a></h3>
+</section>
+<section id="mcd">
+<h3>MCD<a class="headerlink" href="#mcd" title="Link to this heading">#</a></h3>
+</section>
+<section id="craft">
+<h3>CRAFT<a class="headerlink" href="#craft" title="Link to this heading">#</a></h3>
+</section>
+<section id="dma-ima">
+<h3>DMA, IMA<a class="headerlink" href="#dma-ima" title="Link to this heading">#</a></h3>
+</section>
+<section id="stce">
+<h3>STCE<a class="headerlink" href="#stce" title="Link to this heading">#</a></h3>
+</section>
+<section id="visual-concepts">
+<h3>Visual concepts<a class="headerlink" href="#visual-concepts" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Original version: Visual Concept Learning: Combining Machine Vision and Bayesian Generalization on Concept Hierarchies</p></li>
+</ul>
+</section>
+</section>
+<section id="applications">
+<h2>Applications<a class="headerlink" href="#applications" title="Link to this heading">#</a></h2>
+<section id="phenotypic-concepts">
+<h3>Phenotypic Concepts<a class="headerlink" href="#phenotypic-concepts" title="Link to this heading">#</a></h3>
+<p>Using TCAV.</p>
+<ul class="simple">
+<li><p>Original version: Identifying Phenotypic Concepts Discriminating Molecular Breast Cancer Sub-Types <span id="id6">[<a class="reference internal" href="#id20" title="Christoph Fürböck, Matthias Perkonigg, Thomas Helbich, Katja Pinker, Valeria Romeo, and Georg Langs. Identifying phenotypic concepts discriminating molecular breast cancer sub-types. In International Conference on Medical Image Computing and Computer-Assisted Intervention, 276–286. Springer, 2022.">FurbockPH+22</a>]</span></p></li>
+</ul>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<div class="docutils container" id="id7">
+<div role="list" class="citation-list">
+<div class="citation" id="id20" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">FurbockPH+22</a><span class="fn-bracket">]</span></span>
+<p>Christoph Fürböck, Matthias Perkonigg, Thomas Helbich, Katja Pinker, Valeria Romeo, and Georg Langs. Identifying phenotypic concepts discriminating molecular breast cancer sub-types. In <em>International Conference on Medical Image Computing and Computer-Assisted Intervention</em>, 276–286. Springer, 2022.</p>
+</div>
+<div class="citation" id="id23" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">GWZK19</a><span class="fn-bracket">]</span></span>
+<p>Amirata Ghorbani, James Wexler, James Y Zou, and Been Kim. Towards automatic concept-based explanations. <em>Advances in neural information processing systems</em>, 2019. URL: <a class="reference external" href="https://proceedings.neurips.cc/paper/2019/hash/77d2afcb31f6493e350fca61764efb9a-Abstract.html">https://proceedings.neurips.cc/paper/2019/hash/77d2afcb31f6493e350fca61764efb9a-Abstract.html</a>.</p>
+</div>
+<div class="citation" id="id30" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>KWG+18<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id4">1</a>,<a role="doc-backlink" href="#id5">2</a>)</span>
+<p>Been Kim, Martin Wattenberg, Justin Gilmer, Carrie Cai, James Wexler, Fernanda Viegas, and others. Interpretability beyond feature attribution: quantitative testing with concept activation vectors (tcav). In <em>International conference on machine learning</em>, 2668–2677. PMLR, 2018.</p>
+</div>
+<div class="citation" id="id38" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Mol22</a><span class="fn-bracket">]</span></span>
+<p>Christoph Molnar. Interpretable machine learning - network dissection. 2022. URL: <a class="reference external" href="https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection">https://christophm.github.io/interpretable-ml-book/cnn-features.html#network-dissection</a>.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="int_attributional.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Attributional interpretablility</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="int_mechanistic.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Mechanistic interpretability</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key takeaways</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keywords">Keywords:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-dissection">Network dissection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-attribution">Concept Attribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concept-based-explanations">Concept-based explanations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-with-concept-activation-vector-tcav">Testing with concept activation vector (TCAV)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tcav-deep-dream">TCAV + Deep dream</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-with-concept-activation-regions-tcar">Testing with Concept Activation Regions (TCAR)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretable-basis-decomposition-ibd">Interpretable Basis Decomposition (IBD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-concept-effect-cace">Causal Concept Effect (CaCE)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cpm">CPM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-detection">Object detection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nd">ND</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#net2vec">Net2Vec</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gnn-ci">GNN-CI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ace">ACE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compl-aware">Compl Aware</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ice">ICE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mcd">MCD</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#craft">CRAFT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dma-ima">DMA, IMA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stce">STCE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-concepts">Visual concepts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phenotypic-concepts">Phenotypic Concepts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
