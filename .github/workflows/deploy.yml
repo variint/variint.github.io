@@ -43,6 +43,11 @@ jobs:
         run: |
           jupyter-book build wiki
 
+      - name: Move to /wiki/ subfolder
+        run: |
+          mkdir -p wiki
+          cp -r wiki/_build/html/* wiki/
+
       # Upload the book's HTML as an artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
