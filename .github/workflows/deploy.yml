@@ -9,6 +9,9 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
 
     steps:
     - name: Checkout repo
@@ -33,5 +36,5 @@ jobs:
         if [ -d "assets" ]; then cp -r assets deploy/; fi  # if you have CSS/js/images
 
     - name: Deploy to GitHub Pages
-      run: |
-        ghp-import -n -p -f deploy
+      id: deployment
+      uses: actions/deploy-pages@v4
