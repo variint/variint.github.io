@@ -17,6 +17,132 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.steps-name{
+  padding-top: 0.5em;
+  font-size: 1.3em;
+}
+
+
+.steps-timeline {
+  outline: 1px dashed rgba(255, 0, 0, 0);
+}
+@media screen and (max-width: 500px) {
+  .steps-timeline {
+    border-left: 2px solid;
+    margin-left: 25px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .steps-timeline {
+    border-top: 2px solid;
+    padding-top: 20px;
+    margin-top: 40px;
+    margin-left: 16.65%;
+    margin-right: 16.65%;
+  }
+}
+.steps-timeline:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.steps-one,
+.steps-two,
+.steps-three {
+  outline: 1px dashed rgba(0, 128, 0, 0);
+}
+@media screen and (max-width: 500px) {
+  .steps-one,
+  .steps-two,
+  .steps-three {
+    margin-left: -25px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .steps-one,
+  .steps-two,
+  .steps-three {
+    float: left;
+    width: 33%;
+    margin-top: -50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .steps-one,
+  .steps-two {
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .steps-one {
+    margin-left: -16.65%;
+    margin-right: 16.65%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .steps-three {
+    margin-bottom: -100%;
+  }
+}
+@media screen and (min-width: 500px) {
+  .steps-three {
+    margin-left: 16.65%;
+    margin-right: -16.65%;
+  }
+}
+
+.steps-img {
+  display: block;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+@media screen and (max-width: 500px) {
+  .steps-img {
+    float: left;
+    margin-right: 20px;
+  }
+}
+
+.steps-name,
+.steps-description {
+  margin: 0;
+}
+
+@media screen and (min-width: 500px) {
+  .steps-name {
+    text-align: center;
+  }
+}
+
+.steps-description {
+  overflow: hidden;
+}
+@media screen and (min-width: 500px) {
+  .steps-description {
+    text-align: center;
+  }
+}
+  
+  
+
+        </style>
     </head>
     <body id="page-top">
         <header class="masthead">
@@ -35,13 +161,81 @@
 
             <main class="container">
 
+
               
+
+
+              
+              <h3>Data sources</h3>
+
+              <h4>Bees</h4>
+              <a href="https://www.fao.org/dad-is/bees-data-sheet/en/">https://www.fao.org/dad-is/bees-data-sheet/en/</a>
+
+              <h4>El Niño</h4>
+              <a href="https://origin.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php">https://origin.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php</a>
+
+              <h4>Cherry tree blossom</h4>
+              The peak flowering of cherry trees in Kyoto, Japan, has been recorded since the ninth century. 
+              <a href="https://ourworldindata.org/data-insights/japans-cherry-trees-have-been-blossoming-earlier-due-to-warmer-spring-temperatures">https://ourworldindata.org/data-insights/japans-cherry-trees-have-been-blossoming-earlier-due-to-warmer-spring-temperatures</a>
+
+
+
+
+
+
+
+
+            <!-- STEPS -->
+            <section id="Steps" class="steps-section">
+
+              <h2 class="steps-header">
+                To Bee Continued
+              </h2>
+
+              <div class="steps-timeline">
+
+                <div class="steps-one">
+                  <img class="steps-img" src="assets/img/bee/bee.jpg" alt="bee graphic" />
+                  <h3 class="steps-name">
+                    Copernicus Hackathon (2016)
+                  </h3>
+                  <p class="steps-description">
+                    Wiener Entwickler-Event: Die Satellitenbild-Hacker kommen.
+                    <a href="https://www.derstandard.at/story/2000047257676/die-satellitenbild-hacker-kommen" class="btn btn-primary btn-sm">derstandard.at</a>
+                  </p>
+                </div>
+
+                <div class="steps-two">
+                  <img class="steps-img" src="assets/img/bee/bee.jpg" alt="bee graphic" />
+                  <h3 class="steps-name">
+                    Start of doctorate (2024)
+                  </h3>
+                  <p class="steps-description">
+                     Focusing on winter colony loss. Attended course on wild pollinators.
+                  </p>
+                </div>
+
+                <div class="steps-three">
+                  <img class="steps-img" src="assets/img/bee/bee.jpg" alt="bee graphic" />
+                  <h3 class="steps-name">
+                    Start of outreach (2025)
+                  </h3>
+                  <p class="steps-description">
+                  </p>
+                </div>
+
+              </div><!-- /.steps-timeline -->
+
+            </section>
+
+
+                  
+
+
+
 
             </main>
                
-
-
-            </div>
         </section>
         
         
@@ -53,6 +247,9 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script>
+
+        </script>
     </body>
 </html>
 
