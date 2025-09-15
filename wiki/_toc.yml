@@ -9,7 +9,7 @@ parts:
     - file: reading_list
 - caption: Fun topics
   chapters:
-    - file: inspiration
+    - file: inspired
     - file: shape_of_knowledge
 - caption: Deep learning basics
   chapters:

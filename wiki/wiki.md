@@ -7,5 +7,7 @@ This is my (constantly changing) jupyterbook with my favourite deep learning top
 
 ## Topics covered:
 
+
+
 ```{tableofcontents}
 ```

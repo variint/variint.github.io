@@ -1,12 +1,13 @@
 # Network pruning
 
-- keywords: regularisation, granularity, scheduling, criteria and evaluation of pruning.
+- keywords: regularisation, granularity, scheduling, criteria, evaluation, structured vs unstructured
 
 
 ## Definitions
 Sources: {cite:p}`hoefler2021sparsity`
 Selectively pruning components reduces the size of neural networks.
- 
+
+
 
 ## Hypothesis
 
@@ -15,20 +16,8 @@ Sources: {cite:p}`radhakrishnan2022mechanism`
 The “lottery ticket hypothesis” refers to the claim that a randomly-initialized neural network contains a sub-network that can match or outperform the trained network when trained in isolation.
 
 
+
 ## Methods
-
-### Regularisation
-Sources: {cite:p}`he2023structured`, {cite:p}`zhan2019directed`
-
-Regularization can be used for learning structured sparse
-networks by adding different sparsity regularizers.
-
-Examples:
-- Group Lasso 
-
-
-Group Lasso regularization is commonly used to sparsify filters in a structured manner. It can effectively zero out all weights in groups, thus filter-wise group lasso would zero out a whole filter and then the filter is removed from the convolution layer
-
 
 ### Granularity
 Sources: {cite:p}`hubens2020pruning`
@@ -51,14 +40,26 @@ Examples:
 - Automated Gradual Pruning
 
 ### Criteria
-Sources: {cite:p}`hubens2020pruning`, {cite:p}`he2023structured` 
+Sources: {cite:p}`hubens2020pruning`, {cite:p}`he2023structured`, table generated with chat-gpt
 
 Examples:
-- Weight Magnitude = Filter Norm
-- Gradient Magnitude
-- Filter Correlation
-- Taylor expansion
-- Mutual information
+	- Weight Magnitude = Filter Norm
+	- Filter Correlation
+	- Gradient Magnitude 
+	- Taylor expansion
+	- Mutual information
+
+
+| **Pruning Criterion**          | **Depends on Weights**  | **Depends on Gradients**                     | **Requires Input Data**  |
+| ------------------------------ | ----------------------  | ------------------------------------------   | -----------------------  |
+| Weight Magnitude (Filter Norm) | ✅ Yes                  | ❌ No                                       | ❌ No                    |
+| Filter Correlation             | ✅ Yes                  | ❌ No                                       | ❌ No                    |
+| Gradient Magnitude             | ❌ No                   | ✅ Yes                                      | ✅ Yes                   |
+| Taylor Expansion               | ✅ Yes                  | ✅ Yes                                      | ✅ Yes                   |
+| Mutual Information             | ❌ No                   | ❌ No (but usually computed on activations) | ✅ Yes                   |
+
+
+
 
 ### Evaluation
 Sources: {cite:p}`hubens2020pruning`
