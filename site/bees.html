@@ -28,11 +28,23 @@ html {
   box-sizing: inherit;
 }
 
-.steps-name{
-  padding-top: 0.5em;
-  font-size: 1.3em;
+p, .bees{
+  font-size: 14px;
+  font-weight:300;
 }
 
+h4{
+  font-size: 18px;
+}
+
+.steps-name{
+  padding-top: 0.5em;
+}
+
+.steps-description{
+  text-align: center;
+
+}
 
 .steps-timeline {
   outline: 1px dashed rgba(255, 0, 0, 0);
@@ -137,7 +149,23 @@ html {
 @media screen and (min-width: 500px) {
   .steps-description {
     text-align: center;
-  }
+  } 
+}
+
+section .bglandscape, section .bgdata  {
+  min-height: 50vh;  /* 100vh full screen height */
+  min-width:100%;
+  
+}
+
+
+.bglandscape {
+  background: url("assets/img/bee/landscape.jpg") center / cover no-repeat fixed;
+}
+
+
+.bgdata {
+  background: url("assets/img/bee/data.jpg") center / cover no-repeat fixed;
 }
   
   
@@ -162,23 +190,37 @@ html {
             <main class="container">
 
 
-              
+            <section class="bglandscape">
+              <div></div>
+            </section>
 
 
               
+            <section>
               <h3>Data sources</h3>
 
               <h4>Bees</h4>
-              <a href="https://www.fao.org/dad-is/bees-data-sheet/en/">https://www.fao.org/dad-is/bees-data-sheet/en/</a>
-
+              <p class="bees">
+                <a href="https://www.fao.org/dad-is/bees-data-sheet/en/">https://www.fao.org/dad-is/bees-data-sheet/en/</a>
+              </p>
               <h4>El Niño</h4>
-              <a href="https://origin.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php">https://origin.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php</a>
-
+              <p class="bees">
+                <a href="https://origin.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php">https://origin.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php</a>
+              </p>
               <h4>Cherry tree blossom</h4>
-              The peak flowering of cherry trees in Kyoto, Japan, has been recorded since the ninth century. 
-              <a href="https://ourworldindata.org/data-insights/japans-cherry-trees-have-been-blossoming-earlier-due-to-warmer-spring-temperatures">https://ourworldindata.org/data-insights/japans-cherry-trees-have-been-blossoming-earlier-due-to-warmer-spring-temperatures</a>
+              <p class="bees">
+                The peak flowering of cherry trees in Kyoto, Japan, has been recorded since the ninth century. 
+                <a href="https://ourworldindata.org/data-insights/japans-cherry-trees-have-been-blossoming-earlier-due-to-warmer-spring-temperatures">https://ourworldindata.org/data-insights/japans-cherry-trees-have-been-blossoming-earlier-due-to-warmer-spring-temperatures</a>
+              </p>
 
 
+             </section>
+
+
+
+          <section class="bgdata">
+              <div></div>
+            </section>
 
 
 
@@ -189,16 +231,16 @@ html {
             <section id="Steps" class="steps-section">
 
               <h2 class="steps-header">
-                To Bee Continued
+                Buzz Through the Years
               </h2>
 
               <div class="steps-timeline">
 
                 <div class="steps-one">
                   <img class="steps-img" src="assets/img/bee/bee.jpg" alt="bee graphic" />
-                  <h3 class="steps-name">
+                  <h4 class="steps-name">
                     Copernicus Hackathon (2016)
-                  </h3>
+                  </h4>
                   <p class="steps-description">
                     Wiener Entwickler-Event: Die Satellitenbild-Hacker kommen.
                     <a href="https://www.derstandard.at/story/2000047257676/die-satellitenbild-hacker-kommen" class="btn btn-primary btn-sm">derstandard.at</a>
@@ -207,9 +249,9 @@ html {
 
                 <div class="steps-two">
                   <img class="steps-img" src="assets/img/bee/bee.jpg" alt="bee graphic" />
-                  <h3 class="steps-name">
+                  <h4 class="steps-name">
                     Start of doctorate (2024)
-                  </h3>
+                  </h4>
                   <p class="steps-description">
                      Focusing on winter colony loss. Attended course on wild pollinators.
                   </p>
@@ -217,9 +259,9 @@ html {
 
                 <div class="steps-three">
                   <img class="steps-img" src="assets/img/bee/bee.jpg" alt="bee graphic" />
-                  <h3 class="steps-name">
+                  <h4 class="steps-name">
                     Start of outreach (2025)
-                  </h3>
+                  </h4>
                   <p class="steps-description">
                   </p>
                 </div>
@@ -229,7 +271,9 @@ html {
             </section>
 
 
-                  
+ 
+
+            
 
 
 
